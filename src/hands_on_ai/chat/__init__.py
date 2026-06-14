@@ -2,7 +2,8 @@
 Chat module - Simple chatbot with system prompts.
 """
 
-from .get_response import get_response
+from .get_response import get_response, chat_completion
+from .conversation import Conversation
 from .personalities import (
     friendly_bot,
     sarcastic_bot,
@@ -22,6 +23,8 @@ from .personalities import (
 # 🧠 Core interface
 __all__ = [
     "get_response",
+    "chat_completion",
+    "Conversation",
     "friendly_bot",
     "sarcastic_bot",
     "pirate_bot",

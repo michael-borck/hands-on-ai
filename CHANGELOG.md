@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+- `chat.Conversation`: a multi-turn chat object that remembers history (resends
+  the transcript each turn) and tracks `total_tokens` / `last_usage`.
+- `get_response(..., return_usage=True)` returns a `(response, usage)` tuple so
+  you can see token counts. New low-level `chat.chat_completion(messages, ...)`
+  primitive shared by both.
+
+### Changed
+- Project tutorials updated to match the current library and security posture:
+  RAG projects rewritten against the real `get_top_k` API; the calculator agent
+  now teaches a safe AST evaluator instead of `eval`; statelessness and
+  small-model expectation callouts added; assorted CLI-flag, secret-handling,
+  syntax, and Python-version fixes.
+
 ## [0.2.2] - 2026-06-14
 
 ### Security

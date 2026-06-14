@@ -122,6 +122,22 @@ pirate_response = pirate_bot("Tell me about sailing ships")
 print(pirate_response)
 ```
 
+`get_response` is stateless — each call is independent. For a multi-turn chat
+that remembers what was said, use `Conversation`:
+
+```python
+from hands_on_ai.chat import Conversation
+
+chat = Conversation(system="You are a helpful tutor.")
+chat.ask("My name is Sam.")
+print(chat.ask("What's my name?"))   # -> remembers "Sam"
+
+print(f"Tokens used so far: {chat.total_tokens}")
+```
+
+You can also see token usage for a single call with `get_response(..., return_usage=True)`,
+which returns a `(response, usage)` tuple.
+
 ## 🌍 Provider-Agnostic Architecture
 
 HandsOnAI is designed to work with **any OpenAI-compatible LLM provider**. The system uses standard OpenAI API endpoints (`/v1/chat/completions`, `/v1/models`) making it compatible with a wide range of AI services.
