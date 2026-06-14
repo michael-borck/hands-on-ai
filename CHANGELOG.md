@@ -5,6 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.2] - 2026-06-14
+
+### Security
+- Replaced `eval()`-based calculator tools with an AST-based safe evaluator.
+  Emptying `__builtins__` is not a sandbox, so a crafted expression (e.g. via
+  LLM/agent input) could reach `os`/`subprocess` and run arbitrary code.
+- RAG indexes now load with `allow_pickle=False` to prevent code execution
+  from a malicious `.npz` index file.
+
+### Changed
+- RAG `get_embeddings` now uses the OpenAI-compatible `/v1` endpoint, so it
+  works with any provider instead of only Ollama's native `/api/embeddings`.
+  Added a request timeout.
+
+### Fixed
+- README Python version requirement corrected to 3.10+ to match `pyproject.toml`.
+
+### Removed
+- Deleted dead `agent/tools.py` (shadowed by the `agent/tools/` package).
+
 ## [0.1.13] - 2025-05-24
 
 ### Added
