@@ -80,7 +80,7 @@ def youtube_to_blog():
 def extract_video_id(video_input):
     """Extract the YouTube video ID from a URL or return the ID if already provided."""
     # Check if it's already a video ID (simple 11-character string)
-    if re.match(r'^[a-zA-Z0-9_-]{11}, video_input):
+    if re.match(r'^[a-zA-Z0-9_-]{11}$', video_input):
         return video_input
         
     # Try to extract from URL
@@ -95,6 +95,9 @@ def extract_video_id(video_input):
 def get_transcript(video_id):
     """Get the transcript from a YouTube video."""
     try:
+        # Note: youtube-transcript-api changed its API across versions. This uses
+        # the classic call; on newer versions use
+        # `YouTubeTranscriptApi().fetch(video_id)` and access `snippet.text`.
         transcript_list = YouTubeTranscriptApi.get_transcript(video_id)
         
         # Combine all transcript segments

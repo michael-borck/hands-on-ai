@@ -33,26 +33,20 @@ class WeatherDashboard:
     def setup(self):
         """Set up the dashboard with the API key."""
         print("=== Weather Dashboard Setup ===")
-        
-        # Check for existing API key
-        key_file = os.path.join(self.output_dir, "api_key.txt")
-        if os.path.exists(key_file):
-            with open(key_file, 'r') as f:
-                self.api_key = f.read().strip()
-            print("API key loaded from file.")
-        
-        # If no API key, prompt for one
+
+        # Read the API key from an environment variable. Never hard-code secrets
+        # or write them to a file in your project folder — they can be committed
+        # to git by accident. Set it in your shell instead:
+        #   export OPENWEATHER_API_KEY="your-key"   (macOS/Linux)
+        #   setx OPENWEATHER_API_KEY "your-key"     (Windows)
+        self.api_key = os.environ.get("OPENWEATHER_API_KEY")
+
+        # If it isn't set, prompt for one (used only for this session)
         if not self.api_key:
             print("\nYou need an OpenWeatherMap API key to use this dashboard.")
             print("Get a free API key at: https://openweathermap.org/api")
+            print("Tip: set OPENWEATHER_API_KEY in your environment to skip this prompt.")
             self.api_key = input("Enter your API key: ").strip()
-            
-            # Save API key for future use
-            save_key = input("Save this API key for future use? (y/n): ").lower() == 'y'
-            if save_key:
-                with open(key_file, 'w') as f:
-                    f.write(self.api_key)
-                print("API key saved.")
     
     def get_current_weather(self, location):
         """Get current weather for a location."""

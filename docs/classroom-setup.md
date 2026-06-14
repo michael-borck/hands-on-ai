@@ -7,7 +7,7 @@ This guide walks educators and students through the technical setup needed to us
 ## 💻 System Requirements
 
 - Operating System: Linux, macOS, or WSL on Windows
-- Python: 3.10+ (3.6+ minimum)
+- Python: 3.10+
 - Access to an OpenAI-compatible LLM provider:
   - Local: [Ollama](https://ollama.com) for privacy and control
   - Cloud: OpenAI, OpenRouter, Together AI, etc. for advanced models

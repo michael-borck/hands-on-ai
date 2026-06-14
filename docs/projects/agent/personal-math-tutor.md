@@ -8,6 +8,12 @@
 ## Overview
 Create a math tutor agent that helps solve arithmetic problems and explains the steps involved.
 
+> ⚙️ **Small local models have limits.** This project chains several reasoning or
+> tool-use steps. Small models (the kind you often run locally on Ollama) can be
+> unreliable at multi-step reasoning — expect occasional wrong turns or dropped
+> steps. If results are poor, try a larger/more capable model. Note that the
+> library routes small models to JSON tool-calling rather than the ReAct format.
+
 ## Instructions
 1. Start the agent in interactive mode using `hands-on-ai agent interactive`
 2. Ask the agent to solve basic math problems like "What is 24 × 7?" or "Calculate 125 ÷ 5"

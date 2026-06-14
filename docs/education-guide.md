@@ -96,7 +96,7 @@ Deeper exploration of AI concepts and applications:
 - Or: Sufficient local processing power for running Ollama locally
 
 ### Software
-- Python 3.6+
+- Python 3.10+
 - Hands-On AI library installed
 - Ollama or alternative LLM backend
 

@@ -8,6 +8,12 @@
 ## Overview
 Challenge the agent to solve complex problems that require using multiple tools together in creative ways.
 
+> ⚙️ **Small local models have limits.** This project chains several reasoning or
+> tool-use steps. Small models (the kind you often run locally on Ollama) can be
+> unreliable at multi-step reasoning — expect occasional wrong turns or dropped
+> steps. If results are poor, try a larger/more capable model. Note that the
+> library routes small models to JSON tool-calling rather than the ReAct format.
+
 ## Instructions
 1. Launch the agent using `hands-on-ai agent interactive`
 2. Create 3 multi-step problems that each require at least 2 different tools. For example:

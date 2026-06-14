@@ -13,6 +13,12 @@ Simulate an interview or debate between multiple bots with different personaliti
 
 This project offers flexibility to run either panel discussions with multiple participants or focused one-on-one debates, allowing students to explore how different personas respond to the same topics.
 
+> 🧠 **LLMs have no memory of their own.** Each `get_response()` call is
+> independent — the model only sees the `system` prompt plus the single `prompt`
+> you pass *this* call. If you want the bot to "remember" earlier turns, keep a
+> running transcript and include it in the prompt yourself; nothing does it
+> automatically.
+
 ## Instructions
 
 ```python

@@ -33,7 +33,7 @@ pip install git+https://github.com/teaching-repositories/hands-on-ai.git
 
 ### Prerequisites
 
-- Python 3.10+ (3.6+ minimum)
+- Python 3.10+
 - Access to any OpenAI-compatible LLM provider:
   - Local: [Ollama](https://ollama.ai/) for privacy and control
   - Cloud: OpenAI, OpenRouter, Together AI, etc. for advanced models

@@ -9,6 +9,12 @@
 
 Chat with simulated historical figures to learn about their lives, achievements, and time periods.
 
+> 🧠 **LLMs have no memory of their own.** Each `get_response()` call is
+> independent — the model only sees the `system` prompt plus the single `prompt`
+> you pass *this* call. To make a bot that "remembers" earlier turns, **you** keep
+> the conversation history and resend it each time, as this project does below.
+> There is no hidden state doing it for you.
+
 ## Instructions
 
 ```python
@@ -63,16 +69,24 @@ def historical_figure_chat():
     
     print("\n" + random.choice(greetings))
     
-    # Chat loop
+    # Chat loop. get_response is stateless, so we keep our own running transcript
+    # and resend it every turn — that is what gives the figure "memory" of the
+    # conversation so it can follow up on what was said earlier.
+    transcript = ""
     while True:
         user_input = input("\nYou: ")
         
         if user_input.lower() == "exit":
             print(f"\n{figure}: Farewell! It was a pleasure speaking with you.")
             break
-            
-        response = get_response(user_input, system=system_prompt)
+
+        # Send the conversation so far plus the new question
+        prompt = f"{transcript}You: {user_input}\n{figure}:"
+        response = get_response(prompt, system=system_prompt)
         print(f"\n{figure}: {response}")
+
+        # Remember this exchange for the next turn
+        transcript += f"You: {user_input}\n{figure}: {response}\n"
 
 # Run the historical figure chat
 if __name__ == "__main__":

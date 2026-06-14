@@ -11,18 +11,25 @@ Create a command-line interface (CLI) tool that implements Retrieval-Augmented G
 ## Instructions
 
 1. **Setup Your Environment**
-   - Ensure you have Python 3.7+ installed
-   - Install the required libraries: `hands-on-ai` and `numpy`
+   - Ensure you have Python 3.10+ installed
+   - Install the library: `pip install hands-on-ai`
+   - Build an index from your documents first:
+     ```bash
+     rag index path/to/your/docs/
+     ```
+     This writes an index to `~/.hands-on-ai/index.npz` by default.
 
 2. **Understanding the Components**
    - Learn how RAG combines retrieval and generation
    - Understand embeddings and cosine similarity for semantic search
-   - Explore the provided `rag_utils` functions: `embed_query()` and `get_top_k()`
+   - Explore the retrieval helper in `hands_on_ai.rag.utils`:
+     `get_top_k(query, index_path, k=3, return_scores=False)`. It embeds the
+     query, loads the index, runs the similarity search, and returns a list of
+     `(chunk, source)` tuples — optionally with scores.
 
 3. **Build Your CLI Script**
    - Create a Python script with the following functions:
-     - `load_index()`: Load document chunks and embeddings from an .npz file
-     - `query_index()`: Embed a query and find the most similar chunks
+     - `query_index()`: Retrieve the most similar chunks for a query
      - `generate_answer()`: Create a response using retrieved context
      - `main()`: Handle CLI arguments and orchestrate the workflow
 
@@ -31,118 +38,78 @@ Create a command-line interface (CLI) tool that implements Retrieval-Augmented G
    #!/usr/bin/env python3
    """
    Simple Q&A CLI using RAG (Retrieval-Augmented Generation)
-   This script loads an index, embeds queries, retrieves relevant chunks, and generates answers.
+   This script retrieves relevant chunks from an index and generates answers.
    """
 
    import argparse
-   import numpy as np
    from hands_on_ai.chat import get_response
-   from hands_on_ai.rag.utils import embed_query, get_top_k
+   from hands_on_ai.rag.utils import get_top_k
 
-   def load_index(index_path):
-       """Load chunked documents and their embeddings from an .npz file"""
-       print(f"Loading index from {index_path}...")
-       try:
-           data = np.load(index_path, allow_pickle=True)
-           chunks = data['chunks']
-           embeddings = data['embeddings']
-           metadata = data.get('metadata', None)
-           print(f"Loaded {len(chunks)} chunks from index.")
-           return chunks, embeddings, metadata
-       except Exception as e:
-           print(f"Error loading index: {e}")
-           exit(1)
-
-   def query_index(query, chunks, embeddings, metadata=None, top_k=3, show_scores=False):
-       """Embed the query and retrieve the top K most relevant chunks"""
+   def query_index(query, index_path, top_k=3, show_scores=False):
+       """Retrieve the top K most relevant chunks for a query."""
        print(f"Processing query: '{query}'")
-       
-       # Embed the query
-       query_embedding = embed_query(query)
-       
-       # Get the top k chunks and their similarity scores
-       top_chunks, top_scores, top_indices = get_top_k(
-           query_embedding, embeddings, chunks, k=top_k, return_indices=True
-       )
-       
-       # Prepare context from top chunks
-       context = "\n\n---\n\n".join(top_chunks)
-       
-       # Show scores and sources if requested
+
+       # get_top_k embeds the query, loads the index, and runs the search.
+       # It returns a list of (chunk, source) tuples.
+       if show_scores:
+           results, scores = get_top_k(query, index_path, k=top_k, return_scores=True)
+       else:
+           results, scores = get_top_k(query, index_path, k=top_k), None
+
+       context = "\n\n---\n\n".join(chunk for chunk, _ in results)
+
        if show_scores:
            print("\n=== Top Chunks ===")
-           for i, (chunk, score) in enumerate(zip(top_chunks, top_scores)):
-               source_info = ""
-               if metadata is not None and len(metadata) > top_indices[i]:
-                   source_info = f" Source: {metadata[top_indices[i]].get('source', 'unknown')}"
-               print(f"[{i+1}] Score: {score:.4f}{source_info}")
+           for i, ((chunk, source), score) in enumerate(zip(results, scores)):
+               print(f"[{i+1}] Score: {score:.4f}  Source: {source}")
                print(f"Preview: {chunk[:100]}...\n")
-       
-       return context, top_chunks, top_scores
+
+       return context, results
 
    def generate_answer(query, context):
-       """Generate a response using the provided context"""
-       prompt = f"""
-   Based on the following context, please answer the question. If the context doesn't contain 
-   relevant information to answer the question fully, say what you can based on the context 
-   and indicate what information is missing.
+       """Generate a response using the retrieved context."""
+       prompt = f"""Based on the following context, please answer the question. If the context doesn't contain relevant information to answer the question fully, say what you can based on the context and indicate what information is missing.
 
    Context:
    {context}
 
    Question: {query}
 
-   Answer:
-   """
-       return get_response(prompt, personality="helpful")
+   Answer:"""
+       return get_response(prompt)
 
    def main():
        parser = argparse.ArgumentParser(description="Query a RAG index and get answers.")
        parser.add_argument("query", help="The question to ask")
-       parser.add_argument("--index", "-i", default="sample_index.npz", help="Path to the .npz index file")
+       parser.add_argument("--index", "-i", default="index.npz", help="Path to the .npz index file")
        parser.add_argument("--top-k", "-k", type=int, default=3, help="Number of chunks to retrieve")
        parser.add_argument("--show-scores", "-s", action="store_true", help="Show similarity scores and chunk previews")
        parser.add_argument("--show-context", "-c", action="store_true", help="Show full context used for generation")
        args = parser.parse_args()
-       
-       # Load the index
-       chunks, embeddings, metadata = load_index(args.index)
-       
-       # Query the index
-       context, top_chunks, top_scores = query_index(
-           args.query, chunks, embeddings, metadata, 
-           top_k=args.top_k, show_scores=args.show_scores
+
+       context, results = query_index(
+           args.query, args.index, top_k=args.top_k, show_scores=args.show_scores
        )
-       
-       # Show full context if requested
+
        if args.show_context:
            print("\n=== Full Context ===")
            print(context)
-           print("\n")
-       
-       # Generate and print the answer
+           print()
+
        print("\n=== Answer ===")
-       answer = generate_answer(args.query, context)
-       print(answer)
-       
-       # Log source information if metadata is available
-       if metadata is not None and not args.show_scores:
-           print("\n=== Sources ===")
-           used_sources = set()
-           for idx in range(min(args.top_k, len(top_chunks))):
-               if idx < len(top_scores):
-                   source = metadata[idx].get('source', 'unknown')
-                   used_sources.add(source)
-           
-           for source in used_sources:
-               print(f"- {source}")
+       print(generate_answer(args.query, context))
+
+       # Show which sources the answer drew from
+       print("\n=== Sources ===")
+       for source in {source for _, source in results}:
+           print(f"- {source}")
 
    if __name__ == "__main__":
        main()
    ```
 
 5. **Test Your Implementation**
-   - Use the provided `sample_index.npz` file
+   - Point `--index` at the index you built (default `~/.hands-on-ai/index.npz`)
    - Run your script with various queries
    - Experiment with different `top_k` values to see how it affects answers
 

@@ -26,22 +26,22 @@ Learn how to use the `rag` CLI to index documents and create a simple Retrieval-
    ```bash
    rag index hands_on_ai/testdata/demo_notes/
    ```
-3. Observe the output showing how many files were found and processed, and note the name of the saved index file (e.g., `sample_index.npz`)
+3. Observe the output showing how many files were found and processed. By default the index is saved to `~/.hands-on-ai/index.npz` (so `rag ask` finds it automatically).
 
 ### Step 3: Ask questions using your RAG system
 1. Ask a basic question about the content:
    ```bash
-   rag ask "What does TCP do?" --show-context
+   rag ask "What does TCP do?" --context
    ```
 2. Try different questions to explore the content:
    ```bash
-   rag ask "How does HTTP work?" --show-context
-   rag ask "What is the difference between TCP and UDP?" --show-scores
+   rag ask "How does HTTP work?" --context
+   rag ask "What is the difference between TCP and UDP?" --scores
    ```
 3. Experiment with different flags:
-   - `--show-context`: See what information was used to answer
-   - `--show-scores`: View relevance ranking of different text chunks
-   - `--top-k 5`: Retrieve 5 most relevant chunks instead of default 3
+   - `--context` (`-c`): See what information was used to answer
+   - `--scores` (`-s`): View relevance ranking of different text chunks
+   - `--k 5`: Retrieve 5 most relevant chunks instead of default 3
 
 ### Step 4: Understand how RAG works
 1. Review how the system processes your request:
@@ -67,6 +67,6 @@ Learn how to use the `rag` CLI to index documents and create a simple Retrieval-
    - Fine-tune your prompts to get better answers
 
 4. **Analyze retrieval performance**:
-   - Use the `--show-scores` flag to see how different chunks are ranked
+   - Use the `--scores` flag to see how different chunks are ranked
    - Experiment with question phrasing to improve retrieval accuracy
    - Try adjusting the number of chunks retrieved with `--top-k`

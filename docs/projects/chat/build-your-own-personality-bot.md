@@ -9,6 +9,12 @@
 
 Create a new bot personality that responds in a unique way — like a movie character, animal, celebrity, or completely invented creature. Students will learn how to craft system prompts that reflect specific voices or styles.
 
+> 🧠 **LLMs have no memory of their own.** Each `get_response()` call is
+> independent — the model only sees the `system` prompt plus the single `prompt`
+> you pass *this* call. If you want the bot to "remember" earlier turns, keep a
+> running transcript and include it in the prompt yourself; nothing does it
+> automatically.
+
 ## Instructions
 
 ```python

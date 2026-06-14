@@ -9,6 +9,12 @@
 
 Create a bot that responds differently based on the user's emotional state, providing tailored support, advice, or encouragement depending on the mood expressed.
 
+> 🧠 **LLMs have no memory of their own.** Each `get_response()` call is
+> independent — the model only sees the `system` prompt plus the single `prompt`
+> you pass *this* call. If you want the bot to "remember" earlier turns, keep a
+> running transcript and include it in the prompt yourself; nothing does it
+> automatically.
+
 ## Instructions
 
 ```python

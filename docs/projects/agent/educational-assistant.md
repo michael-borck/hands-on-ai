@@ -8,6 +8,12 @@
 ## Overview
 Create a comprehensive educational assistant that helps students learn a specific topic by providing explanations, examples, practice problems, and personalized feedback.
 
+> ⚙️ **Small local models have limits.** This project chains several reasoning or
+> tool-use steps. Small models (the kind you often run locally on Ollama) can be
+> unreliable at multi-step reasoning — expect occasional wrong turns or dropped
+> steps. If results are poor, try a larger/more capable model. Note that the
+> library routes small models to JSON tool-calling rather than the ReAct format.
+
 ## Instructions
 1. Choose an educational topic that can leverage multiple agent tools (e.g., chemistry, mathematics, language learning)
 2. Design a learning plan with these components:

@@ -8,6 +8,12 @@
 ## Overview
 Use the agent as a science learning companion to explore elements, mathematical properties, and scientific concepts.
 
+> ⚙️ **Small local models have limits.** This project chains several reasoning or
+> tool-use steps. Small models (the kind you often run locally on Ollama) can be
+> unreliable at multi-step reasoning — expect occasional wrong turns or dropped
+> steps. If results are poor, try a larger/more capable model. Note that the
+> library routes small models to JSON tool-calling rather than the ReAct format.
+
 ## Instructions
 1. Launch the agent using `hands-on-ai agent interactive`
 2. Explore the periodic table tool by asking about different elements:
