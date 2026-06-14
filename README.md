@@ -4,7 +4,7 @@
 [![ai-education](https://img.shields.io/badge/-ai--education-blue?style=flat-square)](https://github.com/topics/ai-education) [![chatbots](https://img.shields.io/badge/-chatbots-blue?style=flat-square)](https://github.com/topics/chatbots) [![cli-tool](https://img.shields.io/badge/-cli--tool-blue?style=flat-square)](https://github.com/topics/cli-tool) [![natural-language-processing](https://img.shields.io/badge/-natural--language--processing-blue?style=flat-square)](https://github.com/topics/natural-language-processing) [![python](https://img.shields.io/badge/-python-3776ab?style=flat-square)](https://github.com/topics/python) [![react-framework](https://img.shields.io/badge/-react--framework-blue?style=flat-square)](https://github.com/topics/react-framework) [![retrieval-augmented-generation](https://img.shields.io/badge/-retrieval--augmented--generation-blue?style=flat-square)](https://github.com/topics/retrieval-augmented-generation) [![educational-toolkit](https://img.shields.io/badge/-educational--toolkit-blue?style=flat-square)](https://github.com/topics/educational-toolkit) [![edtech](https://img.shields.io/badge/-edtech-4caf50?style=flat-square)](https://github.com/topics/edtech) [![artificial-intelligence](https://img.shields.io/badge/-artificial--intelligence-blue?style=flat-square)](https://github.com/topics/artificial-intelligence)
 <!-- BADGES:END -->
 
-[![Python 3.6+](https://img.shields.io/badge/python-3.6+-blue.svg)](https://www.python.org/downloads/)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![MIT License](https://img.shields.io/badge/licence-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Classroom Ready](https://img.shields.io/badge/classroom-ready-brightgreen.svg)]()
 [![Beginner Friendly](https://img.shields.io/badge/beginner-friendly-orange.svg)]()
@@ -74,7 +74,7 @@ pip install git+https://github.com/teaching-repositories/hands-on-ai.git
 
 ### Prerequisites
 
-- Python 3.6 or higher
+- Python 3.10 or higher
 - Any OpenAI-compatible LLM provider (see [Provider Compatibility](#provider-compatibility))
 
 ### Quick Start

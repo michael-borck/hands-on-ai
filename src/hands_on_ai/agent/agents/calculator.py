@@ -7,6 +7,7 @@ This agent provides tools for performing basic and advanced calculations.
 import math
 from typing import Dict, Any
 from ..core import register_tool
+from ...utils.safe_eval import safe_eval
 
 
 def calc(expression: str) -> str:
@@ -32,8 +33,7 @@ def calc(expression: str) -> str:
     }
     
     try:
-        # Use safer eval with restricted globals
-        result = eval(expression, {"__builtins__": {}}, safe_globals)
+        result = safe_eval(expression, safe_globals)
         return str(result)
     except Exception as e:
         return f"Error: Could not evaluate expression. {str(e)}"
@@ -74,8 +74,7 @@ def advanced_calc(expression: str) -> str:
     }
     
     try:
-        # Use safer eval with restricted globals
-        result = eval(expression, {"__builtins__": {}}, safe_globals)
+        result = safe_eval(expression, safe_globals)
         return str(result)
     except Exception as e:
         return f"Error: Could not evaluate expression. {str(e)}"

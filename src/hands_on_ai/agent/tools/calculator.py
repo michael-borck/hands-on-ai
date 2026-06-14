@@ -4,6 +4,7 @@ Calculator tool for mathematical operations.
 
 import math
 from ..core import register_tool
+from ...utils.safe_eval import safe_eval
 
 
 def calculator(expression: str):
@@ -28,8 +29,7 @@ def calculator(expression: str):
     }
     
     try:
-        # Use safer eval with restricted globals
-        result = eval(expression, {"__builtins__": {}}, safe_globals)
+        result = safe_eval(expression, safe_globals)
         return f"Result: {result}"
     except Exception as e:
         return f"Error: Could not evaluate expression. {str(e)}"

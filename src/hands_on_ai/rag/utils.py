@@ -7,7 +7,7 @@ import shutil
 import importlib.resources
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
-import requests
+from openai import OpenAI
 from ..config import get_server_url, get_embedding_model, get_chunk_size, get_api_key
 
 
@@ -70,38 +70,40 @@ def chunk_text(text, chunk_size=None):
 
 def get_embeddings(chunks, model=None):
     """
-    Get embeddings for text chunks using Ollama API.
-    
+    Get embeddings for text chunks using the OpenAI-compatible embeddings API.
+
+    This uses the same ``/v1`` endpoint and client as the rest of the package,
+    so it works with any OpenAI-compatible provider (Ollama, OpenAI, etc.)
+    rather than only Ollama's native ``/api/embeddings`` endpoint.
+
     Args:
         chunks: List of text chunks
         model: Embedding model to use (default from config)
-        
+
     Returns:
         ndarray: Array of embedding vectors
-        
+
     Raises:
         Exception: If embedding request fails
     """
     if model is None:
         model = get_embedding_model()
-        
-    url = f"{get_server_url()}/api/embeddings"
-    headers = {"Content-Type": "application/json"}
-    api_key = get_api_key()
-    if api_key:
-        headers["Authorization"] = f"Bearer {api_key}"
-    vectors = []
 
-    for chunk in chunks:
-        response = requests.post(
-            url, 
-            headers=headers, 
-            json={"model": model, "prompt": chunk}
-        )
-        response.raise_for_status()
-        vectors.append(response.json()["embedding"])
+    server_url = get_server_url()
+    # Add /v1 suffix for OpenAI-compatible endpoints
+    if not server_url.endswith("/v1"):
+        server_url = server_url.rstrip("/") + "/v1"
 
-    return np.array(vectors)
+    client = OpenAI(
+        base_url=server_url,
+        api_key=get_api_key() or "hands-on-ai",
+        timeout=30,
+    )
+
+    response = client.embeddings.create(model=model, input=list(chunks))
+    # Sort by index so vector order matches the input chunk order.
+    ordered = sorted(response.data, key=lambda item: item.index)
+    return np.array([item.embedding for item in ordered])
 
 
 def save_index_with_sources(vectors, chunks, sources, path):
@@ -127,7 +129,10 @@ def load_index_with_sources(path):
     Returns:
         tuple: (vectors, chunks, sources)
     """
-    data = np.load(path, allow_pickle=True)
+    # allow_pickle=False prevents arbitrary code execution from a malicious
+    # index file. chunks/sources are saved as plain string arrays, which load
+    # fine without pickling.
+    data = np.load(path, allow_pickle=False)
     return data["vectors"], data["chunks"], data["sources"]
 
 

@@ -5,17 +5,17 @@ Simple tools for the agent module.
 import datetime
 from typing import Dict, Callable
 from .core import register_tool
+from ..utils.safe_eval import safe_eval
 
 # Simple built-in tools
 def calculator(expression: str) -> str:
     """
     Evaluates a mathematical expression.
-    Uses a restricted environment for safe evaluation.
+    Uses an AST-based evaluator (not ``eval``) for safe evaluation.
     """
     try:
-        # Use restricted globals for safety
-        result = eval(expression, {"__builtins__": {}}, {
-            "abs": abs, "min": min, "max": max, "round": round, 
+        result = safe_eval(expression, {
+            "abs": abs, "min": min, "max": max, "round": round,
             "sum": sum, "len": len, "int": int, "float": float,
             "str": str, "pow": pow
         })
