@@ -20,12 +20,8 @@ Or install the latest from GitHub:
 pip install git+https://github.com/teaching-repositories/hands-on-ai.git
 ```
 
-The RAG module can read PDFs and Word documents. If you plan to use those,
-install the optional extras:
-
-```bash
-pip install "hands-on-ai[rag]"
-```
+That single command installs everything: all four modules, plus PDF and Word
+support for RAG. There are no extra installs to remember.
 
 ## 3. Connect a provider
 

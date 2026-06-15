@@ -60,8 +60,8 @@ A few notes:
 - Any OpenAI-compatible provider works the same way (OpenAI, Groq, OpenRouter,
   and so on). Just swap the server URL, key, and model. See
   [Choose a Provider](providers.md).
-- For the RAG module's PDF/Word support, install the extras:
-  `!pip install -q "hands-on-ai[rag]"`.
+- The one `pip install hands-on-ai` covers everything, including RAG's PDF and
+  Word support. There are no extra installs to remember.
 
 ## For educators
 

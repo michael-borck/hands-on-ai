@@ -34,7 +34,7 @@ def load_text_file(path: Path) -> str:
         try:
             import docx
         except ImportError:
-            raise ImportError("Please install `python-docx` to use .docx files. Try: pip install hands-on-ai[rag]")
+            raise ImportError("`python-docx` is needed to read .docx files (it ships with hands-on-ai). Try reinstalling, or: pip install python-docx")
         doc = docx.Document(path)
         return "\n".join(p.text for p in doc.paragraphs if p.text.strip())
 
@@ -42,7 +42,7 @@ def load_text_file(path: Path) -> str:
         try:
             import fitz  # PyMuPDF
         except ImportError:
-            raise ImportError("Please install `pymupdf` to use .pdf files. Try: pip install hands-on-ai[rag]")
+            raise ImportError("`pymupdf` is needed to read .pdf files (it ships with hands-on-ai). Try reinstalling, or: pip install pymupdf")
         with fitz.open(path) as doc:
             return "\n".join(page.get_text() for page in doc)
 
