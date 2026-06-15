@@ -73,5 +73,6 @@ URL, missing API key, model not pulled, etc.).
 ## Next steps
 
 - [Choose a Provider](providers.md): Ollama, cloud providers, or an authenticated server
+- [Notebooks & Colab](notebooks.md): use Hands-On AI from Jupyter or Google Colab
 - [Configuration](configuration.md): environment variables and the config file
 - [Browse the projects](projects/index.md): build something with what you've installed

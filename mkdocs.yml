@@ -24,6 +24,7 @@ nav:
   - Getting Started:
     - "Install & First Run": installation.md
     - "Choose a Provider": providers.md
+    - "Notebooks & Colab": notebooks.md
     - "Ollama Setup": ollama-guide.md
     - "Configuration": configuration.md
   - Learn:

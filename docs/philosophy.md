@@ -24,6 +24,14 @@ So we trade completeness for clarity, on purpose:
   streaming at scale, evaluation harnesses, vector databases, async pipelines, or
   the dozen other things real production systems need. Those aren't the lesson.
 
+## It's all the same shape
+
+Look closely and every module is identical underneath: one call to the model
+(`get_response`), wrapped in plain Python. Chat adds a system prompt. RAG adds
+code to fetch context. An agent adds a loop that runs your functions. A workflow
+adds folders. The model is the only "AI" in the room; the rest is a thin harness
+you can open and read. That's the whole package, and the whole point.
+
 ## Two friendly clarifications
 
 **"Can I build my real product on top of this?"**
