@@ -63,12 +63,12 @@ register_tool(
 
 > ⚠️ **Why not just use `eval()`?** You may have seen calculators built with
 > `eval(expression, {"__builtins__": {}}, {...})`. **Don't do this.** Emptying
-> `__builtins__` is *not* a sandbox — a crafted string such as
+> `__builtins__` is *not* a sandbox: a crafted string such as
 > `().__class__.__bases__[0].__subclasses__()` can still reach the operating
 > system and run arbitrary code. Because an *agent* feeds model-generated text
 > straight into your tool, that's a real remote-code-execution risk. Parsing the
 > expression with `ast` and walking only the nodes you allow (as above) is the
-> safe approach — it's exactly what `hands-on-ai`'s built-in calculator tool does.
+> safe approach. It's exactly what `hands-on-ai`'s built-in calculator tool does.
 
 ```python
 
@@ -113,7 +113,7 @@ if __name__ == "__main__":
 > default) picks a reasoning format based on the model. The *ReAct* style shown
 > below (`Thought / Action / Observation`) reads nicely but needs a fairly
 > capable model. For the small local models you'll often run on Ollama,
-> `hands-on-ai` automatically routes to a more reliable **JSON** format instead —
+> `hands-on-ai` automatically routes to a more reliable **JSON** format instead,
 > so the exact text you see may differ from the sample below. If a small model
 > struggles, that's expected: try a larger model, or pass `format="json"`
 > explicitly.

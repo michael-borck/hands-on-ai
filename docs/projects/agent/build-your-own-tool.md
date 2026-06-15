@@ -8,7 +8,7 @@
 ## Overview
 
 Agents are only as capable as the tools you give them. This cookbook shows the
-one pattern behind *every* tool — built-in or your own — so you can add new
+one pattern behind *every* tool (built-in or your own) so you can add new
 abilities without guessing.
 
 ## The one rule: a tool is `str -> str`
@@ -35,12 +35,12 @@ print(run_agent("Use the shout tool on 'hello world'"))
 
 That's the whole contract:
 
-- **Input** — one string (whatever the model decides to pass).
-- **Output** — one string (what the agent reads back).
-- **Description** — the model reads *this* to decide when and how to use your
+- **Input**: one string (whatever the model decides to pass).
+- **Output**: one string (what the agent reads back).
+- **Description**: the model reads *this* to decide when and how to use your
   tool. Write it like a help message, and say what the input should look like.
 
-> 💡 A tool can do anything a Python function can — math, a lookup, an API call,
+> 💡 A tool can do anything a Python function can: math, a lookup, an API call,
 > reading a file. The agent doesn't care how; it only sees the string you return.
 
 ## Handling more than one input
@@ -74,7 +74,7 @@ def github_stars(repo: str) -> str:
         # 1. FETCH
         resp = requests.get(f"https://api.github.com/repos/{repo}", timeout=10)
         resp.raise_for_status()
-        # 2. PARSE — pull out just the fact you need
+        # 2. PARSE: pull out just the fact you need
         stars = resp.json()["stargazers_count"]
         # 3. RETURN a short, plain-text answer
         return f"{repo} has {stars:,} stars."
@@ -89,11 +89,11 @@ register_tool(
 ```
 
 Fetch, keep only what you need, return a short string. The same shape works for
-weather, news, dictionaries — anything.
+weather, news, dictionaries, anything.
 
 > ⚠️ **External APIs are the part that dates.** Endpoints change, fields get
 > renamed, and services add rate limits or sign-up requirements. The *library*
-> stays deliberately offline and stable — wiring up a live API is your code's job,
+> stays deliberately offline and stable. Wiring up a live API is your code's job,
 > not the library's. Treat a broken API as a real-world lesson, not a bug in
 > `hands-on-ai`.
 
@@ -117,16 +117,16 @@ The [Weather Dashboard](../chat/weather-dashboard.md) project shows this end to 
 ## Simulated vs. real
 
 The built-in `search` and `weather` tools return **simulated** data on purpose:
-no keys, no rate limits, identical results every run — ideal for a classroom. A
+no keys, no rate limits, identical results every run, ideal for a classroom. A
 real version trades that reliability for fresh data. Both are valid, and choosing
 between them *is* part of the lesson.
 
 ## A good-tool checklist
 
 - ✅ One string in, one string out.
-- ✅ A clear `description` — the model uses it to decide when to call the tool and what to pass.
+- ✅ A clear `description`: the model uses it to decide when to call the tool and what to pass.
 - ✅ Return concise text. The agent re-reads your output; a wall of JSON confuses small models.
-- ✅ Handle errors by **returning** an error string — don't `raise`. A tool that crashes can end the agent run.
+- ✅ Handle errors by **returning** an error string. Don't `raise`. A tool that crashes can end the agent run.
 - ✅ Prefer deterministic/offline tools; reach for the network only when freshness is the whole point.
 - ✅ Keep secrets in environment variables, never in code.
 

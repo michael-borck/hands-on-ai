@@ -2,7 +2,7 @@
 
 Hands-On AI talks to LLMs through the **standard OpenAI-compatible API**
 (`/v1/chat/completions`, `/v1/models`). That means the same code works with many
-providers — you only change a couple of environment variables.
+providers: you only change a couple of environment variables.
 
 This page covers the three setups people ask about most:
 
@@ -24,7 +24,7 @@ See [Configuration](configuration.md) for the full list and the config-file opti
 
 ## 1. Local Ollama (no API key)
 
-The default and simplest setup — free, private, offline.
+The default and simplest setup: free, private, offline.
 
 ```bash
 ollama pull llama3
@@ -136,4 +136,4 @@ handsonai doctor
 ```
 
 This checks the connection, shows the resolved configuration, and lists models
-the provider reports — the quickest way to confirm your provider is wired up.
+the provider reports, the quickest way to confirm your provider is wired up.

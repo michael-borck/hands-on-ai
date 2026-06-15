@@ -2,7 +2,7 @@
 
 So far you've built single steps: a [chat](chat-guide.md) reply, a [RAG](rag-guide.md)
 answer, an [agent](agent-guide.md) that calls a tool. Real work is usually
-*several* steps — research, then outline, then draft, then check. This guide is
+*several* steps: research, then outline, then draft, then check. This guide is
 about orchestrating those steps **without** a heavy framework.
 
 ## The problem with one giant prompt
@@ -19,7 +19,7 @@ Two things go wrong:
 
 ## The idea: folders *are* the architecture
 
-The **Interpretable Context Methodology (ICM)** — "folders over frameworks" —
+The **Interpretable Context Methodology (ICM)**, "folders over frameworks",
 takes the Unix philosophy ("make each stage do one thing well") and applies it
 to AI. Instead of orchestration code, a workflow is just a **folder of numbered
 stages**:
@@ -27,7 +27,7 @@ stages**:
 ```
 workspace/
 ├── CONTEXT.md            # the overall goal / system prompt (optional)
-├── references/           # stable rules — the "factory"
+├── references/           # stable rules: the "factory"
 └── stages/
     ├── 01_research/
     │   ├── CONTEXT.md    # instructions for THIS stage
@@ -46,27 +46,27 @@ Why this is nice for *learning* (and for real work):
 - **It's a glass box.** Every intermediate result is a readable file you can open.
 - **Anyone can change it.** Reorder steps by renaming folders; change a prompt by
   editing a markdown file. No code, no redeploy.
-- **It's portable and durable.** The "logic" is just text and folders — it
+- **It's portable and durable.** The "logic" is just text and folders. It
   survives model upgrades and copies with `cp -r`.
 
 > 💡 This is how the tools you already use work. Claude Code reads a `CLAUDE.md`,
-> loads "skills" from folders, and delegates to sub-agents — the **filesystem is
+> loads "skills" from folders, and delegates to sub-agents. The **filesystem is
 > the coordination layer**. Learn this and you understand modern agentic tooling.
 
 ## Two ideas worth internalising
 
 **1. Factory vs. Product.** Keep *rules* separate from *data*.
 
-- `references/` (the **factory**) holds stable constraints — a voice guide, a
+- `references/` (the **factory**) holds stable constraints: a voice guide, a
   rubric, domain facts. These are *rules to follow*, the same on every run.
-- A stage's input (the **product**) is the specific material to transform — the
+- A stage's input (the **product**) is the specific material to transform, the
   previous step's output.
 
 Separating them tells the model what to *obey* versus what to *work on*, and
 keeps each step's context small and focused.
 
 **2. Review gates: fix the source, not the output.** Because every step writes a
-file, you can stop, read it, and edit it before the next step runs — your edit
+file, you can stop, read it, and edit it before the next step runs. Your edit
 becomes the new ground truth. If a step is *consistently* wrong, don't keep
 hand-fixing its output ("patching the binary"). Edit the stage's `CONTEXT.md` or
 a reference file ("fixing the source") so it's right on every future run.
@@ -77,7 +77,7 @@ at the end (final alignment).
 
 ## Doing it in Hands-On AI
 
-Hands-On AI ships a tiny runner — the `Pipeline` — that does exactly this. It is
+Hands-On AI ships a tiny runner (the `Pipeline`) that does exactly this. It is
 deliberately **sequential and human-in-the-loop**: `run_next()` runs *one* stage
 and stops, so you review the file before continuing.
 
@@ -95,8 +95,8 @@ pipe.run_next()      # runs 01, writes stages/01_research/output/output.md, stop
 pipe.run_next()      # runs 02 using your (possibly edited) research
 ```
 
-`run_all()` exists for when you trust a pipeline, but `run_next()` — run, review,
-continue — is the point.
+`run_all()` exists for when you trust a pipeline, but `run_next()` (run, review,
+continue) is the point.
 
 The [Build a Pipeline](projects/workflow/build-a-pipeline.md) project walks
 through this end to end.
@@ -112,7 +112,7 @@ ICM is one tool, not the only one. Be honest about the fit:
 | Thousands of concurrent users, millisecond agent-to-agent messaging | A real framework (LangChain, etc.) |
 
 Workflows are **sequential and human-in-the-loop by design**. Need parallelism?
-Run separate workflows yourself and decide how to combine them — a deliberate
+Run separate workflows yourself and decide how to combine them, a deliberate
 human choice, not a hidden autonomous loop.
 
 For more on where this little runner fits next to production frameworks (and when

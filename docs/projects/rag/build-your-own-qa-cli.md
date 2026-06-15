@@ -25,7 +25,7 @@ Create a command-line interface (CLI) tool that implements Retrieval-Augmented G
    - Explore the retrieval helper in `hands_on_ai.rag.utils`:
      `get_top_k(query, index_path, k=3, return_scores=False)`. It embeds the
      query, loads the index, runs the similarity search, and returns a list of
-     `(chunk, source)` tuples — optionally with scores.
+     `(chunk, source)` tuples, optionally with scores.
 
 3. **Build Your CLI Script**
    - Create a Python script with the following functions:

@@ -1,6 +1,6 @@
 # 🤖 Hands-On AI Personality Gallery
 
-This gallery lists all available personality bots in Hands-On AI's chat module. Each bot is just `get_response` with a fixed system prompt — see [Understanding Chat & Bots](chat-concepts.md). Each bot can be called with a prompt and will respond in its own unique style.
+This gallery lists all available personality bots in Hands-On AI's chat module. Each bot is just `get_response` with a fixed system prompt. See [Understanding Chat & Bots](chat-concepts.md). Each bot can be called with a prompt and will respond in its own unique style.
 
 Below you'll find each bot's name and its docstring, which includes usage examples, educational applications, and example responses (as written in the docstring).
 

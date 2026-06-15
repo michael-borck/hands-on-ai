@@ -32,7 +32,7 @@ def interactive():
         print("[red]❌ Ollama server is not reachable. Run `chat doctor` for help.[/red]")
         raise typer.Exit(1)
 
-    print("\n🤖 [bold]Chat CLI[/bold] — stateless REPL, no memory between prompts.")
+    print("\n🤖 [bold]Chat CLI[/bold]: stateless REPL, no memory between prompts.")
     print("Type /help for commands.\n")
 
     bot = get_bot(current_bot_name)
@@ -57,7 +57,7 @@ def interactive():
                 break
             elif command == "help":
                 print("""
-🤖 [bold]Chat CLI[/bold] — stateless REPL, no memory between prompts.
+🤖 [bold]Chat CLI[/bold]: stateless REPL, no memory between prompts.
 📖 [bold]Available commands:[/bold]
   /help              Show this help message
   /exit              Exit the REPL

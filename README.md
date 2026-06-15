@@ -12,7 +12,7 @@
 
 > AI learning made simple for students and educators
 
-HandsOnAI is a unified educational toolkit designed to teach students how modern AI systems work — by building and interacting with them directly.
+HandsOnAI is a unified educational toolkit designed to teach students how modern AI systems work, by building and interacting with them directly.
 
 It provides a clean, modular structure that introduces core AI concepts progressively through three tools:
 
@@ -122,7 +122,7 @@ pirate_response = pirate_bot("Tell me about sailing ships")
 print(pirate_response)
 ```
 
-`get_response` is stateless — each call is independent. For a multi-turn chat
+`get_response` is stateless: each call is independent. For a multi-turn chat
 that remembers what was said, use `Conversation`:
 
 ```python

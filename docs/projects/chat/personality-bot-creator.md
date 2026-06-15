@@ -14,7 +14,7 @@ Students create and interact with a bot that has a unique personality of their d
 ```python
 from hands_on_ai.chat import get_response
 
-# A bot's personality comes entirely from its `system` prompt — that's the
+# A bot's personality comes entirely from its `system` prompt. That's the
 # string that tells the model how to behave. (The optional `personality=`
 # argument only selects which canned "please wait" message is shown if a request
 # has to be retried, so we leave it at its default here.)

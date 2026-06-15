@@ -1,13 +1,13 @@
-# Learn how modern AI actually works — by building it
+# Learn how modern AI actually works, by building it
 
 **Hands-On AI** is an educational toolkit for *understanding* AI, not just using it.
-You build the things you hear about — a chatbot, a retrieval system, a
-tool-using agent — in small, readable Python, and run them on free local models.
+You build the things you hear about (a chatbot, a retrieval system, a
+tool-using agent) in small, readable Python, and run them on free local models.
 
 It's designed for the classroom: no API keys required, works offline, and one
 install (`pip install hands-on-ai`) gives you four progressively deeper modules.
 
-> 🔬 **Small on purpose.** This is a learning lab, not a production framework — it
+> 🔬 **Small on purpose.** This is a learning lab, not a production framework. It
 > captures the *essence* of each idea in code you can read in an afternoon, then
 > points you to bigger tools when you're ready to ship. [What this is (and isn't) →](philosophy.md)
 
@@ -17,7 +17,7 @@ install (`pip install hands-on-ai`) gives you four progressively deeper modules.
 # 1. Install
 pip install hands-on-ai
 
-# 2. Connect a provider (easiest: local Ollama — no API key)
+# 2. Connect a provider (easiest: local Ollama, no API key)
 ollama pull llama3
 ```
 
@@ -39,7 +39,7 @@ New here? Follow the [Install & First Run](installation.md) guide, then
     ---
 
     Start with the [Personality Gallery](bot-gallery.md), then learn the ideas behind
-    [Chat](chat-guide.md), [RAG](rag-guide.md), and [Agents](agent-guide.md) —
+    [Chat](chat-guide.md), [RAG](rag-guide.md), and [Agents](agent-guide.md),
     and build your own in the [Projects](mini-projects.md).
 
     [Browse the projects →](projects/index.md)
@@ -48,7 +48,7 @@ New here? Follow the [Install & First Run](installation.md) guide, then
 
     ---
 
-    See how to run Hands-On AI in class — setup, provider choices, and ready-made
+    See how to run Hands-On AI in class: setup, provider choices, and ready-made
     assignments with learning objectives and assessment ideas.
 
     [Education Guide →](education-guide.md) · [Classroom Setup →](classroom-setup.md)
@@ -70,7 +70,7 @@ Each module introduces the next layer of how modern AI systems are built:
 
 <div class="grid cards" markdown>
 
--   💬 **Chat** — `chat`
+-   💬 **Chat**: `chat`
 
     ---
 
@@ -79,7 +79,7 @@ Each module introduces the next layer of how modern AI systems are built:
 
     [Learn Chat →](chat-guide.md)
 
--   📚 **RAG** — `rag`
+-   📚 **RAG**: `rag`
 
     ---
 
@@ -88,7 +88,7 @@ Each module introduces the next layer of how modern AI systems are built:
 
     [Learn RAG →](rag-guide.md)
 
--   🤖 **Agent** — `agent`
+-   🤖 **Agent**: `agent`
 
     ---
 
@@ -97,11 +97,11 @@ Each module introduces the next layer of how modern AI systems are built:
 
     [Learn Agents →](agent-guide.md)
 
--   🗂️ **Workflow** — `workflow`
+-   🗂️ **Workflow**: `workflow`
 
     ---
 
-    Orchestrate multi-step tasks as folders of stages — sequential and
+    Orchestrate multi-step tasks as folders of stages, sequential and
     human-in-the-loop, no framework required.
 
     [Learn Workflows →](workflow-guide.md)
@@ -110,13 +110,13 @@ Each module introduces the next layer of how modern AI systems are built:
 
 ## Why Hands-On AI
 
-- 🔑 **No API keys required** — runs on free local models via [Ollama](ollama-guide.md)
-- 🌍 **Provider-agnostic** — swap to OpenAI, OpenRouter, Together, Groq, or any [OpenAI-compatible provider](providers.md) without changing code
-- 📴 **Works offline** — ideal for classrooms with unreliable internet
-- 🧠 **Beginner-friendly** — small, readable code you're meant to open and understand
-- 🧩 **Progressive** — chat → RAG → agents → workflows mirrors a real learning path
+- 🔑 **No API keys required**: runs on free local models via [Ollama](ollama-guide.md)
+- 🌍 **Provider-agnostic**: swap to OpenAI, OpenRouter, Together, Groq, or any [OpenAI-compatible provider](providers.md) without changing code
+- 📴 **Works offline**: ideal for classrooms with unreliable internet
+- 🧠 **Beginner-friendly**: small, readable code you're meant to open and understand
+- 🧩 **Progressive**: chat → RAG → agents → workflows mirrors a real learning path
 
 ## Offline resources
 
-- **[Project Browser](project_browser.html)** — a standalone HTML file to browse
+- **[Project Browser](project_browser.html)**: a standalone HTML file to browse
   and filter every project offline. Great for classrooms without reliable internet.

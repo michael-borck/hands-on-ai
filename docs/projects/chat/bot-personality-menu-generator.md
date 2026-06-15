@@ -10,7 +10,7 @@
 Create a flexible menu system that allows users to interact with multiple bot personalities on demand, practicing dictionary management, function mappings, and user interface design.
 
 > 🧠 **LLMs have no memory of their own.** Each `get_response()` call is
-> independent — the model only sees the `system` prompt plus the single `prompt`
+> independent: the model only sees the `system` prompt plus the single `prompt`
 > you pass *this* call. If you want the bot to "remember" earlier turns, keep a
 > running transcript and include it in the prompt yourself; nothing does it
 > automatically.

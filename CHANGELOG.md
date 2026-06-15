@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   primitive shared by both.
 - `workflow` module: a tiny file-based (ICM) orchestrator. `Pipeline` runs a
   folder of numbered stages one reviewable step at a time (`run_next`), threading
-  each stage's output into the next — sequential and human-in-the-loop by design.
+  each stage's output into the next: sequential and human-in-the-loop by design.
   Plus a "Understanding Workflows" concept page and a "Build a Pipeline" project.
 
 ### Changed

@@ -1,5 +1,5 @@
 """
-Workflow module — orchestrate multi-step tasks as folders of stages (ICM).
+Workflow module: orchestrate multi-step tasks as folders of stages (ICM).
 
 A lightweight, human-in-the-loop alternative to heavy agent frameworks: a
 workflow is a folder of numbered stages, each a plain-text contract that one

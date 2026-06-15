@@ -35,7 +35,7 @@ class WeatherDashboard:
         print("=== Weather Dashboard Setup ===")
 
         # Read the API key from an environment variable. Never hard-code secrets
-        # or write them to a file in your project folder — they can be committed
+        # or write them to a file in your project folder. They can be committed
         # to git by accident. Set it in your shell instead:
         #   export OPENWEATHER_API_KEY="your-key"   (macOS/Linux)
         #   setx OPENWEATHER_API_KEY "your-key"     (Windows)

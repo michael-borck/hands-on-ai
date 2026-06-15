@@ -10,7 +10,7 @@ Challenge the agent to solve complex problems that require using multiple tools 
 
 > ⚙️ **Small local models have limits.** This project chains several reasoning or
 > tool-use steps. Small models (the kind you often run locally on Ollama) can be
-> unreliable at multi-step reasoning — expect occasional wrong turns or dropped
+> unreliable at multi-step reasoning: expect occasional wrong turns or dropped
 > steps. If results are poor, try a larger/more capable model. Note that the
 > library routes small models to JSON tool-calling rather than the ReAct format.
 

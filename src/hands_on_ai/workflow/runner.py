@@ -1,11 +1,11 @@
 """
-A tiny file-based workflow runner — the Interpretable Context Methodology (ICM).
+A tiny file-based workflow runner: the Interpretable Context Methodology (ICM).
 
 Instead of a coordination framework, a workflow is just a folder of numbered
 stages. Each stage has a ``CONTEXT.md`` (its instructions) and an ``output/``
 folder. One orchestrating model reads each stage's instructions plus the
-previous stage's output, and writes a new readable file. A human reviews — and
-can edit — the output between stages.
+previous stage's output, and writes a new readable file. A human reviews (and
+can edit) the output between stages.
 
     workspace/
     ├── CONTEXT.md            # optional: shared system prompt / overall goal
@@ -18,7 +18,7 @@ can edit — the output between stages.
             ├── CONTEXT.md
             └── output/
 
-Run **one stage at a time** and review the output file before continuing — this
+Run **one stage at a time** and review the output file before continuing. This
 runner is deliberately sequential and human-in-the-loop, not an autonomous loop:
 
     from hands_on_ai.workflow import Pipeline
@@ -165,7 +165,7 @@ class Pipeline:
         """
         Run every remaining stage in order (no review pause between them).
 
-        Use this only once you trust the pipeline — the review-first ``run_next``
+        Use this only once you trust the pipeline. The review-first ``run_next``
         is the recommended way to drive it. ``max_steps`` is a safety bound.
         """
         results = []
