@@ -60,7 +60,7 @@ New here? Follow the [Install & First Run](installation.md) guide, then
 
 </div>
 
-## The three modules
+## The modules
 
 Each module introduces the next layer of how modern AI systems are built:
 
@@ -93,6 +93,15 @@ Each module introduces the next layer of how modern AI systems are built:
 
     [Learn Agents →](agent-guide.md)
 
+-   🗂️ **Workflow** — `workflow`
+
+    ---
+
+    Orchestrate multi-step tasks as folders of stages — sequential and
+    human-in-the-loop, no framework required.
+
+    [Learn Workflows →](workflow-guide.md)
+
 </div>
 
 ## Why Hands-On AI
@@ -101,7 +110,7 @@ Each module introduces the next layer of how modern AI systems are built:
 - 🌍 **Provider-agnostic** — swap to OpenAI, OpenRouter, Together, Groq, or any [OpenAI-compatible provider](providers.md) without changing code
 - 📴 **Works offline** — ideal for classrooms with unreliable internet
 - 🧠 **Beginner-friendly** — small, readable code you're meant to open and understand
-- 🧩 **Progressive** — chat → RAG → agents mirrors a real learning path
+- 🧩 **Progressive** — chat → RAG → agents → workflows mirrors a real learning path
 
 ## Offline resources
 

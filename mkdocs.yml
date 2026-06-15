@@ -39,6 +39,9 @@ nav:
       - "Agent Modules": agent-agents.md
       - "Tool Reference": agent-tools.md
       - "Build Your Own Tool": projects/agent/build-your-own-tool.md
+    - Workflows:
+      - "Understanding Workflows": workflow-guide.md
+      - "Build a Pipeline": projects/workflow/build-a-pipeline.md
   - Build:
     - "Projects Overview": mini-projects.md
     - "Browse All Projects": projects/index.md
@@ -85,6 +88,8 @@ nav:
       - Text Analyzer: projects/agent/text-analyzer.md
       - Unit Conversion Assistant: projects/agent/unit-conversion-assistant.md
       - Word Detective: projects/agent/word-detective.md
+    - Workflow Projects:
+      - Build a Pipeline: projects/workflow/build-a-pipeline.md
     - "Project Template": mini-project-template.md
   - For Educators:
     - "Education Guide": education-guide.md

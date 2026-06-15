@@ -13,6 +13,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `get_response(..., return_usage=True)` returns a `(response, usage)` tuple so
   you can see token counts. New low-level `chat.chat_completion(messages, ...)`
   primitive shared by both.
+- `workflow` module: a tiny file-based (ICM) orchestrator. `Pipeline` runs a
+  folder of numbered stages one reviewable step at a time (`run_next`), threading
+  each stage's output into the next — sequential and human-in-the-loop by design.
+  Plus a "Understanding Workflows" concept page and a "Build a Pipeline" project.
 
 ### Changed
 - Project tutorials updated to match the current library and security posture:

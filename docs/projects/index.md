@@ -55,3 +55,9 @@ Agent projects focus on LLMs that can use tools and follow a reasoning process.
 - [Text Analyzer](agent/text-analyzer.md)
 - [Unit Conversion Assistant](agent/unit-conversion-assistant.md)
 - [Word Detective](agent/word-detective.md)
+
+## Workflow Projects
+
+Workflow projects for Hands-On AI.
+
+- [Build a Pipeline](workflow/build-a-pipeline.md)
