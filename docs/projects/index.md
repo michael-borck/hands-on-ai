@@ -44,6 +44,7 @@ RAG (Retrieval-Augmented Generation) projects focus on combining document retrie
 Agent projects focus on LLMs that can use tools and follow a reasoning process.
 
 - [Agent Evaluation Framework](agent/agent-evaluation-framework.md)
+- [Build Your Own Tool (Cookbook)](agent/build-your-own-tool.md)
 - [Custom Tool Creator](agent/custom-tool-creator.md)
 - [Date Calculator](agent/date-calculator.md)
 - [Educational Assistant](agent/educational-assistant.md)

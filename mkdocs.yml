@@ -49,6 +49,7 @@ nav:
     - "Project Gallery": projects/index.md
     - Agent Projects:
       - Agent Evaluation Framework: projects/agent/agent-evaluation-framework.md
+      - Build Your Own Tool (Cookbook): projects/agent/build-your-own-tool.md
       - Custom Tool Creator: projects/agent/custom-tool-creator.md
       - Date Calculator: projects/agent/date-calculator.md
       - Educational Assistant: projects/agent/educational-assistant.md

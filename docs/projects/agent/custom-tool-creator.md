@@ -9,7 +9,9 @@
 Design and implement your own custom tools to extend the agent's capabilities for specialized tasks.
 
 ## Instructions
-1. Review the custom tool example in the documentation
+1. Read the [Build Your Own Tool (Cookbook)](build-your-own-tool.md) first — it
+   covers the tool contract (`str -> str`), how to register a tool, and the
+   fetch → parse → return pattern for tools that call an API
 2. Create a Python file to define your custom tools (e.g., `my_tools.py`)
 3. Implement at least 2 of the following custom tools:
    - A random quote generator that returns an inspirational quote
