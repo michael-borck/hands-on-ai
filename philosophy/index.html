@@ -3437,16 +3437,16 @@
   
 
 
-<h1 id="what-hands-on-ai-is-and-isnt">What Hands-On AI Is — and Isn't<a class="headerlink" href="#what-hands-on-ai-is-and-isnt" title="Permanent link">&para;</a></h1>
+<h1 id="what-hands-on-ai-is-and-isnt">What Hands-On AI Is, and Isn't<a class="headerlink" href="#what-hands-on-ai-is-and-isnt" title="Permanent link">&para;</a></h1>
 <p>Hands-On AI is a <strong>learning lab</strong>, not a production framework. Its goal is to help
 you <em>understand</em> how modern AI systems work by building small, readable versions
-of them yourself. That shapes every design choice — including the things it
+of them yourself. That shapes every design choice, including the things it
 deliberately leaves out.</p>
 <h2 id="small-on-purpose">Small on purpose<a class="headerlink" href="#small-on-purpose" title="Permanent link">&para;</a></h2>
 <p>You could read this entire package in an afternoon. That's the point.</p>
-<p>Each module captures the <strong>essence</strong> of an idea — a <a href="../chat-concepts/">chat</a>
+<p>Each module captures the <strong>essence</strong> of an idea (a <a href="../chat-concepts/">chat</a>
 reply, a <a href="../rag-llm-explain/">RAG</a> answer, an <a href="../agent-concepts/">agent</a> calling
-a tool, a <a href="../workflow-guide/">workflow</a> of folders — in a few dozen lines of
+a tool, a <a href="../workflow-guide/">workflow</a> of folders) in a few dozen lines of
 plain Python with no magic. The smallness isn't a limitation we're apologising
 for; it's the feature. When the whole thing fits in your head, the <em>concept</em>
 becomes visible instead of being buried under production machinery.</p>
@@ -3460,20 +3460,20 @@ becomes visible instead of being buried under production machinery.</p>
 </ul>
 <h2 id="two-friendly-clarifications">Two friendly clarifications<a class="headerlink" href="#two-friendly-clarifications" title="Permanent link">&para;</a></h2>
 <p><strong>"Can I build my real product on top of this?"</strong>
-Please don't — and that's a compliment to your ambition, not a knock on the
+Please don't, and that's a compliment to your ambition, not a knock on the
 package. Hands-On AI is the <em>on-ramp</em>, not the highway. Once the ideas here click,
 you'll pick up a production-grade tool far faster <em>because</em> you understand what's
 happening underneath. See <a href="#going-deeper">Going deeper</a> for where to head next.</p>
 <p><strong>"Isn't this too simple? It's missing X."</strong>
-Yes — and on purpose. Every gap is an invitation to go research further. If you
+Yes, and on purpose. Every gap is an invitation to go research further. If you
 finish a module thinking <em>"but what about streaming / evaluation / bigger
-context / a real vector store?"</em> — wonderful, that's the package working. It got
+context / a real vector store?"</em>, wonderful, that's the package working. It got
 you to a good question. Now go chase it in the real libraries and papers.</p>
 <p>We'd rather teach one idea so clearly that you outgrow us, than hand you a
 framework you use without understanding.</p>
 <h2 id="going-deeper">Going deeper<a class="headerlink" href="#going-deeper" title="Permanent link">&para;</a></h2>
 <p>When you're ready to move from <em>understanding</em> to <em>shipping</em>, these are good next
-stops (examples, not endorsements — the ecosystem moves fast, so treat this as a
+stops (examples, not endorsements; the ecosystem moves fast, so treat this as a
 map, not a manual):</p>
 <ul>
 <li><strong>Run models:</strong> <a href="https://ollama.com">Ollama</a>, vLLM, LM Studio</li>
@@ -3484,13 +3484,13 @@ map, not a manual):</p>
 <li><strong>Structured output &amp; agents:</strong> Instructor or Pydantic AI for typed responses;
   LangChain / LangGraph, CrewAI, or a provider's agent SDK for orchestration</li>
 <li><strong>Go to the source:</strong> read the original papers (ReAct, RAG, and the model cards
-  for whatever you're using) — they're more readable than you'd expect</li>
+  for whatever you're using); they're more readable than you'd expect</li>
 </ul>
 <h2 id="the-spirit-of-it">The spirit of it<a class="headerlink" href="#the-spirit-of-it" title="Permanent link">&para;</a></h2>
 <p>Models change every few months; the <em>ideas</em> underneath them change slowly.
 Hands-On AI bets on the ideas. If you leave understanding what a system prompt
 really is, why an LLM is stateless, how retrieval grounds an answer, what a tool
-call actually does, and why folders can orchestrate a workflow — then it did its
+call actually does, and why folders can orchestrate a workflow, then it did its
 job, whatever you build next.</p>
 <p>Welcome to the lab. Poke at things, break them, read the code. That's how it's
 meant to be used. 🔬</p>

@@ -3467,7 +3467,7 @@
 <h1 id="choose-a-provider">Choose a Provider<a class="headerlink" href="#choose-a-provider" title="Permanent link">&para;</a></h1>
 <p>Hands-On AI talks to LLMs through the <strong>standard OpenAI-compatible API</strong>
 (<code>/v1/chat/completions</code>, <code>/v1/models</code>). That means the same code works with many
-providers — you only change a couple of environment variables.</p>
+providers: you only change a couple of environment variables.</p>
 <p>This page covers the three setups people ask about most:</p>
 <ol>
 <li><a href="#1-local-ollama-no-api-key">Local Ollama (no key)</a></li>
@@ -3500,7 +3500,7 @@ providers — you only change a couple of environment variables.</p>
 <p>See <a href="../configuration/">Configuration</a> for the full list and the config-file option.</p>
 <hr />
 <h2 id="1-local-ollama-no-api-key">1. Local Ollama (no API key)<a class="headerlink" href="#1-local-ollama-no-api-key" title="Permanent link">&para;</a></h2>
-<p>The default and simplest setup — free, private, offline.</p>
+<p>The default and simplest setup: free, private, offline.</p>
 <div class="highlight"><pre><span></span><code>ollama<span class="w"> </span>pull<span class="w"> </span>llama3
 </code></pre></div>
 <p>Nothing to configure: Hands-On AI connects to <code>http://localhost:11434</code>
@@ -3630,7 +3630,7 @@ endpoints below.</p>
 <div class="highlight"><pre><span></span><code>handsonai<span class="w"> </span>doctor
 </code></pre></div>
 <p>This checks the connection, shows the resolved configuration, and lists models
-the provider reports — the quickest way to confirm your provider is wired up.</p>
+the provider reports, the quickest way to confirm your provider is wired up.</p>
 
 
 

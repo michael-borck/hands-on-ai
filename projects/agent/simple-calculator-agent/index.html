@@ -3579,12 +3579,12 @@
 <blockquote>
 <p>⚠️ <strong>Why not just use <code>eval()</code>?</strong> You may have seen calculators built with
 <code>eval(expression, {"__builtins__": {}}, {...})</code>. <strong>Don't do this.</strong> Emptying
-<code>__builtins__</code> is <em>not</em> a sandbox — a crafted string such as
+<code>__builtins__</code> is <em>not</em> a sandbox: a crafted string such as
 <code>().__class__.__bases__[0].__subclasses__()</code> can still reach the operating
 system and run arbitrary code. Because an <em>agent</em> feeds model-generated text
 straight into your tool, that's a real remote-code-execution risk. Parsing the
 expression with <code>ast</code> and walking only the nodes you allow (as above) is the
-safe approach — it's exactly what <code>hands-on-ai</code>'s built-in calculator tool does.</p>
+safe approach. It's exactly what <code>hands-on-ai</code>'s built-in calculator tool does.</p>
 </blockquote>
 <div class="highlight"><pre><span></span><code><span class="c1"># Create a function to run the agent</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">solve_math_problem</span><span class="p">(</span><span class="n">question</span><span class="p">):</span>
@@ -3627,7 +3627,7 @@ safe approach — it's exactly what <code>hands-on-ai</code>'s built-in calculat
 default) picks a reasoning format based on the model. The <em>ReAct</em> style shown
 below (<code>Thought / Action / Observation</code>) reads nicely but needs a fairly
 capable model. For the small local models you'll often run on Ollama,
-<code>hands-on-ai</code> automatically routes to a more reliable <strong>JSON</strong> format instead —
+<code>hands-on-ai</code> automatically routes to a more reliable <strong>JSON</strong> format instead,
 so the exact text you see may differ from the sample below. If a small model
 struggles, that's expected: try a larger model, or pass <code>format="json"</code>
 explicitly.</p>

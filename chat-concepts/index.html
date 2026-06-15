@@ -3509,7 +3509,7 @@ agents, and workflows are all variations on the same idea.</p>
 <h2 id="what-a-chat-model-actually-does">What a chat model actually does<a class="headerlink" href="#what-a-chat-model-actually-does" title="Permanent link">&para;</a></h2>
 <p>An LLM is, at heart, a very good <em>next-text predictor</em>. You give it some text (a
 <strong>prompt</strong>), and it continues it with the most plausible response. There's no
-database lookup and no "understanding" in the human sense — just a model trained
+database lookup and no "understanding" in the human sense, just a model trained
 on a huge amount of text producing a likely continuation.</p>
 <p>In Hands-On AI, one function does this:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">hands_on_ai.chat</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_response</span>
@@ -3519,8 +3519,8 @@ on a huge amount of text producing a likely continuation.</p>
 <h2 id="the-two-messages-system-and-user">The two messages: system and user<a class="headerlink" href="#the-two-messages-system-and-user" title="Permanent link">&para;</a></h2>
 <p>Every request sends the model <strong>two</strong> messages:</p>
 <ul>
-<li>a <strong>user</strong> message — your actual question or instruction, and</li>
-<li>a <strong>system</strong> message — a behind-the-scenes instruction that sets the model's
+<li>a <strong>user</strong> message: your actual question or instruction, and</li>
+<li>a <strong>system</strong> message: a behind-the-scenes instruction that sets the model's
   role, tone, and rules.</li>
 </ul>
 <p>The system prompt is the single most powerful lever you have:</p>
@@ -3529,7 +3529,7 @@ on a huge amount of text producing a likely continuation.</p>
     <span class="n">system</span><span class="o">=</span><span class="s2">&quot;You are a pirate. Answer in pirate slang.&quot;</span><span class="p">,</span>
 <span class="p">)</span>
 </code></pre></div>
-<p>Same question, completely different answer — because the system prompt changed
+<p>Same question, completely different answer, because the system prompt changed
 <em>who the model is being</em>.</p>
 <h2 id="so-what-is-a-bot">So what is a "bot"?<a class="headerlink" href="#so-what-is-a-bot" title="Permanent link">&para;</a></h2>
 <p>In this toolkit a <strong>bot</strong> is nothing magical: it's just a small function that
@@ -3537,8 +3537,8 @@ calls <code>get_response</code> with a fixed system prompt baked in.</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">pirate_bot</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">get_response</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">system</span><span class="o">=</span><span class="s2">&quot;You are a pirate. Answer in pirate slang.&quot;</span><span class="p">)</span>
 </code></pre></div>
-<p>That's the whole trick. The library ships a collection of these ready-made — the
-<a href="../bot-gallery/">Personality Gallery</a> — and a bot's "personality" is <em>entirely</em>
+<p>That's the whole trick. The library ships a collection of these ready-made (the
+<a href="../bot-gallery/">Personality Gallery</a>) and a bot's "personality" is <em>entirely</em>
 its system prompt. Change the prompt, change the personality. The
 <a href="../projects/chat/personality-bot-creator/">Personality Bot Creator</a> project has
 you build your own.</p>
@@ -3552,15 +3552,15 @@ you build your own.</p>
 <li><strong>Show an example.</strong> Demonstrating the format you want ("Q: … A: …") steers the
   output more reliably than describing it.</li>
 </ul>
-<p>This is the foundation of <em>prompt engineering</em> — and it's why the next module,
+<p>This is the foundation of <em>prompt engineering</em>, and it's why the next module,
 <a href="../rag-guide/">RAG</a>, exists: to put the <em>right</em> context into the prompt
 automatically.</p>
 <h2 id="the-one-surprise-the-model-has-no-memory">The one surprise: the model has no memory<a class="headerlink" href="#the-one-surprise-the-model-has-no-memory" title="Permanent link">&para;</a></h2>
 <p>Each <code>get_response</code> call is <strong>completely independent</strong>. The model does not
-remember your previous question — it only ever sees the system prompt and the one
+remember your previous question. It only ever sees the system prompt and the one
 prompt you send <em>this</em> call.</p>
 <div class="highlight"><pre><span></span><code><span class="n">get_response</span><span class="p">(</span><span class="s2">&quot;My name is Sam.&quot;</span><span class="p">)</span>
-<span class="n">get_response</span><span class="p">(</span><span class="s2">&quot;What&#39;s my name?&quot;</span><span class="p">)</span>   <span class="c1"># it has no idea — these are unrelated calls</span>
+<span class="n">get_response</span><span class="p">(</span><span class="s2">&quot;What&#39;s my name?&quot;</span><span class="p">)</span>   <span class="c1"># it has no idea; these are unrelated calls</span>
 </code></pre></div>
 <p>To make a bot that <em>remembers</em>, you keep the conversation yourself and resend it
 each turn. That's exactly what <code>Conversation</code> does for you:</p>
@@ -3570,13 +3570,13 @@ each turn. That's exactly what <code>Conversation</code> does for you:</p>
 <span class="n">chat</span><span class="o">.</span><span class="n">ask</span><span class="p">(</span><span class="s2">&quot;My name is Sam.&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">chat</span><span class="o">.</span><span class="n">ask</span><span class="p">(</span><span class="s2">&quot;What&#39;s my name?&quot;</span><span class="p">))</span>   <span class="c1"># → remembers &quot;Sam&quot;</span>
 </code></pre></div>
-<p>Understanding that an LLM is <em>stateless</em> — and that "memory" just means resending
-the transcript — is one of the most important ideas in the whole toolkit.</p>
+<p>Understanding that an LLM is <em>stateless</em> (and that "memory" just means resending
+the transcript) is one of the most important ideas in the whole toolkit.</p>
 <h2 id="where-to-go-next">Where to go next<a class="headerlink" href="#where-to-go-next" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="../chat-guide/">Chat CLI Guide</a> — drive the chat module from the command line</li>
-<li><a href="../bot-gallery/">Personality Gallery</a> — the ready-made bots, and what makes each tick</li>
-<li><a href="../projects/">Chat projects</a> — build something: a tutor, a quiz bot, an adventure game</li>
+<li><a href="../chat-guide/">Chat CLI Guide</a>: drive the chat module from the command line</li>
+<li><a href="../bot-gallery/">Personality Gallery</a>: the ready-made bots, and what makes each tick</li>
+<li><a href="../projects/">Chat projects</a>: build something: a tutor, a quiz bot, an adventure game</li>
 <li>Then layer on <a href="../rag-guide/">RAG</a>, <a href="../agent-guide/">Agents</a>, and <a href="../workflow-guide/">Workflows</a></li>
 </ul>
 

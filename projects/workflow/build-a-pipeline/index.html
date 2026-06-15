@@ -1367,7 +1367,7 @@
   <a href="#step-3-run-it-one-stage-at-a-time" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3: Run it — one stage at a time
+        Step 3: Run it, one stage at a time
       
     </span>
   </a>
@@ -3024,7 +3024,7 @@
   <a href="#step-3-run-it-one-stage-at-a-time" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3: Run it — one stage at a time
+        Step 3: Run it, one stage at a time
       
     </span>
   </a>
@@ -3619,7 +3619,7 @@
   <a href="#step-3-run-it-one-stage-at-a-time" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3: Run it — one stage at a time
+        Step 3: Run it, one stage at a time
       
     </span>
   </a>
@@ -3685,7 +3685,7 @@
 <strong>Learning Focus</strong>: Workflow orchestration, context engineering, human-in-the-loop<br />
 <strong>Module</strong>: workflow</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>In this project you'll build a multi-step AI workflow the simple way — as a
+<p>In this project you'll build a multi-step AI workflow the simple way, as a
 <strong>folder of stages</strong>, with no orchestration framework. You'll run it one step at
 a time, reading and editing the intermediate files, so <em>you</em> stay in control of
 the result.</p>
@@ -3701,7 +3701,7 @@ for the concepts.</p>
 <div class="highlight"><pre><span></span><code>01_research  →  02_explain
 (gather facts)   (turn them into a friendly explanation)
 </code></pre></div>
-<p>You'll run stage 1, read its output, <em>optionally edit it</em>, then run stage 2 —
+<p>You'll run stage 1, read its output, <em>optionally edit it</em>, then run stage 2,
 which uses your reviewed research as its input.</p>
 <h2 id="step-1-create-the-workspace">Step 1: Create the workspace<a class="headerlink" href="#step-1-create-the-workspace" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">hands_on_ai.workflow</span><span class="w"> </span><span class="kn">import</span> <span class="n">init_workspace</span>
@@ -3738,9 +3738,9 @@ Output a numbered list. No introduction, just the list.
 Using the research facts provided as input, write a friendly 150-word
 explanation suitable for a 12-year-old. Keep every claim grounded in the facts.
 </code></pre></div>
-<p>Notice stage 2 never mentions the topic — it just transforms whatever stage 1
+<p>Notice stage 2 never mentions the topic. It just transforms whatever stage 1
 produced. That's the point: each stage does <strong>one</strong> thing.</p>
-<h2 id="step-3-run-it-one-stage-at-a-time">Step 3: Run it — one stage at a time<a class="headerlink" href="#step-3-run-it-one-stage-at-a-time" title="Permanent link">&para;</a></h2>
+<h2 id="step-3-run-it-one-stage-at-a-time">Step 3: Run it, one stage at a time<a class="headerlink" href="#step-3-run-it-one-stage-at-a-time" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">hands_on_ai.workflow</span><span class="w"> </span><span class="kn">import</span> <span class="n">Pipeline</span>
 
 <span class="n">pipe</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="s2">&quot;explainer&quot;</span><span class="p">)</span>
@@ -3755,12 +3755,12 @@ to the next stage.</p>
 <div class="highlight"><pre><span></span><code><span class="n">pipe</span><span class="o">.</span><span class="n">run_next</span><span class="p">()</span>      <span class="c1"># runs stage 02 using your (reviewed) research</span>
 <span class="n">pipe</span><span class="o">.</span><span class="n">status</span><span class="p">()</span>        <span class="c1"># [x] 01_research   [x] 02_explain</span>
 </code></pre></div>
-<p>Read <code>stages/02_explain/output/output.md</code> — your finished explanation, built from
+<p>Read <code>stages/02_explain/output/output.md</code>: your finished explanation, built from
 research you got to inspect first.</p>
 <h2 id="why-this-matters">Why this matters<a class="headerlink" href="#why-this-matters" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>You saw the middle.</strong> If the explanation is off, you know whether the
-  <em>research</em> or the <em>explaining</em> was at fault — just open the files.</li>
+  <em>research</em> or the <em>explaining</em> was at fault. Just open the files.</li>
 <li><strong>You could steer it.</strong> Editing the intermediate file changed the outcome
   without touching any code.</li>
 <li><strong>It re-runs cleanly.</strong> <code>pipe.reset()</code> clears the outputs so you can run again.</li>
@@ -3768,24 +3768,24 @@ research you got to inspect first.</p>
 <h2 id="extensions">Extensions<a class="headerlink" href="#extensions" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>Add a "factory" rule.</strong> Drop a file in <code>explainer/references/voice.md</code>
-   (e.g. <em>"Never use jargon; prefer everyday words."</em>). Re-run — every stage now
+   (e.g. <em>"Never use jargon; prefer everyday words."</em>). Re-run, and every stage now
    follows that rule. This is a <em>reference</em> (a rule), separate from the <em>input</em>
    (the data).</li>
 <li><strong>Add a third stage</strong> <code>03_quiz</code> that writes 3 quiz questions from the
-   explanation. Just add the folder (<code>stages/03_quiz/CONTEXT.md</code>) — no code
+   explanation. Just add the folder (<code>stages/03_quiz/CONTEXT.md</code>), no code
    changes needed.</li>
 <li><strong>Fix the source, not the output.</strong> If stage 2 keeps being too long, don't
-   keep trimming its output — edit <code>02_explain/CONTEXT.md</code> to say "100 words
+   keep trimming its output. Edit <code>02_explain/CONTEXT.md</code> to say "100 words
    max." You just "fixed the compiler."</li>
 <li><strong>Swap in an agent.</strong> Make a stage that needs a calculation, and have a small
    script call <a href="../../../agent-guide/"><code>run_agent</code></a> instead of plain chat for that
    step.</li>
 </ol>
 <h2 id="how-it-works-under-the-hood">How it works under the hood<a class="headerlink" href="#how-it-works-under-the-hood" title="Permanent link">&para;</a></h2>
-<p>The <code>Pipeline</code> is deliberately tiny — about 100 lines. For each stage it builds a
+<p>The <code>Pipeline</code> is deliberately tiny, about 100 lines. For each stage it builds a
 prompt from: the stage's <code>CONTEXT.md</code>, any <code>references/</code> files (rules), and the
 previous stage's <code>output.md</code> (input), then calls <code>get_response</code> and writes the
-result. There's no hidden state — everything is a file you can read. Open
+result. There's no hidden state: everything is a file you can read. Open
 <code>hands_on_ai/workflow/runner.py</code> and see for yourself.</p>
 
 

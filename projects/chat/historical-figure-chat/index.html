@@ -3443,7 +3443,7 @@
 <p>Chat with simulated historical figures to learn about their lives, achievements, and time periods.</p>
 <blockquote>
 <p>🧠 <strong>LLMs have no memory of their own.</strong> Each <code>get_response()</code> call is
-independent — the model only sees the <code>system</code> prompt plus the single <code>prompt</code>
+independent: the model only sees the <code>system</code> prompt plus the single <code>prompt</code>
 you pass <em>this</em> call. To make a bot that "remembers" earlier turns, <strong>you</strong> keep
 the conversation history and resend it each time, as this project does below.
 There is no hidden state doing it for you.</p>
@@ -3501,7 +3501,7 @@ There is no hidden state doing it for you.</p>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">greetings</span><span class="p">))</span>
 
     <span class="c1"># Chat loop. get_response is stateless, so we keep our own running transcript</span>
-    <span class="c1"># and resend it every turn — that is what gives the figure &quot;memory&quot; of the</span>
+    <span class="c1"># and resend it every turn. That is what gives the figure &quot;memory&quot; of the</span>
     <span class="c1"># conversation so it can follow up on what was said earlier.</span>
     <span class="n">transcript</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>

@@ -12,7 +12,7 @@
 </head>
 <body class='bg-gray-50 p-6'>
     <h1 class='text-2xl font-bold mb-4'>HandsOnAI Project Browser</h1>
-    <p class='mb-4'>Generated: 2026-06-16 06:35 v0.3.0 <span id="latest-version">📁 Offline version. Visit <a href="https://github.com/teaching-repositories/hands-on-ai" target="_blank">HandsOnAI GitHub</a> to check for updates.</span></p>
+    <p class='mb-4'>Generated: 2026-06-16 07:10 v0.3.0 <span id="latest-version">📁 Offline version. Visit <a href="https://github.com/teaching-repositories/hands-on-ai" target="_blank">HandsOnAI GitHub</a> to check for updates.</span></p>
 
     <div class='mb-4 flex flex-col md:flex-row gap-4'>
         <input type='text' id='search' placeholder='Search project title' class='border p-2 rounded w-full md:w-1/3'>
@@ -123,7 +123,7 @@
 <p>Create a classroom simulation where students can interact with different characters or experts on various topics, practicing both coding skills and exploring different perspectives.</p>
 <blockquote>
 <p>🧠 <strong>LLMs have no memory of their own.</strong> Each <code>get_response()</code> call is
-independent — the model only sees the <code>system</code> prompt plus the single <code>prompt</code>
+independent: the model only sees the <code>system</code> prompt plus the single <code>prompt</code>
 you pass <em>this</em> call. If you want the bot to "remember" earlier turns, keep a
 running transcript and include it in the prompt yourself; nothing does it
 automatically.</p>
@@ -1978,7 +1978,7 @@ automatically.</p>
 <h2>Instructions</h2>
 <div class="codehilite"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">hands_on_ai.chat</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_response</span>
 
-<span class="c1"># A bot&#39;s personality comes entirely from its `system` prompt — that&#39;s the</span>
+<span class="c1"># A bot&#39;s personality comes entirely from its `system` prompt. That&#39;s the</span>
 <span class="c1"># string that tells the model how to behave. (The optional `personality=`</span>
 <span class="c1"># argument only selects which canned &quot;please wait&quot; message is shown if a request</span>
 <span class="c1"># has to be retried, so we leave it at its default here.)</span>
@@ -2039,10 +2039,10 @@ automatically.</p>
 <strong>Learning Focus</strong>: Functions, system prompts, creative writing<br />
 <strong>Module</strong>: chat</p>
 <h2>Overview</h2>
-<p>Create a new bot personality that responds in a unique way — like a movie character, animal, celebrity, or completely invented creature. Students will learn how to craft system prompts that reflect specific voices or styles.</p>
+<p>Create a new bot personality that responds in a unique way, like a movie character, animal, celebrity, or completely invented creature. Students will learn how to craft system prompts that reflect specific voices or styles.</p>
 <blockquote>
 <p>🧠 <strong>LLMs have no memory of their own.</strong> Each <code>get_response()</code> call is
-independent — the model only sees the <code>system</code> prompt plus the single <code>prompt</code>
+independent: the model only sees the <code>system</code> prompt plus the single <code>prompt</code>
 you pass <em>this</em> call. If you want the bot to "remember" earlier turns, keep a
 running transcript and include it in the prompt yourself; nothing does it
 automatically.</p>
@@ -2127,7 +2127,7 @@ automatically.</p>
 <p>This project offers flexibility to run either panel discussions with multiple participants or focused one-on-one debates, allowing students to explore how different personas respond to the same topics.</p>
 <blockquote>
 <p>🧠 <strong>LLMs have no memory of their own.</strong> Each <code>get_response()</code> call is
-independent — the model only sees the <code>system</code> prompt plus the single <code>prompt</code>
+independent: the model only sees the <code>system</code> prompt plus the single <code>prompt</code>
 you pass <em>this</em> call. If you want the bot to "remember" earlier turns, keep a
 running transcript and include it in the prompt yourself; nothing does it
 automatically.</p>
@@ -2616,7 +2616,7 @@ automatically.</p>
 <p>Create a flexible menu system that allows users to interact with multiple bot personalities on demand, practicing dictionary management, function mappings, and user interface design.</p>
 <blockquote>
 <p>🧠 <strong>LLMs have no memory of their own.</strong> Each <code>get_response()</code> call is
-independent — the model only sees the <code>system</code> prompt plus the single <code>prompt</code>
+independent: the model only sees the <code>system</code> prompt plus the single <code>prompt</code>
 you pass <em>this</em> call. If you want the bot to "remember" earlier turns, keep a
 running transcript and include it in the prompt yourself; nothing does it
 automatically.</p>
@@ -4288,7 +4288,7 @@ automatically.</p>
 <p>Chat with simulated historical figures to learn about their lives, achievements, and time periods.</p>
 <blockquote>
 <p>🧠 <strong>LLMs have no memory of their own.</strong> Each <code>get_response()</code> call is
-independent — the model only sees the <code>system</code> prompt plus the single <code>prompt</code>
+independent: the model only sees the <code>system</code> prompt plus the single <code>prompt</code>
 you pass <em>this</em> call. To make a bot that "remembers" earlier turns, <strong>you</strong> keep
 the conversation history and resend it each time, as this project does below.
 There is no hidden state doing it for you.</p>
@@ -4346,7 +4346,7 @@ There is no hidden state doing it for you.</p>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">greetings</span><span class="p">))</span>
 
     <span class="c1"># Chat loop. get_response is stateless, so we keep our own running transcript</span>
-    <span class="c1"># and resend it every turn — that is what gives the figure &quot;memory&quot; of the</span>
+    <span class="c1"># and resend it every turn. That is what gives the figure &quot;memory&quot; of the</span>
     <span class="c1"># conversation so it can follow up on what was said earlier.</span>
     <span class="n">transcript</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
@@ -5380,7 +5380,7 @@ There is no hidden state doing it for you.</p>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== Weather Dashboard Setup ===&quot;</span><span class="p">)</span>
 
         <span class="c1"># Read the API key from an environment variable. Never hard-code secrets</span>
-        <span class="c1"># or write them to a file in your project folder — they can be committed</span>
+        <span class="c1"># or write them to a file in your project folder. They can be committed</span>
         <span class="c1"># to git by accident. Set it in your shell instead:</span>
         <span class="c1">#   export OPENWEATHER_API_KEY=&quot;your-key&quot;   (macOS/Linux)</span>
         <span class="c1">#   setx OPENWEATHER_API_KEY &quot;your-key&quot;     (Windows)</span>
@@ -6390,7 +6390,7 @@ There is no hidden state doing it for you.</p>
 <p>Create a bot that responds differently based on the user's emotional state, providing tailored support, advice, or encouragement depending on the mood expressed.</p>
 <blockquote>
 <p>🧠 <strong>LLMs have no memory of their own.</strong> Each <code>get_response()</code> call is
-independent — the model only sees the <code>system</code> prompt plus the single <code>prompt</code>
+independent: the model only sees the <code>system</code> prompt plus the single <code>prompt</code>
 you pass <em>this</em> call. If you want the bot to "remember" earlier turns, keep a
 running transcript and include it in the prompt yourself; nothing does it
 automatically.</p>
@@ -6590,7 +6590,7 @@ automatically.</p>
 <strong>Module</strong>: agent</p>
 <h2>Overview</h2>
 <p>Agents are only as capable as the tools you give them. This cookbook shows the
-one pattern behind <em>every</em> tool — built-in or your own — so you can add new
+one pattern behind <em>every</em> tool (built-in or your own) so you can add new
 abilities without guessing.</p>
 <h2>The one rule: a tool is <code>str -&gt; str</code></h2>
 <p>An agent tool is just a function that takes a single string and returns a single
@@ -6613,13 +6613,13 @@ string. You <code>register_tool</code> it so the agent can call it by name.</p>
 
 <p>That's the whole contract:</p>
 <ul>
-<li><strong>Input</strong> — one string (whatever the model decides to pass).</li>
-<li><strong>Output</strong> — one string (what the agent reads back).</li>
-<li><strong>Description</strong> — the model reads <em>this</em> to decide when and how to use your
+<li><strong>Input</strong>: one string (whatever the model decides to pass).</li>
+<li><strong>Output</strong>: one string (what the agent reads back).</li>
+<li><strong>Description</strong>: the model reads <em>this</em> to decide when and how to use your
   tool. Write it like a help message, and say what the input should look like.</li>
 </ul>
 <blockquote>
-<p>💡 A tool can do anything a Python function can — math, a lookup, an API call,
+<p>💡 A tool can do anything a Python function can: math, a lookup, an API call,
 reading a file. The agent doesn't care how; it only sees the string you return.</p>
 </blockquote>
 <h2>Handling more than one input</h2>
@@ -6646,7 +6646,7 @@ that reports a GitHub repo's star count:</p>
         <span class="c1"># 1. FETCH</span>
         <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;https://api.github.com/repos/</span><span class="si">{</span><span class="n">repo</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
         <span class="n">resp</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
-        <span class="c1"># 2. PARSE — pull out just the fact you need</span>
+        <span class="c1"># 2. PARSE: pull out just the fact you need</span>
         <span class="n">stars</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s2">&quot;stargazers_count&quot;</span><span class="p">]</span>
         <span class="c1"># 3. RETURN a short, plain-text answer</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">repo</span><span class="si">}</span><span class="s2"> has </span><span class="si">{</span><span class="n">stars</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> stars.&quot;</span>
@@ -6661,11 +6661,11 @@ that reports a GitHub repo's star count:</p>
 </code></pre></div>
 
 <p>Fetch, keep only what you need, return a short string. The same shape works for
-weather, news, dictionaries — anything.</p>
+weather, news, dictionaries, anything.</p>
 <blockquote>
 <p>⚠️ <strong>External APIs are the part that dates.</strong> Endpoints change, fields get
 renamed, and services add rate limits or sign-up requirements. The <em>library</em>
-stays deliberately offline and stable — wiring up a live API is your code's job,
+stays deliberately offline and stable. Wiring up a live API is your code's job,
 not the library's. Treat a broken API as a real-world lesson, not a bug in
 <code>hands-on-ai</code>.</p>
 </blockquote>
@@ -6684,15 +6684,15 @@ variable instead:</p>
 <p>The <a href="../chat/weather-dashboard.md">Weather Dashboard</a> project shows this end to end.</p>
 <h2>Simulated vs. real</h2>
 <p>The built-in <code>search</code> and <code>weather</code> tools return <strong>simulated</strong> data on purpose:
-no keys, no rate limits, identical results every run — ideal for a classroom. A
+no keys, no rate limits, identical results every run, ideal for a classroom. A
 real version trades that reliability for fresh data. Both are valid, and choosing
 between them <em>is</em> part of the lesson.</p>
 <h2>A good-tool checklist</h2>
 <ul>
 <li>✅ One string in, one string out.</li>
-<li>✅ A clear <code>description</code> — the model uses it to decide when to call the tool and what to pass.</li>
+<li>✅ A clear <code>description</code>: the model uses it to decide when to call the tool and what to pass.</li>
 <li>✅ Return concise text. The agent re-reads your output; a wall of JSON confuses small models.</li>
-<li>✅ Handle errors by <strong>returning</strong> an error string — don't <code>raise</code>. A tool that crashes can end the agent run.</li>
+<li>✅ Handle errors by <strong>returning</strong> an error string. Don't <code>raise</code>. A tool that crashes can end the agent run.</li>
 <li>✅ Prefer deterministic/offline tools; reach for the network only when freshness is the whole point.</li>
 <li>✅ Keep secrets in environment variables, never in code.</li>
 </ul>
@@ -6762,7 +6762,7 @@ project challenges you to build a small toolbox of your own.</p>
 <blockquote>
 <p>⚙️ <strong>Small local models have limits.</strong> This project chains several reasoning or
 tool-use steps. Small models (the kind you often run locally on Ollama) can be
-unreliable at multi-step reasoning — expect occasional wrong turns or dropped
+unreliable at multi-step reasoning: expect occasional wrong turns or dropped
 steps. If results are poor, try a larger/more capable model. Note that the
 library routes small models to JSON tool-calling rather than the ReAct format.</p>
 </blockquote>
@@ -6803,7 +6803,7 @@ library routes small models to JSON tool-calling rather than the ReAct format.</
 <blockquote>
 <p>⚙️ <strong>Small local models have limits.</strong> This project chains several reasoning or
 tool-use steps. Small models (the kind you often run locally on Ollama) can be
-unreliable at multi-step reasoning — expect occasional wrong turns or dropped
+unreliable at multi-step reasoning: expect occasional wrong turns or dropped
 steps. If results are poor, try a larger/more capable model. Note that the
 library routes small models to JSON tool-calling rather than the ReAct format.</p>
 </blockquote>
@@ -6850,7 +6850,7 @@ library routes small models to JSON tool-calling rather than the ReAct format.</
 <blockquote>
 <p>⚙️ <strong>Small local models have limits.</strong> This project chains several reasoning or
 tool-use steps. Small models (the kind you often run locally on Ollama) can be
-unreliable at multi-step reasoning — expect occasional wrong turns or dropped
+unreliable at multi-step reasoning: expect occasional wrong turns or dropped
 steps. If results are poor, try a larger/more capable model. Note that the
 library routes small models to JSON tool-calling rather than the ReAct format.</p>
 </blockquote>
@@ -6930,7 +6930,7 @@ library routes small models to JSON tool-calling rather than the ReAct format.</
 <blockquote>
 <p>⚙️ <strong>Small local models have limits.</strong> This project chains several reasoning or
 tool-use steps. Small models (the kind you often run locally on Ollama) can be
-unreliable at multi-step reasoning — expect occasional wrong turns or dropped
+unreliable at multi-step reasoning: expect occasional wrong turns or dropped
 steps. If results are poor, try a larger/more capable model. Note that the
 library routes small models to JSON tool-calling rather than the ReAct format.</p>
 </blockquote>
@@ -7025,12 +7025,12 @@ library routes small models to JSON tool-calling rather than the ReAct format.</
 <blockquote>
 <p>⚠️ <strong>Why not just use <code>eval()</code>?</strong> You may have seen calculators built with
 <code>eval(expression, {"__builtins__": {}}, {...})</code>. <strong>Don't do this.</strong> Emptying
-<code>__builtins__</code> is <em>not</em> a sandbox — a crafted string such as
+<code>__builtins__</code> is <em>not</em> a sandbox: a crafted string such as
 <code>().__class__.__bases__[0].__subclasses__()</code> can still reach the operating
 system and run arbitrary code. Because an <em>agent</em> feeds model-generated text
 straight into your tool, that's a real remote-code-execution risk. Parsing the
 expression with <code>ast</code> and walking only the nodes you allow (as above) is the
-safe approach — it's exactly what <code>hands-on-ai</code>'s built-in calculator tool does.</p>
+safe approach. It's exactly what <code>hands-on-ai</code>'s built-in calculator tool does.</p>
 </blockquote>
 <div class="codehilite"><pre><span></span><code><span class="c1"># Create a function to run the agent</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">solve_math_problem</span><span class="p">(</span><span class="n">question</span><span class="p">):</span>
@@ -7074,7 +7074,7 @@ safe approach — it's exactly what <code>hands-on-ai</code>'s built-in calculat
 default) picks a reasoning format based on the model. The <em>ReAct</em> style shown
 below (<code>Thought / Action / Observation</code>) reads nicely but needs a fairly
 capable model. For the small local models you'll often run on Ollama,
-<code>hands-on-ai</code> automatically routes to a more reliable <strong>JSON</strong> format instead —
+<code>hands-on-ai</code> automatically routes to a more reliable <strong>JSON</strong> format instead,
 so the exact text you see may differ from the sample below. If a small model
 struggles, that's expected: try a larger model, or pass <code>format="json"</code>
 explicitly.</p>
@@ -7151,7 +7151,7 @@ rather than the <code>Thought/Action</code> text.</p>
 <p>Design and implement your own custom tools to extend the agent's capabilities for specialized tasks.</p>
 <h2>Instructions</h2>
 <ol>
-<li>Read the <a href="build-your-own-tool.md">Build Your Own Tool (Cookbook)</a> first — it
+<li>Read the <a href="build-your-own-tool.md">Build Your Own Tool (Cookbook)</a> first. It
    covers the tool contract (<code>str -&gt; str</code>), how to register a tool, and the
    fetch → parse → return pattern for tools that call an API</li>
 <li>Create a Python file to define your custom tools (e.g., <code>my_tools.py</code>)</li>
@@ -7192,7 +7192,7 @@ rather than the <code>Thought/Action</code> text.</p>
 <blockquote>
 <p>⚙️ <strong>Small local models have limits.</strong> This project chains several reasoning or
 tool-use steps. Small models (the kind you often run locally on Ollama) can be
-unreliable at multi-step reasoning — expect occasional wrong turns or dropped
+unreliable at multi-step reasoning: expect occasional wrong turns or dropped
 steps. If results are poor, try a larger/more capable model. Note that the
 library routes small models to JSON tool-calling rather than the ReAct format.</p>
 </blockquote>
@@ -7256,7 +7256,7 @@ library routes small models to JSON tool-calling rather than the ReAct format.</
 <p>Explore the retrieval helper in <code>hands_on_ai.rag.utils</code>:
      <code>get_top_k(query, index_path, k=3, return_scores=False)</code>. It embeds the
      query, loads the index, runs the similarity search, and returns a list of
-     <code>(chunk, source)</code> tuples — optionally with scores.</p>
+     <code>(chunk, source)</code> tuples, optionally with scores.</p>
 </li>
 <li>
 <p><strong>Build Your CLI Script</strong></p>
@@ -7970,7 +7970,7 @@ library routes small models to JSON tool-calling rather than the ReAct format.</
 <strong>Learning Focus</strong>: Workflow orchestration, context engineering, human-in-the-loop<br />
 <strong>Module</strong>: workflow</p>
 <h2>Overview</h2>
-<p>In this project you'll build a multi-step AI workflow the simple way — as a
+<p>In this project you'll build a multi-step AI workflow the simple way, as a
 <strong>folder of stages</strong>, with no orchestration framework. You'll run it one step at
 a time, reading and editing the intermediate files, so <em>you</em> stay in control of
 the result.</p>
@@ -7987,7 +7987,7 @@ for the concepts.</p>
 <span class="p">(</span><span class="n">gather</span><span class="w"> </span><span class="n">facts</span><span class="p">)</span><span class="w">   </span><span class="p">(</span><span class="n">turn</span><span class="w"> </span><span class="n">them</span><span class="w"> </span><span class="nb">int</span><span class="n">o</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">friendly</span><span class="w"> </span><span class="nb">exp</span><span class="n">lanation</span><span class="p">)</span>
 </code></pre></div>
 
-<p>You'll run stage 1, read its output, <em>optionally edit it</em>, then run stage 2 —
+<p>You'll run stage 1, read its output, <em>optionally edit it</em>, then run stage 2,
 which uses your reviewed research as its input.</p>
 <h2>Step 1: Create the workspace</h2>
 <div class="codehilite"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">hands_on_ai.workflow</span><span class="w"> </span><span class="kn">import</span> <span class="n">init_workspace</span>
@@ -8028,9 +8028,9 @@ Using the research facts provided as input, write a friendly 150-word
 explanation suitable for a 12-year-old. Keep every claim grounded in the facts.
 </code></pre></div>
 
-<p>Notice stage 2 never mentions the topic — it just transforms whatever stage 1
+<p>Notice stage 2 never mentions the topic. It just transforms whatever stage 1
 produced. That's the point: each stage does <strong>one</strong> thing.</p>
-<h2>Step 3: Run it — one stage at a time</h2>
+<h2>Step 3: Run it, one stage at a time</h2>
 <div class="codehilite"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">hands_on_ai.workflow</span><span class="w"> </span><span class="kn">import</span> <span class="n">Pipeline</span>
 
 <span class="n">pipe</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="s2">&quot;explainer&quot;</span><span class="p">)</span>
@@ -8047,12 +8047,12 @@ to the next stage.</p>
 <span class="n">pipe</span><span class="o">.</span><span class="n">status</span><span class="p">()</span>        <span class="c1"># [x] 01_research   [x] 02_explain</span>
 </code></pre></div>
 
-<p>Read <code>stages/02_explain/output/output.md</code> — your finished explanation, built from
+<p>Read <code>stages/02_explain/output/output.md</code>: your finished explanation, built from
 research you got to inspect first.</p>
 <h2>Why this matters</h2>
 <ul>
 <li><strong>You saw the middle.</strong> If the explanation is off, you know whether the
-  <em>research</em> or the <em>explaining</em> was at fault — just open the files.</li>
+  <em>research</em> or the <em>explaining</em> was at fault. Just open the files.</li>
 <li><strong>You could steer it.</strong> Editing the intermediate file changed the outcome
   without touching any code.</li>
 <li><strong>It re-runs cleanly.</strong> <code>pipe.reset()</code> clears the outputs so you can run again.</li>
@@ -8060,24 +8060,24 @@ research you got to inspect first.</p>
 <h2>Extensions</h2>
 <ol>
 <li><strong>Add a "factory" rule.</strong> Drop a file in <code>explainer/references/voice.md</code>
-   (e.g. <em>"Never use jargon; prefer everyday words."</em>). Re-run — every stage now
+   (e.g. <em>"Never use jargon; prefer everyday words."</em>). Re-run, and every stage now
    follows that rule. This is a <em>reference</em> (a rule), separate from the <em>input</em>
    (the data).</li>
 <li><strong>Add a third stage</strong> <code>03_quiz</code> that writes 3 quiz questions from the
-   explanation. Just add the folder (<code>stages/03_quiz/CONTEXT.md</code>) — no code
+   explanation. Just add the folder (<code>stages/03_quiz/CONTEXT.md</code>), no code
    changes needed.</li>
 <li><strong>Fix the source, not the output.</strong> If stage 2 keeps being too long, don't
-   keep trimming its output — edit <code>02_explain/CONTEXT.md</code> to say "100 words
+   keep trimming its output. Edit <code>02_explain/CONTEXT.md</code> to say "100 words
    max." You just "fixed the compiler."</li>
 <li><strong>Swap in an agent.</strong> Make a stage that needs a calculation, and have a small
    script call <a href="../../agent-guide.md"><code>run_agent</code></a> instead of plain chat for that
    step.</li>
 </ol>
 <h2>How it works under the hood</h2>
-<p>The <code>Pipeline</code> is deliberately tiny — about 100 lines. For each stage it builds a
+<p>The <code>Pipeline</code> is deliberately tiny, about 100 lines. For each stage it builds a
 prompt from: the stage's <code>CONTEXT.md</code>, any <code>references/</code> files (rules), and the
 previous stage's <code>output.md</code> (input), then calls <code>get_response</code> and writes the
-result. There's no hidden state — everything is a file you can read. Open
+result. There's no hidden state: everything is a file you can read. Open
 <code>hands_on_ai/workflow/runner.py</code> and see for yourself.</p>
         </div>
     </div>

@@ -3483,7 +3483,7 @@
 <h1 id="understanding-workflows-folders-over-frameworks">Understanding Workflows (Folders over Frameworks)<a class="headerlink" href="#understanding-workflows-folders-over-frameworks" title="Permanent link">&para;</a></h1>
 <p>So far you've built single steps: a <a href="../chat-guide/">chat</a> reply, a <a href="../rag-guide/">RAG</a>
 answer, an <a href="../agent-guide/">agent</a> that calls a tool. Real work is usually
-<em>several</em> steps — research, then outline, then draft, then check. This guide is
+<em>several</em> steps: research, then outline, then draft, then check. This guide is
 about orchestrating those steps <strong>without</strong> a heavy framework.</p>
 <h2 id="the-problem-with-one-giant-prompt">The problem with one giant prompt<a class="headerlink" href="#the-problem-with-one-giant-prompt" title="Permanent link">&para;</a></h2>
 <p>The obvious way to do a multi-step task is to stuff everything into a single
@@ -3497,13 +3497,13 @@ Two things go wrong:</p>
   a bad draft.</li>
 </ul>
 <h2 id="the-idea-folders-are-the-architecture">The idea: folders <em>are</em> the architecture<a class="headerlink" href="#the-idea-folders-are-the-architecture" title="Permanent link">&para;</a></h2>
-<p>The <strong>Interpretable Context Methodology (ICM)</strong> — "folders over frameworks" —
+<p>The <strong>Interpretable Context Methodology (ICM)</strong>, "folders over frameworks",
 takes the Unix philosophy ("make each stage do one thing well") and applies it
 to AI. Instead of orchestration code, a workflow is just a <strong>folder of numbered
 stages</strong>:</p>
 <div class="highlight"><pre><span></span><code>workspace/
 ├── CONTEXT.md            # the overall goal / system prompt (optional)
-├── references/           # stable rules — the &quot;factory&quot;
+├── references/           # stable rules: the &quot;factory&quot;
 └── stages/
     ├── 01_research/
     │   ├── CONTEXT.md    # instructions for THIS stage
@@ -3520,26 +3520,26 @@ writes a new file. That's the whole mechanism.</p>
 <li><strong>It's a glass box.</strong> Every intermediate result is a readable file you can open.</li>
 <li><strong>Anyone can change it.</strong> Reorder steps by renaming folders; change a prompt by
   editing a markdown file. No code, no redeploy.</li>
-<li><strong>It's portable and durable.</strong> The "logic" is just text and folders — it
+<li><strong>It's portable and durable.</strong> The "logic" is just text and folders. It
   survives model upgrades and copies with <code>cp -r</code>.</li>
 </ul>
 <blockquote>
 <p>💡 This is how the tools you already use work. Claude Code reads a <code>CLAUDE.md</code>,
-loads "skills" from folders, and delegates to sub-agents — the <strong>filesystem is
+loads "skills" from folders, and delegates to sub-agents. The <strong>filesystem is
 the coordination layer</strong>. Learn this and you understand modern agentic tooling.</p>
 </blockquote>
 <h2 id="two-ideas-worth-internalising">Two ideas worth internalising<a class="headerlink" href="#two-ideas-worth-internalising" title="Permanent link">&para;</a></h2>
 <p><strong>1. Factory vs. Product.</strong> Keep <em>rules</em> separate from <em>data</em>.</p>
 <ul>
-<li><code>references/</code> (the <strong>factory</strong>) holds stable constraints — a voice guide, a
+<li><code>references/</code> (the <strong>factory</strong>) holds stable constraints: a voice guide, a
   rubric, domain facts. These are <em>rules to follow</em>, the same on every run.</li>
-<li>A stage's input (the <strong>product</strong>) is the specific material to transform — the
+<li>A stage's input (the <strong>product</strong>) is the specific material to transform, the
   previous step's output.</li>
 </ul>
 <p>Separating them tells the model what to <em>obey</em> versus what to <em>work on</em>, and
 keeps each step's context small and focused.</p>
 <p><strong>2. Review gates: fix the source, not the output.</strong> Because every step writes a
-file, you can stop, read it, and edit it before the next step runs — your edit
+file, you can stop, read it, and edit it before the next step runs. Your edit
 becomes the new ground truth. If a step is <em>consistently</em> wrong, don't keep
 hand-fixing its output ("patching the binary"). Edit the stage's <code>CONTEXT.md</code> or
 a reference file ("fixing the source") so it's right on every future run.</p>
@@ -3547,7 +3547,7 @@ a reference file ("fixing the source") so it's right on every future run.</p>
 direction), light in the middle (the model follows the rules), and heavy again
 at the end (final alignment).</p>
 <h2 id="doing-it-in-hands-on-ai">Doing it in Hands-On AI<a class="headerlink" href="#doing-it-in-hands-on-ai" title="Permanent link">&para;</a></h2>
-<p>Hands-On AI ships a tiny runner — the <code>Pipeline</code> — that does exactly this. It is
+<p>Hands-On AI ships a tiny runner (the <code>Pipeline</code>) that does exactly this. It is
 deliberately <strong>sequential and human-in-the-loop</strong>: <code>run_next()</code> runs <em>one</em> stage
 and stops, so you review the file before continuing.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">hands_on_ai.workflow</span><span class="w"> </span><span class="kn">import</span> <span class="n">Pipeline</span><span class="p">,</span> <span class="n">init_workspace</span>
@@ -3562,8 +3562,8 @@ and stops, so you review the file before continuing.</p>
 <span class="c1"># open that file, read it, edit if needed...</span>
 <span class="n">pipe</span><span class="o">.</span><span class="n">run_next</span><span class="p">()</span>      <span class="c1"># runs 02 using your (possibly edited) research</span>
 </code></pre></div>
-<p><code>run_all()</code> exists for when you trust a pipeline, but <code>run_next()</code> — run, review,
-continue — is the point.</p>
+<p><code>run_all()</code> exists for when you trust a pipeline, but <code>run_next()</code> (run, review,
+continue) is the point.</p>
 <p>The <a href="../projects/workflow/build-a-pipeline/">Build a Pipeline</a> project walks
 through this end to end.</p>
 <h2 id="when-to-use-what">When to use what<a class="headerlink" href="#when-to-use-what" title="Permanent link">&para;</a></h2>
@@ -3591,7 +3591,7 @@ through this end to end.</p>
 </tbody>
 </table>
 <p>Workflows are <strong>sequential and human-in-the-loop by design</strong>. Need parallelism?
-Run separate workflows yourself and decide how to combine them — a deliberate
+Run separate workflows yourself and decide how to combine them, a deliberate
 human choice, not a hidden autonomous loop.</p>
 <p>For more on where this little runner fits next to production frameworks (and when
 to reach for one), see <a href="../philosophy/">What this is (and isn't)</a>.</p>
