@@ -57,7 +57,7 @@ def main(
     
     # Prepare the content
     content = ["# Project Gallery\n", 
-               "This page lists all the mini-projects available in AiLabKit, organized by module.\n"]
+               "This page lists all the mini-projects available in Hands-On AI, organized by module.\n"]
     
     # Sort categories
     category_order = {"chat": 1, "rag": 2, "agent": 3}
@@ -74,7 +74,7 @@ def main(
         elif category_name.lower() == "agent":
             description = "Agent projects focus on LLMs that can use tools and follow a reasoning process."
         else:
-            description = f"{category_name} projects for AiLabKit."
+            description = f"{category_name} projects for Hands-On AI."
         
         content.append(f"## {category_name} Projects\n")
         content.append(f"{description}\n")
