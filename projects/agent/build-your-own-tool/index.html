@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://teaching-repositories.github.io/hands-on-ai/projects/chat/image-gallery-creator/">
+        <link rel="canonical" href="https://teaching-repositories.github.io/hands-on-ai/projects/agent/build-your-own-tool/">
       
       
-        <link rel="prev" href="../historical-figure-chat/">
+        <link rel="prev" href="../agent-evaluation-framework/">
       
       
-        <link rel="next" href="../journal-or-reflection-bot/">
+        <link rel="next" href="../custom-tool-creator/">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>Image Gallery Creator - HandsOnAI Documentation</title>
+        <title>Build Your Own Tool - HandsOnAI Documentation</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#image-gallery-creator" class="md-skip">
+        <a href="#build-your-own-tool-cookbook" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Image Gallery Creator
+              Build Your Own Tool
             
           </span>
         </div>
@@ -1067,10 +1067,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../agent/build-your-own-tool/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build Your Own Tool
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1086,6 +1113,120 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-one-rule-a-tool-is-str-str" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The one rule: a tool is str -&gt; str
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#handling-more-than-one-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Handling more than one input
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-web-pattern-fetch-parse-return" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The web pattern: fetch → parse → return
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The web pattern: fetch → parse → return">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-the-api-needs-a-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        If the API needs a key
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulated-vs-real" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simulated vs. real
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-good-tool-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A good-tool checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#try-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Try it
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1251,8 +1392,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1268,11 +1407,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
         
           
           <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="">
@@ -1293,7 +1432,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1311,7 +1450,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../advanced-journal-bot/" class="md-nav__link">
+      <a href="../../chat/advanced-journal-bot/" class="md-nav__link">
         
   
   
@@ -1339,7 +1478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bot-personality-menu-generator/" class="md-nav__link">
+      <a href="../../chat/bot-personality-menu-generator/" class="md-nav__link">
         
   
   
@@ -1367,7 +1506,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../build-your-own-personality-bot/" class="md-nav__link">
+      <a href="../../chat/build-your-own-personality-bot/" class="md-nav__link">
         
   
   
@@ -1395,7 +1534,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../choose-your-own-adventure/" class="md-nav__link">
+      <a href="../../chat/choose-your-own-adventure/" class="md-nav__link">
         
   
   
@@ -1423,7 +1562,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../classroom-simulation-bot/" class="md-nav__link">
+      <a href="../../chat/classroom-simulation-bot/" class="md-nav__link">
         
   
   
@@ -1451,7 +1590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../code-explainer-tool/" class="md-nav__link">
+      <a href="../../chat/code-explainer-tool/" class="md-nav__link">
         
   
   
@@ -1479,7 +1618,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../creative-writing-partner/" class="md-nav__link">
+      <a href="../../chat/creative-writing-partner/" class="md-nav__link">
         
   
   
@@ -1507,7 +1646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-visualization-dashboard/" class="md-nav__link">
+      <a href="../../chat/data-visualization-dashboard/" class="md-nav__link">
         
   
   
@@ -1535,7 +1674,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../debate-interview-panel-dialogue-simulator/" class="md-nav__link">
+      <a href="../../chat/debate-interview-panel-dialogue-simulator/" class="md-nav__link">
         
   
   
@@ -1563,7 +1702,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../emotional-support-bot/" class="md-nav__link">
+      <a href="../../chat/emotional-support-bot/" class="md-nav__link">
         
   
   
@@ -1591,7 +1730,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../historical-figure-chat/" class="md-nav__link">
+      <a href="../../chat/historical-figure-chat/" class="md-nav__link">
         
   
   
@@ -1616,37 +1755,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Image Gallery Creator
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../chat/image-gallery-creator/" class="md-nav__link">
         
   
   
@@ -1662,59 +1774,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Overview
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instructions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Instructions
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#extension-ideas" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Extension Ideas
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1727,7 +1786,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../journal-or-reflection-bot/" class="md-nav__link">
+      <a href="../../chat/journal-or-reflection-bot/" class="md-nav__link">
         
   
   
@@ -1755,7 +1814,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../knowledge-quiz-bot/" class="md-nav__link">
+      <a href="../../chat/knowledge-quiz-bot/" class="md-nav__link">
         
   
   
@@ -1783,7 +1842,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../language-translation-helper/" class="md-nav__link">
+      <a href="../../chat/language-translation-helper/" class="md-nav__link">
         
   
   
@@ -1811,7 +1870,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mood-journal-assistant/" class="md-nav__link">
+      <a href="../../chat/mood-journal-assistant/" class="md-nav__link">
         
   
   
@@ -1839,7 +1898,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../personality-bot-creator/" class="md-nav__link">
+      <a href="../../chat/personality-bot-creator/" class="md-nav__link">
         
   
   
@@ -1867,7 +1926,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../smart-to-do-list/" class="md-nav__link">
+      <a href="../../chat/smart-to-do-list/" class="md-nav__link">
         
   
   
@@ -1895,7 +1954,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../subject-expert-tutor/" class="md-nav__link">
+      <a href="../../chat/subject-expert-tutor/" class="md-nav__link">
         
   
   
@@ -1923,7 +1982,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../text-adventure-game-engine/" class="md-nav__link">
+      <a href="../../chat/text-adventure-game-engine/" class="md-nav__link">
         
   
   
@@ -1951,7 +2010,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trivia-or-quiz-bot/" class="md-nav__link">
+      <a href="../../chat/trivia-or-quiz-bot/" class="md-nav__link">
         
   
   
@@ -1979,7 +2038,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../weather-dashboard/" class="md-nav__link">
+      <a href="../../chat/weather-dashboard/" class="md-nav__link">
         
   
   
@@ -2007,7 +2066,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../youtube-to-blog-converter/" class="md-nav__link">
+      <a href="../../chat/youtube-to-blog-converter/" class="md-nav__link">
         
   
   
@@ -2215,6 +2274,8 @@
                 
   
   
+    
+  
   
   
     
@@ -2230,11 +2291,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" checked>
         
           
           <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="">
@@ -2255,7 +2316,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2273,7 +2334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent/agent-evaluation-framework/" class="md-nav__link">
+      <a href="../agent-evaluation-framework/" class="md-nav__link">
         
   
   
@@ -2298,10 +2359,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../agent/build-your-own-tool/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build Your Own Tool
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2317,6 +2405,120 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-one-rule-a-tool-is-str-str" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The one rule: a tool is str -&gt; str
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#handling-more-than-one-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Handling more than one input
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-web-pattern-fetch-parse-return" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The web pattern: fetch → parse → return
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The web pattern: fetch → parse → return">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-the-api-needs-a-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        If the API needs a key
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulated-vs-real" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simulated vs. real
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-good-tool-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A good-tool checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#try-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Try it
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2329,7 +2531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent/custom-tool-creator/" class="md-nav__link">
+      <a href="../custom-tool-creator/" class="md-nav__link">
         
   
   
@@ -2357,7 +2559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent/date-calculator/" class="md-nav__link">
+      <a href="../date-calculator/" class="md-nav__link">
         
   
   
@@ -2385,7 +2587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent/educational-assistant/" class="md-nav__link">
+      <a href="../educational-assistant/" class="md-nav__link">
         
   
   
@@ -2413,7 +2615,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent/multi-tool-problem-solver/" class="md-nav__link">
+      <a href="../multi-tool-problem-solver/" class="md-nav__link">
         
   
   
@@ -2441,7 +2643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent/personal-math-tutor/" class="md-nav__link">
+      <a href="../personal-math-tutor/" class="md-nav__link">
         
   
   
@@ -2469,7 +2671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent/science-explorer/" class="md-nav__link">
+      <a href="../science-explorer/" class="md-nav__link">
         
   
   
@@ -2497,7 +2699,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent/simple-calculator-agent/" class="md-nav__link">
+      <a href="../simple-calculator-agent/" class="md-nav__link">
         
   
   
@@ -2525,7 +2727,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent/text-analyzer/" class="md-nav__link">
+      <a href="../text-analyzer/" class="md-nav__link">
         
   
   
@@ -2553,7 +2755,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent/unit-conversion-assistant/" class="md-nav__link">
+      <a href="../unit-conversion-assistant/" class="md-nav__link">
         
   
   
@@ -2581,7 +2783,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent/word-detective/" class="md-nav__link">
+      <a href="../word-detective/" class="md-nav__link">
         
   
   
@@ -3112,10 +3314,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#instructions" class="md-nav__link">
+  <a href="#the-one-rule-a-tool-is-str-str" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Instructions
+        The one rule: a tool is str -&gt; str
       
     </span>
   </a>
@@ -3123,10 +3325,71 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#extension-ideas" class="md-nav__link">
+  <a href="#handling-more-than-one-input" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Extension Ideas
+        Handling more than one input
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-web-pattern-fetch-parse-return" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The web pattern: fetch → parse → return
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The web pattern: fetch → parse → return">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-the-api-needs-a-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        If the API needs a key
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulated-vs-real" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simulated vs. real
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-good-tool-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A good-tool checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#try-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Try it
       
     </span>
   </a>
@@ -3153,246 +3416,123 @@
   
 
 
-<h1 id="image-gallery-creator">Image Gallery Creator<a class="headerlink" href="#image-gallery-creator" title="Permanent link">&para;</a></h1>
+<h1 id="build-your-own-tool-cookbook">Build Your Own Tool (Cookbook)<a class="headerlink" href="#build-your-own-tool-cookbook" title="Permanent link">&para;</a></h1>
 <p><strong>Difficulty</strong>: Intermediate<br />
-<strong>Time</strong>: 45-60 minutes<br />
-<strong>Learning Focus</strong>: File handling, HTML generation, metadata management, API integration<br />
-<strong>Module</strong>: chat</p>
+<strong>Time</strong>: 30 minutes<br />
+<strong>Learning Focus</strong>: The tool contract, extending agents, calling external APIs safely<br />
+<strong>Module</strong>: agent</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>Create a tool that generates an HTML gallery from a collection of images. The tool manages image metadata, generates descriptions (optionally with AI assistance), and creates a responsive web gallery to showcase the images.</p>
-<h2 id="instructions">Instructions<a class="headerlink" href="#instructions" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">hands_on_ai.chat</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_response</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<p>Agents are only as capable as the tools you give them. This cookbook shows the
+one pattern behind <em>every</em> tool — built-in or your own — so you can add new
+abilities without guessing.</p>
+<h2 id="the-one-rule-a-tool-is-str-str">The one rule: a tool is <code>str -&gt; str</code><a class="headerlink" href="#the-one-rule-a-tool-is-str-str" title="Permanent link">&para;</a></h2>
+<p>An agent tool is just a function that takes a single string and returns a single
+string. You <code>register_tool</code> it so the agent can call it by name.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">hands_on_ai.agent</span><span class="w"> </span><span class="kn">import</span> <span class="n">register_tool</span><span class="p">,</span> <span class="n">run_agent</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">create_image_gallery</span><span class="p">():</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Creates an HTML image gallery from a collection of images.</span>
-<span class="sd">    Students can add their own images to the &#39;gallery_images&#39; folder.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">shout</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the text in uppercase.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">text</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== Image Gallery Creator ===&quot;</span><span class="p">)</span>
+<span class="n">register_tool</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;shout&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Convert text to uppercase. Input: the text to shout.&quot;</span><span class="p">,</span>
+    <span class="n">function</span><span class="o">=</span><span class="n">shout</span><span class="p">,</span>
+<span class="p">)</span>
 
-    <span class="c1"># Create necessary directories</span>
-    <span class="n">image_dir</span> <span class="o">=</span> <span class="s2">&quot;gallery_images&quot;</span>
-    <span class="n">output_dir</span> <span class="o">=</span> <span class="s2">&quot;gallery_output&quot;</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">image_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-    <span class="c1"># Check if there are images to process</span>
-    <span class="n">image_files</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">image_dir</span><span class="p">)</span> 
-                  <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">((</span><span class="s1">&#39;.jpg&#39;</span><span class="p">,</span> <span class="s1">&#39;.jpeg&#39;</span><span class="p">,</span> <span class="s1">&#39;.png&#39;</span><span class="p">,</span> <span class="s1">&#39;.gif&#39;</span><span class="p">))]</span>
-
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">image_files</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No images found in &#39;</span><span class="si">{</span><span class="n">image_dir</span><span class="si">}</span><span class="s2">&#39; folder.&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Please add some image files (JPG, PNG, GIF) to the &#39;</span><span class="si">{</span><span class="n">image_dir</span><span class="si">}</span><span class="s2">&#39; folder.&quot;</span><span class="p">)</span>
-        <span class="k">return</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">image_files</span><span class="p">)</span><span class="si">}</span><span class="s2"> images.&quot;</span><span class="p">)</span>
-
-    <span class="c1"># Load existing metadata or create new</span>
-    <span class="n">metadata_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="s2">&quot;gallery_metadata.json&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">metadata_file</span><span class="p">):</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">metadata_file</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-            <span class="k">try</span><span class="p">:</span>
-                <span class="n">gallery_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-            <span class="k">except</span> <span class="n">json</span><span class="o">.</span><span class="n">JSONDecodeError</span><span class="p">:</span>
-                <span class="n">gallery_data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;My Image Gallery&quot;</span><span class="p">,</span> <span class="s2">&quot;images&quot;</span><span class="p">:</span> <span class="p">[]}</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">gallery_data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;My Image Gallery&quot;</span><span class="p">,</span> <span class="s2">&quot;images&quot;</span><span class="p">:</span> <span class="p">[]}</span>
-
-    <span class="c1"># Update gallery title</span>
-    <span class="n">gallery_title</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Gallery title [</span><span class="si">{</span><span class="n">gallery_data</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">]: &quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">gallery_title</span><span class="p">:</span>
-        <span class="n">gallery_data</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gallery_title</span>
-
-    <span class="c1"># Process each image</span>
-    <span class="n">existing_images</span> <span class="o">=</span> <span class="p">{</span><span class="n">img</span><span class="p">[</span><span class="s2">&quot;filename&quot;</span><span class="p">]:</span> <span class="n">img</span> <span class="k">for</span> <span class="n">img</span> <span class="ow">in</span> <span class="n">gallery_data</span><span class="p">[</span><span class="s2">&quot;images&quot;</span><span class="p">]}</span>
-
-    <span class="k">for</span> <span class="n">image_file</span> <span class="ow">in</span> <span class="n">image_files</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">image_file</span> <span class="ow">in</span> <span class="n">existing_images</span><span class="p">:</span>
-            <span class="c1"># Image already has metadata</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Image </span><span class="si">{</span><span class="n">image_file</span><span class="si">}</span><span class="s2"> already has metadata:&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Title: </span><span class="si">{</span><span class="n">existing_images</span><span class="p">[</span><span class="n">image_file</span><span class="p">][</span><span class="s1">&#39;title&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Description: </span><span class="si">{</span><span class="n">existing_images</span><span class="p">[</span><span class="n">image_file</span><span class="p">][</span><span class="s1">&#39;description&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-            <span class="n">update</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Update this image&#39;s information? (y/n): &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;y&#39;</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="n">update</span><span class="p">:</span>
-                <span class="k">continue</span>
-
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Processing: </span><span class="si">{</span><span class="n">image_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-        <span class="c1"># Get metadata for this image</span>
-        <span class="n">default_title</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">image_file</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
-        <span class="n">title</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Image title [</span><span class="si">{</span><span class="n">default_title</span><span class="si">}</span><span class="s2">]: &quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">default_title</span>
-
-        <span class="n">description</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Image description: &quot;</span><span class="p">)</span>
-
-        <span class="c1"># Optionally generate description using AI</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">description</span><span class="p">:</span>
-            <span class="n">generate_ai</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Generate description with AI? (y/n): &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;y&#39;</span>
-            <span class="k">if</span> <span class="n">generate_ai</span><span class="p">:</span>
-                <span class="k">try</span><span class="p">:</span>
-                    <span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Generate a brief, interesting description for an image named &#39;</span><span class="si">{</span><span class="n">image_file</span><span class="si">}</span><span class="s2">&#39;. Create something imaginative based on the filename, without stating that you&#39;re guessing or that you haven&#39;t seen the image.&quot;</span>
-                    <span class="n">description</span> <span class="o">=</span> <span class="n">get_response</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI-generated description: </span><span class="si">{</span><span class="n">description</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-                    <span class="n">use_desc</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Use this description? (y/n): &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;y&#39;</span>
-                    <span class="k">if</span> <span class="ow">not</span> <span class="n">use_desc</span><span class="p">:</span>
-                        <span class="n">description</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter alternative description: &quot;</span><span class="p">)</span>
-                <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error generating AI description: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-                    <span class="n">description</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter description manually: &quot;</span><span class="p">)</span>
-
-        <span class="c1"># Add or update metadata</span>
-        <span class="n">image_data</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s2">&quot;filename&quot;</span><span class="p">:</span> <span class="n">image_file</span><span class="p">,</span>
-            <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="n">description</span><span class="p">,</span>
-            <span class="s2">&quot;date_added&quot;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="p">}</span>
-
-        <span class="k">if</span> <span class="n">image_file</span> <span class="ow">in</span> <span class="n">existing_images</span><span class="p">:</span>
-            <span class="c1"># Update existing entry</span>
-            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">img</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">gallery_data</span><span class="p">[</span><span class="s2">&quot;images&quot;</span><span class="p">]):</span>
-                <span class="k">if</span> <span class="n">img</span><span class="p">[</span><span class="s2">&quot;filename&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">image_file</span><span class="p">:</span>
-                    <span class="n">gallery_data</span><span class="p">[</span><span class="s2">&quot;images&quot;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">image_data</span>
-                    <span class="k">break</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="c1"># Add new entry</span>
-            <span class="n">gallery_data</span><span class="p">[</span><span class="s2">&quot;images&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">image_data</span><span class="p">)</span>
-
-    <span class="c1"># Save updated metadata</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">metadata_file</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">gallery_data</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Generating HTML gallery...&quot;</span><span class="p">)</span>
-
-    <span class="c1"># Generate HTML gallery</span>
-    <span class="n">html_output</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;&lt;!DOCTYPE html&gt;</span>
-<span class="s2">&lt;html lang=&quot;en&quot;&gt;</span>
-<span class="s2">&lt;head&gt;</span>
-<span class="s2">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span>
-<span class="s2">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span>
-<span class="s2">    &lt;title&gt;</span><span class="si">{</span><span class="n">gallery_data</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&lt;/title&gt;</span>
-<span class="s2">    &lt;style&gt;</span>
-<span class="s2">        body </span><span class="se">{{</span>
-<span class="s2">            font-family: Arial, sans-serif;</span>
-<span class="s2">            margin: 0;</span>
-<span class="s2">            padding: 20px;</span>
-<span class="s2">            background-color: #f5f5f5;</span>
-<span class="s2">        </span><span class="se">}}</span>
-<span class="s2">        h1 </span><span class="se">{{</span>
-<span class="s2">            text-align: center;</span>
-<span class="s2">            color: #333;</span>
-<span class="s2">        </span><span class="se">}}</span>
-<span class="s2">        .gallery </span><span class="se">{{</span>
-<span class="s2">            display: grid;</span>
-<span class="s2">            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));</span>
-<span class="s2">            grid-gap: 20px;</span>
-<span class="s2">            max-width: 1200px;</span>
-<span class="s2">            margin: 0 auto;</span>
-<span class="s2">        </span><span class="se">}}</span>
-<span class="s2">        .gallery-item </span><span class="se">{{</span>
-<span class="s2">            border-radius: 5px;</span>
-<span class="s2">            overflow: hidden;</span>
-<span class="s2">            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);</span>
-<span class="s2">            background-color: white;</span>
-<span class="s2">            transition: transform 0.3s;</span>
-<span class="s2">        </span><span class="se">}}</span>
-<span class="s2">        .gallery-item:hover </span><span class="se">{{</span>
-<span class="s2">            transform: translateY(-5px);</span>
-<span class="s2">        </span><span class="se">}}</span>
-<span class="s2">        .gallery-image </span><span class="se">{{</span>
-<span class="s2">            width: 100%;</span>
-<span class="s2">            height: 200px;</span>
-<span class="s2">            object-fit: cover;</span>
-<span class="s2">        </span><span class="se">}}</span>
-<span class="s2">        .gallery-content </span><span class="se">{{</span>
-<span class="s2">            padding: 15px;</span>
-<span class="s2">        </span><span class="se">}}</span>
-<span class="s2">        .gallery-title </span><span class="se">{{</span>
-<span class="s2">            margin-top: 0;</span>
-<span class="s2">            color: #333;</span>
-<span class="s2">        </span><span class="se">}}</span>
-<span class="s2">        .gallery-description </span><span class="se">{{</span>
-<span class="s2">            color: #666;</span>
-<span class="s2">            font-size: 0.9em;</span>
-<span class="s2">        </span><span class="se">}}</span>
-<span class="s2">        .gallery-date </span><span class="se">{{</span>
-<span class="s2">            color: #999;</span>
-<span class="s2">            font-size: 0.8em;</span>
-<span class="s2">            text-align: right;</span>
-<span class="s2">            margin-top: 10px;</span>
-<span class="s2">        </span><span class="se">}}</span>
-<span class="s2">        footer </span><span class="se">{{</span>
-<span class="s2">            text-align: center;</span>
-<span class="s2">            margin-top: 30px;</span>
-<span class="s2">            color: #999;</span>
-<span class="s2">            font-size: 0.8em;</span>
-<span class="s2">        </span><span class="se">}}</span>
-<span class="s2">    &lt;/style&gt;</span>
-<span class="s2">&lt;/head&gt;</span>
-<span class="s2">&lt;body&gt;</span>
-<span class="s2">    &lt;h1&gt;</span><span class="si">{</span><span class="n">gallery_data</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&lt;/h1&gt;</span>
-
-<span class="s2">    &lt;div class=&quot;gallery&quot;&gt;</span>
-<span class="s2">&quot;&quot;&quot;</span>
-
-    <span class="c1"># Add each image to the gallery</span>
-    <span class="k">for</span> <span class="n">img</span> <span class="ow">in</span> <span class="n">gallery_data</span><span class="p">[</span><span class="s2">&quot;images&quot;</span><span class="p">]:</span>
-        <span class="n">html_output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;        &lt;div class=&quot;gallery-item&quot;&gt;</span>
-<span class="s2">            &lt;img src=&quot;../</span><span class="si">{</span><span class="n">image_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">img</span><span class="p">[</span><span class="s1">&#39;filename&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot; alt=&quot;</span><span class="si">{</span><span class="n">img</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot; class=&quot;gallery-image&quot;&gt;</span>
-<span class="s2">            &lt;div class=&quot;gallery-content&quot;&gt;</span>
-<span class="s2">                &lt;h3 class=&quot;gallery-title&quot;&gt;</span><span class="si">{</span><span class="n">img</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&lt;/h3&gt;</span>
-<span class="s2">                &lt;p class=&quot;gallery-description&quot;&gt;</span><span class="si">{</span><span class="n">img</span><span class="p">[</span><span class="s1">&#39;description&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&lt;/p&gt;</span>
-<span class="s2">                &lt;p class=&quot;gallery-date&quot;&gt;Added: </span><span class="si">{</span><span class="n">img</span><span class="p">[</span><span class="s1">&#39;date_added&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&lt;/p&gt;</span>
-<span class="s2">            &lt;/div&gt;</span>
-<span class="s2">        &lt;/div&gt;</span>
-<span class="s2">&quot;&quot;&quot;</span>
-
-    <span class="c1"># Complete the HTML</span>
-    <span class="n">html_output</span> <span class="o">+=</span> <span class="s2">&quot;&quot;&quot;    &lt;/div&gt;</span>
-
-<span class="s2">    &lt;footer&gt;</span>
-<span class="s2">        &lt;p&gt;Created with Image Gallery Creator&lt;/p&gt;</span>
-<span class="s2">    &lt;/footer&gt;</span>
-<span class="s2">&lt;/body&gt;</span>
-<span class="s2">&lt;/html&gt;</span>
-<span class="s2">&quot;&quot;&quot;</span>
-
-    <span class="c1"># Save the HTML file</span>
-    <span class="n">html_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="s2">&quot;index.html&quot;</span><span class="p">)</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">html_output</span><span class="p">)</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Gallery created successfully!&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;HTML file saved to: </span><span class="si">{</span><span class="n">html_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Open this file in a web browser to view your gallery.&quot;</span><span class="p">)</span>
-
-    <span class="c1"># Optional: Open the gallery in the default browser</span>
-    <span class="n">try_open</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Open gallery in browser? (y/n): &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;y&#39;</span>
-    <span class="k">if</span> <span class="n">try_open</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="kn">import</span><span class="w"> </span><span class="nn">webbrowser</span>
-            <span class="n">webbrowser</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;file://&#39;</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">html_file</span><span class="p">))</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Could not open browser: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="c1"># Run the gallery creator</span>
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">create_image_gallery</span><span class="p">()</span>
+<span class="c1"># The agent can now choose to call `shout` when it helps.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">run_agent</span><span class="p">(</span><span class="s2">&quot;Use the shout tool on &#39;hello world&#39;&quot;</span><span class="p">))</span>
 </code></pre></div>
-<h2 id="extension-ideas">Extension Ideas<a class="headerlink" href="#extension-ideas" title="Permanent link">&para;</a></h2>
+<p>That's the whole contract:</p>
 <ul>
-<li>Add image filtering by tags or categories</li>
-<li>Implement image resising and thumbnail generation</li>
-<li>Create a lightbox effect for viewing full-sise images</li>
-<li>Add EXIF data extraction to display camera information</li>
-<li>Implement a theme selector with different gallery styles</li>
-<li>Create a server-side component to host the gallery online</li>
+<li><strong>Input</strong> — one string (whatever the model decides to pass).</li>
+<li><strong>Output</strong> — one string (what the agent reads back).</li>
+<li><strong>Description</strong> — the model reads <em>this</em> to decide when and how to use your
+  tool. Write it like a help message, and say what the input should look like.</li>
 </ul>
-<hr />
+<blockquote>
+<p>💡 A tool can do anything a Python function can — math, a lookup, an API call,
+reading a file. The agent doesn't care how; it only sees the string you return.</p>
+</blockquote>
+<h2 id="handling-more-than-one-input">Handling more than one input<a class="headerlink" href="#handling-more-than-one-input" title="Permanent link">&para;</a></h2>
+<p>The agent passes a <em>single</em> string, so if your tool needs several values, parse
+them yourself. Pick a simple, documented format and split on it:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">repeat</span><span class="p">(</span><span class="n">spec</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Input format: &#39;text | count&#39;, e.g. &#39;ha | 3&#39;.&quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">text</span><span class="p">,</span> <span class="n">count</span> <span class="o">=</span> <span class="n">spec</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">*</span> <span class="nb">int</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;Error: expected input like &#39;text | count&#39;.&quot;</span>
+</code></pre></div>
+<p>Then describe that format in the <code>description</code> so the model sends the right shape.</p>
+<h2 id="the-web-pattern-fetch-parse-return">The web pattern: fetch → parse → return<a class="headerlink" href="#the-web-pattern-fetch-parse-return" title="Permanent link">&para;</a></h2>
+<p>Every tool that reaches the internet follows the same three steps. Here's one
+that reports a GitHub repo's star count:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>   <span class="c1"># pip install requests</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">github_stars</span><span class="p">(</span><span class="n">repo</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Input: &#39;owner/name&#39;, e.g. &#39;python/cpython&#39;.&quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># 1. FETCH</span>
+        <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;https://api.github.com/repos/</span><span class="si">{</span><span class="n">repo</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+        <span class="n">resp</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+        <span class="c1"># 2. PARSE — pull out just the fact you need</span>
+        <span class="n">stars</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s2">&quot;stargazers_count&quot;</span><span class="p">]</span>
+        <span class="c1"># 3. RETURN a short, plain-text answer</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">repo</span><span class="si">}</span><span class="s2"> has </span><span class="si">{</span><span class="n">stars</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> stars.&quot;</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Error fetching repo info: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="n">register_tool</span><span class="p">(</span>
+    <span class="s2">&quot;github_stars&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Get the star count of a GitHub repo. Input: &#39;owner/name&#39;.&quot;</span><span class="p">,</span>
+    <span class="n">github_stars</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>Fetch, keep only what you need, return a short string. The same shape works for
+weather, news, dictionaries — anything.</p>
+<blockquote>
+<p>⚠️ <strong>External APIs are the part that dates.</strong> Endpoints change, fields get
+renamed, and services add rate limits or sign-up requirements. The <em>library</em>
+stays deliberately offline and stable — wiring up a live API is your code's job,
+not the library's. Treat a broken API as a real-world lesson, not a bug in
+<code>hands-on-ai</code>.</p>
+</blockquote>
+<h3 id="if-the-api-needs-a-key">If the API needs a key<a class="headerlink" href="#if-the-api-needs-a-key" title="Permanent link">&para;</a></h3>
+<p>Never hard-code secrets or commit them to git. Read them from an environment
+variable instead:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">weather</span><span class="p">(</span><span class="n">city</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;OPENWEATHER_API_KEY&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">key</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;Error: set OPENWEATHER_API_KEY in your environment first.&quot;</span>
+    <span class="c1"># ... fetch → parse → return as above ...</span>
+</code></pre></div>
+<p>The <a href="../../chat/weather-dashboard/">Weather Dashboard</a> project shows this end to end.</p>
+<h2 id="simulated-vs-real">Simulated vs. real<a class="headerlink" href="#simulated-vs-real" title="Permanent link">&para;</a></h2>
+<p>The built-in <code>search</code> and <code>weather</code> tools return <strong>simulated</strong> data on purpose:
+no keys, no rate limits, identical results every run — ideal for a classroom. A
+real version trades that reliability for fresh data. Both are valid, and choosing
+between them <em>is</em> part of the lesson.</p>
+<h2 id="a-good-tool-checklist">A good-tool checklist<a class="headerlink" href="#a-good-tool-checklist" title="Permanent link">&para;</a></h2>
+<ul>
+<li>✅ One string in, one string out.</li>
+<li>✅ A clear <code>description</code> — the model uses it to decide when to call the tool and what to pass.</li>
+<li>✅ Return concise text. The agent re-reads your output; a wall of JSON confuses small models.</li>
+<li>✅ Handle errors by <strong>returning</strong> an error string — don't <code>raise</code>. A tool that crashes can end the agent run.</li>
+<li>✅ Prefer deterministic/offline tools; reach for the network only when freshness is the whole point.</li>
+<li>✅ Keep secrets in environment variables, never in code.</li>
+</ul>
+<h2 id="try-it">Try it<a class="headerlink" href="#try-it" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Build a tool that reverses a string, then ask the agent to use it.</li>
+<li>Build a dictionary tool using a free, keyless API (fetch → parse → return).</li>
+<li>Convert one of your tools to read an API key from the environment.</li>
+</ol>
+<p>Once you're comfortable here, the <a href="../custom-tool-creator/">Custom Tool Creator</a>
+project challenges you to build a small toolbox of your own.</p>
 
 
 
