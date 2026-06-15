@@ -10,6 +10,11 @@ Want to dive straight in? Open the starter notebook:
 It walks through chat, personality bots, memory, a tool-using agent, and a
 workflow, in a few short cells. The rest of this page explains the setup it uses.
 
+For a deeper look at retrieval, the
+[RAG notebook](https://colab.research.google.com/github/michael-borck/hands-on-ai/blob/main/notebooks/rag.ipynb)
+builds a search index over your own documents and grounds a model's answers in
+them (it also needs an embedding model, e.g. `ollama pull nomic-embed-text`).
+
 ```python
 !pip install hands-on-ai
 
