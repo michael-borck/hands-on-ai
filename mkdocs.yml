@@ -8,11 +8,12 @@ theme:
   favicon: assets/icon-192.png
   features:
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
     - navigation.instant
     - navigation.tracking
+    - navigation.top
     - content.code.copy
-    - toc.integrate
   palette:
     scheme: default
     primary: indigo
@@ -20,47 +21,28 @@ theme:
 nav:
   - Home: index.md
   - Getting Started:
-    - "Installation": configuration.md 
+    - "Install & First Run": installation.md
+    - "Choose a Provider": providers.md
     - "Ollama Setup": ollama-guide.md
-    - "Classroom Setup": classroom-setup.md
-    - "LLM Guide": llm-guide.md
-    - "Migration Guide": migration.md
-  - Modules:
+    - "Configuration": configuration.md
+  - Learn:
     - Chat:
       - "Overview": chat-guide.md
       - "Bot Gallery": bot-gallery.md
-      - "Bot Template": bot-template.md
-      - "CLI Reference": cli-guide.md
     - RAG:
       - "Overview": rag-guide.md
-      - "RAG Flow": rag-flow.md
       - "How RAG Works": rag-llm-explain.md
-      - "CLI Reference": cli-guide.md
+      - "RAG Flow": rag-flow.md
     - Agent:
       - "Overview": agent-guide.md
       - "Understanding Agents": agent-concepts.md
       - "Agent Modules": agent-agents.md
       - "Tool Reference": agent-tools.md
-      - "CLI Reference": cli-guide.md
-  - For Educators:
-    - "Education Guide": education-guide.md
-    - "Classroom Setup": classroom-setup.md
+      - "Build Your Own Tool": projects/agent/build-your-own-tool.md
+  - Build:
     - "Projects Overview": mini-projects.md
-    - "Project Gallery": projects/index.md
+    - "Browse All Projects": projects/index.md
     - "Project Browser": project_browser.html
-    - Agent Projects:
-      - Agent Evaluation Framework: projects/agent/agent-evaluation-framework.md
-      - Build Your Own Tool (Cookbook): projects/agent/build-your-own-tool.md
-      - Custom Tool Creator: projects/agent/custom-tool-creator.md
-      - Date Calculator: projects/agent/date-calculator.md
-      - Educational Assistant: projects/agent/educational-assistant.md
-      - Multi-tool Problem Solver: projects/agent/multi-tool-problem-solver.md
-      - Personal Math Tutor: projects/agent/personal-math-tutor.md
-      - Science Explorer: projects/agent/science-explorer.md
-      - Simple Calculator Agent: projects/agent/simple-calculator-agent.md
-      - Text Analyzer: projects/agent/text-analyzer.md
-      - Unit Conversion Assistant: projects/agent/unit-conversion-assistant.md
-      - Word Detective: projects/agent/word-detective.md
     - Chat Projects:
       - Advanced Journal Bot: projects/chat/advanced-journal-bot.md
       - Bot Personality Menu Generator: projects/chat/bot-personality-menu-generator.md
@@ -90,17 +72,29 @@ nav:
       - First RAG Bot: projects/rag/first-rag-bot.md
       - Hybrid Reasoning Bot: projects/rag/hybrid-reasoning-bot.md
       - PDF Question Answering Chatbot: projects/rag/pdf-question-answering-chatbot.md
+    - Agent Projects:
+      - Agent Evaluation Framework: projects/agent/agent-evaluation-framework.md
+      - Build Your Own Tool (Cookbook): projects/agent/build-your-own-tool.md
+      - Custom Tool Creator: projects/agent/custom-tool-creator.md
+      - Date Calculator: projects/agent/date-calculator.md
+      - Educational Assistant: projects/agent/educational-assistant.md
+      - Multi-tool Problem Solver: projects/agent/multi-tool-problem-solver.md
+      - Personal Math Tutor: projects/agent/personal-math-tutor.md
+      - Science Explorer: projects/agent/science-explorer.md
+      - Simple Calculator Agent: projects/agent/simple-calculator-agent.md
+      - Text Analyzer: projects/agent/text-analyzer.md
+      - Unit Conversion Assistant: projects/agent/unit-conversion-assistant.md
+      - Word Detective: projects/agent/word-detective.md
     - "Project Template": mini-project-template.md
-    - "Bot Template": bot-template.md
-  - For Developers:
-    - "Project Tools": project-tools.md
+  - For Educators:
+    - "Education Guide": education-guide.md
+    - "Classroom Setup": classroom-setup.md
+  - Reference:
     - "CLI Reference": cli-guide.md
     - "Bot Template": bot-template.md
-    - "Project Template": mini-project-template.md
-    - "Contributing": contributing.md
-  - Templates:
-    - "Bot Template": bot-template.md
-    - "Project Template": mini-project-template.md
+    - "Migration Guide": migration.md
+    - "Project Tools": project-tools.md
+    - "LLM Guide": llm-guide.md
   - About:
     - "Authors": authors.md
     - "Contributing": contributing.md
@@ -116,6 +110,8 @@ plugins:
 
 markdown_extensions:
   - admonition
+  - attr_list
+  - md_in_html
   - codehilite
   - toc:
       permalink: true

@@ -179,7 +179,8 @@ os.environ['HANDS_ON_AI_API_KEY'] = 'classroom-api-key'
 
 ## 📚 Related Documentation
 
-- Provider Compatibility (see main README) - Full list of supported providers
+- [Install & First Run](installation.md) - Install the package and run your first bot
+- [Choose a Provider](providers.md) - Full provider list, setup, and compatibility table
 - [Classroom Setup](classroom-setup.md) - Setting up HandsOnAI for education
 - [Ollama Guide](ollama-guide.md) - Local Ollama installation and setup
 
