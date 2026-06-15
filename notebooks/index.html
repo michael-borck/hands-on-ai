@@ -3455,6 +3455,10 @@ There's only one thing to think about: <strong>where the model runs.</strong></p
 <p><a href="https://colab.research.google.com/github/michael-borck/hands-on-ai/blob/main/notebooks/quickstart.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
 <p>It walks through chat, personality bots, memory, a tool-using agent, and a
 workflow, in a few short cells. The rest of this page explains the setup it uses.</p>
+<p>For a deeper look at retrieval, the
+<a href="https://colab.research.google.com/github/michael-borck/hands-on-ai/blob/main/notebooks/rag.ipynb">RAG notebook</a>
+builds a search index over your own documents and grounds a model's answers in
+them (it also needs an embedding model, e.g. <code>ollama pull nomic-embed-text</code>).</p>
 <div class="highlight"><pre><span></span><code><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">hands</span><span class="o">-</span><span class="n">on</span><span class="o">-</span><span class="n">ai</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">hands_on_ai.chat</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_response</span>
