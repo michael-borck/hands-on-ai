@@ -47,6 +47,7 @@ nav:
     - "Classroom Setup": classroom-setup.md
     - "Projects Overview": mini-projects.md
     - "Project Gallery": projects/index.md
+    - "Project Browser": project_browser.html
     - Agent Projects:
       - Agent Evaluation Framework: projects/agent/agent-evaluation-framework.md
       - Build Your Own Tool (Cookbook): projects/agent/build-your-own-tool.md
