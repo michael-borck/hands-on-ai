@@ -79,6 +79,10 @@ pip install git+https://github.com/teaching-repositories/hands-on-ai.git
 
 ### Quick Start
 
+Prefer a notebook? Open the starter in Colab:
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/michael-borck/hands-on-ai/blob/main/notebooks/quickstart.ipynb)
+
 #### Option 1: Set configuration in Python (Recommended for beginners)
 
 ```python

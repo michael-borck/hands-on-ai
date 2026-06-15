@@ -3,6 +3,13 @@
 Hands-On AI is just Python, so it works anywhere Python does, notebooks included.
 There's only one thing to think about: **where the model runs.**
 
+Want to dive straight in? Open the starter notebook:
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/michael-borck/hands-on-ai/blob/main/notebooks/quickstart.ipynb)
+
+It walks through chat, personality bots, memory, a tool-using agent, and a
+workflow, in a few short cells. The rest of this page explains the setup it uses.
+
 ```python
 !pip install hands-on-ai
 
