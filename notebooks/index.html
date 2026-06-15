@@ -8,31 +8,31 @@
       
       
       
-        <link rel="canonical" href="https://teaching-repositories.github.io/hands-on-ai/projects/chat/code-explainer-tool/">
+        <link rel="canonical" href="https://teaching-repositories.github.io/hands-on-ai/notebooks/">
       
       
-        <link rel="prev" href="../classroom-simulation-bot/">
+        <link rel="prev" href="../providers/">
       
       
-        <link rel="next" href="../creative-writing-partner/">
+        <link rel="next" href="../ollama-guide/">
       
       
         
       
       
-      <link rel="icon" href="../../../assets/icon-192.png">
+      <link rel="icon" href="../assets/icon-192.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Code Explainer Tool - HandsOnAI Documentation</title>
+        <title>Notebooks & Colab - HandsOnAI Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -51,11 +51,11 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/custom.css">
+      <link rel="stylesheet" href="../stylesheets/custom.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#code-explainer-tool" class="md-skip">
+        <a href="#using-notebooks-jupyter-colab" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="HandsOnAI Documentation" class="md-header__button md-logo" aria-label="HandsOnAI Documentation" data-md-component="logo">
+    <a href=".." title="HandsOnAI Documentation" class="md-header__button md-logo" aria-label="HandsOnAI Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Code Explainer Tool
+              Notebooks & Colab
             
           </span>
         </div>
@@ -193,7 +193,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href=".." class="md-tabs__link">
         
   
   
@@ -212,7 +212,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../philosophy/" class="md-tabs__link">
+      <a href="../philosophy/" class="md-tabs__link">
         
   
   
@@ -229,11 +229,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../installation/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../installation/" class="md-tabs__link">
           
   
   
@@ -260,7 +262,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../chat-concepts/" class="md-tabs__link">
+        <a href="../chat-concepts/" class="md-tabs__link">
           
   
   
@@ -279,13 +281,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../mini-projects/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../mini-projects/" class="md-tabs__link">
           
   
   
@@ -305,7 +305,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../education-guide/" class="md-tabs__link">
+        <a href="../education-guide/" class="md-tabs__link">
           
   
   
@@ -325,7 +325,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../cli-guide/" class="md-tabs__link">
+        <a href="../cli-guide/" class="md-tabs__link">
           
   
   
@@ -345,7 +345,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../authors/" class="md-tabs__link">
+        <a href="../authors/" class="md-tabs__link">
           
   
   
@@ -385,7 +385,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="HandsOnAI Documentation" class="md-nav__button md-logo" aria-label="HandsOnAI Documentation" data-md-component="logo">
+    <a href=".." title="HandsOnAI Documentation" class="md-nav__button md-logo" aria-label="HandsOnAI Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -415,7 +415,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -442,7 +442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../philosophy/" class="md-nav__link">
+      <a href="../philosophy/" class="md-nav__link">
         
   
   
@@ -466,26 +466,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -503,7 +508,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -521,7 +526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../installation/" class="md-nav__link">
+      <a href="../installation/" class="md-nav__link">
         
   
   
@@ -549,7 +554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../providers/" class="md-nav__link">
+      <a href="../providers/" class="md-nav__link">
         
   
   
@@ -574,10 +579,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../notebooks/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notebooks & Colab
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -593,6 +625,59 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#local-notebooks-jupyter-jupyterlab-vs-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local notebooks (Jupyter, JupyterLab, VS Code)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#google-colab-and-other-hosted-notebooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Google Colab and other hosted notebooks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-educators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For educators
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -605,7 +690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ollama-guide/" class="md-nav__link">
+      <a href="../ollama-guide/" class="md-nav__link">
         
   
   
@@ -633,7 +718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../configuration/" class="md-nav__link">
+      <a href="../configuration/" class="md-nav__link">
         
   
   
@@ -772,7 +857,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../chat-concepts/" class="md-nav__link">
+      <a href="../chat-concepts/" class="md-nav__link">
         
   
   
@@ -800,7 +885,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../chat-guide/" class="md-nav__link">
+      <a href="../chat-guide/" class="md-nav__link">
         
   
   
@@ -828,7 +913,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../bot-gallery/" class="md-nav__link">
+      <a href="../bot-gallery/" class="md-nav__link">
         
   
   
@@ -916,7 +1001,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../rag-llm-explain/" class="md-nav__link">
+      <a href="../rag-llm-explain/" class="md-nav__link">
         
   
   
@@ -944,7 +1029,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../rag-guide/" class="md-nav__link">
+      <a href="../rag-guide/" class="md-nav__link">
         
   
   
@@ -972,7 +1057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../rag-flow/" class="md-nav__link">
+      <a href="../rag-flow/" class="md-nav__link">
         
   
   
@@ -1060,7 +1145,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../agent-concepts/" class="md-nav__link">
+      <a href="../agent-concepts/" class="md-nav__link">
         
   
   
@@ -1088,7 +1173,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../agent-guide/" class="md-nav__link">
+      <a href="../agent-guide/" class="md-nav__link">
         
   
   
@@ -1116,7 +1201,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../agent-agents/" class="md-nav__link">
+      <a href="../agent-agents/" class="md-nav__link">
         
   
   
@@ -1144,7 +1229,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../agent-tools/" class="md-nav__link">
+      <a href="../agent-tools/" class="md-nav__link">
         
   
   
@@ -1172,7 +1257,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent/build-your-own-tool/" class="md-nav__link">
+      <a href="../projects/agent/build-your-own-tool/" class="md-nav__link">
         
   
   
@@ -1260,7 +1345,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../workflow-guide/" class="md-nav__link">
+      <a href="../workflow-guide/" class="md-nav__link">
         
   
   
@@ -1288,7 +1373,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workflow/build-a-pipeline/" class="md-nav__link">
+      <a href="../projects/workflow/build-a-pipeline/" class="md-nav__link">
         
   
   
@@ -1328,31 +1413,26 @@
       
   
   
-    
   
   
-  
     
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   
@@ -1370,7 +1450,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1388,7 +1468,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mini-projects/" class="md-nav__link">
+      <a href="../mini-projects/" class="md-nav__link">
         
   
   
@@ -1416,7 +1496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../projects/" class="md-nav__link">
         
   
   
@@ -1444,7 +1524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../project_browser.html" class="md-nav__link">
+      <a href="../project_browser.html" class="md-nav__link">
         
   
   
@@ -1469,31 +1549,26 @@
                 
   
   
-    
   
   
-  
     
     
     
     
       
       
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
         
           
-          
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
             
   
   
@@ -1511,7 +1586,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1529,7 +1604,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../advanced-journal-bot/" class="md-nav__link">
+      <a href="../projects/chat/advanced-journal-bot/" class="md-nav__link">
         
   
   
@@ -1557,7 +1632,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bot-personality-menu-generator/" class="md-nav__link">
+      <a href="../projects/chat/bot-personality-menu-generator/" class="md-nav__link">
         
   
   
@@ -1585,7 +1660,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../build-your-own-personality-bot/" class="md-nav__link">
+      <a href="../projects/chat/build-your-own-personality-bot/" class="md-nav__link">
         
   
   
@@ -1613,7 +1688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../choose-your-own-adventure/" class="md-nav__link">
+      <a href="../projects/chat/choose-your-own-adventure/" class="md-nav__link">
         
   
   
@@ -1641,7 +1716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../classroom-simulation-bot/" class="md-nav__link">
+      <a href="../projects/chat/classroom-simulation-bot/" class="md-nav__link">
         
   
   
@@ -1666,37 +1741,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Code Explainer Tool
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../projects/chat/code-explainer-tool/" class="md-nav__link">
         
   
   
@@ -1712,59 +1760,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Overview
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instructions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Instructions
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#extension-ideas" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Extension Ideas
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1777,7 +1772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../creative-writing-partner/" class="md-nav__link">
+      <a href="../projects/chat/creative-writing-partner/" class="md-nav__link">
         
   
   
@@ -1805,7 +1800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-visualization-dashboard/" class="md-nav__link">
+      <a href="../projects/chat/data-visualization-dashboard/" class="md-nav__link">
         
   
   
@@ -1833,7 +1828,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../debate-interview-panel-dialogue-simulator/" class="md-nav__link">
+      <a href="../projects/chat/debate-interview-panel-dialogue-simulator/" class="md-nav__link">
         
   
   
@@ -1861,7 +1856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../emotional-support-bot/" class="md-nav__link">
+      <a href="../projects/chat/emotional-support-bot/" class="md-nav__link">
         
   
   
@@ -1889,7 +1884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../historical-figure-chat/" class="md-nav__link">
+      <a href="../projects/chat/historical-figure-chat/" class="md-nav__link">
         
   
   
@@ -1917,7 +1912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../image-gallery-creator/" class="md-nav__link">
+      <a href="../projects/chat/image-gallery-creator/" class="md-nav__link">
         
   
   
@@ -1945,7 +1940,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../journal-or-reflection-bot/" class="md-nav__link">
+      <a href="../projects/chat/journal-or-reflection-bot/" class="md-nav__link">
         
   
   
@@ -1973,7 +1968,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../knowledge-quiz-bot/" class="md-nav__link">
+      <a href="../projects/chat/knowledge-quiz-bot/" class="md-nav__link">
         
   
   
@@ -2001,7 +1996,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../language-translation-helper/" class="md-nav__link">
+      <a href="../projects/chat/language-translation-helper/" class="md-nav__link">
         
   
   
@@ -2029,7 +2024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mood-journal-assistant/" class="md-nav__link">
+      <a href="../projects/chat/mood-journal-assistant/" class="md-nav__link">
         
   
   
@@ -2057,7 +2052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../personality-bot-creator/" class="md-nav__link">
+      <a href="../projects/chat/personality-bot-creator/" class="md-nav__link">
         
   
   
@@ -2085,7 +2080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../smart-to-do-list/" class="md-nav__link">
+      <a href="../projects/chat/smart-to-do-list/" class="md-nav__link">
         
   
   
@@ -2113,7 +2108,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../subject-expert-tutor/" class="md-nav__link">
+      <a href="../projects/chat/subject-expert-tutor/" class="md-nav__link">
         
   
   
@@ -2141,7 +2136,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../text-adventure-game-engine/" class="md-nav__link">
+      <a href="../projects/chat/text-adventure-game-engine/" class="md-nav__link">
         
   
   
@@ -2169,7 +2164,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trivia-or-quiz-bot/" class="md-nav__link">
+      <a href="../projects/chat/trivia-or-quiz-bot/" class="md-nav__link">
         
   
   
@@ -2197,7 +2192,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../weather-dashboard/" class="md-nav__link">
+      <a href="../projects/chat/weather-dashboard/" class="md-nav__link">
         
   
   
@@ -2225,7 +2220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../youtube-to-blog-converter/" class="md-nav__link">
+      <a href="../projects/chat/youtube-to-blog-converter/" class="md-nav__link">
         
   
   
@@ -2267,20 +2262,17 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
         
           
-          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
             
   
   
@@ -2316,7 +2308,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../rag/build-your-own-qa-cli/" class="md-nav__link">
+      <a href="../projects/rag/build-your-own-qa-cli/" class="md-nav__link">
         
   
   
@@ -2344,7 +2336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../rag/first-rag-bot/" class="md-nav__link">
+      <a href="../projects/rag/first-rag-bot/" class="md-nav__link">
         
   
   
@@ -2372,7 +2364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../rag/hybrid-reasoning-bot/" class="md-nav__link">
+      <a href="../projects/rag/hybrid-reasoning-bot/" class="md-nav__link">
         
   
   
@@ -2400,7 +2392,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../rag/pdf-question-answering-chatbot/" class="md-nav__link">
+      <a href="../projects/rag/pdf-question-answering-chatbot/" class="md-nav__link">
         
   
   
@@ -2442,20 +2434,17 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
         
           
-          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
             
   
   
@@ -2491,7 +2480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent/agent-evaluation-framework/" class="md-nav__link">
+      <a href="../projects/agent/agent-evaluation-framework/" class="md-nav__link">
         
   
   
@@ -2519,7 +2508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent/build-your-own-tool/" class="md-nav__link">
+      <a href="../projects/agent/build-your-own-tool/" class="md-nav__link">
         
   
   
@@ -2547,7 +2536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent/custom-tool-creator/" class="md-nav__link">
+      <a href="../projects/agent/custom-tool-creator/" class="md-nav__link">
         
   
   
@@ -2575,7 +2564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent/date-calculator/" class="md-nav__link">
+      <a href="../projects/agent/date-calculator/" class="md-nav__link">
         
   
   
@@ -2603,7 +2592,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent/educational-assistant/" class="md-nav__link">
+      <a href="../projects/agent/educational-assistant/" class="md-nav__link">
         
   
   
@@ -2631,7 +2620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent/multi-tool-problem-solver/" class="md-nav__link">
+      <a href="../projects/agent/multi-tool-problem-solver/" class="md-nav__link">
         
   
   
@@ -2659,7 +2648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent/personal-math-tutor/" class="md-nav__link">
+      <a href="../projects/agent/personal-math-tutor/" class="md-nav__link">
         
   
   
@@ -2687,7 +2676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent/science-explorer/" class="md-nav__link">
+      <a href="../projects/agent/science-explorer/" class="md-nav__link">
         
   
   
@@ -2715,7 +2704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent/simple-calculator-agent/" class="md-nav__link">
+      <a href="../projects/agent/simple-calculator-agent/" class="md-nav__link">
         
   
   
@@ -2743,7 +2732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent/text-analyzer/" class="md-nav__link">
+      <a href="../projects/agent/text-analyzer/" class="md-nav__link">
         
   
   
@@ -2771,7 +2760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent/unit-conversion-assistant/" class="md-nav__link">
+      <a href="../projects/agent/unit-conversion-assistant/" class="md-nav__link">
         
   
   
@@ -2799,7 +2788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent/word-detective/" class="md-nav__link">
+      <a href="../projects/agent/word-detective/" class="md-nav__link">
         
   
   
@@ -2841,20 +2830,17 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
         
           
-          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
             
   
   
@@ -2890,7 +2876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workflow/build-a-pipeline/" class="md-nav__link">
+      <a href="../projects/workflow/build-a-pipeline/" class="md-nav__link">
         
   
   
@@ -2926,7 +2912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mini-project-template/" class="md-nav__link">
+      <a href="../mini-project-template/" class="md-nav__link">
         
   
   
@@ -3013,7 +2999,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../education-guide/" class="md-nav__link">
+      <a href="../education-guide/" class="md-nav__link">
         
   
   
@@ -3041,7 +3027,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../classroom-setup/" class="md-nav__link">
+      <a href="../classroom-setup/" class="md-nav__link">
         
   
   
@@ -3128,7 +3114,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cli-guide/" class="md-nav__link">
+      <a href="../cli-guide/" class="md-nav__link">
         
   
   
@@ -3156,7 +3142,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../bot-template/" class="md-nav__link">
+      <a href="../bot-template/" class="md-nav__link">
         
   
   
@@ -3184,7 +3170,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../migration/" class="md-nav__link">
+      <a href="../migration/" class="md-nav__link">
         
   
   
@@ -3212,7 +3198,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../project-tools/" class="md-nav__link">
+      <a href="../project-tools/" class="md-nav__link">
         
   
   
@@ -3240,7 +3226,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../llm-guide/" class="md-nav__link">
+      <a href="../llm-guide/" class="md-nav__link">
         
   
   
@@ -3327,7 +3313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../authors/" class="md-nav__link">
+      <a href="../authors/" class="md-nav__link">
         
   
   
@@ -3355,7 +3341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/" class="md-nav__link">
+      <a href="../contributing/" class="md-nav__link">
         
   
   
@@ -3410,10 +3396,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#local-notebooks-jupyter-jupyterlab-vs-code" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        Local notebooks (Jupyter, JupyterLab, VS Code)
       
     </span>
   </a>
@@ -3421,10 +3407,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#instructions" class="md-nav__link">
+  <a href="#google-colab-and-other-hosted-notebooks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Instructions
+        Google Colab and other hosted notebooks
       
     </span>
   </a>
@@ -3432,10 +3418,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#extension-ideas" class="md-nav__link">
+  <a href="#for-educators" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Extension Ideas
+        For educators
       
     </span>
   </a>
@@ -3462,186 +3448,53 @@
   
 
 
-<h1 id="code-explainer-tool">Code Explainer Tool<a class="headerlink" href="#code-explainer-tool" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty</strong>: Intermediate<br />
-<strong>Time</strong>: 45-60 minutes<br />
-<strong>Learning Focus</strong>: Code analysis, documentation<br />
-<strong>Module</strong>: chat</p>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>Create a tool that explains code snippets and helps users understand programming concepts.</p>
-<h2 id="instructions">Instructions<a class="headerlink" href="#instructions" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">hands_on_ai.chat</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_response</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<h1 id="using-notebooks-jupyter-colab">Using Notebooks (Jupyter &amp; Colab)<a class="headerlink" href="#using-notebooks-jupyter-colab" title="Permanent link">&para;</a></h1>
+<p>Hands-On AI is just Python, so it works anywhere Python does, notebooks included.
+There's only one thing to think about: <strong>where the model runs.</strong></p>
+<div class="highlight"><pre><span></span><code><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">hands</span><span class="o">-</span><span class="n">on</span><span class="o">-</span><span class="n">ai</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">code_explainer</span><span class="p">():</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Tool to explain code and help with programming concepts&quot;&quot;&quot;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== Code Explainer Tool ===&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1. Explain a code snippet&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2. Simplify complex code&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3. Debug problematic code&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;4. Learn a programming concept&quot;</span><span class="p">)</span>
-
-    <span class="n">choice</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">What would you like to do? &quot;</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
-        <span class="c1"># Explain code</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Paste your code snippet below (type &#39;DONE&#39; on a new line when finished):&quot;</span><span class="p">)</span>
-        <span class="n">code_lines</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-            <span class="n">line</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
-            <span class="k">if</span> <span class="n">line</span> <span class="o">==</span> <span class="s2">&quot;DONE&quot;</span><span class="p">:</span>
-                <span class="k">break</span>
-            <span class="n">code_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
-
-        <span class="n">code</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">code_lines</span><span class="p">)</span>
-
-        <span class="n">detail_level</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Explanation detail (brief/detailed/step-by-step): &quot;</span><span class="p">)</span>
-        <span class="n">audience</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Target audience (beginner/intermediate/advanced): &quot;</span><span class="p">)</span>
-
-        <span class="n">system_prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">        You are an expert programming tutor specializing in code explanation.</span>
-<span class="s2">        You break down code in a way that&#39;s understandable to </span><span class="si">{</span><span class="n">audience</span><span class="si">}</span><span class="s2"> programmers.</span>
-<span class="s2">        You provide </span><span class="si">{</span><span class="n">detail_level</span><span class="si">}</span><span class="s2"> explanations that help users truly understand the code.</span>
-<span class="s2">        &quot;&quot;&quot;</span>
-
-        <span class="n">explain_prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">        Explain this code:</span>
-<span class="s2">        ```</span>
-<span class="s2">        </span><span class="si">{</span><span class="n">code</span><span class="si">}</span>
-<span class="s2">        ```</span>
-
-<span class="s2">        Provide a </span><span class="si">{</span><span class="n">detail_level</span><span class="si">}</span><span class="s2"> explanation suitable for a </span><span class="si">{</span><span class="n">audience</span><span class="si">}</span><span class="s2"> programmer.</span>
-<span class="s2">        If possible, identify:</span>
-<span class="s2">        1. The programming language</span>
-<span class="s2">        2. What the code does</span>
-<span class="s2">        3. Key concepts it demonstrates</span>
-<span class="s2">        4. Any potential issues or improvements</span>
-<span class="s2">        &quot;&quot;&quot;</span>
-
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Analyzing code...&quot;</span><span class="p">)</span>
-        <span class="n">explanation</span> <span class="o">=</span> <span class="n">get_response</span><span class="p">(</span><span class="n">explain_prompt</span><span class="p">,</span> <span class="n">system</span><span class="o">=</span><span class="n">system_prompt</span><span class="p">)</span>
-
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== Code Explanation ===&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">explanation</span><span class="p">)</span>
-
-    <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span>
-        <span class="c1"># Simplify complex code</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Paste the complex code below (type &#39;DONE&#39; on a new line when finished):&quot;</span><span class="p">)</span>
-        <span class="n">code_lines</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-            <span class="n">line</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
-            <span class="k">if</span> <span class="n">line</span> <span class="o">==</span> <span class="s2">&quot;DONE&quot;</span><span class="p">:</span>
-                <span class="k">break</span>
-            <span class="n">code_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
-
-        <span class="n">code</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">code_lines</span><span class="p">)</span>
-
-        <span class="n">system_prompt</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">        You are an expert in code refactoring and simplification.</span>
-<span class="s2">        You take complex code and make it more readable while preserving functionality.</span>
-<span class="s2">        You explain your changes clearly so the user understands the improvements.</span>
-<span class="s2">        &quot;&quot;&quot;</span>
-
-        <span class="n">simplify_prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">        Simplify this code to make it more readable and maintainable:</span>
-<span class="s2">        ```</span>
-<span class="s2">        </span><span class="si">{</span><span class="n">code</span><span class="si">}</span>
-<span class="s2">        ```</span>
-
-<span class="s2">        Provide:</span>
-<span class="s2">        1. A simplified version of the code</span>
-<span class="s2">        2. An explanation of what changes you made and why</span>
-<span class="s2">        3. How the simplified version improves upon the original</span>
-<span class="s2">        &quot;&quot;&quot;</span>
-
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Simplifying code...&quot;</span><span class="p">)</span>
-        <span class="n">simplified</span> <span class="o">=</span> <span class="n">get_response</span><span class="p">(</span><span class="n">simplify_prompt</span><span class="p">,</span> <span class="n">system</span><span class="o">=</span><span class="n">system_prompt</span><span class="p">)</span>
-
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== Simplified Code ===&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">simplified</span><span class="p">)</span>
-
-    <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;3&quot;</span><span class="p">:</span>
-        <span class="c1"># Debug code</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Paste the problematic code below (type &#39;DONE&#39; on a new line when finished):&quot;</span><span class="p">)</span>
-        <span class="n">code_lines</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-            <span class="n">line</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
-            <span class="k">if</span> <span class="n">line</span> <span class="o">==</span> <span class="s2">&quot;DONE&quot;</span><span class="p">:</span>
-                <span class="k">break</span>
-            <span class="n">code_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
-
-        <span class="n">code</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">code_lines</span><span class="p">)</span>
-
-        <span class="n">error</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Describe any error messages you&#39;re seeing: &quot;</span><span class="p">)</span>
-        <span class="n">expected</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What did you expect the code to do? &quot;</span><span class="p">)</span>
-
-        <span class="n">system_prompt</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">        You are an expert debugging assistant who helps find and fix code issues.</span>
-<span class="s2">        You are an expert debugging assistant who helps find and fix code issues.</span>
-<span class="s2">        You carefully analyze code to identify bugs, logic errors, and other problems.</span>
-<span class="s2">        You explain issues clearly and provide working solutions.</span>
-<span class="s2">        &quot;&quot;&quot;</span>
-
-        <span class="n">debug_prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">        Debug this code:</span>
-<span class="s2">        ```</span>
-<span class="s2">        </span><span class="si">{</span><span class="n">code</span><span class="si">}</span>
-<span class="s2">        ```</span>
-
-<span class="s2">        Error information: </span><span class="si">{</span><span class="n">error</span><span class="si">}</span>
-<span class="s2">        Expected behavior: </span><span class="si">{</span><span class="n">expected</span><span class="si">}</span>
-
-<span class="s2">        Provide:</span>
-<span class="s2">        1. Identification of the likely issue(s)</span>
-<span class="s2">        2. An explanation of what&#39;s causing the problem</span>
-<span class="s2">        3. A corrected version of the code</span>
-<span class="s2">        4. Testing suggestions to verify the fix</span>
-<span class="s2">        &quot;&quot;&quot;</span>
-
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Debugging code...&quot;</span><span class="p">)</span>
-        <span class="n">debug_info</span> <span class="o">=</span> <span class="n">get_response</span><span class="p">(</span><span class="n">debug_prompt</span><span class="p">,</span> <span class="n">system</span><span class="o">=</span><span class="n">system_prompt</span><span class="p">)</span>
-
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== Debugging Results ===&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">debug_info</span><span class="p">)</span>
-
-    <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;4&quot;</span><span class="p">:</span>
-        <span class="c1"># Learn programming concept</span>
-        <span class="n">concept</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">What programming concept would you like to learn about? &quot;</span><span class="p">)</span>
-        <span class="n">language</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;For which programming language? &quot;</span><span class="p">)</span>
-
-        <span class="n">system_prompt</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">        You are a programming educator who excels at explaining technical concepts clearly.</span>
-<span class="s2">        You use examples and analogies to make abstract ideas concrete and understandable.</span>
-<span class="s2">        You provide practical code examples to illustrate concepts.</span>
-<span class="s2">        &quot;&quot;&quot;</span>
-
-        <span class="n">learn_prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">        Explain the programming concept of </span><span class="si">{</span><span class="n">concept</span><span class="si">}</span><span class="s2"> in </span><span class="si">{</span><span class="n">language</span><span class="si">}</span><span class="s2">.</span>
-
-<span class="s2">        Include:</span>
-<span class="s2">        1. A clear definition of the concept</span>
-<span class="s2">        2. Why it&#39;s important and when to use it</span>
-<span class="s2">        3. At least 2 practical code examples in </span><span class="si">{</span><span class="n">language</span><span class="si">}</span>
-<span class="s2">        4. Common pitfalls or misconceptions</span>
-<span class="s2">        5. Best practices when using this concept</span>
-<span class="s2">        &quot;&quot;&quot;</span>
-
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Researching </span><span class="si">{</span><span class="n">concept</span><span class="si">}</span><span class="s2"> in </span><span class="si">{</span><span class="n">language</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span>
-        <span class="n">concept_explanation</span> <span class="o">=</span> <span class="n">get_response</span><span class="p">(</span><span class="n">learn_prompt</span><span class="p">,</span> <span class="n">system</span><span class="o">=</span><span class="n">system_prompt</span><span class="p">)</span>
-
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== </span><span class="si">{</span><span class="n">concept</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2"> in </span><span class="si">{</span><span class="n">language</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2"> ===&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">concept_explanation</span><span class="p">)</span>
-
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid choice.&quot;</span><span class="p">)</span>
-
-<span class="c1"># Run the code explainer</span>
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">code_explainer</span><span class="p">()</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">hands_on_ai.chat</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_response</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">get_response</span><span class="p">(</span><span class="s2">&quot;Explain photosynthesis like I&#39;m 10.&quot;</span><span class="p">))</span>
 </code></pre></div>
-<h2 id="extension-ideas">Extension Ideas<a class="headerlink" href="#extension-ideas" title="Permanent link">&para;</a></h2>
-<p>Add functionality to generate test cases or convert code between languages.</p>
-<hr />
+<h2 id="local-notebooks-jupyter-jupyterlab-vs-code">Local notebooks (Jupyter, JupyterLab, VS Code)<a class="headerlink" href="#local-notebooks-jupyter-jupyterlab-vs-code" title="Permanent link">&para;</a></h2>
+<p>If the notebook runs on <strong>your own machine</strong>, local <a href="../ollama-guide/">Ollama</a>
+works out of the box: it listens on <code>http://localhost:11434</code> and Hands-On AI
+connects automatically, no configuration needed. You can also point at a remote
+provider if you prefer (see <a href="../providers/">Choose a Provider</a>).</p>
+<h2 id="google-colab-and-other-hosted-notebooks">Google Colab and other hosted notebooks<a class="headerlink" href="#google-colab-and-other-hosted-notebooks" title="Permanent link">&para;</a></h2>
+<p>The catch with Colab (or any hosted notebook) is that the code runs on a remote
+server, <strong>not your laptop</strong>, so it cannot reach an Ollama running on your own
+<code>localhost</code>. You need a provider the notebook can reach over the internet.</p>
+<p>The recommended classroom setup is an <strong>Ollama server with a bearer key</strong>, hosted
+by the educator, so a whole class can share it without anyone needing a paid API
+key. Put this in the first cell:</p>
+<div class="highlight"><pre><span></span><code><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">q</span> <span class="n">hands</span><span class="o">-</span><span class="n">on</span><span class="o">-</span><span class="n">ai</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span><span class="o">,</span><span class="w"> </span><span class="nn">getpass</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;HANDS_ON_AI_SERVER&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;https://ollama.your-school.edu&quot;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;HANDS_ON_AI_API_KEY&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">getpass</span><span class="o">.</span><span class="n">getpass</span><span class="p">(</span><span class="s2">&quot;Class API key: &quot;</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;HANDS_ON_AI_MODEL&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;llama3&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">hands_on_ai.chat</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_response</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">get_response</span><span class="p">(</span><span class="s2">&quot;Hello from Colab!&quot;</span><span class="p">))</span>
+</code></pre></div>
+<p>A few notes:</p>
+<ul>
+<li>Set the environment variables <strong>before your first <code>get_response</code> call</strong>. A
+  config cell at the top of the notebook is the simplest place.</li>
+<li>Use <code>getpass.getpass(...)</code> for the API key rather than <code>input(...)</code>, so the key
+  stays out of the saved notebook and its output.</li>
+<li>Any OpenAI-compatible provider works the same way (OpenAI, Groq, OpenRouter,
+  and so on). Just swap the server URL, key, and model. See
+  <a href="../providers/">Choose a Provider</a>.</li>
+<li>For the RAG module's PDF/Word support, install the extras:
+  <code>!pip install -q "hands-on-ai[rag]"</code>.</li>
+</ul>
+<h2 id="for-educators">For educators<a class="headerlink" href="#for-educators" title="Permanent link">&para;</a></h2>
+<p>Hosting one Ollama server with a bearer key is usually the smoothest classroom
+path: students only paste a URL and a key, and no one needs their own cloud
+account. The <a href="../providers/">Choose a Provider</a> and
+<a href="../classroom-setup/">Classroom Setup</a> guides cover the details.</p>
 
 
 
@@ -3713,12 +3566,12 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.instant", "navigation.tracking", "navigation.top", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.instant", "navigation.tracking", "navigation.top", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
-        <script src="../../../javascripts/custom.js"></script>
+        <script src="../javascripts/custom.js"></script>
       
     
   </body>

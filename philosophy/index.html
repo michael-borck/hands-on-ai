@@ -513,6 +513,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#its-all-the-same-shape" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        It's all the same shape
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#two-friendly-clarifications" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -648,6 +659,34 @@
     
   
     Choose a Provider
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notebooks & Colab
   
 
     
@@ -3385,6 +3424,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#its-all-the-same-shape" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        It's all the same shape
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#two-friendly-clarifications" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3458,6 +3508,12 @@ becomes visible instead of being buried under production machinery.</p>
   streaming at scale, evaluation harnesses, vector databases, async pipelines, or
   the dozen other things real production systems need. Those aren't the lesson.</li>
 </ul>
+<h2 id="its-all-the-same-shape">It's all the same shape<a class="headerlink" href="#its-all-the-same-shape" title="Permanent link">&para;</a></h2>
+<p>Look closely and every module is identical underneath: one call to the model
+(<code>get_response</code>), wrapped in plain Python. Chat adds a system prompt. RAG adds
+code to fetch context. An agent adds a loop that runs your functions. A workflow
+adds folders. The model is the only "AI" in the room; the rest is a thin harness
+you can open and read. That's the whole package, and the whole point.</p>
 <h2 id="two-friendly-clarifications">Two friendly clarifications<a class="headerlink" href="#two-friendly-clarifications" title="Permanent link">&para;</a></h2>
 <p><strong>"Can I build my real product on top of this?"</strong>
 Please don't, and that's a compliment to your ambition, not a knock on the
