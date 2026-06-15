@@ -1,508 +1,289 @@
-# HandsOnAI - LLM Reference Guide
+# Hands-On AI: LLM Reference Guide
 
-## Package Overview
+This file is a single-file reference you can paste into an AI assistant (Claude,
+ChatGPT, and so on). Once it is in the context window, the assistant can answer
+questions and write correct code for the `hands-on-ai` package.
 
-HandsOnAI is a provider-agnostic educational AI toolkit designed to teach students how modern AI systems work through hands-on experimentation. The package works with any OpenAI-compatible LLM provider and includes three core modules for progressive AI learning.
+## Overview
 
-**Package Name**: `hands-on-ai`
-**Current Version**: 0.2.0
-**Python Requirements**: 3.10+ (3.6+ minimum)
-**Installation**: `pip install hands-on-ai`
+Hands-On AI is a provider-agnostic, educational AI toolkit that teaches how
+modern AI systems work by building small, readable versions of them. It works
+with any OpenAI-compatible LLM provider.
 
-## Architecture
+- Package name: `hands-on-ai`
+- Version: 0.3.0
+- Python: 3.10+
+- Install: `pip install hands-on-ai` (one install includes everything; there are
+  no optional extras to add)
 
-HandsOnAI uses a provider-agnostic architecture that works with any OpenAI-compatible API endpoint:
-- Local providers: Ollama, LocalAI, vLLM
-- Cloud providers: OpenAI, OpenRouter, Together AI, Groq, Hugging Face
-- Custom providers: Any service implementing OpenAI `/v1/chat/completions` endpoint
+It has four modules, meant to be learned in order:
+
+1. `chat`: prompting, system prompts, personalities, and multi-turn conversation
+2. `rag`: retrieval-augmented generation over your own documents
+3. `agent`: tool use and step-by-step reasoning
+4. `workflow`: orchestrating multi-step tasks as folders of stages
+
+## The core idea
+
+Every module is the same shape underneath: one call to the model
+(`get_response`), wrapped in plain Python. Chat adds a system prompt. RAG adds
+code to fetch context. An agent adds a loop that runs your functions. A workflow
+adds folders. The model is the only "AI"; the rest is ordinary code. The package
+is deliberately small and educational, not a production framework.
 
 ## Configuration
 
-### Environment Variables
+Configure with environment variables (highest priority), a config file
+(`~/.hands-on-ai/config.json`), or built-in defaults.
+
 ```python
 import os
-
-# Required: Provider base URL (auto-appends /v1)
-os.environ['HANDS_ON_AI_SERVER'] = 'https://api.openai.com'  # or your provider
-os.environ['HANDS_ON_AI_API_KEY'] = 'your-api-key'          # if required
-os.environ['HANDS_ON_AI_MODEL'] = 'gpt-4'                   # default model
-os.environ['HANDS_ON_AI_LOG'] = 'debug'                     # optional: enable debug logging
+os.environ["HANDS_ON_AI_SERVER"] = "http://localhost:11434"   # provider base URL (/v1 is auto-appended)
+os.environ["HANDS_ON_AI_API_KEY"] = "your-api-key"            # omit for local Ollama
+os.environ["HANDS_ON_AI_MODEL"] = "llama3"                    # chat model
+os.environ["HANDS_ON_AI_EMBEDDING_MODEL"] = "nomic-embed-text" # used by RAG
+os.environ["HANDS_ON_AI_LOG"] = "debug"                       # optional logging
 ```
 
-### Default Configuration
-- Server: `http://localhost:11434` (local Ollama)
-- Model: `llama3`
-- Authentication: Bearer token (if API key provided)
+Defaults: server `http://localhost:11434` (local Ollama), model `llama3`,
+embedding model `nomic-embed-text`. In notebooks set these before the first call.
 
-## Module 1: Chat - Simple Conversational AI
+## Module 1: chat
 
-The chat module provides basic LLM interactions with system prompts and personality bots.
+### get_response
 
-### Core Functions
+```
+get_response(prompt, model=None, system="You are a helpful assistant.",
+             personality="friendly", stream=False, retries=2, return_usage=False)
+```
 
-#### `get_response(prompt, model=None, system="You are a helpful assistant.", personality="friendly", stream=False, retries=2)`
+Stateless single-turn call. Returns the response string. With
+`return_usage=True` it returns a `(response, usage)` tuple, where `usage` is a
+dict of token counts (or None if the provider does not report them).
 
-Basic chat function that sends a prompt to the configured LLM provider.
-
-**Parameters:**
-- `prompt` (str): The user's question or input
-- `model` (str, optional): Override the default model
-- `system` (str): System message defining bot behavior  
-- `personality` (str): Used for fallback messages during retries
-- `stream` (bool): Enable streaming responses (default: False)
-- `retries` (int): Number of retry attempts on error
-
-**Returns:** String response from the LLM
-
-**Example:**
 ```python
 from hands_on_ai.chat import get_response
 
-# Basic usage
-response = get_response("What is machine learning?")
-print(response)
+print(get_response("What is machine learning?"))
+print(get_response("Explain gravity.", system="You are a pirate. Answer in pirate slang."))
 
-# With custom system prompt
-response = get_response(
-    "Explain quantum physics",
-    system="You are a physics professor. Explain concepts simply for beginners."
-)
+text, usage = get_response("Hello", return_usage=True)
 ```
 
-### Built-in Personality Bots
+### Personality bots
 
-Pre-configured bots with specific personalities and use cases:
+A "bot" is just `get_response` with a fixed system prompt. Available bots:
 
 ```python
 from hands_on_ai.chat import (
-    friendly_bot, pirate_bot, coder_bot, coach_bot,
-    teacher_bot, scientist_bot, storyteller_bot
+    friendly_bot, sarcastic_bot, pirate_bot, shakespeare_bot, teacher_bot,
+    coach_bot, caveman_bot, hacker_bot, therapist_bot, grumpy_professor_bot,
+    alien_bot, emoji_bot, coder_bot,
 )
-
-# Usage examples
-response = friendly_bot("How do I learn Python?")
-response = pirate_bot("Tell me about the ocean")
-response = coder_bot("How do I write a for loop?")
-response = teacher_bot("Explain photosynthesis")
+print(pirate_bot("Tell me about the ocean."))
 ```
 
-**Available Bots:**
-- `friendly_bot`: Casual, helpful conversations
-- `pirate_bot`: Speaks like a pirate (creative/fun)
-- `coder_bot`: Focused on programming help
-- `coach_bot`: Motivational and encouraging
-- `teacher_bot`: Educational explanations
-- `scientist_bot`: Technical, evidence-based responses
-- `storyteller_bot`: Creative narrative responses
-- `caveman_bot`: Simple language (vocabulary practice)
-- `alien_bot`: Unique perspective (creative writing)
-
-### Creating Custom Bots
+Create your own by writing a function that calls `get_response` with a system
+prompt:
 
 ```python
-def custom_bot(prompt):
-    return get_response(
-        prompt,
-        system="You are a [define personality]. You always [define behavior]."
-    )
-
-# Example: Detective bot
 def detective_bot(prompt):
-    return get_response(
-        prompt,
-        system="You are a brilliant detective. Analyze questions logically and look for clues and evidence."
-    )
+    return get_response(prompt, system="You are a brilliant detective. Reason from clues and evidence.")
 ```
 
-### CLI Usage
+### Conversation (multi-turn memory)
+
+An LLM is stateless: each `get_response` call is independent. To remember earlier
+turns, resend the transcript. `Conversation` does that for you.
+
+```python
+from hands_on_ai.chat import Conversation
+
+chat = Conversation(system="You are a helpful tutor.")
+chat.ask("My name is Sam.")
+print(chat.ask("What is my name?"))   # remembers "Sam"
+print(chat.total_tokens)              # tokens used across the conversation
+chat.reset()                          # clear history, keep the system prompt
+```
+
+### Chat CLI
 
 ```bash
-# Direct question
-chat "What is artificial intelligence?"
-
-# Specific personality
-chat "Explain loops" --personality coder
-
-# Interactive mode
-chat interactive
-
-# List available bots
-chat bots
-
-# System check
-chat doctor
+chat ask "What is AI?"                # one question
+chat ask "Explain loops" --personality coder
+chat interactive                     # REPL
+chat bots                            # list personalities
+chat doctor                          # connection test
 ```
 
-## Module 2: RAG - Retrieval-Augmented Generation
+## Module 2: rag
 
-The RAG module enables question-answering over custom documents using vector embeddings and retrieval.
-
-### Core Workflow
-
-1. **Index documents** - Convert documents to vector embeddings
-2. **Query** - Ask questions about the indexed content
-3. **Retrieve** - Find relevant document chunks
-4. **Generate** - LLM generates answers using retrieved context
-
-### CLI Commands
-
-```bash
-# Index documents from directory or file
-rag index path/to/documents/
-
-# Ask questions about indexed content
-rag ask "What is the main topic?"
-
-# Show source context used
-rag ask "Explain the concept" --show-context
-
-# Show relevance scores
-rag ask "What are the benefits?" --show-scores
-
-# Interactive Q&A session
-rag interactive
-
-# Web interface
-rag web
-```
+RAG indexes your documents, retrieves the most relevant chunks for a question,
+and puts them in the prompt so the model answers from your sources. It needs an
+embedding model in addition to the chat model.
 
 ### Python API
 
-```python
-# Basic usage - index and query
-from hands_on_ai.rag import index_documents, query_documents
-
-# Index documents
-index_path = index_documents("path/to/docs/", output_file="my_index.npz")
-
-# Query the index
-response = query_documents("What is machine learning?", index_path=index_path)
-print(response)
-```
-
-### Supported File Types
-
-- **Text files**: .txt, .md
-- **Documents**: .pdf, .docx
-- **Web content**: HTML files
-- **Code**: .py, .js, .java, etc.
-
-### Configuration Options
+The helpers live in `hands_on_ai.rag.utils`:
 
 ```python
-# Custom embedding model
-os.environ['HANDS_ON_AI_EMBEDDING_MODEL'] = 'text-embedding-ada-002'
-
-# Custom chunk size for documents
-os.environ['HANDS_ON_AI_CHUNK_SIZE'] = '1000'
-```
-
-## Module 3: Agent - ReAct Reasoning with Tools
-
-The agent module implements ReAct (Reasoning, Acting, Observing) patterns for multi-step problem solving with tool use.
-
-### Core Concepts
-
-**ReAct Framework:**
-1. **Reasoning**: Agent thinks about the problem
-2. **Acting**: Agent decides to use a tool or provide an answer
-3. **Observing**: Agent sees the tool results
-4. **Repeat**: Until the problem is solved
-
-### Tool Registration and Usage
-
-```python
-from hands_on_ai.agent import run_agent, register_tool
-
-# Define a tool function
-def calculator(expression):
-    """Evaluate mathematical expressions safely."""
-    try:
-        # Safe evaluation with restricted builtins
-        result = eval(expression, {"__builtins__": {}}, {
-            "abs": abs, "min": min, "max": max, "round": round,
-            "pow": pow, "int": int, "float": float
-        })
-        return f"Result: {result}"
-    except Exception as e:
-        return f"Error: {str(e)}"
-
-# Register the tool
-register_tool(
-    name="calculator",
-    description="Evaluate mathematical expressions like '2+2' or 'sqrt(16)'",
-    function=calculator
+from hands_on_ai.rag.utils import (
+    load_text_file, chunk_text, get_embeddings,
+    save_index_with_sources, get_top_k,
 )
 
-# Use the agent
-response = run_agent(
-    "What is 15 * 23 + 47?",
-    model="llama3"
-)
-print(response)
+# Build an index
+chunks, sources = [], []
+for path in ["notes.txt"]:
+    text = load_text_file(path)            # supports .txt, .md, .pdf, .docx
+    for chunk in chunk_text(text):
+        chunks.append(chunk)
+        sources.append(path)
+vectors = get_embeddings(chunks)
+save_index_with_sources(vectors, chunks, sources, "index.npz")
+
+# Retrieve and answer
+results, scores = get_top_k("What is the topic?", "index.npz", k=3, return_scores=True)
+# results is a list of (chunk, source) tuples
+context = "\n\n".join(chunk for chunk, _ in results)
+from hands_on_ai.chat import get_response
+print(get_response(f"Answer from this context only:\n{context}\n\nQuestion: What is the topic?"))
 ```
 
-### Advanced Tool Examples
+Key signature: `get_top_k(query, index_path, k=3, return_scores=False)`. It
+embeds the query, loads the index, runs the similarity search, and returns
+`(chunk, source)` tuples (plus a list of scores when `return_scores=True`).
 
-```python
-# Web search tool
-def web_search(query):
-    """Search the web for information."""
-    # Implement web search logic
-    return f"Search results for: {query}"
+Note: there are no `index_documents` or `query_documents` functions. Use the
+`hands_on_ai.rag.utils` helpers above, or the CLI.
 
-# File operations tool  
-def read_file(filepath):
-    """Read contents of a file."""
-    try:
-        with open(filepath, 'r') as f:
-            return f.read()
-    except Exception as e:
-        return f"Error reading file: {e}"
-
-# Register multiple tools
-register_tool("web_search", "Search the web for information", web_search)
-register_tool("read_file", "Read contents of a text file", read_file)
-
-# Agent can now use multiple tools
-response = run_agent(
-    "Search for information about Python, then read the file 'notes.txt'",
-    model="gpt-4"
-)
-```
-
-### Agent Formats
-
-HandsOnAI automatically selects the best format based on model capabilities:
-
-- **JSON Format**: Structured outputs with Pydantic validation (default for most models)
-- **ReAct Format**: Text-based reasoning for larger, more capable models
-
-### CLI Usage
+### RAG CLI
 
 ```bash
-# Single question
-agent "Calculate the area of a circle with radius 5"
-
-# Interactive mode
-agent interactive
-
-# Web interface
-agent web
-
-# Specify model
-agent "Solve this math problem" --model gpt-4
+rag index path/to/docs/              # writes ~/.hands-on-ai/index.npz by default
+rag ask "What does TCP do?" --context   # -c shows retrieved context
+rag ask "Compare TCP and UDP" --scores  # -s shows similarity scores
+rag ask "..." --k 5                   # number of chunks to retrieve
+rag interactive
 ```
 
-### Instructor Integration
+## Module 3: agent
 
-The agent module uses the Instructor library for robust structured outputs:
+An agent is a loop: the model decides which tool to call, your Python runs it,
+and the result goes back to the model. Tools are just functions.
 
-```python
-# Automatic validation with Pydantic models
-from hands_on_ai.agent.schemas import ToolCall, FinalAnswer
+### The tool contract
 
-# The agent automatically validates responses using these schemas
-# - Ensures proper JSON structure
-# - Validates required fields
-# - Provides clear error messages for malformed responses
-```
-
-## Provider Compatibility
-
-HandsOnAI works with any OpenAI-compatible provider:
-
-### Local Providers
-- **Ollama**: `http://localhost:11434` (default, no API key needed)
-- **LocalAI**: `http://localhost:8080`
-- **vLLM**: Custom server URL
-
-### Cloud Providers  
-- **OpenAI**: `https://api.openai.com` (API key required)
-- **OpenRouter**: `https://openrouter.ai/api` (API key required)
-- **Together AI**: `https://api.together.xyz` (API key required)
-- **Groq**: `https://api.groq.com` (API key required)
-- **Hugging Face**: `https://api-inference.huggingface.co` (API key required)
-
-### Provider-Specific Model Names
+A tool is a function that takes a single string and returns a string. Register it
+with `register_tool(name, description, function)`. The model reads the
+description to decide when and how to use the tool.
 
 ```python
-# OpenAI
-os.environ['HANDS_ON_AI_MODEL'] = 'gpt-4'
-
-# OpenRouter (includes provider prefix)
-os.environ['HANDS_ON_AI_MODEL'] = 'openai/gpt-4'
-os.environ['HANDS_ON_AI_MODEL'] = 'anthropic/claude-3-sonnet'
-
-# Ollama (local models)
-os.environ['HANDS_ON_AI_MODEL'] = 'llama3:latest'
-```
-
-## Educational Applications
-
-### Beginner Projects (30-45 minutes)
-```python
-# Simple chatbot personality
-def study_buddy(prompt):
-    return get_response(
-        prompt,
-        system="You are a helpful study buddy. Encourage learning and break down complex topics."
-    )
-
-# Test the bot
-print(study_buddy("I'm struggling with algebra"))
-```
-
-### Intermediate Projects (1-2 hours)
-```python
-# Document Q&A system
-from hands_on_ai.rag import index_documents, query_documents
-
-# Index course materials
-index_path = index_documents("course_materials/")
-
-# Interactive Q&A
-while True:
-    question = input("Ask about the course materials: ")
-    if question.lower() == 'quit':
-        break
-    answer = query_documents(question, index_path=index_path)
-    print(f"Answer: {answer}")
-```
-
-### Advanced Projects (3+ hours)
-```python
-# Multi-tool research assistant
 from hands_on_ai.agent import run_agent, register_tool
 
-def research_tool(topic):
-    """Research a topic and return key information."""
-    # Implement research logic
-    return f"Research findings on {topic}"
+def shout(text):
+    """Return the text in uppercase."""
+    return text.upper()
 
-def summarize_tool(text):
-    """Summarize long text into key points."""
-    return get_response(f"Summarize this text: {text}", 
-                       system="Provide a concise summary with key points.")
-
-register_tool("research", "Research any topic", research_tool)
-register_tool("summarize", "Summarize long text", summarize_tool)
-
-# Research assistant that can use multiple tools
-response = run_agent(
-    "Research machine learning and provide a summary of the key concepts",
-    model="gpt-4"
-)
+register_tool("shout", "Convert text to uppercase. Input: the text.", shout)
+print(run_agent("Use the shout tool on 'hello world'"))
 ```
 
-## Best Practices
+`run_agent(prompt, model=None, format="auto", max_iterations=5, verbose=False)`.
+With `format="auto"` the library routes small local models to a JSON tool-calling
+format (more reliable for them) and capable models to ReAct.
 
-### Error Handling
+### Built-in tools
+
 ```python
-from hands_on_ai.chat import get_response
-
-try:
-    response = get_response("Your question here")
-    print(response)
-except Exception as e:
-    print(f"Error: {e}")
-    # Handle provider connectivity issues
+from hands_on_ai.agent import run_agent, register_calculator_tool
+register_calculator_tool()
+print(run_agent("What is 23 * 19? Use the calculator tool."))
 ```
 
-### Model Selection
+Safety note: do NOT build a calculator with `eval`. Emptying `__builtins__` is
+not a sandbox and is escapable to remote code execution. The built-in calculator
+parses expressions with `ast` and walks only the allowed nodes. Write tools that
+parse input safely and return a string; handle errors by returning an error
+string rather than raising.
+
+### Agent CLI
+
+```bash
+agent ask "Calculate the area of a circle with radius 5"
+agent interactive
+```
+
+## Module 4: workflow
+
+Orchestrate multi-step tasks as a folder of numbered stages ("folders over
+frameworks"). One model walks the stages in order, writing a readable file at
+each step. It is sequential and human-in-the-loop by design.
+
+```
+workspace/
+├── CONTEXT.md            # optional shared system prompt
+├── references/           # stable rules (the "factory")
+└── stages/
+    ├── 01_research/
+    │   ├── CONTEXT.md    # instructions for this stage
+    │   └── output/       # output.md is written here
+    └── 02_draft/
+        ├── CONTEXT.md
+        └── output/
+```
+
 ```python
-# Use appropriate models for different tasks
-def choose_model_for_task(task_type):
-    if task_type == "creative":
-        return "gpt-4"  # Better for creative tasks
-    elif task_type == "factual":
-        return "llama3"  # Good for factual responses
-    elif task_type == "code":
-        return "codellama"  # Specialized for coding
+from hands_on_ai.workflow import Pipeline, init_workspace
+
+init_workspace("essay", ["research", "draft"], system="You are a writing assistant.")
+# edit stages/01_research/CONTEXT.md and stages/02_draft/CONTEXT.md
+
+pipe = Pipeline("essay")
+pipe.status()        # [ ] 01_research   [ ] 02_draft
+pipe.run_next()      # runs stage 01, writes output.md, then stops for review
+pipe.run_next()      # runs stage 02 using stage 01's (reviewed) output
 ```
 
-### Configuration Management
-```python
-# Centralized configuration for classroom use
-import os
+`run_next()` runs one stage and stops so you can read or edit the output file
+before continuing. `run_all()` runs the rest without stopping. Each stage's
+prompt is built from its `CONTEXT.md`, any `references/` files, and the previous
+stage's output.
 
-class HandsOnAIConfig:
-    @staticmethod
-    def setup_for_classroom(server_url, api_key=None):
-        os.environ['HANDS_ON_AI_SERVER'] = server_url
-        if api_key:
-            os.environ['HANDS_ON_AI_API_KEY'] = api_key
-        print(f"✅ Configured for {server_url}")
+## Providers
 
-# Setup for class
-HandsOnAIConfig.setup_for_classroom("https://your-school-server.edu", "class-api-key")
-```
+Any OpenAI-compatible provider works by setting `HANDS_ON_AI_SERVER`,
+`HANDS_ON_AI_API_KEY`, and `HANDS_ON_AI_MODEL`.
+
+- Local: Ollama (`http://localhost:11434`, no key), LocalAI, vLLM
+- Cloud: OpenAI (`https://api.openai.com`), OpenRouter (`https://openrouter.ai/api`),
+  Together AI (`https://api.together.xyz`), Groq (`https://api.groq.com/openai`),
+  Google Gemini (`https://generativelanguage.googleapis.com/v1beta/openai`),
+  Hugging Face
+- For an authenticated Ollama server, set both the server URL and the API key.
+
+## Educational philosophy
+
+Hands-On AI is small on purpose. It captures the essence of each idea in code you
+can read in an afternoon, and leaves out production concerns (retries, dashboards,
+streaming at scale, vector databases, evaluation harnesses). It is an on-ramp:
+once the ideas click, move to production tools (LlamaIndex and a vector database
+for RAG; Instructor or Pydantic AI for structured output; LangChain, LangGraph,
+or a provider's agent SDK for orchestration). The point is understanding, not
+shipping.
 
 ## Troubleshooting
 
-### Common Issues
-
-**Connection Errors**:
-- Check server URL is correct
-- Verify API key if using cloud provider
-- Ensure provider is running (for local setups)
-
-**Model Not Found**:
-- Verify model name matches provider format
-- For Ollama: run `ollama pull model-name` first
-- Check available models: `handsonai doctor`
-
-**Import Errors**:
-- Ensure package is installed: `pip install hands-on-ai`
-- Check Python version: 3.10+ recommended
-- Verify virtual environment is activated
-
-### Debugging
-
-```python
-import os
-os.environ['HANDS_ON_AI_LOG'] = 'debug'
-
-# Now all requests will show debug information
-from hands_on_ai.chat import get_response
-response = get_response("test")  # Shows detailed logging
-```
-
-## CLI Reference
-
-### Global Commands
 ```bash
-# System diagnostics
-handsonai doctor
-
-# Configuration check
-handsonai config
-
-# Version info
-handsonai version
-
-# List modules
-handsonai list
+handsonai doctor      # checks connection, shows resolved config, lists models
 ```
 
-### Module-Specific Commands
-```bash
-# Chat module
-chat "question"              # Direct question
-chat interactive             # Interactive mode
-chat bots                   # List personality bots
-chat doctor                 # Connection test
+- Connection errors: check the server URL and (for cloud) the API key.
+- Model not found: for Ollama, run `ollama pull <model>` first.
+- RAG needs an embedding model: `ollama pull nomic-embed-text` for local Ollama.
 
-# RAG module  
-rag index path/             # Index documents
-rag ask "question"          # Query documents
-rag interactive             # Interactive Q&A
-rag web                     # Web interface
+## Learn more
 
-# Agent module
-agent "question"            # Single question
-agent interactive           # Interactive mode
-agent web                   # Web interface
-```
-
-This guide provides everything needed to understand and use HandsOnAI effectively. The package is designed for educational use, with clear APIs and comprehensive error handling to support student learning.
+- Documentation: https://michael-borck.github.io/hands-on-ai/
+- Source: https://github.com/michael-borck/hands-on-ai
+- DeepWiki (AI chat interface to the repo): https://deepwiki.com/michael-borck/hands-on-ai

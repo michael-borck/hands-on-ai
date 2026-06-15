@@ -98,6 +98,7 @@ nav:
     - "Education Guide": education-guide.md
     - "Classroom Setup": classroom-setup.md
   - Reference:
+    - "Use with an LLM": use-with-llm.md
     - "CLI Reference": cli-guide.md
     - "Bot Template": bot-template.md
     - "Migration Guide": migration.md
