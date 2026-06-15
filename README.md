@@ -71,7 +71,7 @@ Each tool teaches a different level of modern AI interaction:
 pip install hands-on-ai
 
 # Or directly from GitHub
-pip install git+https://github.com/teaching-repositories/hands-on-ai.git
+pip install git+https://github.com/michael-borck/hands-on-ai.git
 ```
 
 ### Prerequisites
@@ -255,12 +255,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 This package is designed to work seamlessly with Large Language Models for coding assistance and learning:
 
 ### For Students & Educators
-- **[LLM.txt](https://github.com/teaching-repositories/hands-on-ai/blob/main/LLM.txt)** - Complete reference guide for LLMs
+- **[LLM.txt](https://github.com/michael-borck/hands-on-ai/blob/main/LLM.txt)** - Complete reference guide for LLMs
 - **[Documentation](https://michael-borck.github.io/hands-on-ai/)** - Full documentation site
 - **[DeepWiki](https://deepwiki.com/michael-borck/hands-on-ai)** - Interactive code exploration and wiki
 
 ### How to Use with LLMs
-1. **Download** the [LLM.txt file](https://github.com/teaching-repositories/hands-on-ai/blob/main/LLM.txt)
+1. **Download** the [LLM.txt file](https://github.com/michael-borck/hands-on-ai/blob/main/LLM.txt)
 2. **Upload** it to your LLM (Claude, ChatGPT, etc.)
 3. **Ask** for help with HandsOnAI projects - get complete, working code examples
 

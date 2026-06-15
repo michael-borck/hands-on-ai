@@ -1,6 +1,6 @@
 # Classroom Setup for HandsOnAI
 
-This guide walks educators and students through the technical setup needed to use [HandsOnAI](https://github.com/teaching-repositories/hands-on-ai) in a classroom environment. It assumes basic familiarity with Python and supports any OpenAI-compatible LLM provider.
+This guide walks educators and students through the technical setup needed to use [HandsOnAI](https://github.com/michael-borck/hands-on-ai) in a classroom environment. It assumes basic familiarity with Python and supports any OpenAI-compatible LLM provider.
 
 ---
 
@@ -26,7 +26,7 @@ pip install hands-on-ai
 
 #### 1. Clone the HandsOnAI Repository
 ```bash
-git clone https://github.com/teaching-repositories/hands-on-ai.git
+git clone https://github.com/michael-borck/hands-on-ai.git
 cd hands-on-ai
 ```
 

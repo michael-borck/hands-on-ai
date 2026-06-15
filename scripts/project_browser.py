@@ -91,7 +91,7 @@ def generate_html(projects):
 </head>
 <body class='bg-gray-50 p-6'>
     <h1 class='text-2xl font-bold mb-4'>HandsOnAI Project Browser</h1>
-    <p class='mb-4'>Generated: {date_str} v{local_version} <span id="latest-version">📁 Offline version. Visit <a href="https://github.com/teaching-repositories/hands-on-ai" target="_blank">HandsOnAI GitHub</a> to check for updates.</span></p>
+    <p class='mb-4'>Generated: {date_str} v{local_version} <span id="latest-version">📁 Offline version. Visit <a href="https://github.com/michael-borck/hands-on-ai" target="_blank">HandsOnAI GitHub</a> to check for updates.</span></p>
 
     <div class='mb-4 flex flex-col md:flex-row gap-4'>
         <input type='text' id='search' placeholder='Search project title' class='border p-2 rounded w-full md:w-1/3'>

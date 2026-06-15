@@ -6,7 +6,7 @@ This project was made possible thanks to the following contributors:
 
 - **Michael Borck**  
   Lead developer and educational designer.  
-  GitHub: [michael-borck](https://github.com/teaching-repositories)  
+  GitHub: [michael-borck](https://github.com/michael-borck)  
   Email: michael@borck.me
 
 ## AI Co-Authors

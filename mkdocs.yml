@@ -1,7 +1,7 @@
 site_name: HandsOnAI Documentation
-site_url: https://teaching-repositories.github.io/hands-on-ai/
-repo_url: https://github.com/teaching-repositories/hands-on-ai
-repo_name: teaching-repositories/hands-on-ai
+site_url: https://michael-borck.github.io/hands-on-ai/
+repo_url: https://github.com/michael-borck/hands-on-ai
+repo_name: michael-borck/hands-on-ai
 edit_uri: edit/main/docs/
 theme:
   name: material
@@ -132,7 +132,7 @@ markdown_extensions:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/teaching-repositories/hands-on-ai
+      link: https://github.com/michael-borck/hands-on-ai
 
 extra_css:
   - stylesheets/custom.css

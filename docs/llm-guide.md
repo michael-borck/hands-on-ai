@@ -28,7 +28,7 @@ The package aims to make AI learning accessible for students and educators throu
 pip install hands-on-ai
 
 # Or directly from GitHub
-pip install git+https://github.com/teaching-repositories/hands-on-ai.git
+pip install git+https://github.com/michael-borck/hands-on-ai.git
 ```
 
 ### Prerequisites

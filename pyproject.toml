@@ -65,11 +65,11 @@ where = ["src"]
 include = ["LLM.txt"]
 
 [project.urls]
-Homepage = "https://github.com/teaching-repositories/hands-on-ai"
+Homepage = "https://github.com/michael-borck/hands-on-ai"
 Documentation = "https://michael-borck.github.io/hands-on-ai/"
-Source = "https://github.com/teaching-repositories/hands-on-ai"
-Issues = "https://github.com/teaching-repositories/hands-on-ai/issues"
-"LLM Guide" = "https://github.com/teaching-repositories/hands-on-ai/blob/main/LLM.txt"
+Source = "https://github.com/michael-borck/hands-on-ai"
+Issues = "https://github.com/michael-borck/hands-on-ai/issues"
+"LLM Guide" = "https://github.com/michael-borck/hands-on-ai/blob/main/LLM.txt"
 
 [tool.pytest.ini_options]
 pythonpath = ["."]

@@ -17,7 +17,7 @@ pip install hands-on-ai
 Or install the latest from GitHub:
 
 ```bash
-pip install git+https://github.com/teaching-repositories/hands-on-ai.git
+pip install git+https://github.com/michael-borck/hands-on-ai.git
 ```
 
 That single command installs everything: all four modules, plus PDF and Word
