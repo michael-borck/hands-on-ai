@@ -20,6 +20,7 @@ theme:
     accent: light blue
 nav:
   - Home: index.md
+  - "Our Approach": philosophy.md
   - Getting Started:
     - "Install & First Run": installation.md
     - "Choose a Provider": providers.md
@@ -31,12 +32,12 @@ nav:
       - "CLI Guide": chat-guide.md
       - "Personality Gallery": bot-gallery.md
     - RAG:
-      - "Overview": rag-guide.md
       - "How RAG Works": rag-llm-explain.md
+      - "CLI Guide": rag-guide.md
       - "RAG Flow": rag-flow.md
     - Agent:
-      - "Overview": agent-guide.md
       - "Understanding Agents": agent-concepts.md
+      - "Guide": agent-guide.md
       - "Agent Modules": agent-agents.md
       - "Tool Reference": agent-tools.md
       - "Build Your Own Tool": projects/agent/build-your-own-tool.md

@@ -115,6 +115,9 @@ Workflows are **sequential and human-in-the-loop by design**. Need parallelism?
 Run separate workflows yourself and decide how to combine them — a deliberate
 human choice, not a hidden autonomous loop.
 
+For more on where this little runner fits next to production frameworks (and when
+to reach for one), see [What this is (and isn't)](philosophy.md).
+
 > The honest summary: models are ephemeral, but **context and structure are
 > durable**. Organising the information well often matters more than the
 > orchestration code you didn't have to write.

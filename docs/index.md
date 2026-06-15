@@ -5,7 +5,11 @@ You build the things you hear about — a chatbot, a retrieval system, a
 tool-using agent — in small, readable Python, and run them on free local models.
 
 It's designed for the classroom: no API keys required, works offline, and one
-install (`pip install hands-on-ai`) gives you three progressively deeper modules.
+install (`pip install hands-on-ai`) gives you four progressively deeper modules.
+
+> 🔬 **Small on purpose.** This is a learning lab, not a production framework — it
+> captures the *essence* of each idea in code you can read in an afternoon, then
+> points you to bigger tools when you're ready to ship. [What this is (and isn't) →](philosophy.md)
 
 ## Start in 3 steps
 
