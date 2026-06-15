@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://teaching-repositories.github.io/hands-on-ai/workflow-guide/">
+        <link rel="canonical" href="https://teaching-repositories.github.io/hands-on-ai/chat-concepts/">
       
       
-        <link rel="prev" href="../projects/agent/build-your-own-tool/">
+        <link rel="prev" href="../configuration/">
       
       
-        <link rel="next" href="../projects/workflow/build-a-pipeline/">
+        <link rel="next" href="../chat-guide/">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>Understanding Workflows - HandsOnAI Documentation</title>
+        <title>Understanding Chat & Bots - HandsOnAI Documentation</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#understanding-workflows-folders-over-frameworks" class="md-skip">
+        <a href="#understanding-chat-bots" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Understanding Workflows
+              Understanding Chat & Bots
             
           </span>
         </div>
@@ -245,7 +245,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../chat-concepts/" class="md-tabs__link">
+        <a href="./" class="md-tabs__link">
           
   
   
@@ -650,6 +650,8 @@
                 
   
   
+    
+  
   
   
     
@@ -665,11 +667,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
         
           
           <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="">
@@ -690,7 +692,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -705,10 +707,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../chat-concepts/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Understanding Chat & Bots
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -724,6 +753,92 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-a-chat-model-actually-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What a chat model actually does
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-two-messages-system-and-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The two messages: system and user
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#so-what-is-a-bot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        So what is a "bot"?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompting-getting-better-answers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompting: getting better answers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-one-surprise-the-model-has-no-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The one surprise: the model has no memory
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-to-go-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where to go next
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1147,8 +1262,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1164,11 +1277,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
         
           
           <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
@@ -1189,7 +1302,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1204,37 +1317,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Understanding Workflows
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../workflow-guide/" class="md-nav__link">
         
   
   
@@ -1250,81 +1336,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#the-problem-with-one-giant-prompt" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The problem with one giant prompt
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-idea-folders-are-the-architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The idea: folders are the architecture
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#two-ideas-worth-internalising" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Two ideas worth internalising
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#doing-it-in-hands-on-ai" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Doing it in Hands-On AI
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-to-use-what" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When to use what
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3360,10 +3371,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-problem-with-one-giant-prompt" class="md-nav__link">
+  <a href="#what-a-chat-model-actually-does" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The problem with one giant prompt
+        What a chat model actually does
       
     </span>
   </a>
@@ -3371,10 +3382,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-idea-folders-are-the-architecture" class="md-nav__link">
+  <a href="#the-two-messages-system-and-user" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The idea: folders are the architecture
+        The two messages: system and user
       
     </span>
   </a>
@@ -3382,10 +3393,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#two-ideas-worth-internalising" class="md-nav__link">
+  <a href="#so-what-is-a-bot" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Two ideas worth internalising
+        So what is a "bot"?
       
     </span>
   </a>
@@ -3393,10 +3404,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#doing-it-in-hands-on-ai" class="md-nav__link">
+  <a href="#prompting-getting-better-answers" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Doing it in Hands-On AI
+        Prompting: getting better answers
       
     </span>
   </a>
@@ -3404,10 +3415,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#when-to-use-what" class="md-nav__link">
+  <a href="#the-one-surprise-the-model-has-no-memory" class="md-nav__link">
     <span class="md-ellipsis">
       
-        When to use what
+        The one surprise: the model has no memory
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-to-go-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where to go next
       
     </span>
   </a>
@@ -3434,124 +3456,83 @@
   
 
 
-<h1 id="understanding-workflows-folders-over-frameworks">Understanding Workflows (Folders over Frameworks)<a class="headerlink" href="#understanding-workflows-folders-over-frameworks" title="Permanent link">&para;</a></h1>
-<p>So far you've built single steps: a <a href="../chat-guide/">chat</a> reply, a <a href="../rag-guide/">RAG</a>
-answer, an <a href="../agent-guide/">agent</a> that calls a tool. Real work is usually
-<em>several</em> steps — research, then outline, then draft, then check. This guide is
-about orchestrating those steps <strong>without</strong> a heavy framework.</p>
-<h2 id="the-problem-with-one-giant-prompt">The problem with one giant prompt<a class="headerlink" href="#the-problem-with-one-giant-prompt" title="Permanent link">&para;</a></h2>
-<p>The obvious way to do a multi-step task is to stuff everything into a single
-enormous prompt: "research X, then outline it, then write 800 words, then…".
-Two things go wrong:</p>
-<ul>
-<li><strong>The model loses focus.</strong> Buried instructions get ignored (the "lost in the
-  middle" effect). More context is not always better context.</li>
-<li><strong>You can't see or steer the middle.</strong> If the final draft is wrong, you can't
-  tell <em>which</em> step went wrong, and you can't fix the outline before it becomes
-  a bad draft.</li>
-</ul>
-<h2 id="the-idea-folders-are-the-architecture">The idea: folders <em>are</em> the architecture<a class="headerlink" href="#the-idea-folders-are-the-architecture" title="Permanent link">&para;</a></h2>
-<p>The <strong>Interpretable Context Methodology (ICM)</strong> — "folders over frameworks" —
-takes the Unix philosophy ("make each stage do one thing well") and applies it
-to AI. Instead of orchestration code, a workflow is just a <strong>folder of numbered
-stages</strong>:</p>
-<div class="highlight"><pre><span></span><code>workspace/
-├── CONTEXT.md            # the overall goal / system prompt (optional)
-├── references/           # stable rules — the &quot;factory&quot;
-└── stages/
-    ├── 01_research/
-    │   ├── CONTEXT.md    # instructions for THIS stage
-    │   └── output/       # output.md is written here
-    └── 02_draft/
-        ├── CONTEXT.md
-        └── output/
-</code></pre></div>
-<p>One orchestrating model walks the stages in order. For each stage it reads that
-stage's <code>CONTEXT.md</code> plus the <strong>previous stage's output</strong>, does the work, and
-writes a new file. That's the whole mechanism.</p>
-<p>Why this is nice for <em>learning</em> (and for real work):</p>
-<ul>
-<li><strong>It's a glass box.</strong> Every intermediate result is a readable file you can open.</li>
-<li><strong>Anyone can change it.</strong> Reorder steps by renaming folders; change a prompt by
-  editing a markdown file. No code, no redeploy.</li>
-<li><strong>It's portable and durable.</strong> The "logic" is just text and folders — it
-  survives model upgrades and copies with <code>cp -r</code>.</li>
-</ul>
-<blockquote>
-<p>💡 This is how the tools you already use work. Claude Code reads a <code>CLAUDE.md</code>,
-loads "skills" from folders, and delegates to sub-agents — the <strong>filesystem is
-the coordination layer</strong>. Learn this and you understand modern agentic tooling.</p>
-</blockquote>
-<h2 id="two-ideas-worth-internalising">Two ideas worth internalising<a class="headerlink" href="#two-ideas-worth-internalising" title="Permanent link">&para;</a></h2>
-<p><strong>1. Factory vs. Product.</strong> Keep <em>rules</em> separate from <em>data</em>.</p>
-<ul>
-<li><code>references/</code> (the <strong>factory</strong>) holds stable constraints — a voice guide, a
-  rubric, domain facts. These are <em>rules to follow</em>, the same on every run.</li>
-<li>A stage's input (the <strong>product</strong>) is the specific material to transform — the
-  previous step's output.</li>
-</ul>
-<p>Separating them tells the model what to <em>obey</em> versus what to <em>work on</em>, and
-keeps each step's context small and focused.</p>
-<p><strong>2. Review gates: fix the source, not the output.</strong> Because every step writes a
-file, you can stop, read it, and edit it before the next step runs — your edit
-becomes the new ground truth. If a step is <em>consistently</em> wrong, don't keep
-hand-fixing its output ("patching the binary"). Edit the stage's <code>CONTEXT.md</code> or
-a reference file ("fixing the source") so it's right on every future run.</p>
-<p>In practice, human attention follows a <strong>U-shape</strong>: heavy at the start (setting
-direction), light in the middle (the model follows the rules), and heavy again
-at the end (final alignment).</p>
-<h2 id="doing-it-in-hands-on-ai">Doing it in Hands-On AI<a class="headerlink" href="#doing-it-in-hands-on-ai" title="Permanent link">&para;</a></h2>
-<p>Hands-On AI ships a tiny runner — the <code>Pipeline</code> — that does exactly this. It is
-deliberately <strong>sequential and human-in-the-loop</strong>: <code>run_next()</code> runs <em>one</em> stage
-and stops, so you review the file before continuing.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">hands_on_ai.workflow</span><span class="w"> </span><span class="kn">import</span> <span class="n">Pipeline</span><span class="p">,</span> <span class="n">init_workspace</span>
+<h1 id="understanding-chat-bots">Understanding Chat &amp; Bots<a class="headerlink" href="#understanding-chat-bots" title="Permanent link">&para;</a></h1>
+<p>This is the starting point for the whole toolkit: talking to a large language
+model (LLM) and shaping <em>how</em> it talks back. Once you understand this, RAG,
+agents, and workflows are all variations on the same idea.</p>
+<h2 id="what-a-chat-model-actually-does">What a chat model actually does<a class="headerlink" href="#what-a-chat-model-actually-does" title="Permanent link">&para;</a></h2>
+<p>An LLM is, at heart, a very good <em>next-text predictor</em>. You give it some text (a
+<strong>prompt</strong>), and it continues it with the most plausible response. There's no
+database lookup and no "understanding" in the human sense — just a model trained
+on a huge amount of text producing a likely continuation.</p>
+<p>In Hands-On AI, one function does this:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">hands_on_ai.chat</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_response</span>
 
-<span class="c1"># Create a starter workspace with two stages</span>
-<span class="n">init_workspace</span><span class="p">(</span><span class="s2">&quot;essay&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;research&quot;</span><span class="p">,</span> <span class="s2">&quot;draft&quot;</span><span class="p">],</span> <span class="n">system</span><span class="o">=</span><span class="s2">&quot;You are a writing assistant.&quot;</span><span class="p">)</span>
-<span class="c1"># ...edit stages/01_research/CONTEXT.md and stages/02_draft/CONTEXT.md...</span>
-
-<span class="n">pipe</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="s2">&quot;essay&quot;</span><span class="p">)</span>
-<span class="n">pipe</span><span class="o">.</span><span class="n">status</span><span class="p">()</span>        <span class="c1"># [ ] 01_research   [ ] 02_draft</span>
-<span class="n">pipe</span><span class="o">.</span><span class="n">run_next</span><span class="p">()</span>      <span class="c1"># runs 01, writes stages/01_research/output/output.md, stops</span>
-<span class="c1"># open that file, read it, edit if needed...</span>
-<span class="n">pipe</span><span class="o">.</span><span class="n">run_next</span><span class="p">()</span>      <span class="c1"># runs 02 using your (possibly edited) research</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">get_response</span><span class="p">(</span><span class="s2">&quot;Explain gravity in one sentence.&quot;</span><span class="p">))</span>
 </code></pre></div>
-<p><code>run_all()</code> exists for when you trust a pipeline, but <code>run_next()</code> — run, review,
-continue — is the point.</p>
-<p>The <a href="../projects/workflow/build-a-pipeline/">Build a Pipeline</a> project walks
-through this end to end.</p>
-<h2 id="when-to-use-what">When to use what<a class="headerlink" href="#when-to-use-what" title="Permanent link">&para;</a></h2>
-<p>ICM is one tool, not the only one. Be honest about the fit:</p>
-<table>
-<thead>
-<tr>
-<th>Use</th>
-<th>Reach for</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Sequential, reviewable steps (research → draft → polish)</td>
-<td><strong>A workflow (this)</strong></td>
-</tr>
-<tr>
-<td>One question, maybe one tool call</td>
-<td><a href="../agent-guide/">An agent</a></td>
-</tr>
-<tr>
-<td>Thousands of concurrent users, millisecond agent-to-agent messaging</td>
-<td>A real framework (LangChain, etc.)</td>
-</tr>
-</tbody>
-</table>
-<p>Workflows are <strong>sequential and human-in-the-loop by design</strong>. Need parallelism?
-Run separate workflows yourself and decide how to combine them — a deliberate
-human choice, not a hidden autonomous loop.</p>
-<blockquote>
-<p>The honest summary: models are ephemeral, but <strong>context and structure are
-durable</strong>. Organising the information well often matters more than the
-orchestration code you didn't have to write.</p>
-</blockquote>
+<h2 id="the-two-messages-system-and-user">The two messages: system and user<a class="headerlink" href="#the-two-messages-system-and-user" title="Permanent link">&para;</a></h2>
+<p>Every request sends the model <strong>two</strong> messages:</p>
+<ul>
+<li>a <strong>user</strong> message — your actual question or instruction, and</li>
+<li>a <strong>system</strong> message — a behind-the-scenes instruction that sets the model's
+  role, tone, and rules.</li>
+</ul>
+<p>The system prompt is the single most powerful lever you have:</p>
+<div class="highlight"><pre><span></span><code><span class="n">get_response</span><span class="p">(</span>
+    <span class="s2">&quot;Explain gravity.&quot;</span><span class="p">,</span>
+    <span class="n">system</span><span class="o">=</span><span class="s2">&quot;You are a pirate. Answer in pirate slang.&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>Same question, completely different answer — because the system prompt changed
+<em>who the model is being</em>.</p>
+<h2 id="so-what-is-a-bot">So what is a "bot"?<a class="headerlink" href="#so-what-is-a-bot" title="Permanent link">&para;</a></h2>
+<p>In this toolkit a <strong>bot</strong> is nothing magical: it's just a small function that
+calls <code>get_response</code> with a fixed system prompt baked in.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">pirate_bot</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">get_response</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">system</span><span class="o">=</span><span class="s2">&quot;You are a pirate. Answer in pirate slang.&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>That's the whole trick. The library ships a collection of these ready-made — the
+<a href="../bot-gallery/">Personality Gallery</a> — and a bot's "personality" is <em>entirely</em>
+its system prompt. Change the prompt, change the personality. The
+<a href="../projects/chat/personality-bot-creator/">Personality Bot Creator</a> project has
+you build your own.</p>
+<h2 id="prompting-getting-better-answers">Prompting: getting better answers<a class="headerlink" href="#prompting-getting-better-answers" title="Permanent link">&para;</a></h2>
+<p>Because the model just continues your text, <em>how you ask</em> matters a lot:</p>
+<ul>
+<li><strong>Be specific.</strong> "Summarise this in 3 bullet points for a 12-year-old" beats
+  "summarise this."</li>
+<li><strong>Give context.</strong> Paste the material the model needs; it only knows what's in
+  the prompt (plus its training).</li>
+<li><strong>Show an example.</strong> Demonstrating the format you want ("Q: … A: …") steers the
+  output more reliably than describing it.</li>
+</ul>
+<p>This is the foundation of <em>prompt engineering</em> — and it's why the next module,
+<a href="../rag-guide/">RAG</a>, exists: to put the <em>right</em> context into the prompt
+automatically.</p>
+<h2 id="the-one-surprise-the-model-has-no-memory">The one surprise: the model has no memory<a class="headerlink" href="#the-one-surprise-the-model-has-no-memory" title="Permanent link">&para;</a></h2>
+<p>Each <code>get_response</code> call is <strong>completely independent</strong>. The model does not
+remember your previous question — it only ever sees the system prompt and the one
+prompt you send <em>this</em> call.</p>
+<div class="highlight"><pre><span></span><code><span class="n">get_response</span><span class="p">(</span><span class="s2">&quot;My name is Sam.&quot;</span><span class="p">)</span>
+<span class="n">get_response</span><span class="p">(</span><span class="s2">&quot;What&#39;s my name?&quot;</span><span class="p">)</span>   <span class="c1"># it has no idea — these are unrelated calls</span>
+</code></pre></div>
+<p>To make a bot that <em>remembers</em>, you keep the conversation yourself and resend it
+each turn. That's exactly what <code>Conversation</code> does for you:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">hands_on_ai.chat</span><span class="w"> </span><span class="kn">import</span> <span class="n">Conversation</span>
+
+<span class="n">chat</span> <span class="o">=</span> <span class="n">Conversation</span><span class="p">(</span><span class="n">system</span><span class="o">=</span><span class="s2">&quot;You are a helpful tutor.&quot;</span><span class="p">)</span>
+<span class="n">chat</span><span class="o">.</span><span class="n">ask</span><span class="p">(</span><span class="s2">&quot;My name is Sam.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">chat</span><span class="o">.</span><span class="n">ask</span><span class="p">(</span><span class="s2">&quot;What&#39;s my name?&quot;</span><span class="p">))</span>   <span class="c1"># → remembers &quot;Sam&quot;</span>
+</code></pre></div>
+<p>Understanding that an LLM is <em>stateless</em> — and that "memory" just means resending
+the transcript — is one of the most important ideas in the whole toolkit.</p>
+<h2 id="where-to-go-next">Where to go next<a class="headerlink" href="#where-to-go-next" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../chat-guide/">Chat CLI Guide</a> — drive the chat module from the command line</li>
+<li><a href="../bot-gallery/">Personality Gallery</a> — the ready-made bots, and what makes each tick</li>
+<li><a href="../projects/">Chat projects</a> — build something: a tutor, a quiz bot, an adventure game</li>
+<li>Then layer on <a href="../rag-guide/">RAG</a>, <a href="../agent-guide/">Agents</a>, and <a href="../workflow-guide/">Workflows</a></li>
+</ul>
 
 
 
