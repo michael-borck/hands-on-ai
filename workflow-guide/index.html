@@ -8,31 +8,31 @@
       
       
       
-        <link rel="canonical" href="https://teaching-repositories.github.io/hands-on-ai/projects/agent/science-explorer/">
+        <link rel="canonical" href="https://teaching-repositories.github.io/hands-on-ai/workflow-guide/">
       
       
-        <link rel="prev" href="../personal-math-tutor/">
+        <link rel="prev" href="../projects/agent/build-your-own-tool/">
       
       
-        <link rel="next" href="../simple-calculator-agent/">
+        <link rel="next" href="../projects/workflow/build-a-pipeline/">
       
       
         
       
       
-      <link rel="icon" href="../../../assets/icon-192.png">
+      <link rel="icon" href="../assets/icon-192.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Science Explorer - HandsOnAI Documentation</title>
+        <title>Understanding Workflows - HandsOnAI Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -51,11 +51,11 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/custom.css">
+      <link rel="stylesheet" href="../stylesheets/custom.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#science-explorer" class="md-skip">
+        <a href="#understanding-workflows-folders-over-frameworks" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="HandsOnAI Documentation" class="md-header__button md-logo" aria-label="HandsOnAI Documentation" data-md-component="logo">
+    <a href=".." title="HandsOnAI Documentation" class="md-header__button md-logo" aria-label="HandsOnAI Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Science Explorer
+              Understanding Workflows
             
           </span>
         </div>
@@ -193,7 +193,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href=".." class="md-tabs__link">
         
   
   
@@ -214,7 +214,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../installation/" class="md-tabs__link">
+        <a href="../installation/" class="md-tabs__link">
           
   
   
@@ -230,6 +230,8 @@
   
   
   
+    
+  
   
     
     
@@ -237,11 +239,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../chat-guide/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../chat-guide/" class="md-tabs__link">
           
   
   
@@ -260,13 +264,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../mini-projects/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../mini-projects/" class="md-tabs__link">
           
   
   
@@ -286,7 +288,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../education-guide/" class="md-tabs__link">
+        <a href="../education-guide/" class="md-tabs__link">
           
   
   
@@ -306,7 +308,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../cli-guide/" class="md-tabs__link">
+        <a href="../cli-guide/" class="md-tabs__link">
           
   
   
@@ -326,7 +328,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../authors/" class="md-tabs__link">
+        <a href="../authors/" class="md-tabs__link">
           
   
   
@@ -366,7 +368,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="HandsOnAI Documentation" class="md-nav__button md-logo" aria-label="HandsOnAI Documentation" data-md-component="logo">
+    <a href=".." title="HandsOnAI Documentation" class="md-nav__button md-logo" aria-label="HandsOnAI Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -396,7 +398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -475,7 +477,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../installation/" class="md-nav__link">
+      <a href="../installation/" class="md-nav__link">
         
   
   
@@ -503,7 +505,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../providers/" class="md-nav__link">
+      <a href="../providers/" class="md-nav__link">
         
   
   
@@ -531,7 +533,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ollama-guide/" class="md-nav__link">
+      <a href="../ollama-guide/" class="md-nav__link">
         
   
   
@@ -559,7 +561,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../configuration/" class="md-nav__link">
+      <a href="../configuration/" class="md-nav__link">
         
   
   
@@ -591,26 +593,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -628,7 +635,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -652,17 +659,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
         
           
-          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="">
             
   
   
@@ -698,7 +708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../chat-guide/" class="md-nav__link">
+      <a href="../chat-guide/" class="md-nav__link">
         
   
   
@@ -726,7 +736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../bot-gallery/" class="md-nav__link">
+      <a href="../bot-gallery/" class="md-nav__link">
         
   
   
@@ -768,17 +778,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
             
   
   
@@ -814,7 +827,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../rag-guide/" class="md-nav__link">
+      <a href="../rag-guide/" class="md-nav__link">
         
   
   
@@ -842,7 +855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../rag-llm-explain/" class="md-nav__link">
+      <a href="../rag-llm-explain/" class="md-nav__link">
         
   
   
@@ -870,7 +883,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../rag-flow/" class="md-nav__link">
+      <a href="../rag-flow/" class="md-nav__link">
         
   
   
@@ -912,17 +925,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
         
           
-          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
             
   
   
@@ -958,7 +974,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../agent-guide/" class="md-nav__link">
+      <a href="../agent-guide/" class="md-nav__link">
         
   
   
@@ -986,7 +1002,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../agent-concepts/" class="md-nav__link">
+      <a href="../agent-concepts/" class="md-nav__link">
         
   
   
@@ -1014,7 +1030,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../agent-agents/" class="md-nav__link">
+      <a href="../agent-agents/" class="md-nav__link">
         
   
   
@@ -1042,7 +1058,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../agent-tools/" class="md-nav__link">
+      <a href="../agent-tools/" class="md-nav__link">
         
   
   
@@ -1070,7 +1086,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../build-your-own-tool/" class="md-nav__link">
+      <a href="../projects/agent/build-your-own-tool/" class="md-nav__link">
         
   
   
@@ -1103,26 +1119,31 @@
                 
   
   
+    
   
   
+  
     
     
     
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
         
           
-          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
             
   
   
@@ -1140,7 +1161,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1155,10 +1176,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../workflow-guide/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Understanding Workflows
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1174,6 +1222,81 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-problem-with-one-giant-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem with one giant prompt
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-idea-folders-are-the-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The idea: folders are the architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#two-ideas-worth-internalising" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two ideas worth internalising
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#doing-it-in-hands-on-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Doing it in Hands-On AI
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-use-what" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to use what
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1186,7 +1309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workflow/build-a-pipeline/" class="md-nav__link">
+      <a href="../projects/workflow/build-a-pipeline/" class="md-nav__link">
         
   
   
@@ -1226,31 +1349,26 @@
       
   
   
-    
   
   
-  
     
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   
@@ -1268,7 +1386,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1286,7 +1404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mini-projects/" class="md-nav__link">
+      <a href="../mini-projects/" class="md-nav__link">
         
   
   
@@ -1314,7 +1432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../projects/" class="md-nav__link">
         
   
   
@@ -1342,7 +1460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../project_browser.html" class="md-nav__link">
+      <a href="../project_browser.html" class="md-nav__link">
         
   
   
@@ -1376,20 +1494,17 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
         
           
-          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
             
   
   
@@ -1425,7 +1540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../chat/advanced-journal-bot/" class="md-nav__link">
+      <a href="../projects/chat/advanced-journal-bot/" class="md-nav__link">
         
   
   
@@ -1453,7 +1568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../chat/bot-personality-menu-generator/" class="md-nav__link">
+      <a href="../projects/chat/bot-personality-menu-generator/" class="md-nav__link">
         
   
   
@@ -1481,7 +1596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../chat/build-your-own-personality-bot/" class="md-nav__link">
+      <a href="../projects/chat/build-your-own-personality-bot/" class="md-nav__link">
         
   
   
@@ -1509,7 +1624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../chat/choose-your-own-adventure/" class="md-nav__link">
+      <a href="../projects/chat/choose-your-own-adventure/" class="md-nav__link">
         
   
   
@@ -1537,7 +1652,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../chat/classroom-simulation-bot/" class="md-nav__link">
+      <a href="../projects/chat/classroom-simulation-bot/" class="md-nav__link">
         
   
   
@@ -1565,7 +1680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../chat/code-explainer-tool/" class="md-nav__link">
+      <a href="../projects/chat/code-explainer-tool/" class="md-nav__link">
         
   
   
@@ -1593,7 +1708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../chat/creative-writing-partner/" class="md-nav__link">
+      <a href="../projects/chat/creative-writing-partner/" class="md-nav__link">
         
   
   
@@ -1621,7 +1736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../chat/data-visualization-dashboard/" class="md-nav__link">
+      <a href="../projects/chat/data-visualization-dashboard/" class="md-nav__link">
         
   
   
@@ -1649,7 +1764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../chat/debate-interview-panel-dialogue-simulator/" class="md-nav__link">
+      <a href="../projects/chat/debate-interview-panel-dialogue-simulator/" class="md-nav__link">
         
   
   
@@ -1677,7 +1792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../chat/emotional-support-bot/" class="md-nav__link">
+      <a href="../projects/chat/emotional-support-bot/" class="md-nav__link">
         
   
   
@@ -1705,7 +1820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../chat/historical-figure-chat/" class="md-nav__link">
+      <a href="../projects/chat/historical-figure-chat/" class="md-nav__link">
         
   
   
@@ -1733,7 +1848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../chat/image-gallery-creator/" class="md-nav__link">
+      <a href="../projects/chat/image-gallery-creator/" class="md-nav__link">
         
   
   
@@ -1761,7 +1876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../chat/journal-or-reflection-bot/" class="md-nav__link">
+      <a href="../projects/chat/journal-or-reflection-bot/" class="md-nav__link">
         
   
   
@@ -1789,7 +1904,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../chat/knowledge-quiz-bot/" class="md-nav__link">
+      <a href="../projects/chat/knowledge-quiz-bot/" class="md-nav__link">
         
   
   
@@ -1817,7 +1932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../chat/language-translation-helper/" class="md-nav__link">
+      <a href="../projects/chat/language-translation-helper/" class="md-nav__link">
         
   
   
@@ -1845,7 +1960,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../chat/mood-journal-assistant/" class="md-nav__link">
+      <a href="../projects/chat/mood-journal-assistant/" class="md-nav__link">
         
   
   
@@ -1873,7 +1988,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../chat/personality-bot-creator/" class="md-nav__link">
+      <a href="../projects/chat/personality-bot-creator/" class="md-nav__link">
         
   
   
@@ -1901,7 +2016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../chat/smart-to-do-list/" class="md-nav__link">
+      <a href="../projects/chat/smart-to-do-list/" class="md-nav__link">
         
   
   
@@ -1929,7 +2044,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../chat/subject-expert-tutor/" class="md-nav__link">
+      <a href="../projects/chat/subject-expert-tutor/" class="md-nav__link">
         
   
   
@@ -1957,7 +2072,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../chat/text-adventure-game-engine/" class="md-nav__link">
+      <a href="../projects/chat/text-adventure-game-engine/" class="md-nav__link">
         
   
   
@@ -1985,7 +2100,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../chat/trivia-or-quiz-bot/" class="md-nav__link">
+      <a href="../projects/chat/trivia-or-quiz-bot/" class="md-nav__link">
         
   
   
@@ -2013,7 +2128,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../chat/weather-dashboard/" class="md-nav__link">
+      <a href="../projects/chat/weather-dashboard/" class="md-nav__link">
         
   
   
@@ -2041,7 +2156,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../chat/youtube-to-blog-converter/" class="md-nav__link">
+      <a href="../projects/chat/youtube-to-blog-converter/" class="md-nav__link">
         
   
   
@@ -2083,20 +2198,17 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
         
           
-          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
             
   
   
@@ -2132,7 +2244,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../rag/build-your-own-qa-cli/" class="md-nav__link">
+      <a href="../projects/rag/build-your-own-qa-cli/" class="md-nav__link">
         
   
   
@@ -2160,7 +2272,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../rag/first-rag-bot/" class="md-nav__link">
+      <a href="../projects/rag/first-rag-bot/" class="md-nav__link">
         
   
   
@@ -2188,7 +2300,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../rag/hybrid-reasoning-bot/" class="md-nav__link">
+      <a href="../projects/rag/hybrid-reasoning-bot/" class="md-nav__link">
         
   
   
@@ -2216,7 +2328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../rag/pdf-question-answering-chatbot/" class="md-nav__link">
+      <a href="../projects/rag/pdf-question-answering-chatbot/" class="md-nav__link">
         
   
   
@@ -2249,31 +2361,26 @@
                 
   
   
-    
   
   
-  
     
     
     
     
       
       
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
         
           
-          
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
             
   
   
@@ -2291,7 +2398,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2309,7 +2416,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../agent-evaluation-framework/" class="md-nav__link">
+      <a href="../projects/agent/agent-evaluation-framework/" class="md-nav__link">
         
   
   
@@ -2337,7 +2444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../build-your-own-tool/" class="md-nav__link">
+      <a href="../projects/agent/build-your-own-tool/" class="md-nav__link">
         
   
   
@@ -2365,7 +2472,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../custom-tool-creator/" class="md-nav__link">
+      <a href="../projects/agent/custom-tool-creator/" class="md-nav__link">
         
   
   
@@ -2393,7 +2500,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../date-calculator/" class="md-nav__link">
+      <a href="../projects/agent/date-calculator/" class="md-nav__link">
         
   
   
@@ -2421,7 +2528,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../educational-assistant/" class="md-nav__link">
+      <a href="../projects/agent/educational-assistant/" class="md-nav__link">
         
   
   
@@ -2449,7 +2556,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../multi-tool-problem-solver/" class="md-nav__link">
+      <a href="../projects/agent/multi-tool-problem-solver/" class="md-nav__link">
         
   
   
@@ -2477,7 +2584,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../personal-math-tutor/" class="md-nav__link">
+      <a href="../projects/agent/personal-math-tutor/" class="md-nav__link">
         
   
   
@@ -2502,37 +2609,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Science Explorer
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../projects/agent/science-explorer/" class="md-nav__link">
         
   
   
@@ -2548,59 +2628,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Overview
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instructions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Instructions
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#extension-ideas" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Extension Ideas
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2613,7 +2640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../simple-calculator-agent/" class="md-nav__link">
+      <a href="../projects/agent/simple-calculator-agent/" class="md-nav__link">
         
   
   
@@ -2641,7 +2668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../text-analyzer/" class="md-nav__link">
+      <a href="../projects/agent/text-analyzer/" class="md-nav__link">
         
   
   
@@ -2669,7 +2696,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../unit-conversion-assistant/" class="md-nav__link">
+      <a href="../projects/agent/unit-conversion-assistant/" class="md-nav__link">
         
   
   
@@ -2697,7 +2724,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../word-detective/" class="md-nav__link">
+      <a href="../projects/agent/word-detective/" class="md-nav__link">
         
   
   
@@ -2739,20 +2766,17 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
         
           
-          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
             
   
   
@@ -2788,7 +2812,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workflow/build-a-pipeline/" class="md-nav__link">
+      <a href="../projects/workflow/build-a-pipeline/" class="md-nav__link">
         
   
   
@@ -2824,7 +2848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mini-project-template/" class="md-nav__link">
+      <a href="../mini-project-template/" class="md-nav__link">
         
   
   
@@ -2911,7 +2935,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../education-guide/" class="md-nav__link">
+      <a href="../education-guide/" class="md-nav__link">
         
   
   
@@ -2939,7 +2963,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../classroom-setup/" class="md-nav__link">
+      <a href="../classroom-setup/" class="md-nav__link">
         
   
   
@@ -3026,7 +3050,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cli-guide/" class="md-nav__link">
+      <a href="../cli-guide/" class="md-nav__link">
         
   
   
@@ -3054,7 +3078,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../bot-template/" class="md-nav__link">
+      <a href="../bot-template/" class="md-nav__link">
         
   
   
@@ -3082,7 +3106,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../migration/" class="md-nav__link">
+      <a href="../migration/" class="md-nav__link">
         
   
   
@@ -3110,7 +3134,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../project-tools/" class="md-nav__link">
+      <a href="../project-tools/" class="md-nav__link">
         
   
   
@@ -3138,7 +3162,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../llm-guide/" class="md-nav__link">
+      <a href="../llm-guide/" class="md-nav__link">
         
   
   
@@ -3225,7 +3249,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../authors/" class="md-nav__link">
+      <a href="../authors/" class="md-nav__link">
         
   
   
@@ -3253,7 +3277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/" class="md-nav__link">
+      <a href="../contributing/" class="md-nav__link">
         
   
   
@@ -3308,10 +3332,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#the-problem-with-one-giant-prompt" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        The problem with one giant prompt
       
     </span>
   </a>
@@ -3319,10 +3343,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#instructions" class="md-nav__link">
+  <a href="#the-idea-folders-are-the-architecture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Instructions
+        The idea: folders are the architecture
       
     </span>
   </a>
@@ -3330,10 +3354,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#extension-ideas" class="md-nav__link">
+  <a href="#two-ideas-worth-internalising" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Extension Ideas
+        Two ideas worth internalising
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#doing-it-in-hands-on-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Doing it in Hands-On AI
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-use-what" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to use what
       
     </span>
   </a>
@@ -3360,41 +3406,124 @@
   
 
 
-<h1 id="science-explorer">Science Explorer<a class="headerlink" href="#science-explorer" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty</strong>: Intermediate<br />
-<strong>Time</strong>: 45 minutes<br />
-<strong>Learning Focus</strong>: Educational tools, multi-tool queries<br />
-<strong>Module</strong>: agent</p>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>Use the agent as a science learning companion to explore elements, mathematical properties, and scientific concepts.</p>
-<blockquote>
-<p>⚙️ <strong>Small local models have limits.</strong> This project chains several reasoning or
-tool-use steps. Small models (the kind you often run locally on Ollama) can be
-unreliable at multi-step reasoning — expect occasional wrong turns or dropped
-steps. If results are poor, try a larger/more capable model. Note that the
-library routes small models to JSON tool-calling rather than the ReAct format.</p>
-</blockquote>
-<h2 id="instructions">Instructions<a class="headerlink" href="#instructions" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Launch the agent using <code>hands-on-ai agent interactive</code></li>
-<li>Explore the periodic table tool by asking about different elements:</li>
-<li>"Tell me about oxygen"</li>
-<li>"What's the atomic number of gold?"</li>
-<li>"Compare the properties of sodium and potassium"</li>
-<li>Use the prime check tool to investigate number properties:</li>
-<li>"Is 97 a prime number?"</li>
-<li>"What are the factors of 144?"</li>
-<li>Combine tools by asking questions that require multiple lookups:</li>
-<li>"What's the sum of the atomic numbers of iron and calcium?"</li>
-<li>"If I have a sample with 12 atoms of carbon and 18 atoms of oxygen, what's the ratio?"</li>
-<li>Create a mini science quiz with 5 questions that the agent can help answer</li>
-</ol>
-<h2 id="extension-ideas">Extension Ideas<a class="headerlink" href="#extension-ideas" title="Permanent link">&para;</a></h2>
+<h1 id="understanding-workflows-folders-over-frameworks">Understanding Workflows (Folders over Frameworks)<a class="headerlink" href="#understanding-workflows-folders-over-frameworks" title="Permanent link">&para;</a></h1>
+<p>So far you've built single steps: a <a href="../chat-guide/">chat</a> reply, a <a href="../rag-guide/">RAG</a>
+answer, an <a href="../agent-guide/">agent</a> that calls a tool. Real work is usually
+<em>several</em> steps — research, then outline, then draft, then check. This guide is
+about orchestrating those steps <strong>without</strong> a heavy framework.</p>
+<h2 id="the-problem-with-one-giant-prompt">The problem with one giant prompt<a class="headerlink" href="#the-problem-with-one-giant-prompt" title="Permanent link">&para;</a></h2>
+<p>The obvious way to do a multi-step task is to stuff everything into a single
+enormous prompt: "research X, then outline it, then write 800 words, then…".
+Two things go wrong:</p>
 <ul>
-<li>Design a chemistry experiment and ask the agent to help with calculations</li>
-<li>Create a periodic table scavenger hunt with clues about element properties</li>
-<li>Compare how the agent answers science questions with and without using tools</li>
+<li><strong>The model loses focus.</strong> Buried instructions get ignored (the "lost in the
+  middle" effect). More context is not always better context.</li>
+<li><strong>You can't see or steer the middle.</strong> If the final draft is wrong, you can't
+  tell <em>which</em> step went wrong, and you can't fix the outline before it becomes
+  a bad draft.</li>
 </ul>
+<h2 id="the-idea-folders-are-the-architecture">The idea: folders <em>are</em> the architecture<a class="headerlink" href="#the-idea-folders-are-the-architecture" title="Permanent link">&para;</a></h2>
+<p>The <strong>Interpretable Context Methodology (ICM)</strong> — "folders over frameworks" —
+takes the Unix philosophy ("make each stage do one thing well") and applies it
+to AI. Instead of orchestration code, a workflow is just a <strong>folder of numbered
+stages</strong>:</p>
+<div class="highlight"><pre><span></span><code>workspace/
+├── CONTEXT.md            # the overall goal / system prompt (optional)
+├── references/           # stable rules — the &quot;factory&quot;
+└── stages/
+    ├── 01_research/
+    │   ├── CONTEXT.md    # instructions for THIS stage
+    │   └── output/       # output.md is written here
+    └── 02_draft/
+        ├── CONTEXT.md
+        └── output/
+</code></pre></div>
+<p>One orchestrating model walks the stages in order. For each stage it reads that
+stage's <code>CONTEXT.md</code> plus the <strong>previous stage's output</strong>, does the work, and
+writes a new file. That's the whole mechanism.</p>
+<p>Why this is nice for <em>learning</em> (and for real work):</p>
+<ul>
+<li><strong>It's a glass box.</strong> Every intermediate result is a readable file you can open.</li>
+<li><strong>Anyone can change it.</strong> Reorder steps by renaming folders; change a prompt by
+  editing a markdown file. No code, no redeploy.</li>
+<li><strong>It's portable and durable.</strong> The "logic" is just text and folders — it
+  survives model upgrades and copies with <code>cp -r</code>.</li>
+</ul>
+<blockquote>
+<p>💡 This is how the tools you already use work. Claude Code reads a <code>CLAUDE.md</code>,
+loads "skills" from folders, and delegates to sub-agents — the <strong>filesystem is
+the coordination layer</strong>. Learn this and you understand modern agentic tooling.</p>
+</blockquote>
+<h2 id="two-ideas-worth-internalising">Two ideas worth internalising<a class="headerlink" href="#two-ideas-worth-internalising" title="Permanent link">&para;</a></h2>
+<p><strong>1. Factory vs. Product.</strong> Keep <em>rules</em> separate from <em>data</em>.</p>
+<ul>
+<li><code>references/</code> (the <strong>factory</strong>) holds stable constraints — a voice guide, a
+  rubric, domain facts. These are <em>rules to follow</em>, the same on every run.</li>
+<li>A stage's input (the <strong>product</strong>) is the specific material to transform — the
+  previous step's output.</li>
+</ul>
+<p>Separating them tells the model what to <em>obey</em> versus what to <em>work on</em>, and
+keeps each step's context small and focused.</p>
+<p><strong>2. Review gates: fix the source, not the output.</strong> Because every step writes a
+file, you can stop, read it, and edit it before the next step runs — your edit
+becomes the new ground truth. If a step is <em>consistently</em> wrong, don't keep
+hand-fixing its output ("patching the binary"). Edit the stage's <code>CONTEXT.md</code> or
+a reference file ("fixing the source") so it's right on every future run.</p>
+<p>In practice, human attention follows a <strong>U-shape</strong>: heavy at the start (setting
+direction), light in the middle (the model follows the rules), and heavy again
+at the end (final alignment).</p>
+<h2 id="doing-it-in-hands-on-ai">Doing it in Hands-On AI<a class="headerlink" href="#doing-it-in-hands-on-ai" title="Permanent link">&para;</a></h2>
+<p>Hands-On AI ships a tiny runner — the <code>Pipeline</code> — that does exactly this. It is
+deliberately <strong>sequential and human-in-the-loop</strong>: <code>run_next()</code> runs <em>one</em> stage
+and stops, so you review the file before continuing.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">hands_on_ai.workflow</span><span class="w"> </span><span class="kn">import</span> <span class="n">Pipeline</span><span class="p">,</span> <span class="n">init_workspace</span>
+
+<span class="c1"># Create a starter workspace with two stages</span>
+<span class="n">init_workspace</span><span class="p">(</span><span class="s2">&quot;essay&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;research&quot;</span><span class="p">,</span> <span class="s2">&quot;draft&quot;</span><span class="p">],</span> <span class="n">system</span><span class="o">=</span><span class="s2">&quot;You are a writing assistant.&quot;</span><span class="p">)</span>
+<span class="c1"># ...edit stages/01_research/CONTEXT.md and stages/02_draft/CONTEXT.md...</span>
+
+<span class="n">pipe</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="s2">&quot;essay&quot;</span><span class="p">)</span>
+<span class="n">pipe</span><span class="o">.</span><span class="n">status</span><span class="p">()</span>        <span class="c1"># [ ] 01_research   [ ] 02_draft</span>
+<span class="n">pipe</span><span class="o">.</span><span class="n">run_next</span><span class="p">()</span>      <span class="c1"># runs 01, writes stages/01_research/output/output.md, stops</span>
+<span class="c1"># open that file, read it, edit if needed...</span>
+<span class="n">pipe</span><span class="o">.</span><span class="n">run_next</span><span class="p">()</span>      <span class="c1"># runs 02 using your (possibly edited) research</span>
+</code></pre></div>
+<p><code>run_all()</code> exists for when you trust a pipeline, but <code>run_next()</code> — run, review,
+continue — is the point.</p>
+<p>The <a href="../projects/workflow/build-a-pipeline/">Build a Pipeline</a> project walks
+through this end to end.</p>
+<h2 id="when-to-use-what">When to use what<a class="headerlink" href="#when-to-use-what" title="Permanent link">&para;</a></h2>
+<p>ICM is one tool, not the only one. Be honest about the fit:</p>
+<table>
+<thead>
+<tr>
+<th>Use</th>
+<th>Reach for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sequential, reviewable steps (research → draft → polish)</td>
+<td><strong>A workflow (this)</strong></td>
+</tr>
+<tr>
+<td>One question, maybe one tool call</td>
+<td><a href="../agent-guide/">An agent</a></td>
+</tr>
+<tr>
+<td>Thousands of concurrent users, millisecond agent-to-agent messaging</td>
+<td>A real framework (LangChain, etc.)</td>
+</tr>
+</tbody>
+</table>
+<p>Workflows are <strong>sequential and human-in-the-loop by design</strong>. Need parallelism?
+Run separate workflows yourself and decide how to combine them — a deliberate
+human choice, not a hidden autonomous loop.</p>
+<blockquote>
+<p>The honest summary: models are ephemeral, but <strong>context and structure are
+durable</strong>. Organising the information well often matters more than the
+orchestration code you didn't have to write.</p>
+</blockquote>
 
 
 
@@ -3466,12 +3595,12 @@ library routes small models to JSON tool-calling rather than the ReAct format.</
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.instant", "navigation.tracking", "navigation.top", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.instant", "navigation.tracking", "navigation.top", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
-        <script src="../../../javascripts/custom.js"></script>
+        <script src="../javascripts/custom.js"></script>
       
     
   </body>

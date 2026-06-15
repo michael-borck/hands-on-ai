@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://teaching-repositories.github.io/hands-on-ai/projects/agent/science-explorer/">
+        <link rel="canonical" href="https://teaching-repositories.github.io/hands-on-ai/projects/workflow/build-a-pipeline/">
       
       
-        <link rel="prev" href="../personal-math-tutor/">
+        <link rel="prev" href="../../agent/word-detective/">
       
       
-        <link rel="next" href="../simple-calculator-agent/">
+        <link rel="next" href="../../../mini-project-template/">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>Science Explorer - HandsOnAI Documentation</title>
+        <title>Build a Pipeline - HandsOnAI Documentation</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#science-explorer" class="md-skip">
+        <a href="#build-a-pipeline" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Science Explorer
+              Build a Pipeline
             
           </span>
         </div>
@@ -1070,7 +1070,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../build-your-own-tool/" class="md-nav__link">
+      <a href="../../agent/build-your-own-tool/" class="md-nav__link">
         
   
   
@@ -1183,10 +1183,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../workflow/build-a-pipeline/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build a Pipeline
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1202,6 +1229,114 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you'll build
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-create-the-workspace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Create the workspace
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-write-the-stage-contracts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Write the stage contracts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-run-it-one-stage-at-a-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Run it — one stage at a time
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this matters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extensions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works-under-the-hood" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works under the hood
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2249,8 +2384,6 @@
                 
   
   
-    
-  
   
   
     
@@ -2266,11 +2399,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
         
           
           <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="">
@@ -2291,7 +2424,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2309,7 +2442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../agent-evaluation-framework/" class="md-nav__link">
+      <a href="../../agent/agent-evaluation-framework/" class="md-nav__link">
         
   
   
@@ -2337,7 +2470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../build-your-own-tool/" class="md-nav__link">
+      <a href="../../agent/build-your-own-tool/" class="md-nav__link">
         
   
   
@@ -2365,7 +2498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../custom-tool-creator/" class="md-nav__link">
+      <a href="../../agent/custom-tool-creator/" class="md-nav__link">
         
   
   
@@ -2393,7 +2526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../date-calculator/" class="md-nav__link">
+      <a href="../../agent/date-calculator/" class="md-nav__link">
         
   
   
@@ -2421,7 +2554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../educational-assistant/" class="md-nav__link">
+      <a href="../../agent/educational-assistant/" class="md-nav__link">
         
   
   
@@ -2449,7 +2582,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../multi-tool-problem-solver/" class="md-nav__link">
+      <a href="../../agent/multi-tool-problem-solver/" class="md-nav__link">
         
   
   
@@ -2477,7 +2610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../personal-math-tutor/" class="md-nav__link">
+      <a href="../../agent/personal-math-tutor/" class="md-nav__link">
         
   
   
@@ -2502,6 +2635,211 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent/science-explorer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Science Explorer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent/simple-calculator-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Simple Calculator Agent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent/text-analyzer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Text Analyzer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent/unit-conversion-assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unit Conversion Assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent/word-detective/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Word Detective
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workflow Projects
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Workflow Projects
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
     
   
   
@@ -2521,7 +2859,7 @@
   <span class="md-ellipsis">
     
   
-    Science Explorer
+    Build a Pipeline
   
 
     
@@ -2539,7 +2877,7 @@
   <span class="md-ellipsis">
     
   
-    Science Explorer
+    Build a Pipeline
   
 
     
@@ -2576,10 +2914,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#instructions" class="md-nav__link">
+  <a href="#what-youll-build" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Instructions
+        What you'll build
       
     </span>
   </a>
@@ -2587,10 +2925,65 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#extension-ideas" class="md-nav__link">
+  <a href="#step-1-create-the-workspace" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Extension Ideas
+        Step 1: Create the workspace
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-write-the-stage-contracts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Write the stage contracts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-run-it-one-stage-at-a-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Run it — one stage at a time
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this matters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extensions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works-under-the-hood" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works under the hood
       
     </span>
   </a>
@@ -2601,209 +2994,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../simple-calculator-agent/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Simple Calculator Agent
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../text-analyzer/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Text Analyzer
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../unit-conversion-assistant/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Unit Conversion Assistant
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../word-detective/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Word Detective
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-          
-          
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Workflow Projects
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_7">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Workflow Projects
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../workflow/build-a-pipeline/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Build a Pipeline
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -3319,10 +3509,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#instructions" class="md-nav__link">
+  <a href="#what-youll-build" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Instructions
+        What you'll build
       
     </span>
   </a>
@@ -3330,10 +3520,65 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#extension-ideas" class="md-nav__link">
+  <a href="#step-1-create-the-workspace" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Extension Ideas
+        Step 1: Create the workspace
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-write-the-stage-contracts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Write the stage contracts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-run-it-one-stage-at-a-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Run it — one stage at a time
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this matters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extensions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works-under-the-hood" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works under the hood
       
     </span>
   </a>
@@ -3360,41 +3605,114 @@
   
 
 
-<h1 id="science-explorer">Science Explorer<a class="headerlink" href="#science-explorer" title="Permanent link">&para;</a></h1>
+<h1 id="build-a-pipeline">Build a Pipeline<a class="headerlink" href="#build-a-pipeline" title="Permanent link">&para;</a></h1>
 <p><strong>Difficulty</strong>: Intermediate<br />
 <strong>Time</strong>: 45 minutes<br />
-<strong>Learning Focus</strong>: Educational tools, multi-tool queries<br />
-<strong>Module</strong>: agent</p>
+<strong>Learning Focus</strong>: Workflow orchestration, context engineering, human-in-the-loop<br />
+<strong>Module</strong>: workflow</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>Use the agent as a science learning companion to explore elements, mathematical properties, and scientific concepts.</p>
+<p>In this project you'll build a multi-step AI workflow the simple way — as a
+<strong>folder of stages</strong>, with no orchestration framework. You'll run it one step at
+a time, reading and editing the intermediate files, so <em>you</em> stay in control of
+the result.</p>
 <blockquote>
-<p>⚙️ <strong>Small local models have limits.</strong> This project chains several reasoning or
-tool-use steps. Small models (the kind you often run locally on Ollama) can be
-unreliable at multi-step reasoning — expect occasional wrong turns or dropped
-steps. If results are poor, try a larger/more capable model. Note that the
-library routes small models to JSON tool-calling rather than the ReAct format.</p>
+<p>🧠 <strong>The big idea: folders over frameworks.</strong> A workflow is just numbered
+stage folders. Each stage has a <code>CONTEXT.md</code> (its instructions) and writes an
+<code>output/output.md</code>. One model walks the stages in order, and you review the
+file between each step. See <a href="../../../workflow-guide/">Understanding Workflows</a>
+for the concepts.</p>
 </blockquote>
-<h2 id="instructions">Instructions<a class="headerlink" href="#instructions" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Launch the agent using <code>hands-on-ai agent interactive</code></li>
-<li>Explore the periodic table tool by asking about different elements:</li>
-<li>"Tell me about oxygen"</li>
-<li>"What's the atomic number of gold?"</li>
-<li>"Compare the properties of sodium and potassium"</li>
-<li>Use the prime check tool to investigate number properties:</li>
-<li>"Is 97 a prime number?"</li>
-<li>"What are the factors of 144?"</li>
-<li>Combine tools by asking questions that require multiple lookups:</li>
-<li>"What's the sum of the atomic numbers of iron and calcium?"</li>
-<li>"If I have a sample with 12 atoms of carbon and 18 atoms of oxygen, what's the ratio?"</li>
-<li>Create a mini science quiz with 5 questions that the agent can help answer</li>
-</ol>
-<h2 id="extension-ideas">Extension Ideas<a class="headerlink" href="#extension-ideas" title="Permanent link">&para;</a></h2>
+<h2 id="what-youll-build">What you'll build<a class="headerlink" href="#what-youll-build" title="Permanent link">&para;</a></h2>
+<p>A two-stage "explainer" pipeline:</p>
+<div class="highlight"><pre><span></span><code>01_research  →  02_explain
+(gather facts)   (turn them into a friendly explanation)
+</code></pre></div>
+<p>You'll run stage 1, read its output, <em>optionally edit it</em>, then run stage 2 —
+which uses your reviewed research as its input.</p>
+<h2 id="step-1-create-the-workspace">Step 1: Create the workspace<a class="headerlink" href="#step-1-create-the-workspace" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">hands_on_ai.workflow</span><span class="w"> </span><span class="kn">import</span> <span class="n">init_workspace</span>
+
+<span class="n">init_workspace</span><span class="p">(</span>
+    <span class="s2">&quot;explainer&quot;</span><span class="p">,</span>
+    <span class="p">[</span><span class="s2">&quot;research&quot;</span><span class="p">,</span> <span class="s2">&quot;explain&quot;</span><span class="p">],</span>
+    <span class="n">system</span><span class="o">=</span><span class="s2">&quot;You are a careful assistant. Do exactly what each stage asks.&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>This creates:</p>
+<div class="highlight"><pre><span></span><code>explainer/
+├── CONTEXT.md
+├── references/
+└── stages/
+    ├── 01_research/
+    │   ├── CONTEXT.md
+    │   └── output/
+    └── 02_explain/
+        ├── CONTEXT.md
+        └── output/
+</code></pre></div>
+<h2 id="step-2-write-the-stage-contracts">Step 2: Write the stage contracts<a class="headerlink" href="#step-2-write-the-stage-contracts" title="Permanent link">&para;</a></h2>
+<p>Each stage's <code>CONTEXT.md</code> is just instructions in plain English. Edit them:</p>
+<p><code>explainer/stages/01_research/CONTEXT.md</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="gh"># Stage 01: Research</span>
+
+Pick the topic &quot;how vaccines work&quot; and list 5 plain, accurate facts about it.
+Output a numbered list. No introduction, just the list.
+</code></pre></div>
+<p><code>explainer/stages/02_explain/CONTEXT.md</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="gh"># Stage 02: Explain</span>
+
+Using the research facts provided as input, write a friendly 150-word
+explanation suitable for a 12-year-old. Keep every claim grounded in the facts.
+</code></pre></div>
+<p>Notice stage 2 never mentions the topic — it just transforms whatever stage 1
+produced. That's the point: each stage does <strong>one</strong> thing.</p>
+<h2 id="step-3-run-it-one-stage-at-a-time">Step 3: Run it — one stage at a time<a class="headerlink" href="#step-3-run-it-one-stage-at-a-time" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">hands_on_ai.workflow</span><span class="w"> </span><span class="kn">import</span> <span class="n">Pipeline</span>
+
+<span class="n">pipe</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="s2">&quot;explainer&quot;</span><span class="p">)</span>
+<span class="n">pipe</span><span class="o">.</span><span class="n">status</span><span class="p">()</span>        <span class="c1"># [ ] 01_research   [ ] 02_explain</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">pipe</span><span class="o">.</span><span class="n">run_next</span><span class="p">()</span>     <span class="c1"># runs ONLY stage 01, then stops</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;output_path&quot;</span><span class="p">])</span> <span class="c1"># explainer/stages/01_research/output/output.md</span>
+</code></pre></div>
+<p>Now <strong>open that output file and read it.</strong> This is the human-in-the-loop moment:
+if a fact looks wrong, <em>edit the file and save it</em>. Your edit becomes the input
+to the next stage.</p>
+<div class="highlight"><pre><span></span><code><span class="n">pipe</span><span class="o">.</span><span class="n">run_next</span><span class="p">()</span>      <span class="c1"># runs stage 02 using your (reviewed) research</span>
+<span class="n">pipe</span><span class="o">.</span><span class="n">status</span><span class="p">()</span>        <span class="c1"># [x] 01_research   [x] 02_explain</span>
+</code></pre></div>
+<p>Read <code>stages/02_explain/output/output.md</code> — your finished explanation, built from
+research you got to inspect first.</p>
+<h2 id="why-this-matters">Why this matters<a class="headerlink" href="#why-this-matters" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Design a chemistry experiment and ask the agent to help with calculations</li>
-<li>Create a periodic table scavenger hunt with clues about element properties</li>
-<li>Compare how the agent answers science questions with and without using tools</li>
+<li><strong>You saw the middle.</strong> If the explanation is off, you know whether the
+  <em>research</em> or the <em>explaining</em> was at fault — just open the files.</li>
+<li><strong>You could steer it.</strong> Editing the intermediate file changed the outcome
+  without touching any code.</li>
+<li><strong>It re-runs cleanly.</strong> <code>pipe.reset()</code> clears the outputs so you can run again.</li>
 </ul>
+<h2 id="extensions">Extensions<a class="headerlink" href="#extensions" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Add a "factory" rule.</strong> Drop a file in <code>explainer/references/voice.md</code>
+   (e.g. <em>"Never use jargon; prefer everyday words."</em>). Re-run — every stage now
+   follows that rule. This is a <em>reference</em> (a rule), separate from the <em>input</em>
+   (the data).</li>
+<li><strong>Add a third stage</strong> <code>03_quiz</code> that writes 3 quiz questions from the
+   explanation. Just add the folder (<code>stages/03_quiz/CONTEXT.md</code>) — no code
+   changes needed.</li>
+<li><strong>Fix the source, not the output.</strong> If stage 2 keeps being too long, don't
+   keep trimming its output — edit <code>02_explain/CONTEXT.md</code> to say "100 words
+   max." You just "fixed the compiler."</li>
+<li><strong>Swap in an agent.</strong> Make a stage that needs a calculation, and have a small
+   script call <a href="../../../agent-guide/"><code>run_agent</code></a> instead of plain chat for that
+   step.</li>
+</ol>
+<h2 id="how-it-works-under-the-hood">How it works under the hood<a class="headerlink" href="#how-it-works-under-the-hood" title="Permanent link">&para;</a></h2>
+<p>The <code>Pipeline</code> is deliberately tiny — about 100 lines. For each stage it builds a
+prompt from: the stage's <code>CONTEXT.md</code>, any <code>references/</code> files (rules), and the
+previous stage's <code>output.md</code> (input), then calls <code>get_response</code> and writes the
+result. There's no hidden state — everything is a file you can read. Open
+<code>hands_on_ai/workflow/runner.py</code> and see for yourself.</p>
 
 
 

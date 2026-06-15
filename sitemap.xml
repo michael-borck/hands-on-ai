@@ -101,6 +101,10 @@
          <lastmod>2026-06-15</lastmod>
     </url>
     <url>
+         <loc>https://teaching-repositories.github.io/hands-on-ai/workflow-guide/</loc>
+         <lastmod>2026-06-15</lastmod>
+    </url>
+    <url>
          <loc>https://teaching-repositories.github.io/hands-on-ai/projects/</loc>
          <lastmod>2026-06-15</lastmod>
     </url>
@@ -258,6 +262,10 @@
     </url>
     <url>
          <loc>https://teaching-repositories.github.io/hands-on-ai/projects/rag/pdf-question-answering-chatbot/</loc>
+         <lastmod>2026-06-15</lastmod>
+    </url>
+    <url>
+         <loc>https://teaching-repositories.github.io/hands-on-ai/projects/workflow/build-a-pipeline/</loc>
          <lastmod>2026-06-15</lastmod>
     </url>
 </urlset>
