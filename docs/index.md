@@ -34,7 +34,7 @@ New here? Follow the [Install & First Run](installation.md) guide, then
 
     ---
 
-    Start with the [Bot Gallery](bot-gallery.md), then learn the ideas behind
+    Start with the [Personality Gallery](bot-gallery.md), then learn the ideas behind
     [Chat](chat-guide.md), [RAG](rag-guide.md), and [Agents](agent-guide.md) —
     and build your own in the [Projects](mini-projects.md).
 

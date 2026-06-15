@@ -27,8 +27,9 @@ nav:
     - "Configuration": configuration.md
   - Learn:
     - Chat:
-      - "Overview": chat-guide.md
-      - "Bot Gallery": bot-gallery.md
+      - "Understanding Chat & Bots": chat-concepts.md
+      - "CLI Guide": chat-guide.md
+      - "Personality Gallery": bot-gallery.md
     - RAG:
       - "Overview": rag-guide.md
       - "How RAG Works": rag-llm-explain.md
