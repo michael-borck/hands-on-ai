@@ -62,23 +62,12 @@ def load_config():
     Returns:
         dict: Configuration settings
     """
+    # Precedence (lowest to highest): defaults < config file < environment variables.
+
     # Start with default configuration
     config = load_default_config()
-    
-    # Check environment variables
-    if "HANDS_ON_AI_SERVER" in os.environ:
-        config["server"] = os.environ["HANDS_ON_AI_SERVER"]
-    
-    if "HANDS_ON_AI_MODEL" in os.environ:
-        config["model"] = os.environ["HANDS_ON_AI_MODEL"]
-        
-    if "HANDS_ON_AI_EMBEDDING_MODEL" in os.environ:
-        config["embedding_model"] = os.environ["HANDS_ON_AI_EMBEDDING_MODEL"]
-    
-    if "HANDS_ON_AI_API_KEY" in os.environ:
-        config["api_key"] = os.environ["HANDS_ON_AI_API_KEY"]
-    
-    # Then check user config file (this overrides defaults and environment variables)
+
+    # User config file overrides the defaults
     if CONFIG_PATH.exists():
         try:
             with open(CONFIG_PATH, encoding="utf-8") as f:
@@ -88,7 +77,20 @@ def load_config():
                     config[key] = file_config[key]
         except Exception as e:
             log.warning(f"Failed to read config.json: {e}")
-    
+
+    # Environment variables have the highest priority (override file and defaults)
+    if "HANDS_ON_AI_SERVER" in os.environ:
+        config["server"] = os.environ["HANDS_ON_AI_SERVER"]
+
+    if "HANDS_ON_AI_MODEL" in os.environ:
+        config["model"] = os.environ["HANDS_ON_AI_MODEL"]
+
+    if "HANDS_ON_AI_EMBEDDING_MODEL" in os.environ:
+        config["embedding_model"] = os.environ["HANDS_ON_AI_EMBEDDING_MODEL"]
+
+    if "HANDS_ON_AI_API_KEY" in os.environ:
+        config["api_key"] = os.environ["HANDS_ON_AI_API_KEY"]
+
     return config
 
 

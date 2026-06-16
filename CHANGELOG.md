@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Fixed
+- Configuration precedence now matches the documentation: environment variables
+  take priority over the user config file (`~/.hands-on-ai/config.json`), which in
+  turn overrides the built-in defaults. Previously the config file silently
+  overrode environment variables, so e.g. `HANDS_ON_AI_MODEL` could be ignored.
+- `rag.utils` file-loader error messages no longer point at the empty `[rag]`
+  install extra.
+
 ## [0.3.0] - 2026-06-16
 
 ### Added
