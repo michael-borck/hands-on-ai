@@ -4,6 +4,7 @@ This directory contains example scripts that demonstrate how to use the Hands-On
 
 ## Basic Examples
 
+- **`smoke_test.py`**: End-to-end checklist that exercises chat, streaming, memory, caching, evaluation, and RAG against your configured provider. Prints PASS/FAIL and exits non-zero on any failure, so it is handy after upgrades or before a release.
 - **`simple_weather_agent_test.py`**: A basic example showing how to create an agent with weather-related tools
 - **`test_agent.py`**: Demonstrates the agent functionality with multiple tools and format detection
 - **`weather_graph_agent_example.py`**: Shows how to use graph-generating tools with the agent

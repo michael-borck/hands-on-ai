@@ -142,10 +142,25 @@ chat.ask("My name is Sam.")
 print(chat.ask("What's my name?"))   # -> remembers "Sam"
 
 print(f"Tokens used so far: {chat.total_tokens}")
+
+chat.save("chat.json")               # persist and resume later
+later = Conversation.load("chat.json")
 ```
 
 You can also see token usage for a single call with `get_response(..., return_usage=True)`,
-which returns a `(response, usage)` tuple.
+which returns a `(response, usage)` tuple (or `chat ask "..." --usage` on the CLI).
+
+Stream a response as it is generated:
+
+```python
+from hands_on_ai.chat import stream_response
+
+for chunk in stream_response("Tell me a short story"):
+    print(chunk, end="", flush=True)
+```
+
+Want reproducible, free reruns (great for classrooms)? Set `HANDS_ON_AI_CACHE` to
+a directory and identical calls return a cached answer instead of calling the model.
 
 ## 🌍 Provider-Agnostic Architecture
 
