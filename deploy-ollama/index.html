@@ -8,31 +8,31 @@
       
       
       
-        <link rel="canonical" href="https://michael-borck.github.io/hands-on-ai/projects/chat/mood-journal-assistant/">
+        <link rel="canonical" href="https://michael-borck.github.io/hands-on-ai/deploy-ollama/">
       
       
-        <link rel="prev" href="../language-translation-helper/">
+        <link rel="prev" href="../classroom-setup/">
       
       
-        <link rel="next" href="../personality-bot-creator/">
+        <link rel="next" href="../use-with-llm/">
       
       
         
       
       
-      <link rel="icon" href="../../../assets/icon-192.png">
+      <link rel="icon" href="../assets/icon-192.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Mood Journal Assistant - HandsOnAI Documentation</title>
+        <title>Host a Shared Ollama - HandsOnAI Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -51,11 +51,11 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/custom.css">
+      <link rel="stylesheet" href="../stylesheets/custom.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mood-journal-assistant" class="md-skip">
+        <a href="#host-a-shared-ollama-for-educators" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="HandsOnAI Documentation" class="md-header__button md-logo" aria-label="HandsOnAI Documentation" data-md-component="logo">
+    <a href=".." title="HandsOnAI Documentation" class="md-header__button md-logo" aria-label="HandsOnAI Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Mood Journal Assistant
+              Host a Shared Ollama
             
           </span>
         </div>
@@ -193,7 +193,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href=".." class="md-tabs__link">
         
   
   
@@ -212,7 +212,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../philosophy/" class="md-tabs__link">
+      <a href="../philosophy/" class="md-tabs__link">
         
   
   
@@ -233,7 +233,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../installation/" class="md-tabs__link">
+        <a href="../installation/" class="md-tabs__link">
           
   
   
@@ -260,7 +260,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../chat-concepts/" class="md-tabs__link">
+        <a href="../chat-concepts/" class="md-tabs__link">
           
   
   
@@ -279,13 +279,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../mini-projects/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../mini-projects/" class="md-tabs__link">
           
   
   
@@ -301,11 +299,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../education-guide/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../education-guide/" class="md-tabs__link">
           
   
   
@@ -325,7 +325,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../use-with-llm/" class="md-tabs__link">
+        <a href="../use-with-llm/" class="md-tabs__link">
           
   
   
@@ -345,7 +345,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../authors/" class="md-tabs__link">
+        <a href="../authors/" class="md-tabs__link">
           
   
   
@@ -385,7 +385,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="HandsOnAI Documentation" class="md-nav__button md-logo" aria-label="HandsOnAI Documentation" data-md-component="logo">
+    <a href=".." title="HandsOnAI Documentation" class="md-nav__button md-logo" aria-label="HandsOnAI Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -415,7 +415,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -442,7 +442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../philosophy/" class="md-nav__link">
+      <a href="../philosophy/" class="md-nav__link">
         
   
   
@@ -521,7 +521,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../installation/" class="md-nav__link">
+      <a href="../installation/" class="md-nav__link">
         
   
   
@@ -549,7 +549,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../providers/" class="md-nav__link">
+      <a href="../providers/" class="md-nav__link">
         
   
   
@@ -577,7 +577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../notebooks/" class="md-nav__link">
+      <a href="../notebooks/" class="md-nav__link">
         
   
   
@@ -605,7 +605,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ollama-guide/" class="md-nav__link">
+      <a href="../ollama-guide/" class="md-nav__link">
         
   
   
@@ -633,7 +633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../configuration/" class="md-nav__link">
+      <a href="../configuration/" class="md-nav__link">
         
   
   
@@ -772,7 +772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../chat-concepts/" class="md-nav__link">
+      <a href="../chat-concepts/" class="md-nav__link">
         
   
   
@@ -800,7 +800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../chat-guide/" class="md-nav__link">
+      <a href="../chat-guide/" class="md-nav__link">
         
   
   
@@ -828,7 +828,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../bot-gallery/" class="md-nav__link">
+      <a href="../bot-gallery/" class="md-nav__link">
         
   
   
@@ -916,7 +916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../rag-llm-explain/" class="md-nav__link">
+      <a href="../rag-llm-explain/" class="md-nav__link">
         
   
   
@@ -944,7 +944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../rag-guide/" class="md-nav__link">
+      <a href="../rag-guide/" class="md-nav__link">
         
   
   
@@ -972,7 +972,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../rag-flow/" class="md-nav__link">
+      <a href="../rag-flow/" class="md-nav__link">
         
   
   
@@ -1060,7 +1060,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../agent-concepts/" class="md-nav__link">
+      <a href="../agent-concepts/" class="md-nav__link">
         
   
   
@@ -1088,7 +1088,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../agent-guide/" class="md-nav__link">
+      <a href="../agent-guide/" class="md-nav__link">
         
   
   
@@ -1116,7 +1116,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../agent-agents/" class="md-nav__link">
+      <a href="../agent-agents/" class="md-nav__link">
         
   
   
@@ -1144,7 +1144,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../agent-tools/" class="md-nav__link">
+      <a href="../agent-tools/" class="md-nav__link">
         
   
   
@@ -1172,7 +1172,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent/build-your-own-tool/" class="md-nav__link">
+      <a href="../projects/agent/build-your-own-tool/" class="md-nav__link">
         
   
   
@@ -1260,7 +1260,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../workflow-guide/" class="md-nav__link">
+      <a href="../workflow-guide/" class="md-nav__link">
         
   
   
@@ -1288,7 +1288,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workflow/build-a-pipeline/" class="md-nav__link">
+      <a href="../projects/workflow/build-a-pipeline/" class="md-nav__link">
         
   
   
@@ -1376,7 +1376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../eval-guide/" class="md-nav__link">
+      <a href="../eval-guide/" class="md-nav__link">
         
   
   
@@ -1404,7 +1404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../eval/judge-your-bot/" class="md-nav__link">
+      <a href="../projects/eval/judge-your-bot/" class="md-nav__link">
         
   
   
@@ -1444,31 +1444,26 @@
       
   
   
-    
   
   
-  
     
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   
@@ -1486,7 +1481,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1504,7 +1499,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mini-projects/" class="md-nav__link">
+      <a href="../mini-projects/" class="md-nav__link">
         
   
   
@@ -1532,7 +1527,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../projects/" class="md-nav__link">
         
   
   
@@ -1560,7 +1555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../project_browser.html" class="md-nav__link">
+      <a href="../project_browser.html" class="md-nav__link">
         
   
   
@@ -1585,31 +1580,26 @@
                 
   
   
-    
   
   
-  
     
     
     
     
       
       
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
         
           
-          
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
             
   
   
@@ -1627,7 +1617,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1645,7 +1635,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../advanced-journal-bot/" class="md-nav__link">
+      <a href="../projects/chat/advanced-journal-bot/" class="md-nav__link">
         
   
   
@@ -1673,7 +1663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bot-personality-menu-generator/" class="md-nav__link">
+      <a href="../projects/chat/bot-personality-menu-generator/" class="md-nav__link">
         
   
   
@@ -1701,7 +1691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../build-your-own-cache/" class="md-nav__link">
+      <a href="../projects/chat/build-your-own-cache/" class="md-nav__link">
         
   
   
@@ -1729,7 +1719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../build-your-own-personality-bot/" class="md-nav__link">
+      <a href="../projects/chat/build-your-own-personality-bot/" class="md-nav__link">
         
   
   
@@ -1757,7 +1747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../choose-your-own-adventure/" class="md-nav__link">
+      <a href="../projects/chat/choose-your-own-adventure/" class="md-nav__link">
         
   
   
@@ -1785,7 +1775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../classroom-simulation-bot/" class="md-nav__link">
+      <a href="../projects/chat/classroom-simulation-bot/" class="md-nav__link">
         
   
   
@@ -1813,7 +1803,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../code-explainer-tool/" class="md-nav__link">
+      <a href="../projects/chat/code-explainer-tool/" class="md-nav__link">
         
   
   
@@ -1841,7 +1831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../creative-writing-partner/" class="md-nav__link">
+      <a href="../projects/chat/creative-writing-partner/" class="md-nav__link">
         
   
   
@@ -1869,7 +1859,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-visualization-dashboard/" class="md-nav__link">
+      <a href="../projects/chat/data-visualization-dashboard/" class="md-nav__link">
         
   
   
@@ -1897,7 +1887,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../debate-interview-panel-dialogue-simulator/" class="md-nav__link">
+      <a href="../projects/chat/debate-interview-panel-dialogue-simulator/" class="md-nav__link">
         
   
   
@@ -1925,7 +1915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../emotional-support-bot/" class="md-nav__link">
+      <a href="../projects/chat/emotional-support-bot/" class="md-nav__link">
         
   
   
@@ -1953,7 +1943,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../historical-figure-chat/" class="md-nav__link">
+      <a href="../projects/chat/historical-figure-chat/" class="md-nav__link">
         
   
   
@@ -1981,7 +1971,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../image-gallery-creator/" class="md-nav__link">
+      <a href="../projects/chat/image-gallery-creator/" class="md-nav__link">
         
   
   
@@ -2009,7 +1999,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../journal-or-reflection-bot/" class="md-nav__link">
+      <a href="../projects/chat/journal-or-reflection-bot/" class="md-nav__link">
         
   
   
@@ -2037,7 +2027,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../knowledge-quiz-bot/" class="md-nav__link">
+      <a href="../projects/chat/knowledge-quiz-bot/" class="md-nav__link">
         
   
   
@@ -2065,7 +2055,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../language-translation-helper/" class="md-nav__link">
+      <a href="../projects/chat/language-translation-helper/" class="md-nav__link">
         
   
   
@@ -2090,37 +2080,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Mood Journal Assistant
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../projects/chat/mood-journal-assistant/" class="md-nav__link">
         
   
   
@@ -2136,59 +2099,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Overview
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instructions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Instructions
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#extension-ideas" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Extension Ideas
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2201,7 +2111,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../personality-bot-creator/" class="md-nav__link">
+      <a href="../projects/chat/personality-bot-creator/" class="md-nav__link">
         
   
   
@@ -2229,7 +2139,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../smart-to-do-list/" class="md-nav__link">
+      <a href="../projects/chat/smart-to-do-list/" class="md-nav__link">
         
   
   
@@ -2257,7 +2167,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../subject-expert-tutor/" class="md-nav__link">
+      <a href="../projects/chat/subject-expert-tutor/" class="md-nav__link">
         
   
   
@@ -2285,7 +2195,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../text-adventure-game-engine/" class="md-nav__link">
+      <a href="../projects/chat/text-adventure-game-engine/" class="md-nav__link">
         
   
   
@@ -2313,7 +2223,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trivia-or-quiz-bot/" class="md-nav__link">
+      <a href="../projects/chat/trivia-or-quiz-bot/" class="md-nav__link">
         
   
   
@@ -2341,7 +2251,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../weather-dashboard/" class="md-nav__link">
+      <a href="../projects/chat/weather-dashboard/" class="md-nav__link">
         
   
   
@@ -2369,7 +2279,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../youtube-to-blog-converter/" class="md-nav__link">
+      <a href="../projects/chat/youtube-to-blog-converter/" class="md-nav__link">
         
   
   
@@ -2411,20 +2321,17 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
         
           
-          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
             
   
   
@@ -2460,7 +2367,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../rag/build-your-own-qa-cli/" class="md-nav__link">
+      <a href="../projects/rag/build-your-own-qa-cli/" class="md-nav__link">
         
   
   
@@ -2488,7 +2395,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../rag/first-rag-bot/" class="md-nav__link">
+      <a href="../projects/rag/first-rag-bot/" class="md-nav__link">
         
   
   
@@ -2516,7 +2423,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../rag/hybrid-reasoning-bot/" class="md-nav__link">
+      <a href="../projects/rag/hybrid-reasoning-bot/" class="md-nav__link">
         
   
   
@@ -2544,7 +2451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../rag/pdf-question-answering-chatbot/" class="md-nav__link">
+      <a href="../projects/rag/pdf-question-answering-chatbot/" class="md-nav__link">
         
   
   
@@ -2586,20 +2493,17 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
         
           
-          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
             
   
   
@@ -2635,7 +2539,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent/agent-evaluation-framework/" class="md-nav__link">
+      <a href="../projects/agent/agent-evaluation-framework/" class="md-nav__link">
         
   
   
@@ -2663,7 +2567,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent/build-your-own-tool/" class="md-nav__link">
+      <a href="../projects/agent/build-your-own-tool/" class="md-nav__link">
         
   
   
@@ -2691,7 +2595,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent/custom-tool-creator/" class="md-nav__link">
+      <a href="../projects/agent/custom-tool-creator/" class="md-nav__link">
         
   
   
@@ -2719,7 +2623,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent/date-calculator/" class="md-nav__link">
+      <a href="../projects/agent/date-calculator/" class="md-nav__link">
         
   
   
@@ -2747,7 +2651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent/educational-assistant/" class="md-nav__link">
+      <a href="../projects/agent/educational-assistant/" class="md-nav__link">
         
   
   
@@ -2775,7 +2679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent/multi-tool-problem-solver/" class="md-nav__link">
+      <a href="../projects/agent/multi-tool-problem-solver/" class="md-nav__link">
         
   
   
@@ -2803,7 +2707,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent/personal-math-tutor/" class="md-nav__link">
+      <a href="../projects/agent/personal-math-tutor/" class="md-nav__link">
         
   
   
@@ -2831,7 +2735,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent/science-explorer/" class="md-nav__link">
+      <a href="../projects/agent/science-explorer/" class="md-nav__link">
         
   
   
@@ -2859,7 +2763,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent/simple-calculator-agent/" class="md-nav__link">
+      <a href="../projects/agent/simple-calculator-agent/" class="md-nav__link">
         
   
   
@@ -2887,7 +2791,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent/text-analyzer/" class="md-nav__link">
+      <a href="../projects/agent/text-analyzer/" class="md-nav__link">
         
   
   
@@ -2915,7 +2819,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent/unit-conversion-assistant/" class="md-nav__link">
+      <a href="../projects/agent/unit-conversion-assistant/" class="md-nav__link">
         
   
   
@@ -2943,7 +2847,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent/word-detective/" class="md-nav__link">
+      <a href="../projects/agent/word-detective/" class="md-nav__link">
         
   
   
@@ -2985,20 +2889,17 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
         
           
-          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
             
   
   
@@ -3034,7 +2935,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workflow/build-a-pipeline/" class="md-nav__link">
+      <a href="../projects/workflow/build-a-pipeline/" class="md-nav__link">
         
   
   
@@ -3076,20 +2977,17 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_8" >
         
           
-          <label class="md-nav__link" for="__nav_5_8" id="__nav_5_8_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5_8" id="__nav_5_8_label" tabindex="0">
             
   
   
@@ -3125,7 +3023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../eval/judge-your-bot/" class="md-nav__link">
+      <a href="../projects/eval/judge-your-bot/" class="md-nav__link">
         
   
   
@@ -3161,7 +3059,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mini-project-template/" class="md-nav__link">
+      <a href="../mini-project-template/" class="md-nav__link">
         
   
   
@@ -3193,26 +3091,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
@@ -3230,7 +3133,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3248,7 +3151,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../education-guide/" class="md-nav__link">
+      <a href="../education-guide/" class="md-nav__link">
         
   
   
@@ -3276,7 +3179,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../classroom-setup/" class="md-nav__link">
+      <a href="../classroom-setup/" class="md-nav__link">
         
   
   
@@ -3301,10 +3204,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../deploy-ollama/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Host a Shared Ollama
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -3320,6 +3250,92 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-shape" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The shape
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-composeyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        docker-compose.yml
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caddyfile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Caddyfile
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pull-the-models-on-the-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pull the models on the server
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-students-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What students do
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-do-this" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Before you do this
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3391,7 +3407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../use-with-llm/" class="md-nav__link">
+      <a href="../use-with-llm/" class="md-nav__link">
         
   
   
@@ -3419,7 +3435,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cli-guide/" class="md-nav__link">
+      <a href="../cli-guide/" class="md-nav__link">
         
   
   
@@ -3447,7 +3463,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../bot-template/" class="md-nav__link">
+      <a href="../bot-template/" class="md-nav__link">
         
   
   
@@ -3475,7 +3491,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../migration/" class="md-nav__link">
+      <a href="../migration/" class="md-nav__link">
         
   
   
@@ -3503,7 +3519,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../project-tools/" class="md-nav__link">
+      <a href="../project-tools/" class="md-nav__link">
         
   
   
@@ -3531,7 +3547,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../llm-guide/" class="md-nav__link">
+      <a href="../llm-guide/" class="md-nav__link">
         
   
   
@@ -3618,7 +3634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../authors/" class="md-nav__link">
+      <a href="../authors/" class="md-nav__link">
         
   
   
@@ -3646,7 +3662,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/" class="md-nav__link">
+      <a href="../contributing/" class="md-nav__link">
         
   
   
@@ -3701,10 +3717,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#the-shape" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        The shape
       
     </span>
   </a>
@@ -3712,10 +3728,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#instructions" class="md-nav__link">
+  <a href="#docker-composeyml" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Instructions
+        docker-compose.yml
       
     </span>
   </a>
@@ -3723,10 +3739,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#extension-ideas" class="md-nav__link">
+  <a href="#caddyfile" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Extension Ideas
+        Caddyfile
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pull-the-models-on-the-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pull the models on the server
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-students-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What students do
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-do-this" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Before you do this
       
     </span>
   </a>
@@ -3753,142 +3802,131 @@
   
 
 
-<h1 id="mood-journal-assistant">Mood Journal Assistant<a class="headerlink" href="#mood-journal-assistant" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty</strong>: Beginner-Intermediate<br />
-<strong>Time</strong>: 45-60 minutes<br />
-<strong>Learning Focus</strong>: File I/O, date handling, text analysis<br />
-<strong>Module</strong>: chat</p>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>Create a journaling assistant that helps users track moods and reflect on patterns.</p>
-<h2 id="instructions">Instructions<a class="headerlink" href="#instructions" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">hands_on_ai.chat</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_response</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<h1 id="host-a-shared-ollama-for-educators">Host a Shared Ollama (for Educators)<a class="headerlink" href="#host-a-shared-ollama-for-educators" title="Permanent link">&para;</a></h1>
+<p>Sometimes you want a whole class pointing at one model server. Every student
+(including the ones on Google Colab) just sets two environment variables and
+starts working. No local installs, no "it runs differently on my laptop", no GPU
+on the student side. You host the model once and everyone shares it.</p>
+<p>This is optional, and it is a bit more setup for you, the educator. If your whole
+class is in one room on one network, plain local Ollama is simpler and you can
+skip this page entirely. Reach for this recipe when students are remote, on
+Colab, or on locked-down machines where installing things is painful.</p>
+<h2 id="the-shape">The shape<a class="headerlink" href="#the-shape" title="Permanent link">&para;</a></h2>
+<p>Ollama has no built-in authentication. If you expose port <code>11434</code> to the
+internet, anyone who finds it can use your server. So the plan is:</p>
+<ol>
+<li>Run Ollama, but do not expose its port publicly.</li>
+<li>Put a small reverse proxy in front of it that checks an
+   <code>Authorization: Bearer &lt;key&gt;</code> header and serves everything over HTTPS.</li>
+<li>Hand students the proxy URL and the class key.</li>
+</ol>
+<p>Students then set two environment variables:</p>
+<ul>
+<li><code>HANDS_ON_AI_SERVER</code>: the public HTTPS URL of your proxy.</li>
+<li><code>HANDS_ON_AI_API_KEY</code>: the shared class key.</li>
+</ul>
+<p>The library sends the key as a bearer token, the proxy checks it, and only then
+does the request reach Ollama.</p>
+<h2 id="docker-composeyml">docker-compose.yml<a class="headerlink" href="#docker-composeyml" title="Permanent link">&para;</a></h2>
+<p>This brings up two services. Ollama keeps its models in a named volume and is
+only reachable on the internal Docker network. Caddy is the public face: it
+terminates HTTPS (it can fetch certificates automatically for a real domain) and
+enforces the bearer token.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ollama</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ollama/ollama</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ollama_models:/root/.ollama</span>
+<span class="w">    </span><span class="c1"># Note: we deliberately do NOT publish 11434 to the host.</span>
+<span class="w">    </span><span class="c1"># Only the caddy service can reach it, over the internal network.</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">mood_journal</span><span class="p">():</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Interactive mood journaling assistant&quot;&quot;&quot;</span>
-    <span class="n">journal_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s2">&quot;~/.mood_journal&quot;</span><span class="p">)</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">journal_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="w">  </span><span class="nt">caddy</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">caddy:2</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;80:80&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;443:443&quot;</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OLLAMA_DOMAIN=${OLLAMA_DOMAIN}</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CLASS_KEY=${CLASS_KEY}</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./Caddyfile:/etc/caddy/Caddyfile</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">caddy_data:/data</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">caddy_config:/config</span>
+<span class="w">    </span><span class="nt">depends_on</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ollama</span>
 
-    <span class="n">journal_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">journal_dir</span><span class="p">,</span> <span class="s2">&quot;journal_entries.json&quot;</span><span class="p">)</span>
-
-    <span class="c1"># Load existing entries</span>
-    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">journal_file</span><span class="p">):</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">journal_file</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-            <span class="k">try</span><span class="p">:</span>
-                <span class="n">entries</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-            <span class="k">except</span> <span class="n">json</span><span class="o">.</span><span class="n">JSONDecodeError</span><span class="p">:</span>
-                <span class="n">entries</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">entries</span> <span class="o">=</span> <span class="p">[]</span>
-
-    <span class="c1"># Get today&#39;s date</span>
-    <span class="n">today</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== Mood Journal Assistant ===&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1. Add a new entry&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2. View past entries&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3. Get insights&quot;</span><span class="p">)</span>
-
-    <span class="n">choice</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">What would you like to do? &quot;</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
-        <span class="c1"># Add new entry</span>
-        <span class="n">mood</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">How would you rate your mood today (1-10)? &quot;</span><span class="p">)</span>
-        <span class="n">activities</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What activities did you do today? &quot;</span><span class="p">)</span>
-        <span class="n">thoughts</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Share any thoughts or reflections: &quot;</span><span class="p">)</span>
-
-        <span class="n">entry</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="n">today</span><span class="p">,</span>
-            <span class="s2">&quot;mood&quot;</span><span class="p">:</span> <span class="n">mood</span><span class="p">,</span>
-            <span class="s2">&quot;activities&quot;</span><span class="p">:</span> <span class="n">activities</span><span class="p">,</span>
-            <span class="s2">&quot;thoughts&quot;</span><span class="p">:</span> <span class="n">thoughts</span>
-        <span class="p">}</span>
-
-        <span class="n">entries</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
-
-        <span class="c1"># Save updated entries</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">journal_file</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-            <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">entries</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-
-        <span class="c1"># Get AI reflection</span>
-        <span class="n">reflection_prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">        The user rated their mood as </span><span class="si">{</span><span class="n">mood</span><span class="si">}</span><span class="s2">/10 today.</span>
-<span class="s2">        They did these activities: </span><span class="si">{</span><span class="n">activities</span><span class="si">}</span>
-<span class="s2">        Their thoughts: </span><span class="si">{</span><span class="n">thoughts</span><span class="si">}</span>
-
-<span class="s2">        Provide a thoughtful, supportive reflection on their entry.</span>
-<span class="s2">        &quot;&quot;&quot;</span>
-
-        <span class="n">reflection</span> <span class="o">=</span> <span class="n">get_response</span><span class="p">(</span><span class="n">reflection_prompt</span><span class="p">,</span> 
-                                 <span class="n">system</span><span class="o">=</span><span class="s2">&quot;You are a supportive, empathetic journaling assistant.&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== Reflection ===&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">reflection</span><span class="p">)</span>
-
-    <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span>
-        <span class="c1"># View past entries</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">entries</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No entries found.&quot;</span><span class="p">)</span>
-            <span class="k">return</span>
-
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== Past Entries ===&quot;</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">entry</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">entries</span><span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">:])):</span>  <span class="c1"># Show last 10 entries</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> - Mood: </span><span class="si">{</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;mood&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">/10&quot;</span><span class="p">)</span>
-
-        <span class="n">entry_choice</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Which entry would you like to view? (number) &quot;</span><span class="p">)</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">idx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">entry_choice</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
-            <span class="n">entry</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">entries</span><span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">:]))[</span><span class="n">idx</span><span class="p">]</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Date: </span><span class="si">{</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mood: </span><span class="si">{</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;mood&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">/10&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Activities: </span><span class="si">{</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;activities&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Thoughts: </span><span class="si">{</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;thoughts&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">IndexError</span><span class="p">):</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid entry number.&quot;</span><span class="p">)</span>
-
-    <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;3&quot;</span><span class="p">:</span>
-        <span class="c1"># Get insights</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">entries</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Need more entries to generate insights (at least 3).&quot;</span><span class="p">)</span>
-            <span class="k">return</span>
-
-        <span class="c1"># Create a summary of recent entries</span>
-        <span class="n">recent_entries</span> <span class="o">=</span> <span class="n">entries</span><span class="p">[</span><span class="o">-</span><span class="mi">7</span><span class="p">:]</span>  <span class="c1"># Last 7 entries</span>
-        <span class="n">entries_text</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-
-        <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">recent_entries</span><span class="p">:</span>
-            <span class="n">entries_text</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;Date: </span><span class="si">{</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">, Mood: </span><span class="si">{</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;mood&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">/10</span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="n">entries_text</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;Activities: </span><span class="si">{</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;activities&#39;</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="n">entries_text</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;Thoughts: </span><span class="si">{</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;thoughts&#39;</span><span class="p">]</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span>
-
-        <span class="n">insight_prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">        Here are the user&#39;s recent journal entries:</span>
-
-<span class="s2">        </span><span class="si">{</span><span class="n">entries_text</span><span class="si">}</span>
-
-<span class="s2">        Based on these entries, provide:</span>
-<span class="s2">        1. Any patterns you notice in their mood</span>
-<span class="s2">        2. Activities that seem to correlate with higher moods</span>
-<span class="s2">        3. Gentle suggestions that might help improve their wellbeing</span>
-<span class="s2">        4. A positive affirmation</span>
-<span class="s2">        &quot;&quot;&quot;</span>
-
-        <span class="n">insights</span> <span class="o">=</span> <span class="n">get_response</span><span class="p">(</span><span class="n">insight_prompt</span><span class="p">,</span> 
-                               <span class="n">system</span><span class="o">=</span><span class="s2">&quot;You are an insightful, supportive journaling assistant who helps identify patterns in mood and behavior.&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== Mood Insights ===&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">insights</span><span class="p">)</span>
-
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid choice.&quot;</span><span class="p">)</span>
-
-<span class="c1"># Run the journal</span>
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">mood_journal</span><span class="p">()</span>
+<span class="nt">volumes</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ollama_models</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">caddy_data</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">caddy_config</span><span class="p">:</span>
 </code></pre></div>
-<h2 id="extension-ideas">Extension Ideas<a class="headerlink" href="#extension-ideas" title="Permanent link">&para;</a></h2>
-<p>Add mood tracking visualisations or goal-setting features.</p>
-<hr />
+<p>Set <code>OLLAMA_DOMAIN</code> and <code>CLASS_KEY</code> in a <code>.env</code> file next to this compose file
+(and keep that file out of git):</p>
+<div class="highlight"><pre><span></span><code><span class="nv">OLLAMA_DOMAIN</span><span class="o">=</span>ollama.example.edu
+<span class="nv">CLASS_KEY</span><span class="o">=</span>replace-with-a-long-random-string
+</code></pre></div>
+<h2 id="caddyfile">Caddyfile<a class="headerlink" href="#caddyfile" title="Permanent link">&para;</a></h2>
+<p>The proxy logic is short: if the <code>Authorization</code> header is not exactly
+<code>Bearer &lt;the class key&gt;</code>, respond <code>401</code>. Otherwise pass the request through to
+Ollama on the internal network.</p>
+<div class="highlight"><pre><span></span><code>{$OLLAMA_DOMAIN} {
+    # Reject anything without the correct bearer token.
+    @unauthorized {
+        not header Authorization &quot;Bearer {$CLASS_KEY}&quot;
+    }
+    respond @unauthorized &quot;Unauthorized&quot; 401
+
+    # Authorized requests go to Ollama on the internal network.
+    reverse_proxy ollama:11434
+}
+</code></pre></div>
+<p>A note on this: Caddy's header-matching syntax has changed between versions, and
+exact bearer-token comparison can be fiddly. Treat the block above as
+illustrative and verify it against the current Caddy docs for the version you are
+running. Test it yourself before handing the URL to students: a misconfigured
+matcher can either lock everyone out or, worse, let everyone in.</p>
+<h2 id="pull-the-models-on-the-server">Pull the models on the server<a class="headerlink" href="#pull-the-models-on-the-server" title="Permanent link">&para;</a></h2>
+<p>The container starts with no models. Pull them once on the host. RAG needs an
+embedding model in addition to a chat model, so pull both:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>ollama<span class="w"> </span>ollama<span class="w"> </span>pull<span class="w"> </span>llama3
+docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>ollama<span class="w"> </span>ollama<span class="w"> </span>pull<span class="w"> </span>nomic-embed-text
+</code></pre></div>
+<p>Pull any other models your assignments use the same way. They live in the named
+volume, so they survive container restarts.</p>
+<h2 id="what-students-do">What students do<a class="headerlink" href="#what-students-do" title="Permanent link">&para;</a></h2>
+<p>Students do not install anything. They set the two environment variables to the
+values you give them. In a terminal:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">HANDS_ON_AI_SERVER</span><span class="o">=</span><span class="s2">&quot;https://ollama.example.edu&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">HANDS_ON_AI_API_KEY</span><span class="o">=</span><span class="s2">&quot;replace-with-a-long-random-string&quot;</span>
+</code></pre></div>
+<p>In a Colab or Jupyter notebook, set them before importing the library. See
+<a href="../providers/">Providers and configuration</a> for every way to set these, and
+<a href="../notebooks/">Using notebooks</a> for the Colab specifics.</p>
+<p>Then confirm the connection:</p>
+<div class="highlight"><pre><span></span><code>handsonai<span class="w"> </span>doctor
+</code></pre></div>
+<p>If <code>doctor</code> reports a healthy connection and finds the models, they are ready to
+go.</p>
+<h2 id="before-you-do-this">Before you do this<a class="headerlink" href="#before-you-do-this" title="Permanent link">&para;</a></h2>
+<p>Be honest with yourself about what you are taking on:</p>
+<ul>
+<li>You are now running an internet-exposed service. Use a real domain with valid
+  TLS, not a self-signed certificate, or notebooks and clients may reject it.</li>
+<li>Keep the key out of git. Put it in <code>.env</code> or a secrets store, never in a
+  committed file or a shared notebook.</li>
+<li>Rotate the key each term, and any time it leaks. Treat it like a password,
+  because that is what it is.</li>
+<li>Watch your sizing. One GPU shared across thirty students running at once can
+  crawl. Test under realistic concurrency before assignments are due.</li>
+<li>If abuse is a concern, consider rate limits at the proxy, or issuing a
+  per-student key instead of one shared class key, so you can revoke one without
+  disrupting everyone.</li>
+</ul>
+<p>For many classes, a shared local Ollama on the classroom network, or a cloud
+provider API key, is simpler and perfectly fine. This recipe is specifically for
+when you want a single hosted endpoint that any student, anywhere, can point at.</p>
 
 
 
@@ -3960,12 +3998,12 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.instant", "navigation.tracking", "navigation.top", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.instant", "navigation.tracking", "navigation.top", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
-        <script src="../../../javascripts/custom.js"></script>
+        <script src="../javascripts/custom.js"></script>
       
     
   </body>

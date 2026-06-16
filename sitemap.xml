@@ -57,7 +57,15 @@
          <lastmod>2026-06-16</lastmod>
     </url>
     <url>
+         <loc>https://michael-borck.github.io/hands-on-ai/deploy-ollama/</loc>
+         <lastmod>2026-06-16</lastmod>
+    </url>
+    <url>
          <loc>https://michael-borck.github.io/hands-on-ai/education-guide/</loc>
+         <lastmod>2026-06-16</lastmod>
+    </url>
+    <url>
+         <loc>https://michael-borck.github.io/hands-on-ai/eval-guide/</loc>
          <lastmod>2026-06-16</lastmod>
     </url>
     <url>
@@ -181,6 +189,10 @@
          <lastmod>2026-06-16</lastmod>
     </url>
     <url>
+         <loc>https://michael-borck.github.io/hands-on-ai/projects/chat/build-your-own-cache/</loc>
+         <lastmod>2026-06-16</lastmod>
+    </url>
+    <url>
          <loc>https://michael-borck.github.io/hands-on-ai/projects/chat/build-your-own-personality-bot/</loc>
          <lastmod>2026-06-16</lastmod>
     </url>
@@ -262,6 +274,10 @@
     </url>
     <url>
          <loc>https://michael-borck.github.io/hands-on-ai/projects/chat/youtube-to-blog-converter/</loc>
+         <lastmod>2026-06-16</lastmod>
+    </url>
+    <url>
+         <loc>https://michael-borck.github.io/hands-on-ai/projects/eval/judge-your-bot/</loc>
          <lastmod>2026-06-16</lastmod>
     </url>
     <url>

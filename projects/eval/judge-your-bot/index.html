@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://michael-borck.github.io/hands-on-ai/projects/chat/mood-journal-assistant/">
+        <link rel="canonical" href="https://michael-borck.github.io/hands-on-ai/projects/eval/judge-your-bot/">
       
       
-        <link rel="prev" href="../language-translation-helper/">
+        <link rel="prev" href="../../workflow/build-a-pipeline/">
       
       
-        <link rel="next" href="../personality-bot-creator/">
+        <link rel="next" href="../../../mini-project-template/">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>Mood Journal Assistant - HandsOnAI Documentation</title>
+        <title>Judge Your Bot - HandsOnAI Documentation</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mood-journal-assistant" class="md-skip">
+        <a href="#judge-your-bot" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Mood Journal Assistant
+              Judge Your Bot
             
           </span>
         </div>
@@ -1401,10 +1401,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../eval/judge-your-bot/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Judge Your Bot
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1420,6 +1447,125 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-define-your-test-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Define your test questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-generate-answers-with-a-bot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Generate answers with a bot
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-score-each-answer-with-the-judge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Score each answer with the judge
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-print-a-small-score-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Print a small score table
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-average-the-scores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Average the scores
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-run-it-twice-and-watch-the-variance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Run it twice and watch the variance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extensions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works-under-the-hood" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works under the hood
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1585,8 +1731,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1602,11 +1746,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
         
           
           <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="">
@@ -1627,7 +1771,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1645,7 +1789,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../advanced-journal-bot/" class="md-nav__link">
+      <a href="../../chat/advanced-journal-bot/" class="md-nav__link">
         
   
   
@@ -1673,7 +1817,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bot-personality-menu-generator/" class="md-nav__link">
+      <a href="../../chat/bot-personality-menu-generator/" class="md-nav__link">
         
   
   
@@ -1701,7 +1845,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../build-your-own-cache/" class="md-nav__link">
+      <a href="../../chat/build-your-own-cache/" class="md-nav__link">
         
   
   
@@ -1729,7 +1873,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../build-your-own-personality-bot/" class="md-nav__link">
+      <a href="../../chat/build-your-own-personality-bot/" class="md-nav__link">
         
   
   
@@ -1757,7 +1901,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../choose-your-own-adventure/" class="md-nav__link">
+      <a href="../../chat/choose-your-own-adventure/" class="md-nav__link">
         
   
   
@@ -1785,7 +1929,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../classroom-simulation-bot/" class="md-nav__link">
+      <a href="../../chat/classroom-simulation-bot/" class="md-nav__link">
         
   
   
@@ -1813,7 +1957,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../code-explainer-tool/" class="md-nav__link">
+      <a href="../../chat/code-explainer-tool/" class="md-nav__link">
         
   
   
@@ -1841,7 +1985,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../creative-writing-partner/" class="md-nav__link">
+      <a href="../../chat/creative-writing-partner/" class="md-nav__link">
         
   
   
@@ -1869,7 +2013,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-visualization-dashboard/" class="md-nav__link">
+      <a href="../../chat/data-visualization-dashboard/" class="md-nav__link">
         
   
   
@@ -1897,7 +2041,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../debate-interview-panel-dialogue-simulator/" class="md-nav__link">
+      <a href="../../chat/debate-interview-panel-dialogue-simulator/" class="md-nav__link">
         
   
   
@@ -1925,7 +2069,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../emotional-support-bot/" class="md-nav__link">
+      <a href="../../chat/emotional-support-bot/" class="md-nav__link">
         
   
   
@@ -1953,7 +2097,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../historical-figure-chat/" class="md-nav__link">
+      <a href="../../chat/historical-figure-chat/" class="md-nav__link">
         
   
   
@@ -1981,7 +2125,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../image-gallery-creator/" class="md-nav__link">
+      <a href="../../chat/image-gallery-creator/" class="md-nav__link">
         
   
   
@@ -2009,7 +2153,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../journal-or-reflection-bot/" class="md-nav__link">
+      <a href="../../chat/journal-or-reflection-bot/" class="md-nav__link">
         
   
   
@@ -2037,7 +2181,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../knowledge-quiz-bot/" class="md-nav__link">
+      <a href="../../chat/knowledge-quiz-bot/" class="md-nav__link">
         
   
   
@@ -2065,7 +2209,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../language-translation-helper/" class="md-nav__link">
+      <a href="../../chat/language-translation-helper/" class="md-nav__link">
         
   
   
@@ -2090,37 +2234,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Mood Journal Assistant
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../chat/mood-journal-assistant/" class="md-nav__link">
         
   
   
@@ -2136,59 +2253,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Overview
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instructions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Instructions
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#extension-ideas" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Extension Ideas
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2201,7 +2265,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../personality-bot-creator/" class="md-nav__link">
+      <a href="../../chat/personality-bot-creator/" class="md-nav__link">
         
   
   
@@ -2229,7 +2293,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../smart-to-do-list/" class="md-nav__link">
+      <a href="../../chat/smart-to-do-list/" class="md-nav__link">
         
   
   
@@ -2257,7 +2321,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../subject-expert-tutor/" class="md-nav__link">
+      <a href="../../chat/subject-expert-tutor/" class="md-nav__link">
         
   
   
@@ -2285,7 +2349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../text-adventure-game-engine/" class="md-nav__link">
+      <a href="../../chat/text-adventure-game-engine/" class="md-nav__link">
         
   
   
@@ -2313,7 +2377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trivia-or-quiz-bot/" class="md-nav__link">
+      <a href="../../chat/trivia-or-quiz-bot/" class="md-nav__link">
         
   
   
@@ -2341,7 +2405,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../weather-dashboard/" class="md-nav__link">
+      <a href="../../chat/weather-dashboard/" class="md-nav__link">
         
   
   
@@ -2369,7 +2433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../youtube-to-blog-converter/" class="md-nav__link">
+      <a href="../../chat/youtube-to-blog-converter/" class="md-nav__link">
         
   
   
@@ -3067,6 +3131,8 @@
                 
   
   
+    
+  
   
   
     
@@ -3082,11 +3148,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_8" checked>
         
           
           <label class="md-nav__link" for="__nav_5_8" id="__nav_5_8_label" tabindex="">
@@ -3107,7 +3173,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5_8">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3122,10 +3188,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../eval/judge-your-bot/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Judge Your Bot
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -3141,6 +3234,125 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-define-your-test-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Define your test questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-generate-answers-with-a-bot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Generate answers with a bot
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-score-each-answer-with-the-judge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Score each answer with the judge
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-print-a-small-score-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Print a small score table
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-average-the-scores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Average the scores
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-run-it-twice-and-watch-the-variance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Run it twice and watch the variance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extensions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works-under-the-hood" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works under the hood
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3712,10 +3924,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#instructions" class="md-nav__link">
+  <a href="#step-1-define-your-test-questions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Instructions
+        Step 1: Define your test questions
       
     </span>
   </a>
@@ -3723,10 +3935,76 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#extension-ideas" class="md-nav__link">
+  <a href="#step-2-generate-answers-with-a-bot" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Extension Ideas
+        Step 2: Generate answers with a bot
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-score-each-answer-with-the-judge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Score each answer with the judge
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-print-a-small-score-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Print a small score table
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-average-the-scores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Average the scores
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-run-it-twice-and-watch-the-variance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Run it twice and watch the variance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extensions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works-under-the-hood" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works under the hood
       
     </span>
   </a>
@@ -3753,142 +4031,119 @@
   
 
 
-<h1 id="mood-journal-assistant">Mood Journal Assistant<a class="headerlink" href="#mood-journal-assistant" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty</strong>: Beginner-Intermediate<br />
-<strong>Time</strong>: 45-60 minutes<br />
-<strong>Learning Focus</strong>: File I/O, date handling, text analysis<br />
-<strong>Module</strong>: chat</p>
+<h1 id="judge-your-bot">Judge Your Bot<a class="headerlink" href="#judge-your-bot" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty</strong>: Intermediate<br />
+<strong>Time</strong>: 40 minutes<br />
+<strong>Learning Focus</strong>: Evaluation, LLM-as-judge, rubrics<br />
+<strong>Module</strong>: eval</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>Create a journaling assistant that helps users track moods and reflect on patterns.</p>
-<h2 id="instructions">Instructions<a class="headerlink" href="#instructions" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">hands_on_ai.chat</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_response</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">mood_journal</span><span class="p">():</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Interactive mood journaling assistant&quot;&quot;&quot;</span>
-    <span class="n">journal_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s2">&quot;~/.mood_journal&quot;</span><span class="p">)</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">journal_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-    <span class="n">journal_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">journal_dir</span><span class="p">,</span> <span class="s2">&quot;journal_entries.json&quot;</span><span class="p">)</span>
-
-    <span class="c1"># Load existing entries</span>
-    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">journal_file</span><span class="p">):</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">journal_file</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-            <span class="k">try</span><span class="p">:</span>
-                <span class="n">entries</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-            <span class="k">except</span> <span class="n">json</span><span class="o">.</span><span class="n">JSONDecodeError</span><span class="p">:</span>
-                <span class="n">entries</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">entries</span> <span class="o">=</span> <span class="p">[]</span>
-
-    <span class="c1"># Get today&#39;s date</span>
-    <span class="n">today</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== Mood Journal Assistant ===&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1. Add a new entry&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2. View past entries&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3. Get insights&quot;</span><span class="p">)</span>
-
-    <span class="n">choice</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">What would you like to do? &quot;</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
-        <span class="c1"># Add new entry</span>
-        <span class="n">mood</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">How would you rate your mood today (1-10)? &quot;</span><span class="p">)</span>
-        <span class="n">activities</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What activities did you do today? &quot;</span><span class="p">)</span>
-        <span class="n">thoughts</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Share any thoughts or reflections: &quot;</span><span class="p">)</span>
-
-        <span class="n">entry</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="n">today</span><span class="p">,</span>
-            <span class="s2">&quot;mood&quot;</span><span class="p">:</span> <span class="n">mood</span><span class="p">,</span>
-            <span class="s2">&quot;activities&quot;</span><span class="p">:</span> <span class="n">activities</span><span class="p">,</span>
-            <span class="s2">&quot;thoughts&quot;</span><span class="p">:</span> <span class="n">thoughts</span>
-        <span class="p">}</span>
-
-        <span class="n">entries</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
-
-        <span class="c1"># Save updated entries</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">journal_file</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-            <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">entries</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-
-        <span class="c1"># Get AI reflection</span>
-        <span class="n">reflection_prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">        The user rated their mood as </span><span class="si">{</span><span class="n">mood</span><span class="si">}</span><span class="s2">/10 today.</span>
-<span class="s2">        They did these activities: </span><span class="si">{</span><span class="n">activities</span><span class="si">}</span>
-<span class="s2">        Their thoughts: </span><span class="si">{</span><span class="n">thoughts</span><span class="si">}</span>
-
-<span class="s2">        Provide a thoughtful, supportive reflection on their entry.</span>
-<span class="s2">        &quot;&quot;&quot;</span>
-
-        <span class="n">reflection</span> <span class="o">=</span> <span class="n">get_response</span><span class="p">(</span><span class="n">reflection_prompt</span><span class="p">,</span> 
-                                 <span class="n">system</span><span class="o">=</span><span class="s2">&quot;You are a supportive, empathetic journaling assistant.&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== Reflection ===&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">reflection</span><span class="p">)</span>
-
-    <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span>
-        <span class="c1"># View past entries</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">entries</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No entries found.&quot;</span><span class="p">)</span>
-            <span class="k">return</span>
-
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== Past Entries ===&quot;</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">entry</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">entries</span><span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">:])):</span>  <span class="c1"># Show last 10 entries</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> - Mood: </span><span class="si">{</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;mood&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">/10&quot;</span><span class="p">)</span>
-
-        <span class="n">entry_choice</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Which entry would you like to view? (number) &quot;</span><span class="p">)</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">idx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">entry_choice</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
-            <span class="n">entry</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">entries</span><span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">:]))[</span><span class="n">idx</span><span class="p">]</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Date: </span><span class="si">{</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mood: </span><span class="si">{</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;mood&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">/10&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Activities: </span><span class="si">{</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;activities&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Thoughts: </span><span class="si">{</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;thoughts&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">IndexError</span><span class="p">):</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid entry number.&quot;</span><span class="p">)</span>
-
-    <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;3&quot;</span><span class="p">:</span>
-        <span class="c1"># Get insights</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">entries</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Need more entries to generate insights (at least 3).&quot;</span><span class="p">)</span>
-            <span class="k">return</span>
-
-        <span class="c1"># Create a summary of recent entries</span>
-        <span class="n">recent_entries</span> <span class="o">=</span> <span class="n">entries</span><span class="p">[</span><span class="o">-</span><span class="mi">7</span><span class="p">:]</span>  <span class="c1"># Last 7 entries</span>
-        <span class="n">entries_text</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-
-        <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">recent_entries</span><span class="p">:</span>
-            <span class="n">entries_text</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;Date: </span><span class="si">{</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">, Mood: </span><span class="si">{</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;mood&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">/10</span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="n">entries_text</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;Activities: </span><span class="si">{</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;activities&#39;</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="n">entries_text</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;Thoughts: </span><span class="si">{</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;thoughts&#39;</span><span class="p">]</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span>
-
-        <span class="n">insight_prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">        Here are the user&#39;s recent journal entries:</span>
-
-<span class="s2">        </span><span class="si">{</span><span class="n">entries_text</span><span class="si">}</span>
-
-<span class="s2">        Based on these entries, provide:</span>
-<span class="s2">        1. Any patterns you notice in their mood</span>
-<span class="s2">        2. Activities that seem to correlate with higher moods</span>
-<span class="s2">        3. Gentle suggestions that might help improve their wellbeing</span>
-<span class="s2">        4. A positive affirmation</span>
-<span class="s2">        &quot;&quot;&quot;</span>
-
-        <span class="n">insights</span> <span class="o">=</span> <span class="n">get_response</span><span class="p">(</span><span class="n">insight_prompt</span><span class="p">,</span> 
-                               <span class="n">system</span><span class="o">=</span><span class="s2">&quot;You are an insightful, supportive journaling assistant who helps identify patterns in mood and behavior.&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== Mood Insights ===&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">insights</span><span class="p">)</span>
-
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid choice.&quot;</span><span class="p">)</span>
-
-<span class="c1"># Run the journal</span>
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">mood_journal</span><span class="p">()</span>
+<p>You've built bots in the earlier projects. Now you'll build a tiny <strong>evaluation
+harness</strong>: a handful of test questions, a bot that answers them, and a <em>judge</em>
+model that scores each answer against criteria you define. By the end you'll have
+a small score table and an average, and you'll see how much those scores wobble
+between runs.</p>
+<blockquote>
+<p>🧠 <strong>Evaluation in one line:</strong> instead of guessing whether an answer is good,
+ask a capable model to score it against clear criteria. See
+<a href="../../../eval-guide/">Understanding Evaluation</a> for the concepts.</p>
+</blockquote>
+<h2 id="step-1-define-your-test-questions">Step 1: Define your test questions<a class="headerlink" href="#step-1-define-your-test-questions" title="Permanent link">&para;</a></h2>
+<p>Start with a few questions where <em>you</em> know roughly what a good answer looks like.
+Keep it small so you can sanity-check the judge's scores yourself.</p>
+<div class="highlight"><pre><span></span><code><span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;What is the capital of France?&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Explain what a variable is in programming, in one sentence.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;What is 17 multiplied by 4?&quot;</span><span class="p">,</span>
+<span class="p">]</span>
 </code></pre></div>
-<h2 id="extension-ideas">Extension Ideas<a class="headerlink" href="#extension-ideas" title="Permanent link">&para;</a></h2>
-<p>Add mood tracking visualisations or goal-setting features.</p>
-<hr />
+<h2 id="step-2-generate-answers-with-a-bot">Step 2: Generate answers with a bot<a class="headerlink" href="#step-2-generate-answers-with-a-bot" title="Permanent link">&para;</a></h2>
+<p>Use the chat module to answer each question. This is the "thing under test".</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">hands_on_ai.chat</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_response</span>
+
+<span class="n">answers</span> <span class="o">=</span> <span class="p">[</span><span class="n">get_response</span><span class="p">(</span><span class="n">q</span><span class="p">)</span> <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">questions</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">q</span><span class="p">,</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">questions</span><span class="p">,</span> <span class="n">answers</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Q: </span><span class="si">{</span><span class="n">q</span><span class="si">}</span><span class="se">\n</span><span class="s2">A: </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="step-3-score-each-answer-with-the-judge">Step 3: Score each answer with the judge<a class="headerlink" href="#step-3-score-each-answer-with-the-judge" title="Permanent link">&para;</a></h2>
+<p>Now bring in the judge. For each answer, score it against criteria. Passing the
+original <code>question</code> gives the judge context, so it knows what the answer was
+supposed to address.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">hands_on_ai.eval</span><span class="w"> </span><span class="kn">import</span> <span class="n">judge</span>
+
+<span class="n">criteria</span> <span class="o">=</span> <span class="s2">&quot;Accurate, directly answers the question, and concise.&quot;</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">q</span><span class="p">,</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">questions</span><span class="p">,</span> <span class="n">answers</span><span class="p">):</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">judge</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">criteria</span><span class="p">,</span> <span class="n">question</span><span class="o">=</span><span class="n">q</span><span class="p">)</span>
+    <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+</code></pre></div>
+<p>Each <code>r</code> is a dict: <code>{"score": int or None, "reasoning": str, "raw": str}</code>.</p>
+<h2 id="step-4-print-a-small-score-table">Step 4: Print a small score table<a class="headerlink" href="#step-4-print-a-small-score-table" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;Score&#39;</span><span class="si">:</span><span class="s2">&lt;6</span><span class="si">}</span><span class="s2"> | Question&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">q</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">questions</span><span class="p">,</span> <span class="n">results</span><span class="p">):</span>
+    <span class="n">score</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="n">r</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="s2">&quot;?&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">score</span><span class="p">)</span><span class="si">:</span><span class="s2">&lt;6</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">q</span><span class="p">[:</span><span class="mi">40</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>You'll get something like:</p>
+<div class="highlight"><pre><span></span><code>Score  | Question
+--------------------------------------------------
+5      | What is the capital of France?
+4      | Explain what a variable is in programming
+5      | What is 17 multiplied by 4?
+</code></pre></div>
+<h2 id="step-5-average-the-scores">Step 5: Average the scores<a class="headerlink" href="#step-5-average-the-scores" title="Permanent link">&para;</a></h2>
+<p>Skip any <code>None</code> scores (a reply the judge couldn't be parsed from), then average
+what's left.</p>
+<div class="highlight"><pre><span></span><code><span class="n">scores</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">results</span> <span class="k">if</span> <span class="n">r</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">]</span>
+<span class="n">average</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span> <span class="k">if</span> <span class="n">scores</span> <span class="k">else</span> <span class="mi">0</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Average score: </span><span class="si">{</span><span class="n">average</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> over </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span><span class="si">}</span><span class="s2"> answers&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="step-6-run-it-twice-and-watch-the-variance">Step 6: Run it twice and watch the variance<a class="headerlink" href="#step-6-run-it-twice-and-watch-the-variance" title="Permanent link">&para;</a></h2>
+<p>Run Steps 3 to 5 again without changing anything. You'll likely see at least one
+score move (a 4 becomes a 3, or the average shifts by half a point). That wobble
+is the single most important lesson here: <strong>a judge gives you a signal, not a
+verdict.</strong> One run is noisy. Trends across runs are trustworthy.</p>
+<h2 id="extensions">Extensions<a class="headerlink" href="#extensions" title="Permanent link">&para;</a></h2>
+<p>Pick any of these to go deeper:</p>
+<ul>
+<li><strong>A richer rubric.</strong> Replace the single criteria string with several explicit
+  checks, and let the judge weigh them: <code>"Score on: (1) factual accuracy, (2)
+  staying on topic, (3) brevity under 30 words."</code></li>
+<li><strong>Head-to-head.</strong> Generate answers from two different bots or models, judge
+  both with the same criteria, and compare their averages to see which wins.</li>
+<li><strong>Median of three.</strong> Judge each answer three times and take the median score.
+  This smooths out the run-to-run wobble you saw in Step 6.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">statistics</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">stable_score</span><span class="p">(</span><span class="n">answer</span><span class="p">,</span> <span class="n">criteria</span><span class="p">,</span> <span class="n">question</span><span class="p">,</span> <span class="n">runs</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">scores</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">runs</span><span class="p">):</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">judge</span><span class="p">(</span><span class="n">answer</span><span class="p">,</span> <span class="n">criteria</span><span class="p">,</span> <span class="n">question</span><span class="o">=</span><span class="n">question</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">r</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">statistics</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span> <span class="k">if</span> <span class="n">scores</span> <span class="k">else</span> <span class="kc">None</span>
+</code></pre></div>
+<ul>
+<li><strong>Flag the failures.</strong> Print only the answers that score below a threshold, so
+  you can review the weak ones by hand:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">threshold</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="k">for</span> <span class="n">q</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">questions</span><span class="p">,</span> <span class="n">answers</span><span class="p">,</span> <span class="n">results</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">r</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">r</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">threshold</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;LOW (</span><span class="si">{</span><span class="n">r</span><span class="p">[</span><span class="s1">&#39;score&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="n">q</span><span class="si">}</span><span class="se">\n</span><span class="s2">  -&gt; </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="se">\n</span><span class="s2">  reason: </span><span class="si">{</span><span class="n">r</span><span class="p">[</span><span class="s1">&#39;reasoning&#39;</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="how-it-works-under-the-hood">How it works under the hood<a class="headerlink" href="#how-it-works-under-the-hood" title="Permanent link">&para;</a></h2>
+<p>The judge is about 40 lines of plain Python in
+<a href="https://github.com/teaching-repositories/hands-on-ai/blob/main/src/hands_on_ai/eval/judge.py"><code>hands_on_ai/eval/judge.py</code></a>.
+It builds a system prompt asking the model to reply with exactly two lines,
+<code>SCORE:</code> and <code>REASONING:</code>, sends your question, criteria, and answer through
+<code>get_response</code>, then uses a small regex to pull the number and the sentence back
+out. The score is clamped into the <code>1..scale</code> range, and if no <code>SCORE:</code> line is
+found, <code>score</code> comes back as <code>None</code> with the full reply preserved in <code>raw</code>. No
+magic: just a careful prompt and some parsing.</p>
 
 
 
