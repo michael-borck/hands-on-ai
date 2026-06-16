@@ -8,7 +8,7 @@
 [![MIT License](https://img.shields.io/badge/licence-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Classroom Ready](https://img.shields.io/badge/classroom-ready-brightgreen.svg)]()
 [![Beginner Friendly](https://img.shields.io/badge/beginner-friendly-orange.svg)]()
-[![DeepWiki](https://deepwiki.com/badge-maker?url=https%3A%2F%2Fdeepwiki.com%2Fmichael-borck%2Fhands-on-ai)](https://deepwiki.com/michael-borck/hands-on-ai)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/michael-borck/hands-on-ai)
 
 > AI learning made simple for students and educators
 
