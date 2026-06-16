@@ -106,6 +106,15 @@ Each module introduces the next layer of how modern AI systems are built:
 
     [Learn Workflows →](workflow-guide.md)
 
+-   ⚖️ **Evaluation**: `eval`
+
+    ---
+
+    The question after "how do I build it?": how do you know if the output is
+    good? Use an LLM to judge a response against your criteria.
+
+    [Learn Evaluation →](eval-guide.md)
+
 </div>
 
 ## Why Hands-On AI
@@ -114,7 +123,7 @@ Each module introduces the next layer of how modern AI systems are built:
 - 🌍 **Provider-agnostic**: swap to OpenAI, OpenRouter, Together, Groq, or any [OpenAI-compatible provider](providers.md) without changing code
 - 📴 **Works offline**: ideal for classrooms with unreliable internet
 - 🧠 **Beginner-friendly**: small, readable code you're meant to open and understand
-- 🧩 **Progressive**: chat → RAG → agents → workflows mirrors a real learning path
+- 🧩 **Progressive**: chat → RAG → agents → workflows → evaluation mirrors a real learning path
 
 ## Offline resources
 

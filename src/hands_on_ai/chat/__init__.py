@@ -2,7 +2,13 @@
 Chat module - Simple chatbot with system prompts.
 """
 
-from .get_response import get_response, chat_completion
+from .get_response import (
+    get_response,
+    chat_completion,
+    stream_response,
+    set_stream_printing,
+    get_last_usage,
+)
 from .conversation import Conversation
 from .personalities import (
     friendly_bot,
@@ -24,6 +30,9 @@ from .personalities import (
 __all__ = [
     "get_response",
     "chat_completion",
+    "stream_response",
+    "set_stream_printing",
+    "get_last_usage",
     "Conversation",
     "friendly_bot",
     "sarcastic_bot",

@@ -8,6 +8,7 @@ Chat mini-projects focus on using LLMs for conversational interactions.
 
 - [Advanced Journal Assistant](chat/advanced-journal-bot.md)
 - [Bot Personality Menu Generator](chat/bot-personality-menu-generator.md)
+- [Build Your Own Cache](chat/build-your-own-cache.md)
 - [Build Your Own Personality Bot](chat/build-your-own-personality-bot.md)
 - [Choose Your Own Adventure](chat/choose-your-own-adventure.md)
 - [Classroom Simulation Bot](chat/classroom-simulation-bot.md)
@@ -61,3 +62,9 @@ Agent projects focus on LLMs that can use tools and follow a reasoning process.
 Workflow projects for Hands-On AI.
 
 - [Build a Pipeline](workflow/build-a-pipeline.md)
+
+## Eval Projects
+
+Eval projects for Hands-On AI.
+
+- [Judge Your Bot](eval/judge-your-bot.md)

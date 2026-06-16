@@ -14,6 +14,9 @@ Example:
     >>> print(chat.total_tokens)      # tokens used across the whole chat
 """
 
+import json
+from pathlib import Path
+
 from .get_response import chat_completion
 
 
@@ -72,3 +75,27 @@ class Conversation:
     def history(self) -> list:
         """Return the user/assistant turns (excluding the system message)."""
         return [m for m in self.messages if m["role"] != "system"]
+
+    def save(self, path):
+        """Save the conversation (system prompt, history, token total) to JSON."""
+        data = {
+            "system": self.system,
+            "model": self.model,
+            "personality": self.personality,
+            "messages": self.messages,
+            "total_tokens": self.total_tokens,
+        }
+        Path(path).write_text(json.dumps(data, indent=2), encoding="utf-8")
+
+    @classmethod
+    def load(cls, path):
+        """Recreate a conversation previously written with :meth:`save`."""
+        data = json.loads(Path(path).read_text(encoding="utf-8"))
+        conv = cls(
+            system=data.get("system", "You are a helpful assistant."),
+            model=data.get("model"),
+            personality=data.get("personality", "friendly"),
+        )
+        conv.messages = data.get("messages", conv.messages)
+        conv.total_tokens = data.get("total_tokens", 0)
+        return conv

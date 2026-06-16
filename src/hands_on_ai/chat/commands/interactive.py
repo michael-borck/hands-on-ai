@@ -6,6 +6,7 @@ import typer
 from rich import print
 import requests
 from ..bots import get_bot
+from ..get_response import set_stream_printing
 from ...config import get_server_url
 
 app = typer.Typer(help="Start interactive REPL")
@@ -34,6 +35,9 @@ def interactive():
 
     print("\n🤖 [bold]Chat CLI[/bold]: stateless REPL, no memory between prompts.")
     print("Type /help for commands.\n")
+
+    # Stream responses token-by-token so you can watch the model generate.
+    set_stream_printing(True)
 
     bot = get_bot(current_bot_name)
     if not bot:
@@ -86,5 +90,6 @@ def interactive():
             else:
                 print(f"[red]⚠️ Unknown command: /{command}[/red]")
         else:
-            response = bot(user_input)
-            print(f"🤖 {response}\n")
+            print("🤖 ", end="")
+            bot(user_input)   # streams token-by-token (live printing enabled)
+            print()

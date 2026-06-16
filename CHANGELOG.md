@@ -5,17 +5,30 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.4.0] - 2026-06-16
+
+### Added
+- New `eval` module: `judge(output, criteria, ...)` scores an output against
+  criteria using an LLM (the LLM-as-judge pattern). A fifth learning concept,
+  with an "Understanding Evaluation" page and a "Judge Your Bot" project.
+- Streaming: `chat.stream_response(prompt, ...)` yields the response in chunks,
+  and `chat interactive` now streams token-by-token.
+- Opt-in response cache: set `HANDS_ON_AI_CACHE` to a directory and identical
+  `(model, system, prompt)` calls return a saved answer (reproducible, free
+  reruns, works offline once warmed). New `hands_on_ai.cache` module and a
+  "Build Your Own Cache" project.
+- `Conversation.save(path)` / `Conversation.load(path)` to persist and resume a
+  chat.
+- Token usage in the CLI: `chat ask "..." --usage`, plus `chat.get_last_usage()`.
+- Ship a `py.typed` marker so type checkers and editors use the inline hints.
+- Educator recipe: "Host a Shared Ollama" (bearer-key reverse proxy via Docker).
 
 ### Removed
 - The experimental web interfaces (`chat web`, `rag web`, `agent web`) and the
   `python-fasthtml` dependency. They were unmaintained and not functional; the
   CLI and Python API cover the same ground. This lightens the install.
-
-### Removed (docs)
 - Deleted the completed-work root notes (INSTRUCTOR_INTEGRATION_PLAN/SUMMARY,
-  PROVIDER_AGNOSTIC_UPDATE); their history lives in git, and current behaviour is
-  covered by the docs site.
+  PROVIDER_AGNOSTIC_UPDATE); their history lives in git.
 
 ## [0.3.1] - 2026-06-16
 

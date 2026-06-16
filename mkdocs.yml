@@ -45,6 +45,9 @@ nav:
     - Workflows:
       - "Understanding Workflows": workflow-guide.md
       - "Build a Pipeline": projects/workflow/build-a-pipeline.md
+    - Evaluation:
+      - "Understanding Evaluation": eval-guide.md
+      - "Judge Your Bot": projects/eval/judge-your-bot.md
   - Build:
     - "Projects Overview": mini-projects.md
     - "Browse All Projects": projects/index.md
@@ -52,6 +55,7 @@ nav:
     - Chat Projects:
       - Advanced Journal Bot: projects/chat/advanced-journal-bot.md
       - Bot Personality Menu Generator: projects/chat/bot-personality-menu-generator.md
+      - Build Your Own Cache: projects/chat/build-your-own-cache.md
       - Build Your Own Personality Bot: projects/chat/build-your-own-personality-bot.md
       - Choose Your Own Adventure: projects/chat/choose-your-own-adventure.md
       - Classroom Simulation Bot: projects/chat/classroom-simulation-bot.md
@@ -93,10 +97,13 @@ nav:
       - Word Detective: projects/agent/word-detective.md
     - Workflow Projects:
       - Build a Pipeline: projects/workflow/build-a-pipeline.md
+    - Eval Projects:
+      - Judge Your Bot: projects/eval/judge-your-bot.md
     - "Project Template": mini-project-template.md
   - For Educators:
     - "Education Guide": education-guide.md
     - "Classroom Setup": classroom-setup.md
+    - "Host a Shared Ollama": deploy-ollama.md
   - Reference:
     - "Use with an LLM": use-with-llm.md
     - "CLI Reference": cli-guide.md

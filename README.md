@@ -16,16 +16,19 @@
 
 HandsOnAI is a unified educational toolkit designed to teach students how modern AI systems work, by building and interacting with them directly.
 
-It provides a clean, modular structure that introduces core AI concepts progressively through three tools:
+It provides a clean, modular structure that introduces core AI concepts progressively through five modules:
 
 ## 🧱 Module Overview
 
 | Module | Purpose | CLI Name |
 |--------|---------|----------|
-| chat | Simple chatbot with system prompts | chat |
-| rag | Retrieval-Augmented Generation (RAG) | rag |
-| agent | ReAct-style reasoning with tool use | agent |
-| models | Model capability detection and utilities | models |
+| chat | Chatbot with system prompts, personalities, and memory | chat |
+| rag | Retrieval-Augmented Generation (RAG) over your documents | rag |
+| agent | Tool use and step-by-step reasoning | agent |
+| workflow | Orchestrate multi-step tasks as folders of stages | (library) |
+| eval | Evaluate output quality with an LLM judge | (library) |
+
+(A small `models` utility module handles model detection and capabilities.)
 
 Each module is:
 - 🔌 Self-contained

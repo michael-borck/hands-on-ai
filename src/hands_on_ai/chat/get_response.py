@@ -12,6 +12,27 @@ _last_model: str | None = None
 # Load fallbacks from the chat module
 _fallbacks = load_fallbacks(module="chat")
 
+# When True, chat_completion prints streamed chunks to stdout as they arrive.
+# Used by the interactive REPL so personality bots stream token-by-token. Off by
+# default so library/notebook use is unaffected.
+_print_stream = False
+
+
+def set_stream_printing(enabled: bool = True):
+    """Enable or disable live token printing to stdout (used by the chat REPL)."""
+    global _print_stream
+    _print_stream = enabled
+
+
+# Token usage from the most recent completion (or None). Lets the CLI show usage
+# even when the call went through a personality bot.
+_last_usage = None
+
+
+def get_last_usage():
+    """Return token usage from the most recent get_response/bot call (or None)."""
+    return _last_usage
+
 
 def _build_client() -> OpenAI:
     """Create an OpenAI-compatible client pointed at the configured server."""
@@ -84,26 +105,40 @@ def chat_completion(
 
     _warm_up(model)
 
+    global _last_usage
+
+    # Stream if explicitly requested, or if live REPL printing is enabled.
+    do_stream = stream or _print_stream
+
     for attempt in range(1, retries + 1):
         try:
             client = _build_client()
             response = client.chat.completions.create(
                 model=model,
                 messages=messages,
-                stream=stream,
+                stream=do_stream,
                 timeout=10,
             )
 
-            if stream:
-                # For streaming, collect all chunks (usage is not available).
+            if do_stream:
+                # Collect all chunks (usage is not available when streaming),
+                # printing each one live when REPL streaming is on.
                 content = ""
                 for chunk in response:
-                    if chunk.choices[0].delta.content:
-                        content += chunk.choices[0].delta.content
+                    delta = chunk.choices[0].delta.content
+                    if delta:
+                        if _print_stream:
+                            print(delta, end="", flush=True)
+                        content += delta
+                if _print_stream:
+                    print()  # final newline after the streamed response
+                _last_usage = None
                 return (content or "⚠️ No response from model.", None)
 
             content = response.choices[0].message.content or "⚠️ No response from model."
-            return (content, _usage_dict(response))
+            usage = _usage_dict(response)
+            _last_usage = usage
+            return (content, usage)
 
         except Exception as e:
             log.warning(f"Error during request (attempt {attempt}): {e}")
@@ -149,6 +184,20 @@ def get_response(
     if not prompt.strip():
         return ("⚠️ Empty prompt.", None) if return_usage else "⚠️ Empty prompt."
 
+    # Resolve the model now so it is part of the cache key.
+    if model is None:
+        from ..config import get_model
+        model = get_model()
+
+    # Opt-in disk cache (HANDS_ON_AI_CACHE). Skip while streaming to the REPL,
+    # where the printed output, not the return value, is what the user sees.
+    from .. import cache
+    use_cache = not stream and not _print_stream
+    if use_cache:
+        cached = cache.get(model, system, prompt)
+        if cached is not None:
+            return (cached, None) if return_usage else cached
+
     messages = [
         {"role": "system", "content": system},
         {"role": "user", "content": prompt},
@@ -160,4 +209,65 @@ def get_response(
         stream=stream,
         retries=retries,
     )
+
+    # Only cache real responses, not error/empty placeholders.
+    if use_cache and not content.startswith(("❌", "⚠️")):
+        cache.put(model, system, prompt, content)
+
     return (content, usage) if return_usage else content
+
+
+def stream_response(
+    prompt: str,
+    model: str = None,
+    system: str = "You are a helpful assistant.",
+    personality: str = "friendly",
+    retries: int = 2,
+):
+    """
+    Like :func:`get_response`, but yields the response in chunks as it arrives.
+
+    This lets you show text as the model generates it, instead of waiting for the
+    whole answer:
+
+        for chunk in stream_response("Tell me a short story"):
+            print(chunk, end="", flush=True)
+
+    Args:
+        prompt: The text prompt to send to the model.
+        model: LLM model to use (defaults to config setting).
+        system: System message defining bot behavior.
+        personality: Unused here; kept for signature parity with get_response.
+        retries: Unused here; streaming makes a single attempt.
+
+    Yields:
+        str: Pieces of the response as they arrive.
+    """
+    if not prompt.strip():
+        yield "⚠️ Empty prompt."
+        return
+
+    if model is None:
+        from ..config import get_model
+        model = get_model()
+
+    _warm_up(model)
+
+    try:
+        client = _build_client()
+        response = client.chat.completions.create(
+            model=model,
+            messages=[
+                {"role": "system", "content": system},
+                {"role": "user", "content": prompt},
+            ],
+            stream=True,
+            timeout=10,
+        )
+        for chunk in response:
+            delta = chunk.choices[0].delta.content
+            if delta:
+                yield delta
+    except Exception as e:
+        log.warning(f"Error during streaming request: {e}")
+        yield f"❌ Error: {str(e)}"

@@ -4,7 +4,7 @@ build-backend = "flit_core.buildapi"
 
 [project]
 name = "hands-on-ai"
-version = "0.3.1"
+version = "0.4.0"
 description = "Hands-on AI Toolkit for classrooms"
 authors = [
   { name = "Michael Borck", email = "michael@borck.me" }

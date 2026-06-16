@@ -11,17 +11,18 @@ modern AI systems work by building small, readable versions of them. It works
 with any OpenAI-compatible LLM provider.
 
 - Package name: `hands-on-ai`
-- Version: 0.3.0
+- Version: 0.4.0
 - Python: 3.10+
 - Install: `pip install hands-on-ai` (one install includes everything; there are
   no optional extras to add)
 
-It has four modules, meant to be learned in order:
+It has five modules, meant to be learned in order:
 
 1. `chat`: prompting, system prompts, personalities, and multi-turn conversation
 2. `rag`: retrieval-augmented generation over your own documents
 3. `agent`: tool use and step-by-step reasoning
 4. `workflow`: orchestrating multi-step tasks as folders of stages
+5. `eval`: judging output quality with an LLM (LLM-as-judge)
 
 ## The core idea
 
@@ -104,6 +105,36 @@ chat.ask("My name is Sam.")
 print(chat.ask("What is my name?"))   # remembers "Sam"
 print(chat.total_tokens)              # tokens used across the conversation
 chat.reset()                          # clear history, keep the system prompt
+```
+
+Save and resume a conversation:
+
+```python
+chat.save("chat.json")
+later = Conversation.load("chat.json")
+```
+
+### Streaming, token usage, and caching
+
+Stream a response as it is generated:
+
+```python
+from hands_on_ai.chat import stream_response
+for chunk in stream_response("Tell me a short story"):
+    print(chunk, end="", flush=True)
+```
+
+See token usage: `get_response(prompt, return_usage=True)` returns
+`(text, usage)`, and `get_last_usage()` returns usage from the most recent call.
+The CLI flag `chat ask "..." --usage` prints it. The interactive REPL
+(`chat interactive`) streams token-by-token automatically.
+
+Opt-in response caching: set `HANDS_ON_AI_CACHE` to a directory and identical
+`(model, system, prompt)` calls return a saved answer instead of calling the
+model again (reproducible, free reruns, works offline once warmed).
+
+```bash
+export HANDS_ON_AI_CACHE=~/.hands-on-ai/cache
 ```
 
 ### Chat CLI
@@ -249,6 +280,27 @@ pipe.run_next()      # runs stage 02 using stage 01's (reviewed) output
 before continuing. `run_all()` runs the rest without stopping. Each stage's
 prompt is built from its `CONTEXT.md`, any `references/` files, and the previous
 stage's output.
+
+## Module 5: eval
+
+Use an LLM to score an output against criteria you define (the LLM-as-judge
+pattern). Useful for "is this answer good?" without hand-writing graders.
+
+```python
+from hands_on_ai.eval import judge
+
+verdict = judge(
+    output="Paris is the capital of France.",
+    criteria="accurate and concise",
+    question="What is the capital of France?",
+)
+print(verdict["score"])      # an int 1..scale (default scale 5), or None
+print(verdict["reasoning"])  # one short sentence
+```
+
+`judge(output, criteria, question=None, model=None, scale=5)` returns a dict with
+`score`, `reasoning`, and `raw`. Treat the score as a signal, not a verdict:
+judges can be inconsistent, so use clear criteria and average several runs.
 
 ## Providers
 
