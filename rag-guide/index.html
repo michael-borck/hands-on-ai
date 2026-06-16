@@ -1102,17 +1102,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#web-interface" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🌐 Web Interface
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#example-workflow" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3617,17 +3606,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#web-interface" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🌐 Web Interface
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#example-workflow" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3684,8 +3662,6 @@
 <p><a href="#cli-usage"><img alt="" src="https://img.shields.io/badge/CLI-Hands_On_AI_RAG-blue" /></a></p>
 <p>The RAG module is a lightweight tool to turn your documents into an AI-powered knowledge base using Retrieval-Augmented Generation (RAG). It's part of the Hands-On AI ecosystem.</p>
 <hr />
-<p><img alt="Hands-On AI RAG Web Interface" src="../assets/ragcraft-web-preview.png" /></p>
-<hr />
 <h2 id="how-to-use">🚀 How to Use<a class="headerlink" href="#how-to-use" title="Permanent link">&para;</a></h2>
 <h3 id="install-hands-on-ai-with-rag-support">✅ Install Hands-On AI with RAG support<a class="headerlink" href="#install-hands-on-ai-with-rag-support" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>hands-on-ai
@@ -3698,13 +3674,11 @@
 <div class="highlight"><pre><span></span><code>hands-on-ai<span class="w"> </span>rag<span class="w"> </span>index<span class="w"> </span>notes/<span class="w">       </span><span class="c1"># Build index from folder or file</span>
 hands-on-ai<span class="w"> </span>rag<span class="w"> </span>ask<span class="w"> </span><span class="s2">&quot;What is TCP?&quot;</span><span class="w"> </span><span class="c1"># Ask a question</span>
 hands-on-ai<span class="w"> </span>rag<span class="w"> </span>interactive<span class="w">        </span><span class="c1"># Start interactive Q&amp;A mode</span>
-hands-on-ai<span class="w"> </span>rag<span class="w"> </span>web<span class="w">                </span><span class="c1"># Launch the web interface</span>
 </code></pre></div>
 <hr />
 <h2 id="where-indexes-are-stored">📁 Where Indexes Are Stored<a class="headerlink" href="#where-indexes-are-stored" title="Permanent link">&para;</a></h2>
 <ul>
 <li>CLI default: <code>~/.hands_on_ai/rag_index/default.npz</code></li>
-<li>Web UI default: <code>~/.hands_on_ai/rag_index/web_index.npz</code></li>
 </ul>
 <p>You can override using <code>--output-file</code> or <code>--index-path</code>.</p>
 <hr />
@@ -3747,24 +3721,9 @@ hands-on-ai<span class="w"> </span>rag<span class="w"> </span>ask<span class="w"
 <h2 id="makefilejustfile-shortcuts">🛠️ Makefile/Justfile Shortcuts<a class="headerlink" href="#makefilejustfile-shortcuts" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1"># Using make</span>
 make<span class="w"> </span>rag-index<span class="w"> </span><span class="nv">file</span><span class="o">=</span>notes.md
-make<span class="w"> </span>rag-web
 
 <span class="c1"># Using just</span>
 just<span class="w"> </span>rag-index<span class="w"> </span><span class="nv">file</span><span class="o">=</span>notes.md
-just<span class="w"> </span>rag-web
-</code></pre></div>
-<h2 id="web-interface">🌐 Web Interface<a class="headerlink" href="#web-interface" title="Permanent link">&para;</a></h2>
-<p>Launch a web interface to ask questions about your documents:</p>
-<div class="highlight"><pre><span></span><code>hands-on-ai<span class="w"> </span>rag<span class="w"> </span>web
-</code></pre></div>
-<p>By default, the interface is only accessible from your local machine. To make it accessible from other devices on your network:</p>
-<div class="highlight"><pre><span></span><code>hands-on-ai<span class="w"> </span>rag<span class="w"> </span>web<span class="w"> </span>--public
-</code></pre></div>
-<blockquote>
-<p>⚠️ When using the <code>--public</code> flag, the interface will be accessible to anyone on your network. Use with caution.</p>
-</blockquote>
-<p>You can also specify a custom port (default is 8001):</p>
-<div class="highlight"><pre><span></span><code>hands-on-ai<span class="w"> </span>rag<span class="w"> </span>web<span class="w"> </span>--port<span class="w"> </span><span class="m">8888</span>
 </code></pre></div>
 <hr />
 <h2 id="example-workflow">🧠 Example Workflow<a class="headerlink" href="#example-workflow" title="Permanent link">&para;</a></h2>
@@ -3776,9 +3735,6 @@ hands-on-ai<span class="w"> </span>rag<span class="w"> </span>index<span class="
 
 <span class="c1"># Ask questions</span>
 hands-on-ai<span class="w"> </span>rag<span class="w"> </span>ask<span class="w"> </span><span class="s2">&quot;What is RAG?&quot;</span><span class="w"> </span>--show-context
-
-<span class="c1"># Launch the web interface</span>
-hands-on-ai<span class="w"> </span>rag<span class="w"> </span>web
 </code></pre></div>
 <hr />
 <h2 id="programmatic-usage">📚 Programmatic Usage<a class="headerlink" href="#programmatic-usage" title="Permanent link">&para;</a></h2>

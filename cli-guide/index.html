@@ -3762,7 +3762,6 @@ Commands:
 <span class="w">  </span>bots<span class="w">          </span>List<span class="w"> </span>available<span class="w"> </span>bots
 <span class="w">  </span>doctor<span class="w">        </span>Run<span class="w"> </span>diagnostics
 <span class="w">  </span>interactive<span class="w">   </span>Start<span class="w"> </span>interactive<span class="w"> </span>REPL
-<span class="w">  </span>web<span class="w">           </span>Launch<span class="w"> </span>web<span class="w"> </span>interface
 </code></pre></div>
 <h3 id="example-usage_1">Example Usage<a class="headerlink" href="#example-usage_1" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># List all available bot personalities</span>
@@ -3773,9 +3772,6 @@ chat<span class="w"> </span>ask<span class="w"> </span>--personality<span class=
 
 <span class="c1"># Start an interactive chat session</span>
 chat<span class="w"> </span>interactive
-
-<span class="c1"># Launch the web interface for chat</span>
-chat<span class="w"> </span>web
 </code></pre></div>
 <h2 id="rag-module-cli-rag">RAG Module CLI (rag)<a class="headerlink" href="#rag-module-cli-rag" title="Permanent link">&para;</a></h2>
 <p>The <code>rag</code> (Retrieval-Augmented Generation) module provides tools for document indexing and question answering.</p>
@@ -3793,7 +3789,6 @@ Commands:
 <span class="w">  </span>index<span class="w">         </span>Build<span class="w"> </span>a<span class="w"> </span>RAG<span class="w"> </span>index<span class="w"> </span>from<span class="w"> </span>files
 <span class="w">  </span>ask<span class="w">           </span>Ask<span class="w"> </span>questions<span class="w"> </span>using<span class="w"> </span>indexed<span class="w"> </span>documents
 <span class="w">  </span>interactive<span class="w">   </span>Run<span class="w"> </span>interactive<span class="w"> </span>RAG<span class="w"> </span>chat
-<span class="w">  </span>web<span class="w">           </span>Launch<span class="w"> </span>web<span class="w"> </span>interface<span class="w"> </span><span class="k">for</span><span class="w"> </span>RAG
 </code></pre></div>
 <h3 id="example-usage_2">Example Usage<a class="headerlink" href="#example-usage_2" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># Index a directory of documents</span>
@@ -3804,9 +3799,6 @@ rag<span class="w"> </span>ask<span class="w"> </span><span class="s2">&quot;Wha
 
 <span class="c1"># Start an interactive RAG session</span>
 rag<span class="w"> </span>interactive
-
-<span class="c1"># Launch the web interface for RAG</span>
-rag<span class="w"> </span>web
 </code></pre></div>
 <h3 id="detailed-command-options">Detailed Command Options<a class="headerlink" href="#detailed-command-options" title="Permanent link">&para;</a></h3>
 <h4 id="rag-index">rag index<a class="headerlink" href="#rag-index" title="Permanent link">&para;</a></h4>
@@ -3839,7 +3831,6 @@ Commands:
 <span class="w">  </span>ask<span class="w">           </span>Run<span class="w"> </span>an<span class="w"> </span>agent<span class="w"> </span>with<span class="w"> </span>a<span class="w"> </span>prompt
 <span class="w">  </span>tools<span class="w">         </span>List<span class="w"> </span>available<span class="w"> </span>tools
 <span class="w">  </span>interactive<span class="w">   </span>Start<span class="w"> </span>interactive<span class="w"> </span>agent<span class="w"> </span>console
-<span class="w">  </span>web<span class="w">           </span>Launch<span class="w"> </span>web<span class="w"> </span>interface<span class="w"> </span><span class="k">for</span><span class="w"> </span>agent
 </code></pre></div>
 <h3 id="example-usage_3">Example Usage<a class="headerlink" href="#example-usage_3" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># List available agent tools</span>
@@ -3850,15 +3841,11 @@ agent<span class="w"> </span>ask<span class="w"> </span><span class="s2">&quot;W
 
 <span class="c1"># Start an interactive agent session</span>
 agent<span class="w"> </span>interactive
-
-<span class="c1"># Launch the web interface for the agent</span>
-agent<span class="w"> </span>web
 </code></pre></div>
 <h2 id="tips-for-using-the-cli">Tips for Using the CLI<a class="headerlink" href="#tips-for-using-the-cli" title="Permanent link">&para;</a></h2>
 <ol>
 <li>All commands support the <code>--help</code> flag to display available options</li>
 <li>Use tab completion (if installed) for easier navigation</li>
-<li>The web interfaces provide a graphical alternative to the command-line</li>
 <li>The interactive modes (REPL) allow for multi-turn conversations</li>
 <li>Configure settings in <code>~/.hands_on_ai/config.json</code> or with the <code>hands-on-ai config</code> command</li>
 </ol>
