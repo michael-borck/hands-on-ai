@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Removed
+- The experimental web interfaces (`chat web`, `rag web`, `agent web`) and the
+  `python-fasthtml` dependency. They were unmaintained and not functional; the
+  CLI and Python API cover the same ground. This lightens the install.
+
+### Removed (docs)
+- Deleted the completed-work root notes (INSTRUCTOR_INTEGRATION_PLAN/SUMMARY,
+  PROVIDER_AGNOSTIC_UPDATE); their history lives in git, and current behaviour is
+  covered by the docs site.
+
 ## [0.3.1] - 2026-06-16
 
 ### Fixed

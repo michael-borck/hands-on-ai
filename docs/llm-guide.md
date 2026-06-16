@@ -238,9 +238,6 @@ chat ask "Explain quantum physics" --personality teacher_bot
 
 # Start interactive chat session
 chat interactive
-
-# Launch web interface
-chat web
 ```
 
 #### RAG CLI
@@ -257,9 +254,6 @@ rag ask "What is TCP/IP?" --index_file index.npz
 
 # Interactive RAG session
 rag interactive --index_file index.npz
-
-# Web interface for RAG
-rag web --index_file index.npz
 ```
 
 #### Agent CLI
@@ -273,9 +267,6 @@ agent ask "Calculate 25 * 4 and convert to binary"
 
 # Interactive agent session
 agent interactive
-
-# Launch agent web interface
-agent web
 ```
 
 ### Python API Examples
@@ -512,7 +503,6 @@ hands_on_ai/
 
 3. **Technical Constraints**:
    - CLI is primarily designed for demonstration/learning
-   - Web interfaces are basic/educational, not production-grade
    - Limited to English language currently
 
 4. **Provider Flexibility**:

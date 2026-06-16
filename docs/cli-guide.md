@@ -60,7 +60,6 @@ Commands:
   bots          List available bots
   doctor        Run diagnostics
   interactive   Start interactive REPL
-  web           Launch web interface
 ```
 
 ### Example Usage
@@ -74,9 +73,6 @@ chat ask --personality pirate_bot "Tell me about the weather"
 
 # Start an interactive chat session
 chat interactive
-
-# Launch the web interface for chat
-chat web
 ```
 
 ## RAG Module CLI (rag)
@@ -98,7 +94,6 @@ Commands:
   index         Build a RAG index from files
   ask           Ask questions using indexed documents
   interactive   Run interactive RAG chat
-  web           Launch web interface for RAG
 ```
 
 ### Example Usage
@@ -112,9 +107,6 @@ rag ask "What is the purpose of RAG?"
 
 # Start an interactive RAG session
 rag interactive
-
-# Launch the web interface for RAG
-rag web
 ```
 
 ### Detailed Command Options
@@ -155,7 +147,6 @@ Commands:
   ask           Run an agent with a prompt
   tools         List available tools
   interactive   Start interactive agent console
-  web           Launch web interface for agent
 ```
 
 ### Example Usage
@@ -169,15 +160,11 @@ agent ask "What is 25 * 32?"
 
 # Start an interactive agent session
 agent interactive
-
-# Launch the web interface for the agent
-agent web
 ```
 
 ## Tips for Using the CLI
 
 1. All commands support the `--help` flag to display available options
 2. Use tab completion (if installed) for easier navigation
-3. The web interfaces provide a graphical alternative to the command-line
-4. The interactive modes (REPL) allow for multi-turn conversations
-5. Configure settings in `~/.hands_on_ai/config.json` or with the `hands-on-ai config` command
+3. The interactive modes (REPL) allow for multi-turn conversations
+4. Configure settings in `~/.hands_on_ai/config.json` or with the `hands-on-ai config` command

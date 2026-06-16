@@ -1,6 +1,6 @@
 # Makefile for Hands-On AI development tasks
 
-.PHONY: help test test-basic lint format ci install-dev sync-version requirements build bundle docs deploy-docs chat-repl rag-repl agent-repl doctor chat-web rag-web agent-web generate-bot-gallery spelling-au build-project-browser build-all lint-mini-projects generate-project-index lint-chat-projects lint-rag-projects lint-agent-projects lint-all-projects clean
+.PHONY: help test test-basic lint format ci install-dev sync-version requirements build bundle docs deploy-docs chat-repl rag-repl agent-repl doctor generate-bot-gallery spelling-au build-project-browser build-all lint-mini-projects generate-project-index lint-chat-projects lint-rag-projects lint-agent-projects lint-all-projects clean
 
 # Default target
 help:
@@ -20,9 +20,6 @@ help:
 	@echo "  chat-repl             Start HandsOnAI chat interactive mode"
 	@echo "  rag-repl              Start HandsOnAI RAG interactive mode"
 	@echo "  agent-repl            Start HandsOnAI agent interactive mode"
-	@echo "  chat-web              Start HandsOnAI chat web interface"
-	@echo "  rag-web               Start HandsOnAI RAG web interface"
-	@echo "  agent-web             Start HandsOnAI agent web interface"
 	@echo "  doctor                Run system diagnostic for HandsOnAI"
 	@echo "  generate-bot-gallery  Generate the bot gallery markdown"
 	@echo "  generate-project-index Generate the projects/index.md file"
@@ -96,16 +93,6 @@ agent-repl:
 # 🩺 Run diagnostic check
 doctor:
 	handsonai doctor
-
-# 🌐 Run web interfaces
-chat-web:
-	chat web
-
-rag-web:
-	rag web
-
-agent-web:
-	agent web
 
 # Rebuild Bot gallery markdown from doc strings
 generate-bot-gallery:

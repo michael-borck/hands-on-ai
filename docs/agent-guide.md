@@ -34,28 +34,6 @@ hands-on-ai agent interactive
 
 This starts an interactive session where you can have a conversation with the agent.
 
-### Web interface
-
-```bash
-hands-on-ai agent web
-```
-
-This launches a web interface for the agent, accessible in your browser.
-
-By default, the interface is only accessible from your local machine. To make it accessible from other devices on your network:
-
-```bash
-hands-on-ai agent web --public
-```
-
-> ⚠️ When using the `--public` flag, the interface will be accessible to anyone on your network. Use with caution.
-
-You can also specify a custom port (default is 8002):
-
-```bash
-hands-on-ai agent web --port 8888
-```
-
 ### List available tools
 
 ```bash

@@ -3,7 +3,7 @@ CLI for the rag module.
 """
 
 import typer
-from .commands import index, ask, interactive, web
+from .commands import index, ask, interactive
 
 app = typer.Typer(help="RAG - Retrieval-Augmented Generation")
 
@@ -11,7 +11,6 @@ app = typer.Typer(help="RAG - Retrieval-Augmented Generation")
 app.add_typer(index.app, name="index", help="Build a RAG index from files")
 app.add_typer(ask.app, name="ask", help="Ask questions using indexed documents")
 app.add_typer(interactive.app, name="interactive", help="Run interactive RAG chat")
-app.add_typer(web.app, name="web", help="Launch web interface for RAG")
 
 # Default command - show help
 @app.callback(invoke_without_command=True)

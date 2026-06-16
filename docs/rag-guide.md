@@ -6,10 +6,6 @@ The RAG module is a lightweight tool to turn your documents into an AI-powered k
 
 ---
 
-![Hands-On AI RAG Web Interface](assets/ragcraft-web-preview.png)
-
----
-
 ## 🚀 How to Use
 
 ### ✅ Install Hands-On AI with RAG support
@@ -32,7 +28,6 @@ uv pip install hands-on-ai
 hands-on-ai rag index notes/       # Build index from folder or file
 hands-on-ai rag ask "What is TCP?" # Ask a question
 hands-on-ai rag interactive        # Start interactive Q&A mode
-hands-on-ai rag web                # Launch the web interface
 ```
 
 ---
@@ -40,7 +35,6 @@ hands-on-ai rag web                # Launch the web interface
 ## 📁 Where Indexes Are Stored
 
 - CLI default: `~/.hands_on_ai/rag_index/default.npz`
-- Web UI default: `~/.hands_on_ai/rag_index/web_index.npz`
 
 You can override using `--output-file` or `--index-path`.
 
@@ -98,33 +92,9 @@ Each file demonstrates different document formats and contains networking-relate
 ```bash
 # Using make
 make rag-index file=notes.md
-make rag-web
 
 # Using just
 just rag-index file=notes.md
-just rag-web
-```
-
-## 🌐 Web Interface
-
-Launch a web interface to ask questions about your documents:
-
-```bash
-hands-on-ai rag web
-```
-
-By default, the interface is only accessible from your local machine. To make it accessible from other devices on your network:
-
-```bash
-hands-on-ai rag web --public
-```
-
-> ⚠️ When using the `--public` flag, the interface will be accessible to anyone on your network. Use with caution.
-
-You can also specify a custom port (default is 8001):
-
-```bash
-hands-on-ai rag web --port 8888
 ```
 
 ---
@@ -140,9 +110,6 @@ hands-on-ai rag index demo/
 
 # Ask questions
 hands-on-ai rag ask "What is RAG?" --show-context
-
-# Launch the web interface
-hands-on-ai rag web
 ```
 
 ---

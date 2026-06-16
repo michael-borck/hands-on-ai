@@ -63,16 +63,6 @@ agent-repl:
 doctor:
   handsonai doctor
 
-# 🌐 Run web interfaces
-chat-web:
-  chat web
-
-rag-web:
-  rag web
-  
-agent-web:
-  agent web
-
 # Rebuild Bot gallery markdown from doc strings
 generate-bot-gallery:
   scripts/generate_bot_gallery.py --flat --out docs/bot-gallery.md
@@ -136,9 +126,6 @@ help:
   @echo "  chat-repl             Start HandsOnAI chat interactive mode"
   @echo "  rag-repl              Start HandsOnAI RAG interactive mode"
   @echo "  agent-repl            Start HandsOnAI agent interactive mode"
-  @echo "  chat-web              Start HandsOnAI chat web interface"
-  @echo "  rag-web               Start HandsOnAI RAG web interface"
-  @echo "  agent-web             Start HandsOnAI agent web interface"
   @echo "  doctor                Run system diagnostic for HandsOnAI"
   @echo "  build-mini-projects   Rebuild mini-projects.md from /docs/projects"
   @echo "  spelling-au           Convert American spelling to Australian/British spelling"

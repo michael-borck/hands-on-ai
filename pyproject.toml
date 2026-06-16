@@ -15,7 +15,6 @@ requires-python = ">=3.10"
 dependencies = [
     "requests", 
     "typer",
-    "python-fasthtml",
     "python-docx", 
     "pymupdf", 
     "scikit-learn", 
