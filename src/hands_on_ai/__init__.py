@@ -4,7 +4,12 @@ hands_on_ai: Your Hands-on AI Toolkit
 A modular toolkit for learning AI concepts through hands-on experimentation.
 """
 
-__version__ = "0.1.10"
+from importlib.metadata import PackageNotFoundError, version as _pkg_version
+
+try:
+    __version__ = _pkg_version("hands-on-ai")
+except PackageNotFoundError:  # package not installed (e.g. running from source)
+    __version__ = "0.4.0"
 
 # Import core modules
 from . import chat

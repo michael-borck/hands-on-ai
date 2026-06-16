@@ -107,8 +107,8 @@ nav:
   - Reference:
     - "Use with an LLM": use-with-llm.md
     - "CLI Reference": cli-guide.md
+    - "API Reference": api-reference.md
     - "Bot Template": bot-template.md
-    - "Migration Guide": migration.md
     - "Project Tools": project-tools.md
     - "LLM Guide": llm-guide.md
   - About:
@@ -119,7 +119,7 @@ plugins:
   - mkdocstrings:
       handlers:
         python:
-          paths: ["hands_on_ai"]
+          paths: ["src"]
           options:
             docstring_style: google
             show_signature: false
