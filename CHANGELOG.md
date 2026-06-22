@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.0] - 2026-06-22
+
+### Added
+- New `loop` module: the simplest agentic pattern, made legible. `run_loop(step,
+  goal, ...)` repeats a step until a goal is met; `judged(criteria, ...)` reuses
+  the `eval` LLM judge as a stopping condition; `run_ratchet(step, score, ...)`
+  is the "Ralph Wiggum" loop that keeps a change only when it scores higher, so
+  the result only moves forward. Loops are bounded by `max_iters` (not
+  wall-clock) so they are deterministic and cheap in a classroom.
+- An "Understanding Loops" guide, plus two projects: "Improve Until Good"
+  (beginner: trigger + goal) and "Build a Ralph Loop" (advanced: the full
+  ratchet, three-file contract, git-as-memory, and backpressure).
+
 ## [0.4.0] - 2026-06-16
 
 ### Added
