@@ -9,7 +9,7 @@ from importlib.metadata import PackageNotFoundError, version as _pkg_version
 try:
     __version__ = _pkg_version("hands-on-ai")
 except PackageNotFoundError:  # package not installed (e.g. running from source)
-    __version__ = "0.5.0"
+    __version__ = "0.5.1"
 
 # Import core modules
 from . import chat

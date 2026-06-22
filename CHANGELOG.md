@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.1] - 2026-06-22
+
+### Added
+- The library is now fully type-checked with `mypy` and the public API carries
+  type hints, so type-checked downstream code (and editors) get accurate
+  signatures. `get_response` uses `@overload` so `return_usage=True` is typed as
+  a tuple while the common case stays `str`.
+- Dev tooling: `just typecheck` / `make typecheck` (mypy) and `just coverage` /
+  `make coverage` (pytest-cov), plus `mypy` and `pytest-cov` in the dev extra.
+- Tests for the built-in agent tools and the agent engine (ReAct loop + JSON
+  parsing/fallback), lifting coverage from ~27% to ~45%.
+
+### Fixed
+- `models info` no longer crashes when `get_model_info()` returns `None`.
+- Removed unused imports flagged by ruff; `ruff check` is now clean.
+
 ## [0.5.0] - 2026-06-22
 
 ### Added
