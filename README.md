@@ -26,6 +26,7 @@ It provides a clean, modular structure that introduces core AI concepts progress
 | rag | Retrieval-Augmented Generation (RAG) over your documents | rag |
 | agent | Tool use and step-by-step reasoning | agent |
 | workflow | Orchestrate multi-step tasks as folders of stages | (library) |
+| loop | Repeat a step until a goal is met (incl. the "ratchet" loop) | (library) |
 | eval | Evaluate output quality with an LLM judge | (library) |
 
 (A small `models` utility module handles model detection and capabilities.)
@@ -43,6 +44,7 @@ hands_on_ai/
 ├── rag/            ← Ask questions using your own documents
 ├── agent/          ← Agent reasoning + tools (ReAct-style)
 ├── workflow/       ← Multi-step tasks as folders of reviewable stages (ICM)
+├── loop/           ← Repeat a step until a goal is met (run_loop, run_ratchet)
 ├── eval/           ← Score output quality with an LLM judge
 ├── config.py       ← Shared config (model, chunk size, paths)
 ├── cli.py          ← Meta CLI (list, config, version)
@@ -67,6 +69,7 @@ Each tool teaches a different level of modern AI interaction:
 - **rag** – Document search, embeddings, and grounded answers
 - **agent** – Multi-step reasoning, tool use, and planning
 - **workflow** – Orchestration as plain folders of stages you can read and review
+- **loop** – Repetition with a goal: do, check, repeat (the core of agentic loops)
 - **eval** – Judging output quality, the foundation of testing AI systems
 
 Each module is intentionally small and readable: the goal is to make the
@@ -196,6 +199,32 @@ pipe.run_next()      # run stage 02 using stage 01's reviewed output
 Run one reviewable stage at a time with `run_next()`, or `run_all()` once you
 trust the pipeline. See the [workflow guide](docs/workflow-guide.md) for the
 full layout (shared `CONTEXT.md`, `references/`, and more).
+
+### Loops: repeat a step until a goal is met
+
+A loop is the same shape, repeated: do something, check whether you're done,
+repeat. The `loop` module gives you two small functions. `run_loop` keeps
+calling a `step` until a `goal` is satisfied, and the goal can be the `eval` LLM
+judge:
+
+```python
+from hands_on_ai.chat import get_response
+from hands_on_ai.loop import run_loop, judged
+
+result = run_loop(
+    step=lambda draft: get_response(f"Improve this paragraph, keep it short:\n{draft}"),
+    goal=judged("clear, concise, and friendly", threshold=4),  # stop when judge scores >= 4
+    start="loops are when you do stuff again and again",
+    max_iters=5,
+)
+print(result["result"], "in", result["iterations"], "turns")
+```
+
+`run_ratchet` is the "Ralph Wiggum" loop: it keeps a change only when it scores
+higher than the best so far, so the result only ever moves forward. See the
+[loop guide](docs/loop-guide.md), and the
+[Build a Ralph Loop](docs/projects/loop/build-a-ralph-loop.md) project for the
+three-file contract, git-as-memory, and backpressure.
 
 ## 🌍 Provider-Agnostic Architecture
 

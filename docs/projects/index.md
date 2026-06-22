@@ -63,6 +63,13 @@ Workflow projects for Hands-On AI.
 
 - [Build a Pipeline](workflow/build-a-pipeline.md)
 
+## Loop Projects
+
+Loop projects focus on repeating a step until a goal is met, including the "ratchet" loop.
+
+- [Improve Until Good](loop/improve-until-good.md)
+- [Build a Ralph Loop](loop/build-a-ralph-loop.md)
+
 ## Eval Projects
 
 Eval projects for Hands-On AI.

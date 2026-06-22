@@ -45,6 +45,10 @@ nav:
     - Workflows:
       - "Understanding Workflows": workflow-guide.md
       - "Build a Pipeline": projects/workflow/build-a-pipeline.md
+    - Loops:
+      - "Understanding Loops": loop-guide.md
+      - "Improve Until Good": projects/loop/improve-until-good.md
+      - "Build a Ralph Loop": projects/loop/build-a-ralph-loop.md
     - Evaluation:
       - "Understanding Evaluation": eval-guide.md
       - "Judge Your Bot": projects/eval/judge-your-bot.md
@@ -97,6 +101,9 @@ nav:
       - Word Detective: projects/agent/word-detective.md
     - Workflow Projects:
       - Build a Pipeline: projects/workflow/build-a-pipeline.md
+    - Loop Projects:
+      - Improve Until Good: projects/loop/improve-until-good.md
+      - Build a Ralph Loop: projects/loop/build-a-ralph-loop.md
     - Eval Projects:
       - Judge Your Bot: projects/eval/judge-your-bot.md
     - "Project Template": mini-project-template.md
