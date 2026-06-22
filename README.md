@@ -42,6 +42,8 @@ hands_on_ai/
 ├── chat/           ← A simple prompt/response chatbot
 ├── rag/            ← Ask questions using your own documents
 ├── agent/          ← Agent reasoning + tools (ReAct-style)
+├── workflow/       ← Multi-step tasks as folders of reviewable stages (ICM)
+├── eval/           ← Score output quality with an LLM judge
 ├── config.py       ← Shared config (model, chunk size, paths)
 ├── cli.py          ← Meta CLI (list, config, version)
 ├── models.py       ← Centralized model utilities
@@ -64,6 +66,13 @@ Each tool teaches a different level of modern AI interaction:
 - **chat** – Prompt engineering, roles, and LLMs
 - **rag** – Document search, embeddings, and grounded answers
 - **agent** – Multi-step reasoning, tool use, and planning
+- **workflow** – Orchestration as plain folders of stages you can read and review
+- **eval** – Judging output quality, the foundation of testing AI systems
+
+Each module is intentionally small and readable: the goal is to make the
+*concept* legible, not to be production-grade. Once a concept clicks, students
+are encouraged to graduate to a more robust, dedicated library (LangChain,
+LlamaIndex, an agent framework, an eval harness, and so on).
 
 ## 🚀 Getting Started
 
@@ -161,6 +170,32 @@ for chunk in stream_response("Tell me a short story"):
 
 Want reproducible, free reruns (great for classrooms)? Set `HANDS_ON_AI_CACHE` to
 a directory and identical calls return a cached answer instead of calling the model.
+
+### Workflows: multi-step tasks as folders (ICM)
+
+The `workflow` module models a multi-step task as a plain folder of numbered
+stages. Each stage has a `CONTEXT.md` (its instructions) and an `output/`
+folder. One model runs a stage at a time, writing a readable `output.md` you can
+review (and edit) before moving on, no opaque orchestration framework required.
+
+```python
+from hands_on_ai.workflow import init_workspace, Pipeline
+
+# Create a workspace with numbered stage folders
+init_workspace("essay", stages=["research", "outline", "draft"])
+# -> essay/stages/01_research, 02_outline, 03_draft (each with a CONTEXT.md)
+
+# Edit each stage's CONTEXT.md to describe what it should do, then:
+pipe = Pipeline("essay")
+pipe.status()        # show stages and which are done
+pipe.run_next()      # run stage 01, write output.md, stop for review
+# ...open stages/01_research/output/output.md, edit if needed...
+pipe.run_next()      # run stage 02 using stage 01's reviewed output
+```
+
+Run one reviewable stage at a time with `run_next()`, or `run_all()` once you
+trust the pipeline. See the [workflow guide](docs/workflow-guide.md) for the
+full layout (shared `CONTEXT.md`, `references/`, and more).
 
 ## 🌍 Provider-Agnostic Architecture
 
