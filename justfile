@@ -35,6 +35,16 @@ requirements:
 build:
   python -m build
 
+# 🚀 Build and publish to PyPI (manual; uses your ~/.pypirc credentials)
+# Run `just sync-version` first if you've bumped version.json.
+publish:
+  rm -rf dist build
+  # Drop macOS ._* metadata so it can't leak into the wheel/sdist (external-drive quirk)
+  find src -name '._*' -delete
+  python -m build
+  twine check dist/*
+  twine upload dist/*
+
 bundle:
   scripts/build_zip.py
 
@@ -118,7 +128,8 @@ help:
   @echo "  test-basic            Run basic imports test directly"
   @echo "  lint                  Run Ruff linter"
   @echo "  format                Auto-format code with Ruff"
-  @echo "  build                 Build and optionally upload"
+  @echo "  build                 Build wheel + sdist into dist/"
+  @echo "  publish               Build and upload to PyPI (uses ~/.pypirc)"
   @echo "  bundle                Create offline zip"
   @echo "  sync-version          Sync version across files"
   @echo "  docs                  Build MkDocs site"
