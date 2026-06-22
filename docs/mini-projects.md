@@ -13,6 +13,24 @@ Each mini-project follows a consistent structure:
 - **Extension Activities**: Ways to expand on the basic project
 - **Assessment Criteria**: How to evaluate project success
 
+## A note on type hints
+
+The example code in these projects is written **without type hints** on purpose.
+For someone still learning the language, annotations like
+`def ask(self, prompt: str) -> str:` add reading overhead before the idea itself
+has landed, so the examples stay deliberately plain to keep the focus on the
+concept.
+
+This is a teaching choice, not a recommendation against type hints:
+
+- **For teachers:** the plain style is intentional. The `hands_on_ai` library
+  *itself* is fully type-hinted and type-checked (`mypy`), so the package models
+  good practice even though the project snippets keep things simple.
+- **For advanced students:** adding type hints is a great extension exercise and
+  reflects industry best practice. Annotate your project, run a type checker
+  (`mypy` or `pyright`), and fix what it finds. Because the library ships type
+  information, your editor and the checker will understand its functions too.
+
 ## Project Categories
 
 ### Chat Module Projects

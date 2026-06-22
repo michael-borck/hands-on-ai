@@ -7,7 +7,6 @@ This script scans the projects directory and generates an index.md file
 that lists all projects by category.
 """
 
-import os
 from pathlib import Path
 import re
 import typer

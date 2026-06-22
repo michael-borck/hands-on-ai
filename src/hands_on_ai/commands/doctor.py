@@ -31,7 +31,7 @@ def doctor():
         masked_key = f"{api_key[:4]}{'*' * (len(api_key) - 8)}{api_key[-4:]}" if len(api_key) > 8 else "****"
         print(f"  • API key: {masked_key} (configured)")
     else:
-        print(f"  • API key: Not configured")
+        print("  • API key: Not configured")
     
     # Check server connectivity
     try:

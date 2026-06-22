@@ -9,9 +9,7 @@ This module provides centralized functionality for working with LLM models:
 - Detecting model capabilities
 """
 
-import requests
-import re
-from typing import Dict, List, Any, Optional, Tuple
+from typing import Dict, List, Any, Optional
 from openai import OpenAI
 from .config import get_server_url, get_api_key, log
 

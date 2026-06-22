@@ -4,9 +4,8 @@ Agent format handlers for different types of model responses.
 
 import re
 import json
-from typing import Dict, List, Callable, Any, Tuple
+from typing import Dict, Any
 from ..config import log
-from ..models import detect_best_format, normalize_model_name
 
 # JSON prompt template
 JSON_SYSTEM_PROMPT = """You are an intelligent agent that can analyze questions and call tools.

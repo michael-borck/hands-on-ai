@@ -39,6 +39,7 @@ chat = []
 agent = []
 dev = [
   "pytest",
+  "pytest-cov",
   "build",
   "twine==6.0.1",
   "cython",

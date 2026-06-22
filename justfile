@@ -17,6 +17,10 @@ format:
 typecheck:
   mypy src/hands_on_ai
 
+# 📈 Test coverage report
+coverage:
+  pytest --cov=hands_on_ai --cov-report=term-missing
+
 # 💼 Run linter and tests together
 ci:
   just lint
@@ -133,6 +137,7 @@ help:
   @echo "  lint                  Run Ruff linter"
   @echo "  format                Auto-format code with Ruff"
   @echo "  typecheck             Run mypy on the library (src/hands_on_ai)"
+  @echo "  coverage              Run tests with a coverage report"
   @echo "  build                 Build wheel + sdist into dist/"
   @echo "  publish               Build and upload to PyPI (uses ~/.pypirc)"
   @echo "  bundle                Create offline zip"
