@@ -4,7 +4,7 @@ Converter agent for unit conversions.
 This agent provides tools for converting between different units of measurement.
 """
 
-from typing import Optional
+from typing import Any, Optional
 from ..core import register_tool
 
 
@@ -64,8 +64,9 @@ TIME_CONVERSIONS = {
     "year": 31536000.0  # 365-day year
 }
 
-# Combined dictionary for easier lookup
-ALL_CONVERSIONS = {
+# Combined dictionary for easier lookup. Values are heterogeneous: the numeric
+# tables map unit -> factor (float), while temperature maps unit -> name (str).
+ALL_CONVERSIONS: dict[str, dict[str, Any]] = {
     "length": LENGTH_CONVERSIONS,
     "weight": WEIGHT_CONVERSIONS,
     "volume": VOLUME_CONVERSIONS,

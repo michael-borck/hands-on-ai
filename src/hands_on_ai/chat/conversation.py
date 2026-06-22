@@ -26,7 +26,7 @@ class Conversation:
     def __init__(
         self,
         system: str = "You are a helpful assistant.",
-        model: str = None,
+        model: str | None = None,
         personality: str = "friendly",
     ):
         """
@@ -41,7 +41,7 @@ class Conversation:
         # The transcript we resend each turn. The system message stays first.
         self.messages = [{"role": "system", "content": system}]
         # Token accounting (None until the provider reports usage).
-        self.last_usage = None
+        self.last_usage: dict | None = None
         self.total_tokens = 0
 
     def ask(self, prompt: str, stream: bool = False) -> str:
@@ -66,7 +66,7 @@ class Conversation:
 
         return content
 
-    def reset(self):
+    def reset(self) -> None:
         """Clear the conversation history, keeping the original system prompt."""
         self.messages = [{"role": "system", "content": self.system}]
         self.last_usage = None
@@ -76,7 +76,7 @@ class Conversation:
         """Return the user/assistant turns (excluding the system message)."""
         return [m for m in self.messages if m["role"] != "system"]
 
-    def save(self, path):
+    def save(self, path: str | Path) -> None:
         """Save the conversation (system prompt, history, token total) to JSON."""
         data = {
             "system": self.system,
@@ -88,7 +88,7 @@ class Conversation:
         Path(path).write_text(json.dumps(data, indent=2), encoding="utf-8")
 
     @classmethod
-    def load(cls, path):
+    def load(cls, path: str | Path) -> "Conversation":
         """Recreate a conversation previously written with :meth:`save`."""
         data = json.loads(Path(path).read_text(encoding="utf-8"))
         conv = cls(

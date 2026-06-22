@@ -4,7 +4,9 @@ Core response functionality for the chat module.
 
 import random
 import time
-from openai import OpenAI
+from collections.abc import Iterator
+from typing import Literal, overload
+from openai import OpenAI, Stream
 from ..config import get_server_url, get_api_key, load_fallbacks, log
 
 # Global model cache
@@ -76,11 +78,11 @@ def _warm_up(model: str):
 
 def chat_completion(
     messages: list,
-    model: str = None,
+    model: str | None = None,
     personality: str = "friendly",
     stream: bool = False,
     retries: int = 2,
-):
+) -> tuple[str, dict | None]:
     """
     Send a list of chat messages to the LLM and return ``(content, usage)``.
 
@@ -120,7 +122,7 @@ def chat_completion(
                 timeout=10,
             )
 
-            if do_stream:
+            if isinstance(response, Stream):
                 # Collect all chunks (usage is not available when streaming),
                 # printing each one live when REPL streaming is on.
                 content = ""
@@ -149,16 +151,43 @@ def chat_completion(
             else:
                 return (f"❌ Error: {str(e)}", None)
 
+    # Unreachable when retries >= 1, but keeps the return type honest.
+    return ("❌ Error: no attempts made.", None)
+
+
+@overload
+def get_response(
+    prompt: str,
+    model: str | None = ...,
+    system: str = ...,
+    personality: str = ...,
+    stream: bool = ...,
+    retries: int = ...,
+    return_usage: Literal[False] = False,
+) -> str: ...
+
+
+@overload
+def get_response(
+    prompt: str,
+    model: str | None = ...,
+    system: str = ...,
+    personality: str = ...,
+    stream: bool = ...,
+    retries: int = ...,
+    return_usage: Literal[True] = ...,
+) -> tuple[str, dict | None]: ...
+
 
 def get_response(
     prompt: str,
-    model: str = None,
+    model: str | None = None,
     system: str = "You are a helpful assistant.",
     personality: str = "friendly",
     stream: bool = False,
     retries: int = 2,
     return_usage: bool = False,
-) -> str:
+) -> str | tuple[str, dict | None]:
     """
     Send a single prompt to the LLM and retrieve the model's response.
 
@@ -219,11 +248,11 @@ def get_response(
 
 def stream_response(
     prompt: str,
-    model: str = None,
+    model: str | None = None,
     system: str = "You are a helpful assistant.",
     personality: str = "friendly",
     retries: int = 2,
-):
+) -> Iterator[str]:
     """
     Like :func:`get_response`, but yields the response in chunks as it arrives.
 

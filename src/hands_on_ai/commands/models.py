@@ -56,7 +56,7 @@ def info(model_name: str):
         print(f"[red]Model '{model_name}' not found.[/red]")
         return
     
-    model_info = get_model_info(model_name)
+    model_info = get_model_info(model_name) or {}
     capabilities = get_model_capabilities(model_name)
     
     print(f"\n[bold cyan]Model:[/bold cyan] {model_name}")
@@ -106,10 +106,12 @@ def check(model_name: str):
 
 def _format_size(size_bytes: int) -> str:
     """Format size in bytes to a human-readable format."""
+    size = float(size_bytes)
     for unit in ["B", "KB", "MB", "GB", "TB"]:
-        if size_bytes < 1024.0 or unit == "TB":
-            return f"{size_bytes:.2f} {unit}"
-        size_bytes /= 1024.0
+        if size < 1024.0 or unit == "TB":
+            return f"{size:.2f} {unit}"
+        size /= 1024.0
+    return f"{size:.2f} TB"
 
 
 def _format_params(params: int) -> str:

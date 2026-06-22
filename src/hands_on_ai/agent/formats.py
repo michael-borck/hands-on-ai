@@ -95,7 +95,8 @@ def parse_json_response(text: str) -> Dict[str, Any]:
     
     try:
         # Parse the JSON response
-        return json.loads(json_text)
+        parsed: Dict[str, Any] = json.loads(json_text)
+        return parsed
     except json.JSONDecodeError as e:
         log.warning(f"Failed to parse JSON from model response: {e}")
         
@@ -103,14 +104,16 @@ def parse_json_response(text: str) -> Dict[str, Any]:
         try:
             # Try to fix missing quotes around keys
             fixed_json = re.sub(r'(\s*)(\w+)(\s*):', r'\1"\2"\3:', json_text)
-            return json.loads(fixed_json)
+            parsed = json.loads(fixed_json)
+            return parsed
         except json.JSONDecodeError:
             pass
             
         try:
             # Try to fix missing commas between elements
             fixed_json = re.sub(r'(\s*"\w+"\s*:\s*"[^"]*")\s*(")', r'\1,\2', json_text)
-            return json.loads(fixed_json)
+            parsed = json.loads(fixed_json)
+            return parsed
         except json.JSONDecodeError:
             pass
         
@@ -161,7 +164,7 @@ def format_tools_for_json_prompt(tools: Dict[str, Dict[str, Any]]) -> str:
 def run_instructor_agent(
     prompt: str, 
     tools: Dict[str, Dict[str, Any]], 
-    model: str = None,
+    model: str | None = None,
     max_iterations: int = 5,
     verbose: bool = False
 ) -> str:
@@ -245,7 +248,9 @@ IMPORTANT:
             # Determine what type of response we expect based on conversation state
             if any("Now provide your final answer" in msg for msg in conversation_history[-2:]):
                 # After tool execution - expect final answer
-                expected_model = FinalAnswer
+                # Either a single model class or a Union of them; instructor
+                # accepts both as its response_model, so we keep this dynamic.
+                expected_model: Any = FinalAnswer
                 if verbose:
                     log.info("Expecting FinalAnswer after tool use")
             else:
@@ -322,7 +327,7 @@ IMPORTANT:
 def run_json_agent_fallback(
     prompt: str, 
     tools: Dict[str, Dict[str, Any]], 
-    model: str = None,
+    model: str | None = None,
     max_iterations: int = 5,
     verbose: bool = False
 ) -> str:
@@ -371,7 +376,7 @@ def run_json_agent_fallback(
         
         # Check if we have a final answer
         if "answer" in response_data:
-            return response_data["answer"]
+            return str(response_data["answer"])
         
         # Check if we need to call a tool
         if "tool" in response_data and "input" in response_data:
@@ -418,7 +423,7 @@ def run_json_agent_fallback(
 def run_json_agent(
     prompt: str, 
     tools: Dict[str, Dict[str, Any]], 
-    model: str = None,
+    model: str | None = None,
     max_iterations: int = 5,
     verbose: bool = False
 ) -> str:

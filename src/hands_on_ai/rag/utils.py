@@ -35,7 +35,7 @@ def load_text_file(path: Path) -> str:
             import docx
         except ImportError:
             raise ImportError("`python-docx` is needed to read .docx files (it ships with hands-on-ai). Try reinstalling, or: pip install python-docx")
-        doc = docx.Document(path)
+        doc = docx.Document(str(path))
         return "\n".join(p.text for p in doc.paragraphs if p.text.strip())
 
     elif ext == ".pdf":
@@ -68,7 +68,7 @@ def chunk_text(text, chunk_size=None):
     return [" ".join(words[i:i+chunk_size]) for i in range(0, len(words), chunk_size)]
 
 
-def get_embeddings(chunks, model=None):
+def get_embeddings(chunks: list[str], model: str | None = None):
     """
     Get embeddings for text chunks using the OpenAI-compatible embeddings API.
 
@@ -136,7 +136,7 @@ def load_index_with_sources(path):
     return data["vectors"], data["chunks"], data["sources"]
 
 
-def get_top_k(query, index_path, k=3, return_scores=False):
+def get_top_k(query: str, index_path: str, k: int = 3, return_scores: bool = False):
     """
     Retrieve top k similar chunks for a query.
     

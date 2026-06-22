@@ -22,9 +22,8 @@ def interactive(
     # Determine the index path
     if index_path is None:
         index_path = str(CONFIG_DIR / "index.npz")
-    
-    index_path = Path(index_path)
-    if not index_path.exists():
+
+    if not Path(index_path).exists():
         print(f"[red]❌ Index file not found: {index_path}[/red]")
         print("Run 'rag index <directory>' first to create an index.")
         raise typer.Exit(1)

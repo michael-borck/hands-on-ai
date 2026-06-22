@@ -43,6 +43,7 @@ dev = [
   "twine==6.0.1",
   "cython",
   "ruff",
+  "mypy",
   "mkdocs",
   "mkdocstrings[python]",
   "mkdocs-material",
@@ -77,3 +78,17 @@ addopts = "-v"
 [tool.ruff]
 line-length = 100
 exclude = ["build", "dist", ".venv"]
+
+[tool.mypy]
+# Gradual typing: we check what is annotated, and we annotate the public API.
+# Lenient on purpose (this is a teaching codebase), but we avoid `# type: ignore`.
+mypy_path = "src"
+explicit_package_bases = true
+python_version = "3.10"
+# Third-party deps without type stubs (requests, fitz, sklearn, docx, instructor)
+# are not our code to type, so don't error on their missing stubs.
+ignore_missing_imports = true
+warn_return_any = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+no_implicit_optional = true

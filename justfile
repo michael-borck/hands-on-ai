@@ -13,8 +13,12 @@ lint:
 format:
   ruff format src/hands_on_ai tests scripts
 
+# 🔎 Static type checking (the shippable library)
+typecheck:
+  mypy src/hands_on_ai
+
 # 💼 Run linter and tests together
-ci: 
+ci:
   just lint
   just test
 
@@ -128,6 +132,7 @@ help:
   @echo "  test-basic            Run basic imports test directly"
   @echo "  lint                  Run Ruff linter"
   @echo "  format                Auto-format code with Ruff"
+  @echo "  typecheck             Run mypy on the library (src/hands_on_ai)"
   @echo "  build                 Build wheel + sdist into dist/"
   @echo "  publish               Build and upload to PyPI (uses ~/.pypirc)"
   @echo "  bundle                Create offline zip"

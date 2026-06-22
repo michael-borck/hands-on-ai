@@ -33,7 +33,7 @@ class UnsafeExpressionError(ValueError):
     """Raised when an expression contains a disallowed construct."""
 
 
-def safe_eval(expression: str, names: dict = None):
+def safe_eval(expression: str, names: dict | None = None):
     """
     Evaluate a mathematical expression without using ``eval``.
 

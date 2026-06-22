@@ -36,9 +36,9 @@ def index(
         chunk_size = get_chunk_size()
     
     # Process the input file(s)
-    input_path = Path(input_path)
-    if not input_path.exists():
-        print(f"[red]❌ Path not found: {input_path}[/red]")
+    path = Path(input_path)
+    if not path.exists():
+        print(f"[red]❌ Path not found: {path}[/red]")
         raise typer.Exit(1)
     
     start_time = time.time()
@@ -46,29 +46,29 @@ def index(
     sources = []
     
     # Process a single file
-    if input_path.is_file():
-        print(f"📄 Loading file: {input_path}")
+    if path.is_file():
+        print(f"📄 Loading file: {path}")
         try:
-            text = load_text_file(input_path)
+            text = load_text_file(path)
             file_chunks = chunk_text(text, chunk_size)
             chunks.extend(file_chunks)
-            sources.extend([str(input_path)] * len(file_chunks))
+            sources.extend([str(path)] * len(file_chunks))
             print(f"  ✓ Generated {len(file_chunks)} chunks")
         except Exception as e:
-            print(f"[red]❌ Error processing {input_path}: {e}[/red]")
+            print(f"[red]❌ Error processing {path}: {e}[/red]")
     
     # Process a directory of files
-    elif input_path.is_dir():
-        print(f"📂 Processing directory: {input_path}")
-        
+    elif path.is_dir():
+        print(f"📂 Processing directory: {path}")
+
         # Find all supported files
         supported_extensions = [".txt", ".md", ".docx", ".pdf"]
-        files = []
+        files: list[Path] = []
         for ext in supported_extensions:
-            files.extend(input_path.glob(f"**/*{ext}"))
-        
+            files.extend(path.glob(f"**/*{ext}"))
+
         if not files:
-            print(f"[yellow]⚠️ No supported files found in {input_path}[/yellow]")
+            print(f"[yellow]⚠️ No supported files found in {path}[/yellow]")
             raise typer.Exit(1)
         
         # Process each file

@@ -1,6 +1,6 @@
 # Makefile for Hands-On AI development tasks
 
-.PHONY: help test test-basic lint format ci install-dev sync-version requirements build bundle docs deploy-docs chat-repl rag-repl agent-repl doctor generate-bot-gallery spelling-au build-project-browser build-all lint-mini-projects generate-project-index lint-chat-projects lint-rag-projects lint-agent-projects lint-all-projects clean
+.PHONY: help test test-basic lint format typecheck ci install-dev sync-version requirements build bundle docs deploy-docs chat-repl rag-repl agent-repl doctor generate-bot-gallery spelling-au build-project-browser build-all lint-mini-projects generate-project-index lint-chat-projects lint-rag-projects lint-agent-projects lint-all-projects clean
 
 # Default target
 help:
@@ -10,6 +10,7 @@ help:
 	@echo "  test-basic            Run basic imports test directly"
 	@echo "  lint                  Run Ruff linter"
 	@echo "  format                Auto-format code with Ruff"
+	@echo "  typecheck             Run mypy on the library (src/hands_on_ai)"
 	@echo "  ci                    Run linter and tests together"
 	@echo "  build                 Build distribution packages"
 	@echo "  bundle                Create offline zip"
@@ -45,6 +46,10 @@ lint:
 
 format:
 	ruff format src/hands_on_ai tests scripts
+
+# 🔎 Static type checking (the shippable library)
+typecheck:
+	mypy src/hands_on_ai
 
 # 💼 Run linter and tests together
 ci: lint test

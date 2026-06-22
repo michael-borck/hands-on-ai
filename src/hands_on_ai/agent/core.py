@@ -5,7 +5,7 @@ Core agent functionality for ReAct-style reasoning and tool use.
 import re
 from typing import Dict, List, Callable, Any, Optional, Tuple
 from ..config import get_model, log
-from ..chat import get_response
+from ..chat.get_response import get_response
 from ..models import detect_best_format
 from .prompts import SYSTEM_PROMPT, TOOL_DESCRIPTION_FORMAT, TOOL_RESULT_FORMAT
 from .formats import run_json_agent
@@ -14,7 +14,7 @@ from .formats import run_json_agent
 _tools: Dict[str, Dict[str, Any]] = {}
 
 
-def register_tool(name: str, description: str, function: Callable):
+def register_tool(name: str, description: str, function: Callable) -> None:
     """
     Register a tool with the agent.
     
@@ -31,7 +31,7 @@ def register_tool(name: str, description: str, function: Callable):
     log.debug(f"Registered tool: {name}")
 
 
-def list_tools():
+def list_tools() -> list[dict[str, str]]:
     """
     List all registered tools.
     

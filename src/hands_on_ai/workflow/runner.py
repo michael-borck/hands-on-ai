@@ -42,7 +42,7 @@ _DEFAULT_SYSTEM = (
 )
 
 
-def init_workspace(path, stages, system: str = None):
+def init_workspace(path: str | Path, stages: list[str], system: str | None = None) -> Path:
     """
     Create a starter workspace with numbered stage folders.
 
@@ -76,7 +76,7 @@ def init_workspace(path, stages, system: str = None):
 class Pipeline:
     """Run a folder-based (ICM) workflow one reviewable stage at a time."""
 
-    def __init__(self, path):
+    def __init__(self, path: str | Path):
         self.root = Path(path)
         self.stages_dir = self.root / "stages"
         if not self.stages_dir.is_dir():
@@ -137,7 +137,7 @@ class Pipeline:
             print(f"  [{'x' if done else ' '}] {name}")
         return rows
 
-    def run_next(self, model: str = None):
+    def run_next(self, model: str | None = None):
         """
         Run the next not-yet-completed stage, write its output, and stop.
 
@@ -161,7 +161,7 @@ class Pipeline:
                 return {"stage": stage.name, "output_path": str(out), "output": result}
         return None
 
-    def run_all(self, model: str = None, max_steps: int = 50):
+    def run_all(self, model: str | None = None, max_steps: int = 50):
         """
         Run every remaining stage in order (no review pause between them).
 

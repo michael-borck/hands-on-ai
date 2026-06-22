@@ -93,7 +93,7 @@ def define(word: str) -> str:
     word = word.lower().strip()
     
     if word in MINI_DICTIONARY:
-        return MINI_DICTIONARY[word]["definition"]
+        return str(MINI_DICTIONARY[word]["definition"])
     else:
         # Using built-in dictionary for words not in our mini dictionary
         # In a full implementation, this would use an API or larger database

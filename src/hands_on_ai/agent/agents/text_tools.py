@@ -180,7 +180,7 @@ def summarize(text: str, ratio: str = "0.3") -> str:
     # Score sentences based on word frequency
     # 1. Calculate word frequency
     words = re.findall(r'\b\w+\b', text.lower())
-    word_freq = {}
+    word_freq: dict[str, int] = {}
     for word in words:
         if len(word) > 3:  # Skip short words
             word_freq[word] = word_freq.get(word, 0) + 1

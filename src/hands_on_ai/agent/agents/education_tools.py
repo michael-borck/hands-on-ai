@@ -72,7 +72,7 @@ def periodic_table(element: str) -> str:
     
     # Check if it's a valid element symbol
     for name, info in ELEMENTS.items():
-        if info["symbol"].lower() == element:
+        if str(info["symbol"]).lower() == element:
             
             # Format the result
             result = f"Element: {name.capitalize()}\n"
