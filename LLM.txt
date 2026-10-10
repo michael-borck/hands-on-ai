@@ -11,7 +11,7 @@ modern AI systems work by building small, readable versions of them. It works
 with any OpenAI-compatible LLM provider.
 
 - Package name: `hands-on-ai`
-- Version: 0.4.0
+- Version: 0.6.0
 - Python: 3.10+
 - Install: `pip install hands-on-ai` (one install includes everything; there are
   no optional extras to add)

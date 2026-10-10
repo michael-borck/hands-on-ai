@@ -62,6 +62,14 @@ map, not a manual):
   Qdrant or pgvector
 - **Structured output & agents:** Instructor or Pydantic AI for typed responses;
   LangChain / LangGraph, CrewAI, or a provider's agent SDK for orchestration
+- **Go multimodal for real:** [Pipecat](https://github.com/pipecat-ai/pipecat)
+  or LiveKit Agents for real-time voice and video agents; whisper.cpp or
+  faster-whisper for local speech-to-text; Piper or Kokoro for local
+  text-to-speech; Silero VAD for turn-taking; moondream and SmolVLM for small
+  vision models
+- **Build the models themselves:** Andrej Karpathy's
+  [Neural Networks: Zero to Hero](https://karpathy.ai/zero-to-hero.html) and
+  nanoGPT, for when "using models" turns into "how does this actually work"
 - **Go to the source:** read the original papers (ReAct, RAG, and the model cards
   for whatever you're using); they're more readable than you'd expect
 

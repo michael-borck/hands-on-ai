@@ -5,6 +5,37 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.6.0] - 2026-10-10
+
+### Added
+- New `vision` module: `describe(image, prompt, ...)` asks a vision-language
+  model about an image (local file or URL; the image rides in the message as a
+  base64 data URL). Default model `moondream` via `HANDS_ON_AI_VISION_MODEL`.
+  New `vision` CLI and "Understanding Vision" guide, plus "The Talking
+  Picture" project (alt-text generator included).
+- New `voice` module: `transcribe(audio_path, ...)` (speech-to-text) and
+  `speak(text, ...)` (text-to-speech) over the OpenAI-compatible audio
+  endpoints, so a voice agent is
+  `speak(conversation.ask(transcribe(audio)))`. STT/TTS servers and models are
+  configured independently (`HANDS_ON_AI_STT_SERVER/_MODEL`,
+  `HANDS_ON_AI_TTS_SERVER/_MODEL`, defaults `whisper-1`/`kokoro` on the main
+  server). New `voice` CLI with a type-to-voice `voice chat` REPL, the
+  "Understanding Voice" guide, the "Host an Audio Server" educator recipe,
+  and the "Build the World's Smallest Pipecat" project.
+- `chat_completion` accepts a `timeout` parameter (text default unchanged at
+  10s; vision/voice pass more generous values).
+- Example scripts `simple_vision_example.py` and `simple_voice_example.py`,
+  and `smoke_test.py` now checks vision and voice (skipping cleanly when no
+  VLM or audio server is configured).
+
+### Fixed
+- Every module CLI (chat, rag, agent, and the meta CLI) was rebuilt on plain
+  `@app.command()` commands. The previous nested-subTyper pattern stopped
+  parsing argument-then-option with current typer/click -- any option after
+  the argument failed with "Missing argument" (e.g. `chat ask "hi" --usage`).
+  Subcommand calls also no longer print the top-level help line, and
+  `handsonai config set` no longer dumps the config before setting.
+
 ## [0.5.1] - 2026-06-22
 
 ### Added
