@@ -85,6 +85,12 @@ And now that AI can write much of the code for us, understanding it matters
 *more*, not less: the person who knows what retrieval or a tool call actually
 is, is the one who can tell good output from confident nonsense.
 
+Never written code, or teaching people who won't? The sibling
+[programming-labs](https://github.com/michael-borck/programming-labs) series
+teaches programming at the natural-language level — spec, verify, and ship
+with an AI agent, no syntax required. Come here when you want to see what the
+machine underneath is doing.
+
 ## 🚀 Getting Started
 
 ### Installation
