@@ -55,9 +55,11 @@ nav:
     - Vision:
       - "Understanding Vision": vision-concepts.md
       - "Vision Guide": vision-guide.md
+      - "The Talking Picture": projects/vision/talking-picture.md
     - Voice:
       - "Understanding Voice": voice-concepts.md
       - "Voice Guide": voice-guide.md
+      - "Build the World's Smallest Pipecat": projects/voice/build-the-worlds-smallest-pipecat.md
   - Build:
     - "Projects Overview": mini-projects.md
     - "Browse All Projects": projects/index.md
@@ -112,6 +114,10 @@ nav:
       - Build a Ralph Loop: projects/loop/build-a-ralph-loop.md
     - Eval Projects:
       - Judge Your Bot: projects/eval/judge-your-bot.md
+    - Vision Projects:
+      - The Talking Picture: projects/vision/talking-picture.md
+    - Voice Projects:
+      - Build the World's Smallest Pipecat: projects/voice/build-the-worlds-smallest-pipecat.md
     - "Project Template": mini-project-template.md
   - For Educators:
     - "Education Guide": education-guide.md

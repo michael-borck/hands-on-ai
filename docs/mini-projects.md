@@ -58,6 +58,24 @@ Agent projects implement tool-using, reasoning systems:
 - **Multi-step Problem Solving**: Complex reasoning tasks
 - **Domain-specific Assistants**: Specialized agents for particular fields
 
+### Vision Module Projects
+
+Vision projects add image understanding on top of the chat shape:
+
+- **Image Description**: Asking questions about images with a VLM
+- **Accessibility Tools**: Generating alt-text for collections of images
+- **Multimodal Pipelines**: Combining vision with voice for spoken output
+
+### Voice Module Projects
+
+Voice projects add speech in and out around the familiar loop:
+
+- **Voice Agents**: Listen -> think -> speak loops, from push-to-talk upward
+- **Turn-taking and VAD**: Hitting (and solving) the hard problems of real
+  conversation
+- **Framework On-ramps**: Reading production frameworks like Pipecat with new
+  eyes after building the smallest version yourself
+
 ## How to Use These Projects
 
 1. Browse the [Project Gallery](projects/index.md) to find a suitable project

@@ -69,9 +69,23 @@ Workflow projects for Hands-On AI.
 
 - [Build a Pipeline](workflow/build-a-pipeline.md)
 
+## Voice Projects
+
+Voice projects for Hands-On AI.
+
+- [._Build The Worlds Smallest Pipecat](voice/._build-the-worlds-smallest-pipecat.md)
+- [Build the World's Smallest Pipecat](voice/build-the-worlds-smallest-pipecat.md)
+
 ## Loop Projects
 
 Loop projects for Hands-On AI.
 
 - [Build a Ralph Loop](loop/build-a-ralph-loop.md)
 - [Improve Until Good](loop/improve-until-good.md)
+
+## Vision Projects
+
+Vision projects for Hands-On AI.
+
+- [._Talking Picture](vision/._talking-picture.md)
+- [The Talking Picture](vision/talking-picture.md)

@@ -3,9 +3,9 @@
 End-to-end smoke test for hands-on-ai against a live LLM provider.
 
 This exercises the main features (chat, streaming, memory, caching, evaluation,
-and RAG) against whatever provider you have configured, and prints a PASS/FAIL
-for each. It is handy as a release checklist: run it after a change to confirm
-nothing is broken against a real model.
+RAG, vision, and voice) against whatever provider you have configured, and
+prints a PASS/FAIL for each. It is handy as a release checklist: run it after a
+change to confirm nothing is broken against a real model.
 
 Usage:
 
@@ -13,9 +13,15 @@ Usage:
     export HANDS_ON_AI_SERVER=http://localhost:11434
     export HANDS_ON_AI_MODEL=gemma3:4b
     export HANDS_ON_AI_EMBEDDING_MODEL=nomic-embed-text   # for the RAG check
+    export HANDS_ON_AI_VISION_MODEL=gemma3:4b             # for the vision check
+    # Optional, for the voice check (plain Ollama does not serve audio):
+    export HANDS_ON_AI_STT_SERVER=http://localhost:8000
+    export HANDS_ON_AI_TTS_SERVER=http://localhost:8000
     python examples/smoke_test.py
 
-The RAG check is skipped automatically if no embedding model is reachable.
+The RAG check is skipped automatically if no embedding model is reachable; the
+vision check if no vision model answers; the voice check if no audio server is
+configured.
 Exit code is 0 if everything passed, 1 otherwise.
 """
 
@@ -118,6 +124,43 @@ def main():
             "Q: What battery does the Zorblax use?")
         check("RAG grounded answer", "graphene" in answer.lower() or "240" in answer,
               repr(answer[:60]))
+
+    # 8. Vision: describe a generated image (skipped if no VLM answers)
+    try:
+        import fitz
+        from hands_on_ai.vision import describe
+        from hands_on_ai.config import get_vision_model
+        doc = fitz.open()
+        page = doc.new_page(width=120, height=120)
+        page.draw_rect(fitz.Rect(0, 0, 120, 120), color=(0, 0, 1), fill=(0, 0, 1))
+        page.draw_rect(fitz.Rect(30, 30, 90, 90), color=(1, 0, 0), fill=(1, 0, 0))
+        img = str(Path(tempfile.mkdtemp()) / "smoke.png")
+        page.get_pixmap().save(img)
+        doc.close()
+        answer = describe(img, "What colour is the square? One word.")
+        if answer.startswith("❌"):
+            skip("vision describe", f"no VLM? ({get_vision_model()}: {answer[:60]})")
+        else:
+            check("vision describe", "red" in answer.lower(), repr(answer[:40]))
+    except ImportError as e:
+        skip("vision describe", f"missing dependency ({e})")
+
+    # 9. Voice: TTS writes audio, STT returns text (skipped if no audio server)
+    try:
+        from hands_on_ai.voice import speak, transcribe
+        spoken = speak("Smoke test one two three.", out_path=str(Path(tempfile.mkdtemp()) / "t.wav"))
+        if isinstance(spoken, str):  # error string from the toolkit style
+            skip("voice speak", f"no audio server? ({spoken[:60]})")
+        else:
+            check("voice speak", spoken.read_bytes()[:4] == b"RIFF", str(spoken))
+            heard = transcribe(str(spoken))
+            if isinstance(heard, str) and not heard.startswith("❌"):
+                check("voice transcribe", len(heard) > 0 and not heard.startswith("❌"),
+                      repr(heard[:40]))
+            else:
+                skip("voice transcribe", f"STT unavailable? ({heard[:60]})")
+    except ImportError as e:
+        skip("voice speak", f"missing dependency ({e})")
 
     # Summary
     passed, total = sum(results), len(results)

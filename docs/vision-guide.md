@@ -62,6 +62,9 @@ describe(image, prompt="Describe this image.", model=None, retries=2)
 
 - `image` is a path to a local file (`jpg`, `png`, `gif`, `webp`, `bmp`) or an
   http(s) URL. Local files are base64-encoded into the request automatically.
+  URLs pass through for the provider to fetch -- cloud providers (OpenAI,
+  Groq, Gemini) do this, but local Ollama does not, so prefer local files
+  there.
 - The result is a string, in the same style as
   [`get_response`](chat-guide.md): the answer, or a `❌ Error: ...` message
   when something went wrong (missing file, no VLM on the server, and so on).
@@ -92,6 +95,9 @@ The server and API key come from `HANDS_ON_AI_SERVER` /
   `HANDS_ON_AI_MODEL`.
 - **File not found / ❌ Error**: check the path; URLs must start with
   `http://` or `https://`.
+- **"image URLs are not currently supported"**: your server (Ollama) doesn't
+  fetch remote URLs. Download the image and pass the local path instead, or
+  use a cloud provider for URL input.
 - **Vague or wrong answers**: try a more specific prompt ("What colour is the
   front door?"), or a bigger VLM. See the
   [honest limitations](vision-concepts.md#what-vlms-are-honestly-bad-at) in
