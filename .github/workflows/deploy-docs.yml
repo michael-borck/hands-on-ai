@@ -1,0 +1,51 @@
+name: Deploy Docs
+
+# Rebuilds the documentation site and publishes it to the gh-pages branch,
+# the same steps as `just deploy-docs`. Runs on every push to main (docstring
+# and code changes both feed the API reference) and on demand.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deploy-docs
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install package and docs tooling
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+          pip install mkdocs mkdocs-material "mkdocstrings[python]" pymdown-extensions ghp-import
+
+      - name: Regenerate bot gallery and project index
+        run: |
+          python scripts/generate_bot_gallery.py --flat --out docs/bot-gallery.md
+          python scripts/generate_project_index.py
+
+      - name: Build site
+        run: |
+          rm -rf site
+          mkdocs build --clean --site-dir site/docs
+          cp -R landing/. site/
+          find site -name '._*' -delete
+
+      - name: Publish to gh-pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          ghp-import --no-jekyll --push --force site
