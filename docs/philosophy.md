@@ -32,7 +32,7 @@ code to fetch context. An agent adds a loop that runs your functions. A workflow
 adds folders. The model is the only "AI" in the room; the rest is a thin harness
 you can open and read. That's the whole package, and the whole point.
 
-## Two friendly clarifications
+## Three friendly clarifications
 
 **"Can I build my real product on top of this?"**
 Please don't, and that's a compliment to your ambition, not a knock on the
@@ -45,6 +45,16 @@ Yes, and on purpose. Every gap is an invitation to go research further. If you
 finish a module thinking *"but what about streaming / evaluation / bigger
 context / a real vector store?"*, wonderful, that's the package working. It got
 you to a good question. Now go chase it in the real libraries and papers.
+
+**"Why learn this when AI writes the code now?"**
+Because the plumbing changed and the judgement didn't. More software is built
+by describing intent to a model, which makes understanding the model *more*
+valuable, not less. When the generated RAG pipeline returns confident nonsense,
+natural language won't debug it -- knowing what retrieval, chunking, and a
+system prompt actually do will. Supervising AI runs on exactly the ideas in
+this package, above all the last one: how do you judge whether output is any
+good? That's the new baseline literacy, and an afternoon here is a cheap way
+to acquire it.
 
 We'd rather teach one idea so clearly that you outgrow us, than hand you a
 framework you use without understanding.

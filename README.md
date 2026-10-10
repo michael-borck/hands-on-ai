@@ -81,6 +81,10 @@ Each module is intentionally small and readable: the goal is to make the
 are encouraged to graduate to a more robust, dedicated library (LangChain,
 LlamaIndex, an agent framework, an eval harness, and so on).
 
+And now that AI can write much of the code for us, understanding it matters
+*more*, not less: the person who knows what retrieval or a tool call actually
+is, is the one who can tell good output from confident nonsense.
+
 ## 🚀 Getting Started
 
 ### Installation
