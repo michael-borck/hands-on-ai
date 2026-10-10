@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HandsOnAI — Your AI Learning Lab</title>
+  <meta name="description" content="A unified educational toolkit for teaching how modern AI systems work: chat, RAG, agents, workflows, loops, and evals. One pip install, beginner friendly, classroom ready." />
+  <link rel="icon" href="icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <div class="brand">
+          <img src="icon-192.png" alt="" class="brand-icon" />
+          <span class="brand-name">HandsOnAI</span>
+        </div>
+        <h1>Your AI <span class="accent">learning lab</span></h1>
+        <p class="sub">
+          A unified educational toolkit for teaching how modern AI systems
+          actually work — by building and interacting with them directly.
+          Chat, RAG, agents, workflows, loops, and evals: six small, readable
+          modules that make each concept legible.
+        </p>
+
+        <div class="install-block">
+          <code id="install-cmd">pip install hands-on-ai</code>
+          <button id="copy-btn" class="copy-btn" title="Copy to clipboard">Copy</button>
+        </div>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="docs/">Read the Documentation</a>
+          <a class="btn btn-secondary" href="https://colab.research.google.com/github/michael-borck/hands-on-ai/blob/main/notebooks/quickstart.ipynb">Try in Colab — no install</a>
+        </div>
+
+        <p class="meta-row">
+          <a href="https://pypi.org/project/hands-on-ai/">PyPI</a> ·
+          <a href="https://github.com/michael-borck/hands-on-ai">GitHub</a> ·
+          Python 3.10+ · MIT licence · Works with Ollama, OpenAI &amp; more
+        </p>
+      </div>
+
+      <div class="hero-visual">
+        <div class="terminal" id="slider">
+          <div class="terminal-bar">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span class="terminal-title" id="slide-title">chat.py</span>
+          </div>
+          <div class="slides">
+            <pre class="slide active" data-title="chat.py"><code><span class="kw">from</span> hands_on_ai.chat <span class="kw">import</span> get_response
+
+reply = get_response(
+    <span class="str">"Explain photosynthesis simply"</span>,
+    personality=<span class="str">"pirate"</span>,
+)
+<span class="fn">print</span>(reply)
+<span class="out"># Arr! Plants be catchin' sunlight t' brew
+# their own grub from air an' water! 🏴‍☠️</span></code></pre>
+            <pre class="slide" data-title="rag.py"><code><span class="kw">from</span> hands_on_ai.rag <span class="kw">import</span> ask
+
+answer = ask(
+    <span class="str">"What were the key findings?"</span>,
+    docs=<span class="str">"my_notes/"</span>,
+)
+<span class="fn">print</span>(answer)
+<span class="out"># Grounded answer with citations,
+# straight from *your* documents.</span></code></pre>
+            <pre class="slide" data-title="agent.py"><code><span class="kw">from</span> hands_on_ai.agent <span class="kw">import</span> run_agent
+
+result = run_agent(
+    <span class="str">"What is 15% of 2,340, in words?"</span>
+)
+<span class="out"># Thought: I need the calculator tool...
+# Action: calculator("2340 * 0.15")
+# Answer: three hundred and fifty-one</span></code></pre>
+          </div>
+          <div class="slider-dots" role="tablist" aria-label="Code examples">
+            <button class="sdot active" data-slide="0" aria-label="chat example"></button>
+            <button class="sdot" data-slide="1" aria-label="rag example"></button>
+            <button class="sdot" data-slide="2" aria-label="agent example"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="container modules">
+    <h2>Six modules, one progressive path</h2>
+    <p class="section-sub">Each module is small, self-contained, and designed so the <em>concept</em> is what students see — not framework plumbing.</p>
+    <div class="grid">
+      <a class="card" href="docs/chat-concepts/"><div class="card-icon">💬</div><h3>chat</h3><p>Prompt engineering, system prompts, personalities, and memory — the front door to LLMs.</p></a>
+      <a class="card" href="docs/rag-llm-explain/"><div class="card-icon">📚</div><h3>rag</h3><p>Retrieval-Augmented Generation over your own documents: embeddings, search, grounded answers.</p></a>
+      <a class="card" href="docs/agent-concepts/"><div class="card-icon">🤖</div><h3>agent</h3><p>ReAct-style reasoning with tools — multi-step thinking, acting, and observing.</p></a>
+      <a class="card" href="docs/workflow-guide/"><div class="card-icon">🗂️</div><h3>workflow</h3><p>Multi-step tasks as plain folders of stages you can read, review, and rerun.</p></a>
+      <a class="card" href="docs/loop-guide/"><div class="card-icon">🔁</div><h3>loop</h3><p>Do, check, repeat until a goal is met — the core move of agentic systems, made visible.</p></a>
+      <a class="card" href="docs/"><div class="card-icon">⚖️</div><h3>eval</h3><p>Score output quality with an LLM judge — the foundation of testing AI systems.</p></a>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="container why">
+      <h2>Built for classrooms</h2>
+      <div class="why-grid">
+        <div class="why-item">
+          <h3>🧑‍🏫 Educator friendly</h3>
+          <p>Progressive difficulty, mini-project galleries, and CLI tools for chat, rag, and agent — ready for labs and lectures.</p>
+        </div>
+        <div class="why-item">
+          <h3>🔌 Bring your own model</h3>
+          <p>Point it at a local Ollama server, a campus server, or a cloud provider. One config, no code changes.</p>
+        </div>
+        <div class="why-item">
+          <h3>🎓 A stepping stone</h3>
+          <p>Once a concept clicks, students graduate to production libraries — LangChain, LlamaIndex, eval harnesses — with real understanding.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <a href="docs/">Documentation</a>
+      <a href="https://pypi.org/project/hands-on-ai/">PyPI</a>
+      <a href="https://github.com/michael-borck/hands-on-ai">GitHub</a>
+      <a href="https://github.com/michael-borck/hands-on-ai/blob/main/CHANGELOG.md">Changelog</a>
+      <span class="copyright">MIT © Michael Borck</span>
+    </div>
+  </footer>
+
+  <script>
+    // Copy install command
+    const copyBtn = document.getElementById('copy-btn');
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText('pip install hands-on-ai').then(() => {
+        copyBtn.textContent = 'Copied!';
+        setTimeout(() => (copyBtn.textContent = 'Copy'), 1500);
+      });
+    });
+
+    // Code slider
+    const slides = [...document.querySelectorAll('.slide')];
+    const dots = [...document.querySelectorAll('.sdot')];
+    const title = document.getElementById('slide-title');
+    let current = 0, timer = null;
+
+    function show(i) {
+      current = i;
+      slides.forEach((s, n) => s.classList.toggle('active', n === i));
+      dots.forEach((d, n) => d.classList.toggle('active', n === i));
+      title.textContent = slides[i].dataset.title;
+    }
+    function start() { timer = setInterval(() => show((current + 1) % slides.length), 5000); }
+    function stop() { clearInterval(timer); }
+
+    dots.forEach(d => d.addEventListener('click', () => { stop(); show(+d.dataset.slide); start(); }));
+    const slider = document.getElementById('slider');
+    slider.addEventListener('mouseenter', stop);
+    slider.addEventListener('mouseleave', start);
+    start();
+  </script>
+</body>
+</html>
