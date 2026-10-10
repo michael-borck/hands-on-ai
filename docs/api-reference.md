@@ -72,6 +72,31 @@ LLM-as-judge scoring for bot outputs.
 
 ---
 
+## Vision
+
+Image description with a vision-language model: image plus question in,
+description out.
+
+### `vision.describe`
+
+::: hands_on_ai.vision.describe
+
+---
+
+## Voice
+
+Speech-to-text and text-to-speech: the ears and mouth around the chat model.
+
+### `voice.transcribe`
+
+::: hands_on_ai.voice.transcribe
+
+### `voice.speak`
+
+::: hands_on_ai.voice.speak
+
+---
+
 ## Core utilities
 
 Shared configuration, model discovery, and response caching used across the

@@ -61,6 +61,35 @@ The following options can be configured:
   - Environment: `HANDS_ON_AI_EMBEDDING_MODEL=text-embedding-ada-002`
   - Config File: `{ "embedding_model": "text-embedding-ada-002" }`
 
+### `HANDS_ON_AI_VISION_MODEL`
+- **Description**: Vision-language model used by the vision module to describe images
+- **Default**: `moondream`
+- **Examples**:
+  - Ollama: `moondream`, `llava`, `qwen2.5-vl`
+  - OpenAI: `gpt-4o-mini`
+- **Set via**:
+  - Environment: `HANDS_ON_AI_VISION_MODEL=llava`
+  - Config File: `{ "vision_model": "llava" }`
+
+### `HANDS_ON_AI_STT_SERVER` / `HANDS_ON_AI_TTS_SERVER`
+- **Description**: Servers for speech-to-text and text-to-speech (voice module).
+  Default to the main `HANDS_ON_AI_SERVER`. Must implement the OpenAI-compatible
+  audio endpoints (`/v1/audio/transcriptions`, `/v1/audio/speech`) -- plain
+  Ollama does not serve audio.
+- **Examples**:
+  - speaches (local Whisper + Kokoro): `http://localhost:8000`
+  - OpenAI: `https://api.openai.com`
+- **Set via**:
+  - Environment: `HANDS_ON_AI_STT_SERVER=http://localhost:8000`
+  - Config File: `{ "stt_server": "http://localhost:8000" }`
+
+### `HANDS_ON_AI_STT_MODEL` / `HANDS_ON_AI_TTS_MODEL`
+- **Description**: Models used by the voice module for transcription and speech
+- **Defaults**: `whisper-1` (STT), `kokoro` (TTS)
+- **Set via**:
+  - Environment: `HANDS_ON_AI_STT_MODEL=whisper-large-v3`
+  - Config File: `{ "stt_model": "whisper-large-v3", "tts_model": "tts-1" }`
+
 ### `HANDS_ON_AI_LOG`
 - **Description**: Enable debug logging
 - **Default**: None (warnings only)

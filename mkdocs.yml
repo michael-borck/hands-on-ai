@@ -52,6 +52,12 @@ nav:
     - Evaluation:
       - "Understanding Evaluation": eval-guide.md
       - "Judge Your Bot": projects/eval/judge-your-bot.md
+    - Vision:
+      - "Understanding Vision": vision-concepts.md
+      - "Vision Guide": vision-guide.md
+    - Voice:
+      - "Understanding Voice": voice-concepts.md
+      - "Voice Guide": voice-guide.md
   - Build:
     - "Projects Overview": mini-projects.md
     - "Browse All Projects": projects/index.md
@@ -111,6 +117,7 @@ nav:
     - "Education Guide": education-guide.md
     - "Classroom Setup": classroom-setup.md
     - "Host a Shared Ollama": deploy-ollama.md
+    - "Host an Audio Server": deploy-audio-server.md
   - Reference:
     - "Use with an LLM": use-with-llm.md
     - "CLI Reference": cli-guide.md

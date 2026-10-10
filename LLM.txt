@@ -24,6 +24,12 @@ It has five modules, meant to be learned in order:
 4. `workflow`: orchestrating multi-step tasks as folders of stages
 5. `eval`: judging output quality with an LLM (LLM-as-judge)
 
+There are also two side modules:
+- `vision`: describes images with a vision-language model (same shape as
+  chat, plus the image).
+- `voice`: speech-to-text (`transcribe`) and text-to-speech (`speak`), so a
+  voice agent is `speak(chat.ask(transcribe(audio)))`.
+
 ## The core idea
 
 Every module is the same shape underneath: one call to the model
@@ -43,6 +49,11 @@ os.environ["HANDS_ON_AI_SERVER"] = "http://localhost:11434"   # provider base UR
 os.environ["HANDS_ON_AI_API_KEY"] = "your-api-key"            # omit for local Ollama
 os.environ["HANDS_ON_AI_MODEL"] = "llama3"                    # chat model
 os.environ["HANDS_ON_AI_EMBEDDING_MODEL"] = "nomic-embed-text" # used by RAG
+os.environ["HANDS_ON_AI_VISION_MODEL"] = "moondream"          # used by vision
+# Voice module (optional; servers must implement OpenAI-compatible audio
+# endpoints, which plain Ollama does not -- e.g. speaches on :8000):
+os.environ["HANDS_ON_AI_STT_SERVER"] = "http://localhost:8000"
+os.environ["HANDS_ON_AI_TTS_SERVER"] = "http://localhost:8000"
 os.environ["HANDS_ON_AI_LOG"] = "debug"                       # optional logging
 ```
 
@@ -301,6 +312,75 @@ print(verdict["reasoning"])  # one short sentence
 `judge(output, criteria, question=None, model=None, scale=5)` returns a dict with
 `score`, `reasoning`, and `raw`. Treat the score as a signal, not a verdict:
 judges can be inconsistent, so use clear criteria and average several runs.
+
+## Module 6 (side module): vision
+
+Describe images with a vision-language model (VLM). Same shape as chat: the
+image becomes tokens in the user message, the model answers with text.
+
+```python
+from hands_on_ai.vision import describe
+
+describe("photo.jpg")                                  # -> description
+describe("photo.jpg", "What breed is the dog?")        # -> answer
+describe("https://example.com/map.png", "Where is the airport?")
+describe("photo.jpg", model="llava")                   # model for one call
+```
+
+Signature: `describe(image, prompt="Describe this image.", model=None, retries=2)`.
+`image` is a local file path (jpg, png, gif, webp, bmp) or an http(s) URL.
+Returns the answer string, or a "❌ Error: ..." string on failure. The model
+defaults to the `vision_model` config setting (default `moondream`), overridable
+with `HANDS_ON_AI_VISION_MODEL`. For local Ollama: `ollama pull moondream`.
+It describes images; it does not create them.
+
+CLI:
+
+```bash
+vision photo.jpg                        # default description
+vision photo.jpg "What's in this?"      # ask a question
+vision --model llava photo.jpg "..."    # model for one call
+```
+
+## Module 7 (side module): voice
+
+Speech-to-text and text-to-speech, so a voice agent is three lines:
+
+```python
+from hands_on_ai.chat import Conversation
+from hands_on_ai.voice import speak, transcribe
+
+conversation = Conversation()
+speak(conversation.ask(transcribe("question.wav")))
+```
+
+```python
+from hands_on_ai.voice import speak, transcribe
+
+transcribe("audio.wav")                              # -> "the words that were said"
+transcribe("audio.wav", language="en")               # with a language hint
+speak("Hello class")                                 # -> writes speech.wav, returns Path
+speak("Hello", voice="alloy", out_path="greeting.wav")
+```
+
+Signatures: `transcribe(audio_path, model=None, language=None, retries=2, timeout=120)`
+returns the words as a string; `speak(text, voice="alloy", out_path=None,
+model=None, retries=2, timeout=120)` writes a WAV file and returns its `Path`
+(or a "❌ Error: ..." string on failure; `out_path` defaults to `speech.wav`).
+
+Both need an OpenAI-compatible **audio** server: plain Ollama does not serve
+audio. Point `HANDS_ON_AI_STT_SERVER` and `HANDS_ON_AI_TTS_SERVER` at
+something like speaches (local Whisper + Kokoro in one Docker container) or
+OpenAI/Groq; models default to `whisper-1` and `kokoro` via
+`HANDS_ON_AI_STT_MODEL` / `HANDS_ON_AI_TTS_MODEL`.
+
+CLI:
+
+```bash
+voice transcribe audio.wav          # speech -> text
+voice speak "Hello class" --play    # text -> speech.wav, then play it
+voice chat                          # type a question, hear the spoken answer
+```
 
 ## Providers
 

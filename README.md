@@ -28,6 +28,8 @@ It provides a clean, modular structure that introduces core AI concepts progress
 | workflow | Orchestrate multi-step tasks as folders of stages | (library) |
 | loop | Repeat a step until a goal is met (incl. the "ratchet" loop) | (library) |
 | eval | Evaluate output quality with an LLM judge | (library) |
+| vision | Describe images with a vision-language model | vision |
+| voice | Speech-to-text and text-to-speech around the chat loop | voice |
 
 (A small `models` utility module handles model detection and capabilities.)
 
@@ -46,6 +48,8 @@ hands_on_ai/
 ├── workflow/       ← Multi-step tasks as folders of reviewable stages (ICM)
 ├── loop/           ← Repeat a step until a goal is met (run_loop, run_ratchet)
 ├── eval/           ← Score output quality with an LLM judge
+├── vision/         ← Describe images with a vision-language model
+├── voice/          ← Speech-to-text and text-to-speech
 ├── config.py       ← Shared config (model, chunk size, paths)
 ├── cli.py          ← Meta CLI (list, config, version)
 ├── models.py       ← Centralized model utilities

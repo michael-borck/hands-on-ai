@@ -70,12 +70,18 @@ save_config(config)
 - `get_server_url()`: Get the server URL from config
 - `get_model()`: Get the default model from config
 - `get_embedding_model()`: Get the default embedding model
+- `get_vision_model()`: Get the default vision model
+- `get_stt_model()` / `get_stt_server_url()`: Get the default STT model/server
+- `get_tts_model()` / `get_tts_server_url()`: Get the default TTS model/server
 - `get_chunk_size()`: Get the default chunk size for RAG
 
 Environment variables that override config:
 - `HANDS_ON_AI_SERVER`: Override server URL
 - `HANDS_ON_AI_MODEL`: Override default model
 - `HANDS_ON_AI_EMBEDDING_MODEL`: Override embedding model
+- `HANDS_ON_AI_VISION_MODEL`: Override vision model
+- `HANDS_ON_AI_STT_SERVER` / `HANDS_ON_AI_STT_MODEL`: Override STT settings
+- `HANDS_ON_AI_TTS_SERVER` / `HANDS_ON_AI_TTS_MODEL`: Override TTS settings
 - `HANDS_ON_AI_LOG=debug`: Enable debug logging
 
 ### Chat Module API

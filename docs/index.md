@@ -115,6 +115,24 @@ Each module introduces the next layer of how modern AI systems are built:
 
     [Learn Evaluation →](eval-guide.md)
 
+-   👁️ **Vision**: `vision`
+
+    ---
+
+    Describe images with a vision-language model. The same chat shape, with an
+    image riding along in the prompt.
+
+    [Learn Vision →](vision-guide.md)
+
+-   🎙️ **Voice**: `voice`
+
+    ---
+
+    Speech-to-text and text-to-speech. A voice agent is three lines:
+    listen, think, speak.
+
+    [Learn Voice →](voice-guide.md)
+
 </div>
 
 ## Why Hands-On AI
