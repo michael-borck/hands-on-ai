@@ -2,13 +2,9 @@
 List command for the hands-on-ai CLI.
 """
 
-import typer
 from rich import print
 
-app = typer.Typer(help="List available modules")
 
-
-@app.callback(invoke_without_command=True)
 def list_modules():
     """List available modules and their CLIs."""
     print("\n🧠 [bold]hands-on-ai[/bold]: AI Learning Lab Toolkit\n\n")
@@ -19,3 +15,7 @@ def list_modules():
     print("    Usage: [cyan]rag --help[/cyan]")
     print("  • [bold]agent[/bold] - ReAct-style reasoning with tool use")
     print("    Usage: [cyan]agent --help[/cyan]")
+    print("  • [bold]vision[/bold] - Describe images with a vision-language model")
+    print("    Usage: [cyan]vision --help[/cyan]")
+    print("  • [bold]voice[/bold] - Speech-to-text and text-to-speech")
+    print("    Usage: [cyan]voice --help[/cyan]")

@@ -9,8 +9,6 @@ from ..bots import get_bot
 from ..get_response import set_stream_printing
 from ...config import get_server_url
 
-app = typer.Typer(help="Start interactive REPL")
-
 
 def check_server():
     """Check if Ollama server is running."""
@@ -24,7 +22,6 @@ def check_server():
     return False
 
 
-@app.callback(invoke_without_command=True)
 def interactive():
     """Start interactive REPL (no memory)."""
     current_bot_name = "friendly_bot"

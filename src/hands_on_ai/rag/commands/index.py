@@ -10,10 +10,6 @@ import time
 from ...config import CONFIG_DIR, get_chunk_size, log
 from ..utils import load_text_file, chunk_text, get_embeddings, save_index_with_sources
 
-app = typer.Typer(help="Build a RAG index from files")
-
-
-@app.callback(invoke_without_command=True)
 def index(
     input_path: str = typer.Argument(..., help="File or directory to index"),
     output_file: str = typer.Option(None, help="Output index file (default: ~/.hands-on-ai/index.npz)"),

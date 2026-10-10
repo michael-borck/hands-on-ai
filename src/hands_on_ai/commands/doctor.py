@@ -2,16 +2,12 @@
 Doctor command for the hands-on-ai CLI - checks environment and configuration.
 """
 
-import typer
 from rich import print
 import requests
 from .. import config
 from ..models import check_model_exists, list_models
 
-app = typer.Typer(help="Check environment and configuration")
 
-
-@app.callback(invoke_without_command=True)
 def doctor():
     """Check environment and configuration."""
     print("\n🩺 [bold]hands-on-ai[/bold] environment check\n")

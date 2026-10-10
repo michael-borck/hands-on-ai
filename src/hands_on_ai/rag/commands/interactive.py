@@ -8,10 +8,7 @@ from pathlib import Path
 from ...config import CONFIG_DIR
 from .ask import ask
 
-app = typer.Typer(help="Run interactive RAG chat")
 
-
-@app.callback(invoke_without_command=True)
 def interactive(
     index_path: str = typer.Option(None, help="Path to index file (default: ~/.hands-on-ai/index.npz)"),
     show_context: bool = typer.Option(False, "--context", "-c", help="Show retrieved context"),

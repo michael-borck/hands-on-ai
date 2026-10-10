@@ -11,10 +11,6 @@ from ...config import CONFIG_DIR, get_model
 from ...chat import get_response
 from ..utils import get_top_k
 
-app = typer.Typer(help="Ask questions using indexed documents")
-
-
-@app.callback(invoke_without_command=True)
 def ask(
     query: str = typer.Argument(..., help="Question to ask"),
     index_path: str = typer.Option(None, help="Path to index file (default: ~/.hands-on-ai/index.npz)"),

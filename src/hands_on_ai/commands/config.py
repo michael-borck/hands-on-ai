@@ -11,8 +11,10 @@ app = typer.Typer(help="View or edit configuration")
 
 
 @app.callback(invoke_without_command=True)
-def show_config():
+def show_config(ctx: typer.Context):
     """View or edit configuration."""
+    if ctx.invoked_subcommand is not None:
+        return
     config.ensure_config_dir()
     
     if not config.CONFIG_PATH.exists():

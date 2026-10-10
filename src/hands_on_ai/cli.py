@@ -7,10 +7,12 @@ from .commands import version, list, doctor, config, models
 
 app = typer.Typer(help="AI Learning Lab Toolkit")
 
-# Add command modules
-app.add_typer(version.app, name="version", help="Display version information")
-app.add_typer(list.app, name="list", help="List available modules")
-app.add_typer(doctor.app, name="doctor", help="Check environment and configuration")
+# Plain commands (single-action functions)
+app.command(name="version", help="Display version information")(version.version)
+app.command(name="list", help="List available modules")(list.list_modules)
+app.command(name="doctor", help="Check environment and configuration")(doctor.doctor)
+
+# Command groups (have their own subcommands)
 app.add_typer(config.app, name="config", help="View or edit configuration")
 app.add_typer(models.app, name="models", help="Manage and inspect LLM models")
 

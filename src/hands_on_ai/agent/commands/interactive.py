@@ -9,10 +9,7 @@ from rich.console import Console
 from ..core import run_agent
 from ...config import get_model
 
-app = typer.Typer(help="Run interactive agent chat")
 
-
-@app.callback(invoke_without_command=True)
 def interactive(
     model: str = typer.Option(None, help="LLM model to use (default: from config)"),
     verbose: bool = typer.Option(False, "--verbose", "-v", help="Show detailed output"),

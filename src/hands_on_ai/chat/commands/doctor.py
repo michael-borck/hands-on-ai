@@ -7,10 +7,7 @@ from rich import print
 import requests
 from ...config import get_server_url
 
-app = typer.Typer(help="Run diagnostics")
 
-
-@app.callback(invoke_without_command=True)
 def doctor():
     """Run diagnostics to check Ollama server and model availability."""
     print("🩺 Running Chat environment check...\n")

@@ -2,15 +2,11 @@
 Tools command for the agent CLI - lists available tools.
 """
 
-import typer
 from rich.table import Table
 from rich.console import Console
 from ..core import list_tools
 
-app = typer.Typer(help="List available agent tools")
 
-
-@app.callback(invoke_without_command=True)
 def list_available_tools():
     """List all available agent tools."""
     # Register tools from built-in agents

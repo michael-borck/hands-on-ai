@@ -8,10 +8,7 @@ from rich.console import Console
 from ..core import run_agent, list_tools
 from ...config import get_model
 
-app = typer.Typer(help="Ask a question using agent tools")
 
-
-@app.callback(invoke_without_command=True)
 def ask(
     prompt: str = typer.Argument(..., help="Question or instruction for the agent"),
     model: str = typer.Option(None, help="LLM model to use (default: from config)"),
