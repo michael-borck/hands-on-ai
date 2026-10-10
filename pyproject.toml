@@ -28,6 +28,8 @@ handsonai = "hands_on_ai.cli:app"
 chat = "hands_on_ai.chat.cli:app"
 rag = "hands_on_ai.rag.cli:app"
 agent = "hands_on_ai.agent.cli:app"
+vision = "hands_on_ai.vision.cli:app"
+voice = "hands_on_ai.voice.cli:app"
 
 [tool.flit.module]
 name = "hands_on_ai"

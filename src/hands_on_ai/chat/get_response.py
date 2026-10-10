@@ -82,6 +82,7 @@ def chat_completion(
     personality: str = "friendly",
     stream: bool = False,
     retries: int = 2,
+    timeout: float = 10,
 ) -> tuple[str, dict | None]:
     """
     Send a list of chat messages to the LLM and return ``(content, usage)``.
@@ -96,6 +97,8 @@ def chat_completion(
         personality: Used to pick a fallback message during retries.
         stream: Whether to request streaming output.
         retries: Number of attempts before giving up.
+        timeout: Request timeout in seconds. Vision and other slow modules
+            pass a larger value than the text default.
 
     Returns:
         tuple: ``(content, usage)`` where ``usage`` is a token-count dict, or
@@ -119,7 +122,7 @@ def chat_completion(
                 model=model,
                 messages=messages,
                 stream=do_stream,
-                timeout=10,
+                timeout=timeout,
             )
 
             if isinstance(response, Stream):

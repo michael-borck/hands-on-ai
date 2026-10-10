@@ -12,6 +12,9 @@ from pathlib import Path
 DEFAULT_SERVER = "http://localhost:11434"
 DEFAULT_MODEL = "llama3"
 DEFAULT_EMBEDDING_MODEL = "nomic-embed-text"
+DEFAULT_VISION_MODEL = "moondream"
+DEFAULT_STT_MODEL = "whisper-1"
+DEFAULT_TTS_MODEL = "kokoro"
 DEFAULT_CHUNK_SIZE = 500
 CONFIG_DIR = Path.home() / ".hands-on-ai"
 CONFIG_PATH = CONFIG_DIR / "config.json"
@@ -51,6 +54,9 @@ def load_default_config():
             "server": DEFAULT_SERVER,
             "model": DEFAULT_MODEL,
             "embedding_model": DEFAULT_EMBEDDING_MODEL,
+            "vision_model": DEFAULT_VISION_MODEL,
+            "stt_model": DEFAULT_STT_MODEL,
+            "tts_model": DEFAULT_TTS_MODEL,
             "chunk_size": DEFAULT_CHUNK_SIZE,
         }
 
@@ -87,6 +93,21 @@ def load_config():
 
     if "HANDS_ON_AI_EMBEDDING_MODEL" in os.environ:
         config["embedding_model"] = os.environ["HANDS_ON_AI_EMBEDDING_MODEL"]
+
+    if "HANDS_ON_AI_VISION_MODEL" in os.environ:
+        config["vision_model"] = os.environ["HANDS_ON_AI_VISION_MODEL"]
+
+    if "HANDS_ON_AI_STT_SERVER" in os.environ:
+        config["stt_server"] = os.environ["HANDS_ON_AI_STT_SERVER"]
+
+    if "HANDS_ON_AI_STT_MODEL" in os.environ:
+        config["stt_model"] = os.environ["HANDS_ON_AI_STT_MODEL"]
+
+    if "HANDS_ON_AI_TTS_SERVER" in os.environ:
+        config["tts_server"] = os.environ["HANDS_ON_AI_TTS_SERVER"]
+
+    if "HANDS_ON_AI_TTS_MODEL" in os.environ:
+        config["tts_model"] = os.environ["HANDS_ON_AI_TTS_MODEL"]
 
     if "HANDS_ON_AI_API_KEY" in os.environ:
         config["api_key"] = os.environ["HANDS_ON_AI_API_KEY"]
@@ -154,6 +175,31 @@ def get_model():
 def get_embedding_model():
     """Get the default embedding model from config."""
     return load_config()["embedding_model"]
+
+
+def get_vision_model():
+    """Get the default vision (image description) model from config."""
+    return load_config().get("vision_model", DEFAULT_VISION_MODEL)
+
+
+def get_stt_server_url():
+    """Get the STT (speech-to-text) server URL, defaulting to the main server."""
+    return load_config().get("stt_server") or get_server_url()
+
+
+def get_stt_model():
+    """Get the default STT model from config."""
+    return load_config().get("stt_model", DEFAULT_STT_MODEL)
+
+
+def get_tts_server_url():
+    """Get the TTS (text-to-speech) server URL, defaulting to the main server."""
+    return load_config().get("tts_server") or get_server_url()
+
+
+def get_tts_model():
+    """Get the default TTS model from config."""
+    return load_config().get("tts_model", DEFAULT_TTS_MODEL)
 
 
 def get_chunk_size():
