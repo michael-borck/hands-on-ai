@@ -1,0 +1,6095 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://michael-borck.github.io/hands-on-ai/docs/llm-guide/">
+      
+      
+        <link rel="prev" href="../project-tools/">
+      
+      
+        <link rel="next" href="../authors/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/icon-192.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>LLM Guide - HandsOnAI Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#hands-on-ai-llm-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="HandsOnAI Documentation" class="md-header__button md-logo" aria-label="HandsOnAI Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            HandsOnAI Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              LLM Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/michael-borck/hands-on-ai" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    michael-borck/hands-on-ai
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../philosophy/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Our Approach
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../installation/" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../chat-concepts/" class="md-tabs__link">
+          
+  
+  
+  Learn
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../mini-projects/" class="md-tabs__link">
+          
+  
+  
+  Build
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../education-guide/" class="md-tabs__link">
+          
+  
+  
+  For Educators
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../use-with-llm/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../authors/" class="md-tabs__link">
+          
+  
+  
+  About
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="HandsOnAI Documentation" class="md-nav__button md-logo" aria-label="HandsOnAI Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    HandsOnAI Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/michael-borck/hands-on-ai" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    michael-borck/hands-on-ai
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../philosophy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Our Approach
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install & First Run
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../providers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Choose a Provider
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notebooks & Colab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ollama-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ollama Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learn
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Learn
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chat
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chat
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chat-concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Understanding Chat & Bots
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chat-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bot-gallery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Personality Gallery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RAG
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    RAG
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rag-llm-explain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How RAG Works
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rag-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rag-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RAG Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Agent
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Understanding Agents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent Modules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tool Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/agent/build-your-own-tool/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build Your Own Tool
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workflows
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Workflows
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workflow-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Understanding Workflows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/workflow/build-a-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build a Pipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Loops
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Loops
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../loop-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Understanding Loops
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/loop/improve-until-good/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Improve Until Good
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/loop/build-a-ralph-loop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build a Ralph Loop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Evaluation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Evaluation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eval-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Understanding Evaluation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/eval/judge-your-bot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Judge Your Bot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vision
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vision
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vision-concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Understanding Vision
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vision-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vision Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/vision/talking-picture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Talking Picture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voice
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Voice
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../voice-concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Understanding Voice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../voice-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voice Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/voice/build-the-worlds-smallest-pipecat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build the World's Smallest Pipecat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Build
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mini-projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projects Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Browse All Projects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project_browser.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Browser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chat Projects
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chat Projects
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/chat/advanced-journal-bot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Journal Bot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/chat/bot-personality-menu-generator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bot Personality Menu Generator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/chat/build-your-own-cache/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build Your Own Cache
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/chat/build-your-own-personality-bot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build Your Own Personality Bot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/chat/choose-your-own-adventure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Choose Your Own Adventure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/chat/classroom-simulation-bot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Classroom Simulation Bot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/chat/code-explainer-tool/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Explainer Tool
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/chat/creative-writing-partner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creative Writing Partner
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/chat/data-visualization-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Visualization Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/chat/debate-interview-panel-dialogue-simulator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debate Interview Panel Dialogue Simulator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/chat/emotional-support-bot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Emotional Support Bot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/chat/historical-figure-chat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Historical Figure Chat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/chat/image-gallery-creator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Image Gallery Creator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/chat/journal-or-reflection-bot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Journal or Reflection Bot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/chat/knowledge-quiz-bot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Knowledge Quiz Bot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/chat/language-translation-helper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Language Translation Helper
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/chat/mood-journal-assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mood Journal Assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/chat/personality-bot-creator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Personality Bot Creator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/chat/smart-to-do-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Smart To-Do List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/chat/subject-expert-tutor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Subject Expert Tutor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/chat/text-adventure-game-engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Text Adventure Game Engine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/chat/trivia-or-quiz-bot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trivia or Quiz Bot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/chat/weather-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Weather Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/chat/youtube-to-blog-converter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    YouTube to Blog Converter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RAG Projects
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    RAG Projects
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/rag/build-your-own-qa-cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build Your Own QA CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/rag/first-rag-bot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    First RAG Bot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/rag/hybrid-reasoning-bot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hybrid Reasoning Bot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/rag/pdf-question-answering-chatbot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PDF Question Answering Chatbot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent Projects
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Agent Projects
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/agent/agent-evaluation-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent Evaluation Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/agent/build-your-own-tool/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build Your Own Tool
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/agent/custom-tool-creator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Tool Creator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/agent/date-calculator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Date Calculator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/agent/educational-assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Educational Assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/agent/multi-tool-problem-solver/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multi-tool Problem Solver
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/agent/personal-math-tutor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Personal Math Tutor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/agent/science-explorer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Science Explorer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/agent/simple-calculator-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Simple Calculator Agent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/agent/text-analyzer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Text Analyzer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/agent/unit-conversion-assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unit Conversion Assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/agent/word-detective/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Word Detective
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workflow Projects
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Workflow Projects
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/workflow/build-a-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build a Pipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_8" id="__nav_5_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Loop Projects
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Loop Projects
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/loop/improve-until-good/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Improve Until Good
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/loop/build-a-ralph-loop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build a Ralph Loop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_9" id="__nav_5_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Eval Projects
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Eval Projects
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/eval/judge-your-bot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Judge Your Bot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_10" id="__nav_5_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vision Projects
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vision Projects
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/vision/talking-picture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Talking Picture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_11" id="__nav_5_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voice Projects
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Voice Projects
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/voice/build-the-worlds-smallest-pipecat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build the World's Smallest Pipecat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mini-project-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    For Educators
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    For Educators
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../education-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Education Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../classroom-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Classroom Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deploy-ollama/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Host a Shared Ollama
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deploy-audio-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Host an Audio Server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../use-with-llm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Use with an LLM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bot-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bot Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLM Guide
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLM Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-package-overview-and-core-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Package Overview and Core Features
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-installation-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Installation Instructions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Installation Instructions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#development-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Development Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-complete-api-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Complete API Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Complete API Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Module
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration Module">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-configuration-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Configuration Functions:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chat-module-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chat Module API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chat Module API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Functions:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#available-personality-bots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Available Personality Bots:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rag-module-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RAG Module API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RAG Module API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-functions_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Functions:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-module-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agent Module API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Agent Module API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-functions_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Functions:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#built-in-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Built-in Agents:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-usage-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Usage Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Usage Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#command-line-interface-cli-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Command-Line Interface (CLI) Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Command-Line Interface (CLI) Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Main CLI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chat-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chat CLI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rag-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RAG CLI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agent CLI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-api-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python API Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Python API Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-chat-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Chat Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rag-example-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RAG Example Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-agent-with-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Agent with Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-architecture-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Architecture Details
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Architecture Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#package-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Package Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design Principles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workflow Patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-common-use-cases-and-project-ideas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Common Use Cases and Project Ideas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Common Use Cases and Project Ideas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#educational-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Educational Use Cases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project-ideas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project Ideas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Project Ideas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chat-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chat Projects
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rag-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RAG Projects
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agent Projects
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-module-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-Module Projects
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-best-practices-and-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Best Practices and Limitations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Best Practices and Limitations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    About
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-package-overview-and-core-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Package Overview and Core Features
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-installation-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Installation Instructions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Installation Instructions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#development-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Development Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-complete-api-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Complete API Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Complete API Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Module
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration Module">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-configuration-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Configuration Functions:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chat-module-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chat Module API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chat Module API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Functions:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#available-personality-bots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Available Personality Bots:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rag-module-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RAG Module API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RAG Module API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-functions_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Functions:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-module-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agent Module API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Agent Module API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-functions_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Functions:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#built-in-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Built-in Agents:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-usage-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Usage Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Usage Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#command-line-interface-cli-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Command-Line Interface (CLI) Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Command-Line Interface (CLI) Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Main CLI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chat-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chat CLI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rag-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RAG CLI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agent CLI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-api-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python API Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Python API Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-chat-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Chat Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rag-example-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RAG Example Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-agent-with-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Agent with Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-architecture-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Architecture Details
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Architecture Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#package-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Package Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design Principles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workflow Patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-common-use-cases-and-project-ideas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Common Use Cases and Project Ideas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Common Use Cases and Project Ideas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#educational-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Educational Use Cases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project-ideas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project Ideas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Project Ideas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chat-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chat Projects
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rag-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RAG Projects
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agent Projects
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-module-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-Module Projects
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-best-practices-and-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Best Practices and Limitations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Best Practices and Limitations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="hands-on-ai-llm-guide">hands-on-ai LLM Guide<a class="headerlink" href="#hands-on-ai-llm-guide" title="Permanent link">&para;</a></h1>
+<p>This comprehensive guide provides detailed information about the <code>hands-on-ai</code> package to help large language models (LLMs) understand how to use and explain it effectively.</p>
+<h2 id="1-package-overview-and-core-features">1. Package Overview and Core Features<a class="headerlink" href="#1-package-overview-and-core-features" title="Permanent link">&para;</a></h2>
+<p><code>hands-on-ai</code> is a unified educational toolkit designed to teach students how modern AI systems work by building and interacting with them directly. The package includes three primary modules:</p>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Purpose</th>
+<th>CLI Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>chat</strong></td>
+<td>Simple chatbot with system prompts and personalities</td>
+<td><code>chat</code></td>
+</tr>
+<tr>
+<td><strong>rag</strong></td>
+<td>Retrieval-Augmented Generation for document Q&amp;A</td>
+<td><code>rag</code></td>
+</tr>
+<tr>
+<td><strong>agent</strong></td>
+<td>ReAct-style reasoning with tool use</td>
+<td><code>agent</code></td>
+</tr>
+</tbody>
+</table>
+<p>Each module is:
+- Self-contained with its own functionality
+- Accessible via a single package installation
+- Designed for progressive learning from simple to complex AI concepts</p>
+<p>The package aims to make AI learning accessible for students and educators through hands-on experimentation with key AI paradigms.</p>
+<h2 id="2-installation-instructions">2. Installation Instructions<a class="headerlink" href="#2-installation-instructions" title="Permanent link">&para;</a></h2>
+<h3 id="basic-installation">Basic Installation<a class="headerlink" href="#basic-installation" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install from PyPI</span>
+pip<span class="w"> </span>install<span class="w"> </span>hands-on-ai
+
+<span class="c1"># Or directly from GitHub</span>
+pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/michael-borck/hands-on-ai.git
+</code></pre></div>
+<h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Python 3.10+</li>
+<li>Access to any OpenAI-compatible LLM provider:</li>
+<li>Local: <a href="https://ollama.ai/">Ollama</a> for privacy and control</li>
+<li>Cloud: OpenAI, OpenRouter, Together AI, etc. for advanced models</li>
+</ul>
+<h3 id="development-installation">Development Installation<a class="headerlink" href="#development-installation" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install with development dependencies</span>
+pip<span class="w"> </span>install<span class="w"> </span>hands-on-ai<span class="o">[</span>dev<span class="o">]</span>
+</code></pre></div>
+<h2 id="3-complete-api-reference">3. Complete API Reference<a class="headerlink" href="#3-complete-api-reference" title="Permanent link">&para;</a></h2>
+<h3 id="configuration-module">Configuration Module<a class="headerlink" href="#configuration-module" title="Permanent link">&para;</a></h3>
+<p>The central configuration system manages settings across all modules.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">hands_on_ai.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_config</span><span class="p">,</span> <span class="n">save_config</span><span class="p">,</span> <span class="n">get_server_url</span><span class="p">,</span> <span class="n">get_model</span>
+
+<span class="c1"># Get configuration values</span>
+<span class="n">config</span> <span class="o">=</span> <span class="n">load_config</span><span class="p">()</span>  <span class="c1"># Returns dict with all config</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">get_model</span><span class="p">()</span>     <span class="c1"># Get default LLM model</span>
+<span class="n">server</span> <span class="o">=</span> <span class="n">get_server_url</span><span class="p">()</span>  <span class="c1"># Get configured LLM provider URL</span>
+
+<span class="c1"># Save configuration</span>
+<span class="n">config</span><span class="p">[</span><span class="s2">"model"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"llama3"</span>
+<span class="n">save_config</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="key-configuration-functions">Key Configuration Functions:<a class="headerlink" href="#key-configuration-functions" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>load_config()</code>: Load configuration from file or environment variables</li>
+<li><code>save_config(config)</code>: Save configuration to file</li>
+<li><code>get_server_url()</code>: Get the server URL from config</li>
+<li><code>get_model()</code>: Get the default model from config</li>
+<li><code>get_embedding_model()</code>: Get the default embedding model</li>
+<li><code>get_vision_model()</code>: Get the default vision model</li>
+<li><code>get_stt_model()</code> / <code>get_stt_server_url()</code>: Get the default STT model/server</li>
+<li><code>get_tts_model()</code> / <code>get_tts_server_url()</code>: Get the default TTS model/server</li>
+<li><code>get_chunk_size()</code>: Get the default chunk size for RAG</li>
+</ul>
+<p>Environment variables that override config:
+- <code>HANDS_ON_AI_SERVER</code>: Override server URL
+- <code>HANDS_ON_AI_MODEL</code>: Override default model
+- <code>HANDS_ON_AI_EMBEDDING_MODEL</code>: Override embedding model
+- <code>HANDS_ON_AI_VISION_MODEL</code>: Override vision model
+- <code>HANDS_ON_AI_STT_SERVER</code> / <code>HANDS_ON_AI_STT_MODEL</code>: Override STT settings
+- <code>HANDS_ON_AI_TTS_SERVER</code> / <code>HANDS_ON_AI_TTS_MODEL</code>: Override TTS settings
+- <code>HANDS_ON_AI_LOG=debug</code>: Enable debug logging</p>
+<h3 id="chat-module-api">Chat Module API<a class="headerlink" href="#chat-module-api" title="Permanent link">&para;</a></h3>
+<p>The chat module provides simple LLM interactions with various personalities.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">hands_on_ai.chat</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_response</span><span class="p">,</span> <span class="n">pirate_bot</span><span class="p">,</span> <span class="n">coder_bot</span>
+
+<span class="c1"># Basic chat usage</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">get_response</span><span class="p">(</span><span class="s2">"Tell me about planets"</span><span class="p">)</span>
+
+<span class="c1"># Use a personality bot</span>
+<span class="n">pirate_response</span> <span class="o">=</span> <span class="n">pirate_bot</span><span class="p">(</span><span class="s2">"Tell me about sailing ships"</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="core-functions">Core Functions:<a class="headerlink" href="#core-functions" title="Permanent link">&para;</a></h4>
+<p><code>get_response(prompt, model=None, system="You are a helpful assistant.", personality="friendly", stream=False, retries=2)</code>
+- <code>prompt</code>: Text prompt to send to the model (required)
+- <code>model</code>: LLM model to use (defaults to config setting)
+- <code>system</code>: System message defining bot behavior
+- <code>personality</code>: Used for fallback character during retries
+- <code>stream</code>: Whether to request streaming output (default False)
+- <code>retries</code>: Number of times to retry on error</p>
+<h4 id="available-personality-bots">Available Personality Bots:<a class="headerlink" href="#available-personality-bots" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>friendly_bot</code>: General helpful assistant</li>
+<li><code>sarcastic_bot</code>: Sarcastic, humorous responses</li>
+<li><code>pirate_bot</code>: Answers in pirate speak</li>
+<li><code>shakespeare_bot</code>: Shakespearean language</li>
+<li><code>coder_bot</code>: Technical programming assistant</li>
+<li><code>teacher_bot</code>: Educational, explanatory style</li>
+<li><code>therapist_bot</code>: Supportive, reflective responses</li>
+<li>And many more...</li>
+</ul>
+<h3 id="rag-module-api">RAG Module API<a class="headerlink" href="#rag-module-api" title="Permanent link">&para;</a></h3>
+<p>The RAG (Retrieval-Augmented Generation) module enables document-based question answering.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">hands_on_ai.rag</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">load_text_file</span><span class="p">,</span> <span class="n">chunk_text</span><span class="p">,</span> <span class="n">get_embeddings</span><span class="p">,</span>
+    <span class="n">save_index_with_sources</span><span class="p">,</span> <span class="n">load_index_with_sources</span><span class="p">,</span>
+    <span class="n">get_top_k</span><span class="p">,</span> <span class="n">copy_sample_docs</span>
+<span class="p">)</span>
+
+<span class="c1"># Basic RAG workflow</span>
+<span class="n">text</span> <span class="o">=</span> <span class="n">load_text_file</span><span class="p">(</span><span class="s2">"document.pdf"</span><span class="p">)</span>
+<span class="n">chunks</span> <span class="o">=</span> <span class="n">chunk_text</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+<span class="n">vectors</span> <span class="o">=</span> <span class="n">get_embeddings</span><span class="p">(</span><span class="n">chunks</span><span class="p">)</span>
+<span class="n">save_index_with_sources</span><span class="p">(</span><span class="n">vectors</span><span class="p">,</span> <span class="n">chunks</span><span class="p">,</span> <span class="p">[</span><span class="s2">"document.pdf"</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">chunks</span><span class="p">),</span> <span class="s2">"index.npz"</span><span class="p">)</span>
+
+<span class="c1"># Query the index</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">get_top_k</span><span class="p">(</span><span class="s2">"What is climate change?"</span><span class="p">,</span> <span class="s2">"index.npz"</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="core-functions_1">Core Functions:<a class="headerlink" href="#core-functions_1" title="Permanent link">&para;</a></h4>
+<p><code>load_text_file(path)</code>: 
+- Loads text from .txt, .md, .docx, or .pdf files
+- Returns extracted text content</p>
+<p><code>chunk_text(text, chunk_size=None)</code>:
+- Splits text into chunks for embedding
+- Default chunk_size from config if not specified</p>
+<p><code>get_embeddings(chunks, model=None)</code>:
+- Generates vector embeddings for text chunks
+- Uses default embedding model from config if not specified</p>
+<p><code>save_index_with_sources(vectors, chunks, sources, path)</code>:
+- Saves RAG index with source tracking
+- Preserves relationship between chunks and source documents</p>
+<p><code>load_index_with_sources(path)</code>:
+- Loads previously saved RAG index
+- Returns (vectors, chunks, sources) tuple</p>
+<p><code>get_top_k(query, index_path, k=3, return_scores=False)</code>:
+- Retrieves top k similar chunks for a query
+- Optionally returns similarity scores</p>
+<p><code>get_sample_docs_path()</code>, <code>list_sample_docs()</code>, <code>copy_sample_docs()</code>:
+- Helper functions for working with sample documents</p>
+<h3 id="agent-module-api">Agent Module API<a class="headerlink" href="#agent-module-api" title="Permanent link">&para;</a></h3>
+<p>The agent module implements ReAct-style agents with tool use capabilities.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">hands_on_ai.agent</span><span class="w"> </span><span class="kn">import</span> <span class="n">run_agent</span><span class="p">,</span> <span class="n">register_tool</span><span class="p">,</span> <span class="n">list_tools</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">hands_on_ai.agent</span><span class="w"> </span><span class="kn">import</span> <span class="n">calculator</span><span class="p">,</span> <span class="n">dictionary</span><span class="p">,</span> <span class="n">converter</span>
+
+<span class="c1"># Run a pre-configured calculator agent</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">calculator</span><span class="p">(</span><span class="s2">"Calculate 5 + 3 * 2"</span><span class="p">)</span>
+
+<span class="c1"># Custom agent with tool registration</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">weather_tool</span><span class="p">(</span><span class="n">location</span><span class="p">):</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">"Weather forecast for </span><span class="si">{</span><span class="n">location</span><span class="si">}</span><span class="s2">: Sunny, 25°C"</span>
+
+<span class="n">register_tool</span><span class="p">(</span><span class="s2">"weather"</span><span class="p">,</span> <span class="s2">"Get weather for a location"</span><span class="p">,</span> <span class="n">weather_tool</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">run_agent</span><span class="p">(</span><span class="s2">"What's the weather in London?"</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="core-functions_2">Core Functions:<a class="headerlink" href="#core-functions_2" title="Permanent link">&para;</a></h4>
+<p><code>run_agent(prompt, model=None, max_iterations=5, verbose=False)</code>:
+- Runs the agent with the given prompt
+- Uses ReAct format for reasoning and tool use
+- Returns final response after tool interactions
+- Parameters:
+  - <code>prompt</code>: User question or instruction
+  - <code>model</code>: LLM model to use (default from config)
+  - <code>max_iterations</code>: Maximum tool use iterations
+  - <code>verbose</code>: Print intermediate steps</p>
+<p><code>register_tool(name, description, function)</code>:
+- Registers a new tool with the agent
+- Parameters:
+  - <code>name</code>: Tool name
+  - <code>description</code>: Tool description
+  - <code>function</code>: Python function that implements the tool</p>
+<p><code>list_tools()</code>:
+- Returns list of all registered tools</p>
+<h4 id="built-in-agents">Built-in Agents:<a class="headerlink" href="#built-in-agents" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>calculator</code>: Simple calculations</li>
+<li><code>dictionary</code>: Word definitions and information</li>
+<li><code>converter</code>: Unit conversions</li>
+</ul>
+<h2 id="4-usage-examples">4. Usage Examples<a class="headerlink" href="#4-usage-examples" title="Permanent link">&para;</a></h2>
+<h3 id="command-line-interface-cli-examples">Command-Line Interface (CLI) Examples<a class="headerlink" href="#command-line-interface-cli-examples" title="Permanent link">&para;</a></h3>
+<p>Each module includes a CLI for easy access to functionality.</p>
+<h4 id="main-cli">Main CLI<a class="headerlink" href="#main-cli" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># List available modules</span>
+handsonai<span class="w"> </span>list
+
+<span class="c1"># Configure the toolkit</span>
+handsonai<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>model<span class="w"> </span>llama3
+
+<span class="c1"># Check environment and setup</span>
+handsonai<span class="w"> </span>doctor
+</code></pre></div>
+<h4 id="chat-cli">Chat CLI<a class="headerlink" href="#chat-cli" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Simple question with default bot</span>
+chat<span class="w"> </span>ask<span class="w"> </span><span class="s2">"What is photosynthesis?"</span>
+
+<span class="c1"># Use a specific personality</span>
+chat<span class="w"> </span>ask<span class="w"> </span><span class="s2">"Explain quantum physics"</span><span class="w"> </span>--personality<span class="w"> </span>teacher_bot
+
+<span class="c1"># Start interactive chat session</span>
+chat<span class="w"> </span>interactive
+</code></pre></div>
+<h4 id="rag-cli">RAG CLI<a class="headerlink" href="#rag-cli" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Copy sample documents to current directory</span>
+rag<span class="w"> </span>index<span class="w"> </span>--samples
+
+<span class="c1"># Index documents in a directory</span>
+rag<span class="w"> </span>index<span class="w"> </span>./docs<span class="w"> </span>--output_file<span class="w"> </span>index.npz
+
+<span class="c1"># Ask questions about indexed documents</span>
+rag<span class="w"> </span>ask<span class="w"> </span><span class="s2">"What is TCP/IP?"</span><span class="w"> </span>--index_file<span class="w"> </span>index.npz
+
+<span class="c1"># Interactive RAG session</span>
+rag<span class="w"> </span>interactive<span class="w"> </span>--index_file<span class="w"> </span>index.npz
+</code></pre></div>
+<h4 id="agent-cli">Agent CLI<a class="headerlink" href="#agent-cli" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># List available tools</span>
+agent<span class="w"> </span>tools
+
+<span class="c1"># Ask a question that requires tools</span>
+agent<span class="w"> </span>ask<span class="w"> </span><span class="s2">"Calculate 25 * 4 and convert to binary"</span>
+
+<span class="c1"># Interactive agent session</span>
+agent<span class="w"> </span>interactive
+</code></pre></div>
+<h3 id="python-api-examples">Python API Examples<a class="headerlink" href="#python-api-examples" title="Permanent link">&para;</a></h3>
+<h4 id="basic-chat-example">Basic Chat Example<a class="headerlink" href="#basic-chat-example" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">hands_on_ai.chat</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_response</span><span class="p">,</span> <span class="n">pirate_bot</span>
+
+<span class="c1"># Simple chat with default model</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">get_response</span><span class="p">(</span><span class="s2">"What is the capital of France?"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>  <span class="c1"># Paris</span>
+
+<span class="c1"># Chat with a personality</span>
+<span class="n">pirate_response</span> <span class="o">=</span> <span class="n">pirate_bot</span><span class="p">(</span><span class="s2">"Tell me about sailing ships"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pirate_response</span><span class="p">)</span>  <span class="c1"># Arr matey! Sailing ships be magnificent vessels...</span>
+</code></pre></div>
+<h4 id="rag-example-workflow">RAG Example Workflow<a class="headerlink" href="#rag-example-workflow" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">hands_on_ai.rag</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">load_text_file</span><span class="p">,</span> <span class="n">chunk_text</span><span class="p">,</span> <span class="n">get_embeddings</span><span class="p">,</span>
+    <span class="n">save_index_with_sources</span><span class="p">,</span> <span class="n">get_top_k</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">hands_on_ai.chat</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_response</span>
+
+<span class="c1"># 1. Load and prepare documents</span>
+<span class="n">documents</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"report.pdf"</span><span class="p">,</span> <span class="s2">"whitepaper.txt"</span><span class="p">,</span> <span class="s2">"notes.md"</span><span class="p">]</span>
+<span class="n">all_chunks</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">all_sources</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">documents</span><span class="p">:</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">load_text_file</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">doc</span><span class="p">))</span>
+    <span class="n">chunks</span> <span class="o">=</span> <span class="n">chunk_text</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+    <span class="n">all_chunks</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">chunks</span><span class="p">)</span>
+    <span class="n">all_sources</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">doc</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">chunks</span><span class="p">))</span>
+
+<span class="c1"># 2. Create embeddings and index</span>
+<span class="n">vectors</span> <span class="o">=</span> <span class="n">get_embeddings</span><span class="p">(</span><span class="n">all_chunks</span><span class="p">)</span>
+<span class="n">save_index_with_sources</span><span class="p">(</span><span class="n">vectors</span><span class="p">,</span> <span class="n">all_chunks</span><span class="p">,</span> <span class="n">all_sources</span><span class="p">,</span> <span class="s2">"my_index.npz"</span><span class="p">)</span>
+
+<span class="c1"># 3. Retrieve relevant context for a query</span>
+<span class="n">query</span> <span class="o">=</span> <span class="s2">"What are the main findings?"</span>
+<span class="n">context_chunks</span> <span class="o">=</span> <span class="n">get_top_k</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="s2">"my_index.npz"</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># 4. Format context for the LLM</span>
+<span class="n">context_text</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\n\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">chunk</span> <span class="k">for</span> <span class="n">chunk</span><span class="p">,</span> <span class="n">source</span> <span class="ow">in</span> <span class="n">context_chunks</span><span class="p">])</span>
+<span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""Answer based on this context:</span>
+
+<span class="si">{</span><span class="n">context_text</span><span class="si">}</span>
+
+<span class="s2">Question: </span><span class="si">{</span><span class="n">query</span><span class="si">}</span>
+<span class="s2">"""</span>
+
+<span class="c1"># 5. Get response from LLM with context</span>
+<span class="n">answer</span> <span class="o">=</span> <span class="n">get_response</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">system</span><span class="o">=</span><span class="s2">"You are a helpful research assistant."</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="custom-agent-with-tools">Custom Agent with Tools<a class="headerlink" href="#custom-agent-with-tools" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">hands_on_ai.agent</span><span class="w"> </span><span class="kn">import</span> <span class="n">run_agent</span><span class="p">,</span> <span class="n">register_tool</span>
+
+<span class="c1"># Define a custom tool</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">reverse_text</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">text</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># Register the tool with the agent</span>
+<span class="n">register_tool</span><span class="p">(</span>
+    <span class="s2">"reverse"</span><span class="p">,</span> 
+    <span class="s2">"Reverse the input text"</span><span class="p">,</span> 
+    <span class="n">reverse_text</span>
+<span class="p">)</span>
+
+<span class="c1"># Define a translator tool</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">translate</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="c1"># This would use a real translation API in practice</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">"Translated: </span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2"> (to Spanish)"</span>
+
+<span class="n">register_tool</span><span class="p">(</span>
+    <span class="s2">"translate"</span><span class="p">,</span>
+    <span class="s2">"Translate text to Spanish"</span><span class="p">,</span>
+    <span class="n">translate</span>
+<span class="p">)</span>
+
+<span class="c1"># Run the agent with a question that needs tools</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">run_agent</span><span class="p">(</span>
+    <span class="s2">"Please reverse the text 'hello world' and then translate it"</span><span class="p">,</span>
+    <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Final result: </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="5-architecture-details">5. Architecture Details<a class="headerlink" href="#5-architecture-details" title="Permanent link">&para;</a></h2>
+<h3 id="package-structure">Package Structure<a class="headerlink" href="#package-structure" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>hands_on_ai/
+├── chat/           # Simple prompt/response chatbot
+│   ├── __init__.py
+│   ├── bots.py
+│   ├── cli.py
+│   ├── commands/
+│   ├── get_response.py
+│   └── personalities/
+├── rag/            # Retrieval-Augmented Generation
+│   ├── __init__.py
+│   ├── cli.py
+│   ├── commands/
+│   ├── data/
+│   └── utils.py
+├── agent/          # ReAct-style agents with tools
+│   ├── __init__.py
+│   ├── agents/
+│   ├── cli.py
+│   ├── commands/
+│   ├── core.py
+│   ├── prompts.py
+│   └── tools/
+├── config.py       # Shared configuration
+├── cli.py          # Main CLI entry point
+└── utils/          # Shared utilities
+</code></pre></div>
+<h3 id="design-principles">Design Principles<a class="headerlink" href="#design-principles" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Modular Design</strong>: Each module (chat, rag, agent) is self-contained but follows consistent patterns</li>
+<li><strong>Progressive Complexity</strong>: Modules increase in complexity, building upon concepts:</li>
+<li>Chat: Simple LLM interaction</li>
+<li>RAG: LLM + document context</li>
+<li>Agent: LLM + reasoning + tools</li>
+<li><strong>Educational Focus</strong>: Clear, readable code with comments designed for learning</li>
+<li><strong>Configuration System</strong>: Shared settings with multiple override options</li>
+<li><strong>Consistent CLI Structure</strong>: Similar command patterns across modules</li>
+</ol>
+<h3 id="workflow-patterns">Workflow Patterns<a class="headerlink" href="#workflow-patterns" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Chat Pattern</strong>:</li>
+<li>User provides prompt</li>
+<li>System adds context/personality</li>
+<li>
+<p>LLM generates response</p>
+</li>
+<li>
+<p><strong>RAG Pattern</strong>:</p>
+</li>
+<li>Documents → Chunking → Embeddings → Index</li>
+<li>
+<p>Query → Retrieve context → Augment prompt → LLM response</p>
+</li>
+<li>
+<p><strong>Agent Pattern</strong> (ReAct):</p>
+</li>
+<li>User query → LLM reasoning</li>
+<li>Tool selection → Tool execution</li>
+<li>Observation → Further reasoning</li>
+<li>Final answer</li>
+</ol>
+<h2 id="6-common-use-cases-and-project-ideas">6. Common Use Cases and Project Ideas<a class="headerlink" href="#6-common-use-cases-and-project-ideas" title="Permanent link">&para;</a></h2>
+<h3 id="educational-use-cases">Educational Use Cases<a class="headerlink" href="#educational-use-cases" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Classroom Demonstrations</strong>:</li>
+<li>Show how different system prompts affect LLM responses</li>
+<li>Demonstrate the impact of adding document context</li>
+<li>
+<p>Explain tool use and reasoning in agents</p>
+</li>
+<li>
+<p><strong>Progressive Assignments</strong>:</p>
+</li>
+<li>Start with personality creation in chat module</li>
+<li>Advance to document-based QA with RAG</li>
+<li>
+<p>Culminate with custom tool creation for agents</p>
+</li>
+<li>
+<p><strong>Compare/Contrast Learning</strong>:</p>
+</li>
+<li>Same prompt across different personalities</li>
+<li>RAG with/without relevant context</li>
+<li>Agent with limited vs expanded tool access</li>
+</ol>
+<h3 id="project-ideas">Project Ideas<a class="headerlink" href="#project-ideas" title="Permanent link">&para;</a></h3>
+<h4 id="chat-projects">Chat Projects<a class="headerlink" href="#chat-projects" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Custom expert personality (e.g., scientist, historian)</li>
+<li>Multi-personality chatbot with switchable modes</li>
+<li>Role-playing game character generator</li>
+</ul>
+<h4 id="rag-projects">RAG Projects<a class="headerlink" href="#rag-projects" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Personal knowledge base with your notes/documents</li>
+<li>Course material Q&amp;A system</li>
+<li>Technical documentation assistant</li>
+</ul>
+<h4 id="agent-projects">Agent Projects<a class="headerlink" href="#agent-projects" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Financial assistant with calculator and conversion tools</li>
+<li>Research agent with web search and summarization</li>
+<li>Code assistant with syntax checking and explanation tools</li>
+</ul>
+<h4 id="cross-module-projects">Cross-Module Projects<a class="headerlink" href="#cross-module-projects" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Learning coach: combines personality (chat) + materials (RAG) + interactive exercises (agent)</li>
+<li>Academic research assistant: searches documents (RAG) + analyzes data (agent) + explains findings (chat)</li>
+<li>Content creator: generates ideas (chat) + researches topics (RAG) + creates structured content (agent)</li>
+</ul>
+<h2 id="7-best-practices-and-limitations">7. Best Practices and Limitations<a class="headerlink" href="#7-best-practices-and-limitations" title="Permanent link">&para;</a></h2>
+<h3 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Model Selection</strong>:</li>
+<li>Use smaller, faster models for development (e.g., llama3)</li>
+<li>Switch to larger models for better reasoning in complex agent tasks</li>
+<li>
+<p>Match model capabilities to task complexity</p>
+</li>
+<li>
+<p><strong>RAG Optimization</strong>:</p>
+</li>
+<li>Keep chunk size between 300-1000 words depending on document type</li>
+<li>Include deliberate overlap between chunks (10-20%)</li>
+<li>
+<p>Test different embedding models for specific domains</p>
+</li>
+<li>
+<p><strong>Agent Design</strong>:</p>
+</li>
+<li>Keep tool descriptions clear and specific</li>
+<li>Limit agent iterations to 5-10 maximum</li>
+<li>
+<p>Implement error handling in custom tools</p>
+</li>
+<li>
+<p><strong>Configuration Management</strong>:</p>
+</li>
+<li>Use environment variables for sensitive settings</li>
+<li>Create domain-specific config files for different projects</li>
+<li>Document configuration options for users</li>
+</ol>
+<h3 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>LLM Reliability</strong>:</li>
+<li>Responses vary by model and prompt</li>
+<li>Hallucinations can occur, especially without RAG</li>
+<li>
+<p>Tool selection may not always be optimal</p>
+</li>
+<li>
+<p><strong>Performance Considerations</strong>:</p>
+</li>
+<li>Local LLM inference can be slow on limited hardware</li>
+<li>Large document collections may require optimization</li>
+<li>
+<p>Vector operations scale with document count</p>
+</li>
+<li>
+<p><strong>Technical Constraints</strong>:</p>
+</li>
+<li>CLI is primarily designed for demonstration/learning</li>
+<li>
+<p>Limited to English language currently</p>
+</li>
+<li>
+<p><strong>Provider Flexibility</strong>:</p>
+</li>
+<li>Works with any OpenAI-compatible LLM provider</li>
+<li>Defaults to local Ollama but supports cloud providers</li>
+<li>No vendor lock-in - easily switch between providers</li>
+<li>Limited streaming support</li>
+</ol>
+<h3 id="error-handling">Error Handling<a class="headerlink" href="#error-handling" title="Permanent link">&para;</a></h3>
+<p>The package implements several error handling strategies:</p>
+<ol>
+<li><strong>Retries</strong>: Automatic retries for LLM failures</li>
+<li><strong>Fallback Messages</strong>: Personality-specific fallbacks when server errors occur</li>
+<li><strong>Configuration Fallbacks</strong>: Defaults when config files can't be read</li>
+<li><strong>Verbose Logging</strong>: Optional debug logging with environment variable</li>
+</ol>
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<p>The <code>hands-on-ai</code> package provides a comprehensive toolkit for learning and experimenting with modern AI techniques. By offering a progression from simple chatbots to more complex RAG and agent implementations, it enables students and educators to gain hands-on experience with key AI concepts in a structured way.</p>
+<p>The modular design, consistent interfaces, and educational focus make it an excellent resource for understanding how LLMs work in different contexts, from basic prompt engineering to more advanced techniques like retrieval-augmented generation and tool-using agents.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/michael-borck/hands-on-ai" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.instant", "navigation.tracking", "navigation.top", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../javascripts/custom.js"></script>
+      
+    
+  </body>
+</html>

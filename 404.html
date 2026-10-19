@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Page moved — HandsOnAI</title>
+  <script>
+    // Docs moved from the site root to /docs/. Forward old deep links.
+    (function () {
+      var base = '/hands-on-ai/';
+      var path = location.pathname;
+      if (path.indexOf(base) === 0 && path.indexOf(base + 'docs/') !== 0) {
+        location.replace(base + 'docs/' + path.slice(base.length) + location.hash);
+      }
+    })();
+  </script>
+  <meta http-equiv="refresh" content="3;url=/hands-on-ai/" />
+</head>
+<body>
+  <p style="font-family: sans-serif; padding: 2rem;">
+    Page not found — redirecting you to the
+    <a href="/hands-on-ai/docs/">HandsOnAI documentation</a>…
+  </p>
+</body>
+</html>
