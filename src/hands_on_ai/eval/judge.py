@@ -25,6 +25,17 @@ def judge(output, criteria, question=None, model=None, scale=5):
     Returns:
         dict: ``{"score": int | None, "reasoning": str, "raw": str}``.
     """
+    # Preferred path: the typed scorer in hands_on_ai.decide (schema-
+    # validated, no regex). Falls through to the legacy text prompt below
+    # when the structured call cannot produce a score, so existing callers
+    # keep the same {score, reasoning, raw} contract either way.
+    from ..decide import score_output
+
+    typed = score_output(output, criteria, question=question, model=model, scale=scale)
+    if typed["score"] is not None:
+        return {"score": typed["score"], "reasoning": typed["reasoning"],
+                "raw": typed["raw"]}
+
     system = (
         "You are a strict but fair evaluator. Score the response against the "
         f"criteria on a scale of 1 to {scale}, where {scale} is best. "
