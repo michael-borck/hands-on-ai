@@ -14,7 +14,7 @@
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/michael-borck/hands-on-ai/blob/main/notebooks/quickstart.ipynb) **New here? Try the [quickstart notebook](notebooks/quickstart.ipynb) in your browser, no install needed.**
 
-HandsOnAI is a unified educational toolkit designed to teach students how modern AI systems work, by building and interacting with them directly.
+HandsOnAI is a unified educational toolkit designed to teach students how today's LLM-based AI systems work, by building and interacting with them directly. (AI the field is wider than LLMs; the companion notebooks include one classical machine-learning bridge, and the docs say plainly where this toolkit's scope ends.)
 
 It provides a clean, modular structure that introduces core AI concepts progressively through five modules:
 
